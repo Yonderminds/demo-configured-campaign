@@ -2,6 +2,8 @@
 
 Campaign repo for the **Coerneuineo** store, built on the Campaign Page Kit (CPK) and the Campaign Cart SDK. It is the worked example for Yonderminds campaign repos: 1 repo per store, 1 folder per product line, 1 `src/<slug>/` folder per campaign.
 
+**New here? Start with [GO-LIVE.md](GO-LIVE.md)**: a step-by-step guide from a new GitHub repo to a live campaign.
+
 Agent instructions are in `CLAUDE.md`. `AGENTS.md` links to it, so Codex and Claude Code follow the same rules.
 
 ## Campaigns
