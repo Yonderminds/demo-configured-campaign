@@ -79,7 +79,7 @@ On Windows, use WSL (Windows Subsystem for Linux) for all commands in this guide
 
 **Who:** an organization **owner** (a director, or NEXT). Team members cannot create repos in the Yonderminds organization. Do this once for each store.
 
-Use **1 repo for each store**. Name it `<store>-cpk`. Example: the store `coerneuineo` has the repo `coerneuineo-cpk`.
+Use **1 repo for each store**. Name it `<store>-cpk`. Example: the store `mystore` has the repo `mystore-cpk`.
 
 1. Go to https://github.com/organizations/Yonderminds/repositories/new
 2. **Owner:** Yonderminds. **Repository name:** `<store>-cpk`.
@@ -95,7 +95,12 @@ cd <store>-cpk
 
 **You should see:** a folder named `<store>-cpk` on your computer with a `README.md` file in it.
 
-**Example repo:** https://github.com/Yonderminds/coerneuineo-cpk is a finished campaign. Look at it when you are not sure what a file should look like.
+**2 demo repos** show you the start and the end. Look at them when you are not sure what a file should look like:
+
+| Repo | What it shows |
+|---|---|
+| https://github.com/Yonderminds/demo-fresh-campaign | How your repo looks **after Step 3** (fresh install, nothing set up yet) |
+| https://github.com/Yonderminds/demo-configured-campaign | How your repo looks **after Step 13** (configured for a store, tested, online) |
 
 ---
 
@@ -388,7 +393,7 @@ All of them work. Choose **one** host for your team and use it for every store. 
 
 ### Use your own domain
 
-Always use **your own domain** (for example `offers.mystore.com`). The pages use addresses that start with `/`, so they only work at the top of a domain. The free addresses like `yonderminds.github.io/<repo>/` need extra setup. The example repo shows that setup if you need it.
+Always use **your own domain** (for example `offers.mystore.com`). The pages use addresses that start with `/`, so they only work at the top of a domain. The free addresses like `yonderminds.github.io/<repo>/` need extra setup. The demo-configured-campaign repo shows that setup (`scripts/pages-routes.js`) if you need it.
 
 To use your own domain:
 

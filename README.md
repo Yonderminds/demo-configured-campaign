@@ -1,8 +1,19 @@
-# Coerneuineo: Campaign Repo (CPK)
+# Demo: a configured campaign
 
-Campaign repo for the **Coerneuineo** store, built on the Campaign Page Kit (CPK) and the Campaign Cart SDK. It is the worked example for Yonderminds campaign repos: 1 repo per store, 1 folder per product line, 1 `src/<slug>/` folder per campaign.
+This repo shows a **finished** campaign: built for one real store (**Coerneuineo**), configured, tested and online. Use it to see what your own store repo will look like when it is done.
+
+There are 2 demo repos. Look at them side by side:
+
+| Repo | What it shows |
+|---|---|
+| [demo-fresh-campaign](https://github.com/Yonderminds/demo-fresh-campaign) | A **fresh** Campaign Page Kit project, right after install. Nothing set up for a store yet. |
+| **demo-configured-campaign** (this repo) | A campaign **configured for a store**: real campaign, real pages, hosting and test records. |
+
+Live pages: https://yonderminds.github.io/demo-configured-campaign/christmas-diamond-painting-light-wreath/
 
 **New here? Start with [GO-LIVE.md](GO-LIVE.md)**: a step-by-step guide from a new GitHub repo to a live campaign.
+
+Your own repos are named after the store (`<store>-cpk`), not "demo". Layout: 1 repo per store, 1 folder per product line, 1 `src/<slug>/` folder per campaign.
 
 Agent instructions are in `CLAUDE.md`. `AGENTS.md` links to it, so Codex and Claude Code follow the same rules.
 
@@ -43,7 +54,7 @@ A separate product line is a new top-level project folder alongside `christmas-d
 ## Structure
 
 ```
-coerneuineo-cpk/
+demo-configured-campaign/
 ├── scripts/
 │   ├── smoke-check.js       # Pre-deploy validator
 │   └── build.js             # Root build: discovers and merges every project

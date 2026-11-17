@@ -1,9 +1,9 @@
-# Coerneuineo: Campaign Repo (CPK)
+# Demo: a configured campaign (Coerneuineo store)
 
 - **Store:** coerneuineo
 - **Owner:** Yonderminds
 - **Campaign type:** CPK (Campaign Page Kit)
-- **Hosting:** GitHub Pages at `https://yonderminds.github.io/coerneuineo-cpk/`, published by `.github/workflows/pages.yml` on every push to `main`. Nothing here is on coerneuineo.com.
+- **Hosting:** GitHub Pages at `https://yonderminds.github.io/demo-configured-campaign/`, published by `.github/workflows/pages.yml` on every push to `main`. Nothing here is on coerneuineo.com.
 
 `AGENTS.md` is a link to this file, so Codex and Claude Code read the same instructions. Edit `CLAUDE.md`; do not replace the link with a copy.
 
@@ -14,7 +14,7 @@ This repo is the worked example for building campaigns on NEXT: the campaign is 
 ## Repo structure
 
 ```
-coerneuineo-cpk/
+demo-configured-campaign/
 ├── .github/
 │   └── workflows/
 │       ├── pages.yml           # Build + publish to GitHub Pages on every push to main
@@ -98,7 +98,7 @@ Campaigns in this repo are published with GitHub Pages. `.github/workflows/pages
 
 - **Rewrites:** `scripts/pages-routes.js` reads every status-200 rule in `netlify.toml` and copies the target page to the `from` address in `_site/`. That is how the landing page is also served at the store's old product address (`/products/hot-sale-49-off…`), which is where the ads point. To add an address, add a status-200 rule to `netlify.toml`.
 - **Redirects:** 301 rules cannot be sent and are skipped (the build log lists them). The campaign slug address keeps serving the landing page itself.
-- **Address:** the site is served at `https://yonderminds.github.io/coerneuineo-cpk/`. Pages are built with root-relative paths (`/christmas-diamond-painting-light-wreath/…`), so in the Pages build `scripts/pages-routes.js` prefixes them with the base path GitHub reports (`/coerneuineo-cpk`). Local builds and `npm run dev` are untouched. If a custom domain is attached later, the base path becomes empty and nothing is prefixed. `yonderminds.github.io` is an allowed Development domain in the store's Campaigns App settings, so analytics are ignored there.
+- **Address:** the site is served at `https://yonderminds.github.io/demo-configured-campaign/`. Pages are built with root-relative paths (`/christmas-diamond-painting-light-wreath/…`), so in the Pages build `scripts/pages-routes.js` prefixes them with the base path GitHub reports (`/demo-configured-campaign`). Local builds and `npm run dev` are untouched. If a custom domain is attached later, the base path becomes empty and nothing is prefixed. `yonderminds.github.io` is an allowed Development domain in the store's Campaigns App settings, so analytics are ignored there.
 - **Cache headers:** GitHub Pages sets its own; the 30-day image and font caching is not available.
 - **Previews:** there are no per-PR preview sites. Check changes with `npm run dev` locally.
 
