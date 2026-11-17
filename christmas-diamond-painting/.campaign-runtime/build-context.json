@@ -1,0 +1,1889 @@
+{
+  "schema_version": "campaign-runtime-build-context/v0",
+  "generated_at": "2026-11-13T05:09:44.182Z",
+  "source_adapter": "html_funnel",
+  "intake": {
+    "spec_source": "remote",
+    "spec_path": null,
+    "map_id": "christmas-diamond-painting-light-wreath-z56g",
+    "proxy_base": "https://campaign-map.nextcommerce.com",
+    "saved_map_revision": {
+      "map_id": "christmas-diamond-painting-light-wreath-z56g",
+      "hash": "sha256:31ae8c73450990642a472553374719976bcdc629f85201c0f8a469cb4e097699",
+      "algorithm": "map-store-v1",
+      "local_spec_material_hash": "sha256:31ae8c73450990642a472553374719976bcdc629f85201c0f8a469cb4e097699"
+    },
+    "source_root": "./source",
+    "target_repo": ".",
+    "template_family": "shop-single-step",
+    "brief_path": null,
+    "design_manifest_path": null,
+    "allow_uncertified_template": null,
+    "wrapper_policy": null,
+    "packet_path": "./campaign-runtime.build.json"
+  },
+  "status": "prepared",
+  "packet_path": "./campaign-runtime.build.json",
+  "report_path": ".campaign-runtime/assembly-report.json",
+  "design_source_package": {
+    "path": "input/design-source-package.json",
+    "schema_version": "campaign-design-source-package/v0",
+    "sha256": "sha256:2b32adeeb6e7dd4ef5b1b73b69c755bed1e29cd727febd1136e636197eb74036",
+    "material_fingerprint": "sha256:d265aede554ef7fee11cb301a84900e56d54f735c9951789bd83d218d36c0c6a"
+  },
+  "spec": {
+    "path": ".campaign-runtime/fetched-specs/christmas-diamond-painting-light-wreath-z56g.json",
+    "hash": "9232777060f5890bad32a2319690a2987e35fcf6f2f5b85882fe902258489be9",
+    "material_hash": "sha256:31ae8c73450990642a472553374719976bcdc629f85201c0f8a469cb4e097699",
+    "route_masked_material_hash": "sha256:ac505ff7e577d387ec3129be51a98ce67ad98d80122be1456f449545cfb05429",
+    "active_pages": [
+      {
+        "id": "page_mweeqrin_6",
+        "type": "landing",
+        "label": "Wreath product page",
+        "page_url": ""
+      },
+      {
+        "id": "page_mweeqrin_7",
+        "type": "checkout",
+        "label": "Checkout",
+        "page_url": "checkout/"
+      },
+      {
+        "id": "page_mweet1jv_9",
+        "type": "upsell",
+        "label": "Upsell 30% off (WREATH30)",
+        "page_url": "upsell-30/"
+      },
+      {
+        "id": "page_mweet355_10",
+        "type": "downsell",
+        "label": "Downsell 50% off (WREATH50)",
+        "page_url": "downsell-50/"
+      },
+      {
+        "id": "page_mweeqrin_8",
+        "type": "thankyou",
+        "label": "Thank You",
+        "page_url": "receipt/"
+      }
+    ]
+  },
+  "source": {
+    "root": "./source",
+    "html_files": [
+      {
+        "path": "landing.html",
+        "name": "landing.html",
+        "basename": "landing",
+        "bytes": 132027,
+        "sha256": "80e06653a07326baf8a28d5dc70304d3386e69680d01912a489597c9cb8297b6"
+      }
+    ],
+    "manifest": {
+      "path": "./source/.campaigns-os/source-html-manifest.json",
+      "schema_version": "source-html-manifest/v0",
+      "generator": "next-campaigns-import@0.3.0 capture + hand-cleaned standalone landing.html",
+      "generated_at": null,
+      "campaign_slug": "christmas-diamond-painting-light-wreath",
+      "page_count": 5,
+      "file_count": 0,
+      "producer_provenance": null
+    },
+    "manifest_warnings": [],
+    "ambiguous_candidates": [],
+    "manifest_draft": null,
+    "asset_crawl": {
+      "schema_version": "source-asset-crawl/v0",
+      "scanned_files": [
+        {
+          "path": "assets/css/base.css",
+          "kind": "css",
+          "bytes": 415511,
+          "sha256": "a60cb00e8314057f35b2f9f83bda5d3bf3d3e2e67f112730755d9e9e89ef0772"
+        },
+        {
+          "path": "assets/css/page.css",
+          "kind": "css",
+          "bytes": 42560,
+          "sha256": "f60b8d58209c3011915f98313619230f061c0b95d2abce2e67ffcb904013229d"
+        },
+        {
+          "path": "landing.html",
+          "kind": "html",
+          "bytes": 132027,
+          "sha256": "80e06653a07326baf8a28d5dc70304d3386e69680d01912a489597c9cb8297b6"
+        }
+      ],
+      "references": [
+        {
+          "raw": "assets/css/base.css",
+          "normalized": "assets/css/base.css",
+          "asset_kind": "style",
+          "root_relative": false,
+          "source_path": "assets/css/base.css",
+          "source_exists": true,
+          "outside_source_root": false,
+          "source_root_fallback": false,
+          "pagekit_asset_path": "css/base.css",
+          "rewrite_required": true,
+          "rewrite_hint": "Rewrite source asset ref \"assets/css/base.css\" to the Page Kit campaign asset root, e.g. campaign_asset \"css/base.css\".",
+          "referenced_by": [
+            {
+              "path": "landing.html",
+              "kind": "html",
+              "attribute": "href",
+              "page_ids": [
+                "page_mweeqrin_6"
+              ]
+            }
+          ]
+        },
+        {
+          "raw": "assets/css/page.css",
+          "normalized": "assets/css/page.css",
+          "asset_kind": "style",
+          "root_relative": false,
+          "source_path": "assets/css/page.css",
+          "source_exists": true,
+          "outside_source_root": false,
+          "source_root_fallback": false,
+          "pagekit_asset_path": "css/page.css",
+          "rewrite_required": true,
+          "rewrite_hint": "Rewrite source asset ref \"assets/css/page.css\" to the Page Kit campaign asset root, e.g. campaign_asset \"css/page.css\".",
+          "referenced_by": [
+            {
+              "path": "landing.html",
+              "kind": "html",
+              "attribute": "href",
+              "page_ids": [
+                "page_mweeqrin_6"
+              ]
+            }
+          ]
+        },
+        {
+          "raw": "../fonts/poppins_i4.846ad1e22474f856bd6b81ba4585a60799a9f5d2.woff2",
+          "normalized": "../fonts/poppins_i4.846ad1e22474f856bd6b81ba4585a60799a9f5d2.woff2",
+          "asset_kind": "font",
+          "root_relative": false,
+          "source_path": "assets/fonts/poppins_i4.846ad1e22474f856bd6b81ba4585a60799a9f5d2.woff2",
+          "source_exists": true,
+          "outside_source_root": false,
+          "source_root_fallback": false,
+          "pagekit_asset_path": "fonts/poppins_i4.846ad1e22474f856bd6b81ba4585a60799a9f5d2.woff2",
+          "rewrite_required": false,
+          "rewrite_hint": null,
+          "referenced_by": [
+            {
+              "path": "assets/css/page.css",
+              "kind": "css",
+              "attribute": "url()",
+              "page_ids": []
+            }
+          ]
+        },
+        {
+          "raw": "../fonts/poppins_i7.42fd71da11e9d101e1e6c7932199f925f9eea42d.woff2",
+          "normalized": "../fonts/poppins_i7.42fd71da11e9d101e1e6c7932199f925f9eea42d.woff2",
+          "asset_kind": "font",
+          "root_relative": false,
+          "source_path": "assets/fonts/poppins_i7.42fd71da11e9d101e1e6c7932199f925f9eea42d.woff2",
+          "source_exists": true,
+          "outside_source_root": false,
+          "source_root_fallback": false,
+          "pagekit_asset_path": "fonts/poppins_i7.42fd71da11e9d101e1e6c7932199f925f9eea42d.woff2",
+          "rewrite_required": false,
+          "rewrite_hint": null,
+          "referenced_by": [
+            {
+              "path": "assets/css/page.css",
+              "kind": "css",
+              "attribute": "url()",
+              "page_ids": []
+            }
+          ]
+        },
+        {
+          "raw": "../fonts/poppins_n4.0ba78fa5af9b0e1a374041b3ceaadf0a43b41362.woff2",
+          "normalized": "../fonts/poppins_n4.0ba78fa5af9b0e1a374041b3ceaadf0a43b41362.woff2",
+          "asset_kind": "font",
+          "root_relative": false,
+          "source_path": "assets/fonts/poppins_n4.0ba78fa5af9b0e1a374041b3ceaadf0a43b41362.woff2",
+          "source_exists": true,
+          "outside_source_root": false,
+          "source_root_fallback": false,
+          "pagekit_asset_path": "fonts/poppins_n4.0ba78fa5af9b0e1a374041b3ceaadf0a43b41362.woff2",
+          "rewrite_required": false,
+          "rewrite_hint": null,
+          "referenced_by": [
+            {
+              "path": "assets/css/page.css",
+              "kind": "css",
+              "attribute": "url()",
+              "page_ids": []
+            }
+          ]
+        },
+        {
+          "raw": "../fonts/poppins_n7.56758dcf284489feb014a026f3727f2f20a54626.woff2",
+          "normalized": "../fonts/poppins_n7.56758dcf284489feb014a026f3727f2f20a54626.woff2",
+          "asset_kind": "font",
+          "root_relative": false,
+          "source_path": "assets/fonts/poppins_n7.56758dcf284489feb014a026f3727f2f20a54626.woff2",
+          "source_exists": true,
+          "outside_source_root": false,
+          "source_root_fallback": false,
+          "pagekit_asset_path": "fonts/poppins_n7.56758dcf284489feb014a026f3727f2f20a54626.woff2",
+          "rewrite_required": false,
+          "rewrite_hint": null,
+          "referenced_by": [
+            {
+              "path": "assets/css/page.css",
+              "kind": "css",
+              "attribute": "url()",
+              "page_ids": []
+            }
+          ]
+        },
+        {
+          "raw": "assets/images/0a697625fe63537134c6c951a30d8374-1100.webp",
+          "normalized": "assets/images/0a697625fe63537134c6c951a30d8374-1100.webp",
+          "asset_kind": "image",
+          "root_relative": false,
+          "source_path": "assets/images/0a697625fe63537134c6c951a30d8374-1100.webp",
+          "source_exists": true,
+          "outside_source_root": false,
+          "source_root_fallback": false,
+          "pagekit_asset_path": "images/0a697625fe63537134c6c951a30d8374-1100.webp",
+          "rewrite_required": true,
+          "rewrite_hint": "Rewrite source asset ref \"assets/images/0a697625fe63537134c6c951a30d8374-1100.webp\" to the Page Kit campaign asset root, e.g. campaign_asset \"images/0a697625fe63537134c6c951a30d8374-1100.webp\".",
+          "referenced_by": [
+            {
+              "path": "landing.html",
+              "kind": "html",
+              "attribute": "src",
+              "page_ids": [
+                "page_mweeqrin_6"
+              ]
+            }
+          ]
+        },
+        {
+          "raw": "assets/images/0a697625fe63537134c6c951a30d8374-240.webp",
+          "normalized": "assets/images/0a697625fe63537134c6c951a30d8374-240.webp",
+          "asset_kind": "image",
+          "root_relative": false,
+          "source_path": "assets/images/0a697625fe63537134c6c951a30d8374-240.webp",
+          "source_exists": true,
+          "outside_source_root": false,
+          "source_root_fallback": false,
+          "pagekit_asset_path": "images/0a697625fe63537134c6c951a30d8374-240.webp",
+          "rewrite_required": true,
+          "rewrite_hint": "Rewrite source asset ref \"assets/images/0a697625fe63537134c6c951a30d8374-240.webp\" to the Page Kit campaign asset root, e.g. campaign_asset \"images/0a697625fe63537134c6c951a30d8374-240.webp\".",
+          "referenced_by": [
+            {
+              "path": "landing.html",
+              "kind": "html",
+              "attribute": "src",
+              "page_ids": [
+                "page_mweeqrin_6"
+              ]
+            }
+          ]
+        },
+        {
+          "raw": "assets/images/1-800.webp",
+          "normalized": "assets/images/1-800.webp",
+          "asset_kind": "image",
+          "root_relative": false,
+          "source_path": "assets/images/1-800.webp",
+          "source_exists": true,
+          "outside_source_root": false,
+          "source_root_fallback": false,
+          "pagekit_asset_path": "images/1-800.webp",
+          "rewrite_required": true,
+          "rewrite_hint": "Rewrite source asset ref \"assets/images/1-800.webp\" to the Page Kit campaign asset root, e.g. campaign_asset \"images/1-800.webp\".",
+          "referenced_by": [
+            {
+              "path": "landing.html",
+              "kind": "html",
+              "attribute": "src",
+              "page_ids": [
+                "page_mweeqrin_6"
+              ]
+            }
+          ]
+        },
+        {
+          "raw": "assets/images/147bdd38b27ac6b463d884a97358ea69-800.webp",
+          "normalized": "assets/images/147bdd38b27ac6b463d884a97358ea69-800.webp",
+          "asset_kind": "image",
+          "root_relative": false,
+          "source_path": "assets/images/147bdd38b27ac6b463d884a97358ea69-800.webp",
+          "source_exists": true,
+          "outside_source_root": false,
+          "source_root_fallback": false,
+          "pagekit_asset_path": "images/147bdd38b27ac6b463d884a97358ea69-800.webp",
+          "rewrite_required": true,
+          "rewrite_hint": "Rewrite source asset ref \"assets/images/147bdd38b27ac6b463d884a97358ea69-800.webp\" to the Page Kit campaign asset root, e.g. campaign_asset \"images/147bdd38b27ac6b463d884a97358ea69-800.webp\".",
+          "referenced_by": [
+            {
+              "path": "landing.html",
+              "kind": "html",
+              "attribute": "src",
+              "page_ids": [
+                "page_mweeqrin_6"
+              ]
+            }
+          ]
+        },
+        {
+          "raw": "assets/images/1d87738d5ef36246be84ed242c84-fc684af0-1100.webp",
+          "normalized": "assets/images/1d87738d5ef36246be84ed242c84-fc684af0-1100.webp",
+          "asset_kind": "image",
+          "root_relative": false,
+          "source_path": "assets/images/1d87738d5ef36246be84ed242c84-fc684af0-1100.webp",
+          "source_exists": true,
+          "outside_source_root": false,
+          "source_root_fallback": false,
+          "pagekit_asset_path": "images/1d87738d5ef36246be84ed242c84-fc684af0-1100.webp",
+          "rewrite_required": true,
+          "rewrite_hint": "Rewrite source asset ref \"assets/images/1d87738d5ef36246be84ed242c84-fc684af0-1100.webp\" to the Page Kit campaign asset root, e.g. campaign_asset \"images/1d87738d5ef36246be84ed242c84-fc684af0-1100.webp\".",
+          "referenced_by": [
+            {
+              "path": "landing.html",
+              "kind": "html",
+              "attribute": "src",
+              "page_ids": [
+                "page_mweeqrin_6"
+              ]
+            }
+          ]
+        },
+        {
+          "raw": "assets/images/1d87738d5ef36246be84ed242c84-fc684af0-240.webp",
+          "normalized": "assets/images/1d87738d5ef36246be84ed242c84-fc684af0-240.webp",
+          "asset_kind": "image",
+          "root_relative": false,
+          "source_path": "assets/images/1d87738d5ef36246be84ed242c84-fc684af0-240.webp",
+          "source_exists": true,
+          "outside_source_root": false,
+          "source_root_fallback": false,
+          "pagekit_asset_path": "images/1d87738d5ef36246be84ed242c84-fc684af0-240.webp",
+          "rewrite_required": true,
+          "rewrite_hint": "Rewrite source asset ref \"assets/images/1d87738d5ef36246be84ed242c84-fc684af0-240.webp\" to the Page Kit campaign asset root, e.g. campaign_asset \"images/1d87738d5ef36246be84ed242c84-fc684af0-240.webp\".",
+          "referenced_by": [
+            {
+              "path": "landing.html",
+              "kind": "html",
+              "attribute": "src",
+              "page_ids": [
+                "page_mweeqrin_6"
+              ]
+            }
+          ]
+        },
+        {
+          "raw": "assets/images/2-800.webp",
+          "normalized": "assets/images/2-800.webp",
+          "asset_kind": "image",
+          "root_relative": false,
+          "source_path": "assets/images/2-800.webp",
+          "source_exists": true,
+          "outside_source_root": false,
+          "source_root_fallback": false,
+          "pagekit_asset_path": "images/2-800.webp",
+          "rewrite_required": true,
+          "rewrite_hint": "Rewrite source asset ref \"assets/images/2-800.webp\" to the Page Kit campaign asset root, e.g. campaign_asset \"images/2-800.webp\".",
+          "referenced_by": [
+            {
+              "path": "landing.html",
+              "kind": "html",
+              "attribute": "src",
+              "page_ids": [
+                "page_mweeqrin_6"
+              ]
+            }
+          ]
+        },
+        {
+          "raw": "assets/images/220b767ecb465ddbbd27f0af8bda1207-800.webp",
+          "normalized": "assets/images/220b767ecb465ddbbd27f0af8bda1207-800.webp",
+          "asset_kind": "image",
+          "root_relative": false,
+          "source_path": "assets/images/220b767ecb465ddbbd27f0af8bda1207-800.webp",
+          "source_exists": true,
+          "outside_source_root": false,
+          "source_root_fallback": false,
+          "pagekit_asset_path": "images/220b767ecb465ddbbd27f0af8bda1207-800.webp",
+          "rewrite_required": true,
+          "rewrite_hint": "Rewrite source asset ref \"assets/images/220b767ecb465ddbbd27f0af8bda1207-800.webp\" to the Page Kit campaign asset root, e.g. campaign_asset \"images/220b767ecb465ddbbd27f0af8bda1207-800.webp\".",
+          "referenced_by": [
+            {
+              "path": "landing.html",
+              "kind": "html",
+              "attribute": "src",
+              "page_ids": [
+                "page_mweeqrin_6"
+              ]
+            }
+          ]
+        },
+        {
+          "raw": "assets/images/2386795e3dc39bfe3b20836aa13a6d8f-800.webp",
+          "normalized": "assets/images/2386795e3dc39bfe3b20836aa13a6d8f-800.webp",
+          "asset_kind": "image",
+          "root_relative": false,
+          "source_path": "assets/images/2386795e3dc39bfe3b20836aa13a6d8f-800.webp",
+          "source_exists": true,
+          "outside_source_root": false,
+          "source_root_fallback": false,
+          "pagekit_asset_path": "images/2386795e3dc39bfe3b20836aa13a6d8f-800.webp",
+          "rewrite_required": true,
+          "rewrite_hint": "Rewrite source asset ref \"assets/images/2386795e3dc39bfe3b20836aa13a6d8f-800.webp\" to the Page Kit campaign asset root, e.g. campaign_asset \"images/2386795e3dc39bfe3b20836aa13a6d8f-800.webp\".",
+          "referenced_by": [
+            {
+              "path": "landing.html",
+              "kind": "html",
+              "attribute": "src",
+              "page_ids": [
+                "page_mweeqrin_6"
+              ]
+            }
+          ]
+        },
+        {
+          "raw": "assets/images/2772675235a939bd161b0e5e62852fe1-1100.webp",
+          "normalized": "assets/images/2772675235a939bd161b0e5e62852fe1-1100.webp",
+          "asset_kind": "image",
+          "root_relative": false,
+          "source_path": "assets/images/2772675235a939bd161b0e5e62852fe1-1100.webp",
+          "source_exists": true,
+          "outside_source_root": false,
+          "source_root_fallback": false,
+          "pagekit_asset_path": "images/2772675235a939bd161b0e5e62852fe1-1100.webp",
+          "rewrite_required": true,
+          "rewrite_hint": "Rewrite source asset ref \"assets/images/2772675235a939bd161b0e5e62852fe1-1100.webp\" to the Page Kit campaign asset root, e.g. campaign_asset \"images/2772675235a939bd161b0e5e62852fe1-1100.webp\".",
+          "referenced_by": [
+            {
+              "path": "landing.html",
+              "kind": "html",
+              "attribute": "src",
+              "page_ids": [
+                "page_mweeqrin_6"
+              ]
+            }
+          ]
+        },
+        {
+          "raw": "assets/images/2772675235a939bd161b0e5e62852fe1-240.webp",
+          "normalized": "assets/images/2772675235a939bd161b0e5e62852fe1-240.webp",
+          "asset_kind": "image",
+          "root_relative": false,
+          "source_path": "assets/images/2772675235a939bd161b0e5e62852fe1-240.webp",
+          "source_exists": true,
+          "outside_source_root": false,
+          "source_root_fallback": false,
+          "pagekit_asset_path": "images/2772675235a939bd161b0e5e62852fe1-240.webp",
+          "rewrite_required": true,
+          "rewrite_hint": "Rewrite source asset ref \"assets/images/2772675235a939bd161b0e5e62852fe1-240.webp\" to the Page Kit campaign asset root, e.g. campaign_asset \"images/2772675235a939bd161b0e5e62852fe1-240.webp\".",
+          "referenced_by": [
+            {
+              "path": "landing.html",
+              "kind": "html",
+              "attribute": "src",
+              "page_ids": [
+                "page_mweeqrin_6"
+              ]
+            }
+          ]
+        },
+        {
+          "raw": "assets/images/3edde018c34322db2d427abf60bfcaf86919f72b-800.webp",
+          "normalized": "assets/images/3edde018c34322db2d427abf60bfcaf86919f72b-800.webp",
+          "asset_kind": "image",
+          "root_relative": false,
+          "source_path": "assets/images/3edde018c34322db2d427abf60bfcaf86919f72b-800.webp",
+          "source_exists": true,
+          "outside_source_root": false,
+          "source_root_fallback": false,
+          "pagekit_asset_path": "images/3edde018c34322db2d427abf60bfcaf86919f72b-800.webp",
+          "rewrite_required": true,
+          "rewrite_hint": "Rewrite source asset ref \"assets/images/3edde018c34322db2d427abf60bfcaf86919f72b-800.webp\" to the Page Kit campaign asset root, e.g. campaign_asset \"images/3edde018c34322db2d427abf60bfcaf86919f72b-800.webp\".",
+          "referenced_by": [
+            {
+              "path": "landing.html",
+              "kind": "html",
+              "attribute": "src",
+              "page_ids": [
+                "page_mweeqrin_6"
+              ]
+            }
+          ]
+        },
+        {
+          "raw": "assets/images/448a8248fbe12a73b930fc131270206b-800.webp",
+          "normalized": "assets/images/448a8248fbe12a73b930fc131270206b-800.webp",
+          "asset_kind": "image",
+          "root_relative": false,
+          "source_path": "assets/images/448a8248fbe12a73b930fc131270206b-800.webp",
+          "source_exists": true,
+          "outside_source_root": false,
+          "source_root_fallback": false,
+          "pagekit_asset_path": "images/448a8248fbe12a73b930fc131270206b-800.webp",
+          "rewrite_required": true,
+          "rewrite_hint": "Rewrite source asset ref \"assets/images/448a8248fbe12a73b930fc131270206b-800.webp\" to the Page Kit campaign asset root, e.g. campaign_asset \"images/448a8248fbe12a73b930fc131270206b-800.webp\".",
+          "referenced_by": [
+            {
+              "path": "landing.html",
+              "kind": "html",
+              "attribute": "src",
+              "page_ids": [
+                "page_mweeqrin_6"
+              ]
+            }
+          ]
+        },
+        {
+          "raw": "assets/images/6f69a462ca627d211d3d25128c99-ae26e811-1100.webp",
+          "normalized": "assets/images/6f69a462ca627d211d3d25128c99-ae26e811-1100.webp",
+          "asset_kind": "image",
+          "root_relative": false,
+          "source_path": "assets/images/6f69a462ca627d211d3d25128c99-ae26e811-1100.webp",
+          "source_exists": true,
+          "outside_source_root": false,
+          "source_root_fallback": false,
+          "pagekit_asset_path": "images/6f69a462ca627d211d3d25128c99-ae26e811-1100.webp",
+          "rewrite_required": true,
+          "rewrite_hint": "Rewrite source asset ref \"assets/images/6f69a462ca627d211d3d25128c99-ae26e811-1100.webp\" to the Page Kit campaign asset root, e.g. campaign_asset \"images/6f69a462ca627d211d3d25128c99-ae26e811-1100.webp\".",
+          "referenced_by": [
+            {
+              "path": "landing.html",
+              "kind": "html",
+              "attribute": "src",
+              "page_ids": [
+                "page_mweeqrin_6"
+              ]
+            }
+          ]
+        },
+        {
+          "raw": "assets/images/6f69a462ca627d211d3d25128c99-ae26e811-240.webp",
+          "normalized": "assets/images/6f69a462ca627d211d3d25128c99-ae26e811-240.webp",
+          "asset_kind": "image",
+          "root_relative": false,
+          "source_path": "assets/images/6f69a462ca627d211d3d25128c99-ae26e811-240.webp",
+          "source_exists": true,
+          "outside_source_root": false,
+          "source_root_fallback": false,
+          "pagekit_asset_path": "images/6f69a462ca627d211d3d25128c99-ae26e811-240.webp",
+          "rewrite_required": true,
+          "rewrite_hint": "Rewrite source asset ref \"assets/images/6f69a462ca627d211d3d25128c99-ae26e811-240.webp\" to the Page Kit campaign asset root, e.g. campaign_asset \"images/6f69a462ca627d211d3d25128c99-ae26e811-240.webp\".",
+          "referenced_by": [
+            {
+              "path": "landing.html",
+              "kind": "html",
+              "attribute": "src",
+              "page_ids": [
+                "page_mweeqrin_6"
+              ]
+            }
+          ]
+        },
+        {
+          "raw": "assets/images/72b1ae776c7e56710716f944d941-b24690a8-1100.webp",
+          "normalized": "assets/images/72b1ae776c7e56710716f944d941-b24690a8-1100.webp",
+          "asset_kind": "image",
+          "root_relative": false,
+          "source_path": "assets/images/72b1ae776c7e56710716f944d941-b24690a8-1100.webp",
+          "source_exists": true,
+          "outside_source_root": false,
+          "source_root_fallback": false,
+          "pagekit_asset_path": "images/72b1ae776c7e56710716f944d941-b24690a8-1100.webp",
+          "rewrite_required": true,
+          "rewrite_hint": "Rewrite source asset ref \"assets/images/72b1ae776c7e56710716f944d941-b24690a8-1100.webp\" to the Page Kit campaign asset root, e.g. campaign_asset \"images/72b1ae776c7e56710716f944d941-b24690a8-1100.webp\".",
+          "referenced_by": [
+            {
+              "path": "landing.html",
+              "kind": "html",
+              "attribute": "src",
+              "page_ids": [
+                "page_mweeqrin_6"
+              ]
+            }
+          ]
+        },
+        {
+          "raw": "assets/images/72b1ae776c7e56710716f944d941-b24690a8-240.webp",
+          "normalized": "assets/images/72b1ae776c7e56710716f944d941-b24690a8-240.webp",
+          "asset_kind": "image",
+          "root_relative": false,
+          "source_path": "assets/images/72b1ae776c7e56710716f944d941-b24690a8-240.webp",
+          "source_exists": true,
+          "outside_source_root": false,
+          "source_root_fallback": false,
+          "pagekit_asset_path": "images/72b1ae776c7e56710716f944d941-b24690a8-240.webp",
+          "rewrite_required": true,
+          "rewrite_hint": "Rewrite source asset ref \"assets/images/72b1ae776c7e56710716f944d941-b24690a8-240.webp\" to the Page Kit campaign asset root, e.g. campaign_asset \"images/72b1ae776c7e56710716f944d941-b24690a8-240.webp\".",
+          "referenced_by": [
+            {
+              "path": "landing.html",
+              "kind": "html",
+              "attribute": "src",
+              "page_ids": [
+                "page_mweeqrin_6"
+              ]
+            }
+          ]
+        },
+        {
+          "raw": "assets/images/a8ce094bf0af7caeb8631838ffc0-a7881d19-1100.webp",
+          "normalized": "assets/images/a8ce094bf0af7caeb8631838ffc0-a7881d19-1100.webp",
+          "asset_kind": "image",
+          "root_relative": false,
+          "source_path": "assets/images/a8ce094bf0af7caeb8631838ffc0-a7881d19-1100.webp",
+          "source_exists": true,
+          "outside_source_root": false,
+          "source_root_fallback": false,
+          "pagekit_asset_path": "images/a8ce094bf0af7caeb8631838ffc0-a7881d19-1100.webp",
+          "rewrite_required": true,
+          "rewrite_hint": "Rewrite source asset ref \"assets/images/a8ce094bf0af7caeb8631838ffc0-a7881d19-1100.webp\" to the Page Kit campaign asset root, e.g. campaign_asset \"images/a8ce094bf0af7caeb8631838ffc0-a7881d19-1100.webp\".",
+          "referenced_by": [
+            {
+              "path": "landing.html",
+              "kind": "html",
+              "attribute": "src",
+              "page_ids": [
+                "page_mweeqrin_6"
+              ]
+            }
+          ]
+        },
+        {
+          "raw": "assets/images/a8ce094bf0af7caeb8631838ffc0-a7881d19-240.webp",
+          "normalized": "assets/images/a8ce094bf0af7caeb8631838ffc0-a7881d19-240.webp",
+          "asset_kind": "image",
+          "root_relative": false,
+          "source_path": "assets/images/a8ce094bf0af7caeb8631838ffc0-a7881d19-240.webp",
+          "source_exists": true,
+          "outside_source_root": false,
+          "source_root_fallback": false,
+          "pagekit_asset_path": "images/a8ce094bf0af7caeb8631838ffc0-a7881d19-240.webp",
+          "rewrite_required": true,
+          "rewrite_hint": "Rewrite source asset ref \"assets/images/a8ce094bf0af7caeb8631838ffc0-a7881d19-240.webp\" to the Page Kit campaign asset root, e.g. campaign_asset \"images/a8ce094bf0af7caeb8631838ffc0-a7881d19-240.webp\".",
+          "referenced_by": [
+            {
+              "path": "landing.html",
+              "kind": "html",
+              "attribute": "src",
+              "page_ids": [
+                "page_mweeqrin_6"
+              ]
+            }
+          ]
+        },
+        {
+          "raw": "assets/images/ba03b8aa543bb266a934262848e2955c-800.webp",
+          "normalized": "assets/images/ba03b8aa543bb266a934262848e2955c-800.webp",
+          "asset_kind": "image",
+          "root_relative": false,
+          "source_path": "assets/images/ba03b8aa543bb266a934262848e2955c-800.webp",
+          "source_exists": true,
+          "outside_source_root": false,
+          "source_root_fallback": false,
+          "pagekit_asset_path": "images/ba03b8aa543bb266a934262848e2955c-800.webp",
+          "rewrite_required": true,
+          "rewrite_hint": "Rewrite source asset ref \"assets/images/ba03b8aa543bb266a934262848e2955c-800.webp\" to the Page Kit campaign asset root, e.g. campaign_asset \"images/ba03b8aa543bb266a934262848e2955c-800.webp\".",
+          "referenced_by": [
+            {
+              "path": "landing.html",
+              "kind": "html",
+              "attribute": "src",
+              "page_ids": [
+                "page_mweeqrin_6"
+              ]
+            }
+          ]
+        },
+        {
+          "raw": "assets/images/ba6ee487135a880d258d010faf530b7ac86809e6-800.webp",
+          "normalized": "assets/images/ba6ee487135a880d258d010faf530b7ac86809e6-800.webp",
+          "asset_kind": "image",
+          "root_relative": false,
+          "source_path": "assets/images/ba6ee487135a880d258d010faf530b7ac86809e6-800.webp",
+          "source_exists": true,
+          "outside_source_root": false,
+          "source_root_fallback": false,
+          "pagekit_asset_path": "images/ba6ee487135a880d258d010faf530b7ac86809e6-800.webp",
+          "rewrite_required": true,
+          "rewrite_hint": "Rewrite source asset ref \"assets/images/ba6ee487135a880d258d010faf530b7ac86809e6-800.webp\" to the Page Kit campaign asset root, e.g. campaign_asset \"images/ba6ee487135a880d258d010faf530b7ac86809e6-800.webp\".",
+          "referenced_by": [
+            {
+              "path": "landing.html",
+              "kind": "html",
+              "attribute": "src",
+              "page_ids": [
+                "page_mweeqrin_6"
+              ]
+            }
+          ]
+        },
+        {
+          "raw": "assets/images/black_white_minimalist_simpl-471ae137-630.webp",
+          "normalized": "assets/images/black_white_minimalist_simpl-471ae137-630.webp",
+          "asset_kind": "image",
+          "root_relative": false,
+          "source_path": "assets/images/black_white_minimalist_simpl-471ae137-630.webp",
+          "source_exists": true,
+          "outside_source_root": false,
+          "source_root_fallback": false,
+          "pagekit_asset_path": "images/black_white_minimalist_simpl-471ae137-630.webp",
+          "rewrite_required": true,
+          "rewrite_hint": "Rewrite source asset ref \"assets/images/black_white_minimalist_simpl-471ae137-630.webp\" to the Page Kit campaign asset root, e.g. campaign_asset \"images/black_white_minimalist_simpl-471ae137-630.webp\".",
+          "referenced_by": [
+            {
+              "path": "landing.html",
+              "kind": "html",
+              "attribute": "src",
+              "page_ids": [
+                "page_mweeqrin_6"
+              ]
+            }
+          ]
+        },
+        {
+          "raw": "assets/images/c30f6b17b885bbe7f8a7fe493ef2-c6d02254-1100.webp",
+          "normalized": "assets/images/c30f6b17b885bbe7f8a7fe493ef2-c6d02254-1100.webp",
+          "asset_kind": "image",
+          "root_relative": false,
+          "source_path": "assets/images/c30f6b17b885bbe7f8a7fe493ef2-c6d02254-1100.webp",
+          "source_exists": true,
+          "outside_source_root": false,
+          "source_root_fallback": false,
+          "pagekit_asset_path": "images/c30f6b17b885bbe7f8a7fe493ef2-c6d02254-1100.webp",
+          "rewrite_required": true,
+          "rewrite_hint": "Rewrite source asset ref \"assets/images/c30f6b17b885bbe7f8a7fe493ef2-c6d02254-1100.webp\" to the Page Kit campaign asset root, e.g. campaign_asset \"images/c30f6b17b885bbe7f8a7fe493ef2-c6d02254-1100.webp\".",
+          "referenced_by": [
+            {
+              "path": "landing.html",
+              "kind": "html",
+              "attribute": "src",
+              "page_ids": [
+                "page_mweeqrin_6"
+              ]
+            }
+          ]
+        },
+        {
+          "raw": "assets/images/c30f6b17b885bbe7f8a7fe493ef2-c6d02254-240.webp",
+          "normalized": "assets/images/c30f6b17b885bbe7f8a7fe493ef2-c6d02254-240.webp",
+          "asset_kind": "image",
+          "root_relative": false,
+          "source_path": "assets/images/c30f6b17b885bbe7f8a7fe493ef2-c6d02254-240.webp",
+          "source_exists": true,
+          "outside_source_root": false,
+          "source_root_fallback": false,
+          "pagekit_asset_path": "images/c30f6b17b885bbe7f8a7fe493ef2-c6d02254-240.webp",
+          "rewrite_required": true,
+          "rewrite_hint": "Rewrite source asset ref \"assets/images/c30f6b17b885bbe7f8a7fe493ef2-c6d02254-240.webp\" to the Page Kit campaign asset root, e.g. campaign_asset \"images/c30f6b17b885bbe7f8a7fe493ef2-c6d02254-240.webp\".",
+          "referenced_by": [
+            {
+              "path": "landing.html",
+              "kind": "html",
+              "attribute": "src",
+              "page_ids": [
+                "page_mweeqrin_6"
+              ]
+            }
+          ]
+        },
+        {
+          "raw": "assets/images/cd23045ab028196d34d9b2d90e412c1e-1100.webp",
+          "normalized": "assets/images/cd23045ab028196d34d9b2d90e412c1e-1100.webp",
+          "asset_kind": "image",
+          "root_relative": false,
+          "source_path": "assets/images/cd23045ab028196d34d9b2d90e412c1e-1100.webp",
+          "source_exists": true,
+          "outside_source_root": false,
+          "source_root_fallback": false,
+          "pagekit_asset_path": "images/cd23045ab028196d34d9b2d90e412c1e-1100.webp",
+          "rewrite_required": true,
+          "rewrite_hint": "Rewrite source asset ref \"assets/images/cd23045ab028196d34d9b2d90e412c1e-1100.webp\" to the Page Kit campaign asset root, e.g. campaign_asset \"images/cd23045ab028196d34d9b2d90e412c1e-1100.webp\".",
+          "referenced_by": [
+            {
+              "path": "landing.html",
+              "kind": "html",
+              "attribute": "src",
+              "page_ids": [
+                "page_mweeqrin_6"
+              ]
+            }
+          ]
+        },
+        {
+          "raw": "assets/images/cd23045ab028196d34d9b2d90e412c1e-160.webp",
+          "normalized": "assets/images/cd23045ab028196d34d9b2d90e412c1e-160.webp",
+          "asset_kind": "image",
+          "root_relative": false,
+          "source_path": "assets/images/cd23045ab028196d34d9b2d90e412c1e-160.webp",
+          "source_exists": true,
+          "outside_source_root": false,
+          "source_root_fallback": false,
+          "pagekit_asset_path": "images/cd23045ab028196d34d9b2d90e412c1e-160.webp",
+          "rewrite_required": true,
+          "rewrite_hint": "Rewrite source asset ref \"assets/images/cd23045ab028196d34d9b2d90e412c1e-160.webp\" to the Page Kit campaign asset root, e.g. campaign_asset \"images/cd23045ab028196d34d9b2d90e412c1e-160.webp\".",
+          "referenced_by": [
+            {
+              "path": "landing.html",
+              "kind": "html",
+              "attribute": "src",
+              "page_ids": [
+                "page_mweeqrin_6"
+              ]
+            }
+          ]
+        },
+        {
+          "raw": "assets/images/cd23045ab028196d34d9b2d90e412c1e-240.webp",
+          "normalized": "assets/images/cd23045ab028196d34d9b2d90e412c1e-240.webp",
+          "asset_kind": "image",
+          "root_relative": false,
+          "source_path": "assets/images/cd23045ab028196d34d9b2d90e412c1e-240.webp",
+          "source_exists": true,
+          "outside_source_root": false,
+          "source_root_fallback": false,
+          "pagekit_asset_path": "images/cd23045ab028196d34d9b2d90e412c1e-240.webp",
+          "rewrite_required": true,
+          "rewrite_hint": "Rewrite source asset ref \"assets/images/cd23045ab028196d34d9b2d90e412c1e-240.webp\" to the Page Kit campaign asset root, e.g. campaign_asset \"images/cd23045ab028196d34d9b2d90e412c1e-240.webp\".",
+          "referenced_by": [
+            {
+              "path": "landing.html",
+              "kind": "html",
+              "attribute": "src",
+              "page_ids": [
+                "page_mweeqrin_6"
+              ]
+            }
+          ]
+        },
+        {
+          "raw": "assets/images/chatgpt_2026_10_19_17_45_06-1-1100.webp",
+          "normalized": "assets/images/chatgpt_2026_10_19_17_45_06-1-1100.webp",
+          "asset_kind": "image",
+          "root_relative": false,
+          "source_path": "assets/images/chatgpt_2026_10_19_17_45_06-1-1100.webp",
+          "source_exists": true,
+          "outside_source_root": false,
+          "source_root_fallback": false,
+          "pagekit_asset_path": "images/chatgpt_2026_10_19_17_45_06-1-1100.webp",
+          "rewrite_required": true,
+          "rewrite_hint": "Rewrite source asset ref \"assets/images/chatgpt_2026_10_19_17_45_06-1-1100.webp\" to the Page Kit campaign asset root, e.g. campaign_asset \"images/chatgpt_2026_10_19_17_45_06-1-1100.webp\".",
+          "referenced_by": [
+            {
+              "path": "landing.html",
+              "kind": "html",
+              "attribute": "src",
+              "page_ids": [
+                "page_mweeqrin_6"
+              ]
+            }
+          ]
+        },
+        {
+          "raw": "assets/images/chatgpt_2026_10_19_17_45_06-1-240.webp",
+          "normalized": "assets/images/chatgpt_2026_10_19_17_45_06-1-240.webp",
+          "asset_kind": "image",
+          "root_relative": false,
+          "source_path": "assets/images/chatgpt_2026_10_19_17_45_06-1-240.webp",
+          "source_exists": true,
+          "outside_source_root": false,
+          "source_root_fallback": false,
+          "pagekit_asset_path": "images/chatgpt_2026_10_19_17_45_06-1-240.webp",
+          "rewrite_required": true,
+          "rewrite_hint": "Rewrite source asset ref \"assets/images/chatgpt_2026_10_19_17_45_06-1-240.webp\" to the Page Kit campaign asset root, e.g. campaign_asset \"images/chatgpt_2026_10_19_17_45_06-1-240.webp\".",
+          "referenced_by": [
+            {
+              "path": "landing.html",
+              "kind": "html",
+              "attribute": "src",
+              "page_ids": [
+                "page_mweeqrin_6"
+              ]
+            }
+          ]
+        },
+        {
+          "raw": "assets/images/chatgpt_2026_10_19_17_45_08-3-1100.webp",
+          "normalized": "assets/images/chatgpt_2026_10_19_17_45_08-3-1100.webp",
+          "asset_kind": "image",
+          "root_relative": false,
+          "source_path": "assets/images/chatgpt_2026_10_19_17_45_08-3-1100.webp",
+          "source_exists": true,
+          "outside_source_root": false,
+          "source_root_fallback": false,
+          "pagekit_asset_path": "images/chatgpt_2026_10_19_17_45_08-3-1100.webp",
+          "rewrite_required": true,
+          "rewrite_hint": "Rewrite source asset ref \"assets/images/chatgpt_2026_10_19_17_45_08-3-1100.webp\" to the Page Kit campaign asset root, e.g. campaign_asset \"images/chatgpt_2026_10_19_17_45_08-3-1100.webp\".",
+          "referenced_by": [
+            {
+              "path": "landing.html",
+              "kind": "html",
+              "attribute": "src",
+              "page_ids": [
+                "page_mweeqrin_6"
+              ]
+            }
+          ]
+        },
+        {
+          "raw": "assets/images/chatgpt_2026_10_19_17_45_08-3-240.webp",
+          "normalized": "assets/images/chatgpt_2026_10_19_17_45_08-3-240.webp",
+          "asset_kind": "image",
+          "root_relative": false,
+          "source_path": "assets/images/chatgpt_2026_10_19_17_45_08-3-240.webp",
+          "source_exists": true,
+          "outside_source_root": false,
+          "source_root_fallback": false,
+          "pagekit_asset_path": "images/chatgpt_2026_10_19_17_45_08-3-240.webp",
+          "rewrite_required": true,
+          "rewrite_hint": "Rewrite source asset ref \"assets/images/chatgpt_2026_10_19_17_45_08-3-240.webp\" to the Page Kit campaign asset root, e.g. campaign_asset \"images/chatgpt_2026_10_19_17_45_08-3-240.webp\".",
+          "referenced_by": [
+            {
+              "path": "landing.html",
+              "kind": "html",
+              "attribute": "src",
+              "page_ids": [
+                "page_mweeqrin_6"
+              ]
+            }
+          ]
+        },
+        {
+          "raw": "assets/images/chatgpt_2026_10_19_17_45_09-4-1100.webp",
+          "normalized": "assets/images/chatgpt_2026_10_19_17_45_09-4-1100.webp",
+          "asset_kind": "image",
+          "root_relative": false,
+          "source_path": "assets/images/chatgpt_2026_10_19_17_45_09-4-1100.webp",
+          "source_exists": true,
+          "outside_source_root": false,
+          "source_root_fallback": false,
+          "pagekit_asset_path": "images/chatgpt_2026_10_19_17_45_09-4-1100.webp",
+          "rewrite_required": true,
+          "rewrite_hint": "Rewrite source asset ref \"assets/images/chatgpt_2026_10_19_17_45_09-4-1100.webp\" to the Page Kit campaign asset root, e.g. campaign_asset \"images/chatgpt_2026_10_19_17_45_09-4-1100.webp\".",
+          "referenced_by": [
+            {
+              "path": "landing.html",
+              "kind": "html",
+              "attribute": "src",
+              "page_ids": [
+                "page_mweeqrin_6"
+              ]
+            }
+          ]
+        },
+        {
+          "raw": "assets/images/chatgpt_2026_10_19_17_45_09-4-240.webp",
+          "normalized": "assets/images/chatgpt_2026_10_19_17_45_09-4-240.webp",
+          "asset_kind": "image",
+          "root_relative": false,
+          "source_path": "assets/images/chatgpt_2026_10_19_17_45_09-4-240.webp",
+          "source_exists": true,
+          "outside_source_root": false,
+          "source_root_fallback": false,
+          "pagekit_asset_path": "images/chatgpt_2026_10_19_17_45_09-4-240.webp",
+          "rewrite_required": true,
+          "rewrite_hint": "Rewrite source asset ref \"assets/images/chatgpt_2026_10_19_17_45_09-4-240.webp\" to the Page Kit campaign asset root, e.g. campaign_asset \"images/chatgpt_2026_10_19_17_45_09-4-240.webp\".",
+          "referenced_by": [
+            {
+              "path": "landing.html",
+              "kind": "html",
+              "attribute": "src",
+              "page_ids": [
+                "page_mweeqrin_6"
+              ]
+            }
+          ]
+        },
+        {
+          "raw": "assets/images/d2aec6a65ff421f0bc41194a670e5218-800.webp",
+          "normalized": "assets/images/d2aec6a65ff421f0bc41194a670e5218-800.webp",
+          "asset_kind": "image",
+          "root_relative": false,
+          "source_path": "assets/images/d2aec6a65ff421f0bc41194a670e5218-800.webp",
+          "source_exists": true,
+          "outside_source_root": false,
+          "source_root_fallback": false,
+          "pagekit_asset_path": "images/d2aec6a65ff421f0bc41194a670e5218-800.webp",
+          "rewrite_required": true,
+          "rewrite_hint": "Rewrite source asset ref \"assets/images/d2aec6a65ff421f0bc41194a670e5218-800.webp\" to the Page Kit campaign asset root, e.g. campaign_asset \"images/d2aec6a65ff421f0bc41194a670e5218-800.webp\".",
+          "referenced_by": [
+            {
+              "path": "landing.html",
+              "kind": "html",
+              "attribute": "src",
+              "page_ids": [
+                "page_mweeqrin_6"
+              ]
+            }
+          ]
+        },
+        {
+          "raw": "assets/images/d9d3ecddb659d5e81186e2721b2920d9-1100.webp",
+          "normalized": "assets/images/d9d3ecddb659d5e81186e2721b2920d9-1100.webp",
+          "asset_kind": "image",
+          "root_relative": false,
+          "source_path": "assets/images/d9d3ecddb659d5e81186e2721b2920d9-1100.webp",
+          "source_exists": true,
+          "outside_source_root": false,
+          "source_root_fallback": false,
+          "pagekit_asset_path": "images/d9d3ecddb659d5e81186e2721b2920d9-1100.webp",
+          "rewrite_required": true,
+          "rewrite_hint": "Rewrite source asset ref \"assets/images/d9d3ecddb659d5e81186e2721b2920d9-1100.webp\" to the Page Kit campaign asset root, e.g. campaign_asset \"images/d9d3ecddb659d5e81186e2721b2920d9-1100.webp\".",
+          "referenced_by": [
+            {
+              "path": "landing.html",
+              "kind": "html",
+              "attribute": "src",
+              "page_ids": [
+                "page_mweeqrin_6"
+              ]
+            }
+          ]
+        },
+        {
+          "raw": "assets/images/d9d3ecddb659d5e81186e2721b2920d9-240.webp",
+          "normalized": "assets/images/d9d3ecddb659d5e81186e2721b2920d9-240.webp",
+          "asset_kind": "image",
+          "root_relative": false,
+          "source_path": "assets/images/d9d3ecddb659d5e81186e2721b2920d9-240.webp",
+          "source_exists": true,
+          "outside_source_root": false,
+          "source_root_fallback": false,
+          "pagekit_asset_path": "images/d9d3ecddb659d5e81186e2721b2920d9-240.webp",
+          "rewrite_required": true,
+          "rewrite_hint": "Rewrite source asset ref \"assets/images/d9d3ecddb659d5e81186e2721b2920d9-240.webp\" to the Page Kit campaign asset root, e.g. campaign_asset \"images/d9d3ecddb659d5e81186e2721b2920d9-240.webp\".",
+          "referenced_by": [
+            {
+              "path": "landing.html",
+              "kind": "html",
+              "attribute": "src",
+              "page_ids": [
+                "page_mweeqrin_6"
+              ]
+            }
+          ]
+        },
+        {
+          "raw": "assets/images/e0628d6328ceb82047322c031fd75cbc-800.webp",
+          "normalized": "assets/images/e0628d6328ceb82047322c031fd75cbc-800.webp",
+          "asset_kind": "image",
+          "root_relative": false,
+          "source_path": "assets/images/e0628d6328ceb82047322c031fd75cbc-800.webp",
+          "source_exists": true,
+          "outside_source_root": false,
+          "source_root_fallback": false,
+          "pagekit_asset_path": "images/e0628d6328ceb82047322c031fd75cbc-800.webp",
+          "rewrite_required": true,
+          "rewrite_hint": "Rewrite source asset ref \"assets/images/e0628d6328ceb82047322c031fd75cbc-800.webp\" to the Page Kit campaign asset root, e.g. campaign_asset \"images/e0628d6328ceb82047322c031fd75cbc-800.webp\".",
+          "referenced_by": [
+            {
+              "path": "landing.html",
+              "kind": "html",
+              "attribute": "src",
+              "page_ids": [
+                "page_mweeqrin_6"
+              ]
+            }
+          ]
+        },
+        {
+          "raw": "assets/images/e1452c63e1440bd91e7fa354b1cdfa33-1100.webp",
+          "normalized": "assets/images/e1452c63e1440bd91e7fa354b1cdfa33-1100.webp",
+          "asset_kind": "image",
+          "root_relative": false,
+          "source_path": "assets/images/e1452c63e1440bd91e7fa354b1cdfa33-1100.webp",
+          "source_exists": true,
+          "outside_source_root": false,
+          "source_root_fallback": false,
+          "pagekit_asset_path": "images/e1452c63e1440bd91e7fa354b1cdfa33-1100.webp",
+          "rewrite_required": true,
+          "rewrite_hint": "Rewrite source asset ref \"assets/images/e1452c63e1440bd91e7fa354b1cdfa33-1100.webp\" to the Page Kit campaign asset root, e.g. campaign_asset \"images/e1452c63e1440bd91e7fa354b1cdfa33-1100.webp\".",
+          "referenced_by": [
+            {
+              "path": "landing.html",
+              "kind": "html",
+              "attribute": "src",
+              "page_ids": [
+                "page_mweeqrin_6"
+              ]
+            }
+          ]
+        },
+        {
+          "raw": "assets/images/e1452c63e1440bd91e7fa354b1cdfa33-240.webp",
+          "normalized": "assets/images/e1452c63e1440bd91e7fa354b1cdfa33-240.webp",
+          "asset_kind": "image",
+          "root_relative": false,
+          "source_path": "assets/images/e1452c63e1440bd91e7fa354b1cdfa33-240.webp",
+          "source_exists": true,
+          "outside_source_root": false,
+          "source_root_fallback": false,
+          "pagekit_asset_path": "images/e1452c63e1440bd91e7fa354b1cdfa33-240.webp",
+          "rewrite_required": true,
+          "rewrite_hint": "Rewrite source asset ref \"assets/images/e1452c63e1440bd91e7fa354b1cdfa33-240.webp\" to the Page Kit campaign asset root, e.g. campaign_asset \"images/e1452c63e1440bd91e7fa354b1cdfa33-240.webp\".",
+          "referenced_by": [
+            {
+              "path": "landing.html",
+              "kind": "html",
+              "attribute": "src",
+              "page_ids": [
+                "page_mweeqrin_6"
+              ]
+            }
+          ]
+        },
+        {
+          "raw": "assets/images/e3c102c08464ffa3a446bc14fd028ef6-1100.webp",
+          "normalized": "assets/images/e3c102c08464ffa3a446bc14fd028ef6-1100.webp",
+          "asset_kind": "image",
+          "root_relative": false,
+          "source_path": "assets/images/e3c102c08464ffa3a446bc14fd028ef6-1100.webp",
+          "source_exists": true,
+          "outside_source_root": false,
+          "source_root_fallback": false,
+          "pagekit_asset_path": "images/e3c102c08464ffa3a446bc14fd028ef6-1100.webp",
+          "rewrite_required": true,
+          "rewrite_hint": "Rewrite source asset ref \"assets/images/e3c102c08464ffa3a446bc14fd028ef6-1100.webp\" to the Page Kit campaign asset root, e.g. campaign_asset \"images/e3c102c08464ffa3a446bc14fd028ef6-1100.webp\".",
+          "referenced_by": [
+            {
+              "path": "landing.html",
+              "kind": "html",
+              "attribute": "src",
+              "page_ids": [
+                "page_mweeqrin_6"
+              ]
+            }
+          ]
+        },
+        {
+          "raw": "assets/images/e3c102c08464ffa3a446bc14fd028ef6-240.webp",
+          "normalized": "assets/images/e3c102c08464ffa3a446bc14fd028ef6-240.webp",
+          "asset_kind": "image",
+          "root_relative": false,
+          "source_path": "assets/images/e3c102c08464ffa3a446bc14fd028ef6-240.webp",
+          "source_exists": true,
+          "outside_source_root": false,
+          "source_root_fallback": false,
+          "pagekit_asset_path": "images/e3c102c08464ffa3a446bc14fd028ef6-240.webp",
+          "rewrite_required": true,
+          "rewrite_hint": "Rewrite source asset ref \"assets/images/e3c102c08464ffa3a446bc14fd028ef6-240.webp\" to the Page Kit campaign asset root, e.g. campaign_asset \"images/e3c102c08464ffa3a446bc14fd028ef6-240.webp\".",
+          "referenced_by": [
+            {
+              "path": "landing.html",
+              "kind": "html",
+              "attribute": "src",
+              "page_ids": [
+                "page_mweeqrin_6"
+              ]
+            }
+          ]
+        },
+        {
+          "raw": "assets/images/f9a0e816d49533d1ebecfa2c0fb8-dac4d8d7-1100.webp",
+          "normalized": "assets/images/f9a0e816d49533d1ebecfa2c0fb8-dac4d8d7-1100.webp",
+          "asset_kind": "image",
+          "root_relative": false,
+          "source_path": "assets/images/f9a0e816d49533d1ebecfa2c0fb8-dac4d8d7-1100.webp",
+          "source_exists": true,
+          "outside_source_root": false,
+          "source_root_fallback": false,
+          "pagekit_asset_path": "images/f9a0e816d49533d1ebecfa2c0fb8-dac4d8d7-1100.webp",
+          "rewrite_required": true,
+          "rewrite_hint": "Rewrite source asset ref \"assets/images/f9a0e816d49533d1ebecfa2c0fb8-dac4d8d7-1100.webp\" to the Page Kit campaign asset root, e.g. campaign_asset \"images/f9a0e816d49533d1ebecfa2c0fb8-dac4d8d7-1100.webp\".",
+          "referenced_by": [
+            {
+              "path": "landing.html",
+              "kind": "html",
+              "attribute": "src",
+              "page_ids": [
+                "page_mweeqrin_6"
+              ]
+            }
+          ]
+        },
+        {
+          "raw": "assets/images/f9a0e816d49533d1ebecfa2c0fb8-dac4d8d7-240.webp",
+          "normalized": "assets/images/f9a0e816d49533d1ebecfa2c0fb8-dac4d8d7-240.webp",
+          "asset_kind": "image",
+          "root_relative": false,
+          "source_path": "assets/images/f9a0e816d49533d1ebecfa2c0fb8-dac4d8d7-240.webp",
+          "source_exists": true,
+          "outside_source_root": false,
+          "source_root_fallback": false,
+          "pagekit_asset_path": "images/f9a0e816d49533d1ebecfa2c0fb8-dac4d8d7-240.webp",
+          "rewrite_required": true,
+          "rewrite_hint": "Rewrite source asset ref \"assets/images/f9a0e816d49533d1ebecfa2c0fb8-dac4d8d7-240.webp\" to the Page Kit campaign asset root, e.g. campaign_asset \"images/f9a0e816d49533d1ebecfa2c0fb8-dac4d8d7-240.webp\".",
+          "referenced_by": [
+            {
+              "path": "landing.html",
+              "kind": "html",
+              "attribute": "src",
+              "page_ids": [
+                "page_mweeqrin_6"
+              ]
+            }
+          ]
+        },
+        {
+          "raw": "assets/images/f9a0e816d49533d1ebecfa2c0fb8a60d-800.webp",
+          "normalized": "assets/images/f9a0e816d49533d1ebecfa2c0fb8a60d-800.webp",
+          "asset_kind": "image",
+          "root_relative": false,
+          "source_path": "assets/images/f9a0e816d49533d1ebecfa2c0fb8a60d-800.webp",
+          "source_exists": true,
+          "outside_source_root": false,
+          "source_root_fallback": false,
+          "pagekit_asset_path": "images/f9a0e816d49533d1ebecfa2c0fb8a60d-800.webp",
+          "rewrite_required": true,
+          "rewrite_hint": "Rewrite source asset ref \"assets/images/f9a0e816d49533d1ebecfa2c0fb8a60d-800.webp\" to the Page Kit campaign asset root, e.g. campaign_asset \"images/f9a0e816d49533d1ebecfa2c0fb8a60d-800.webp\".",
+          "referenced_by": [
+            {
+              "path": "landing.html",
+              "kind": "html",
+              "attribute": "src",
+              "page_ids": [
+                "page_mweeqrin_6"
+              ]
+            }
+          ]
+        },
+        {
+          "raw": "assets/images/sku_rose_orange_square_ba97c-31ceabe4-160.webp",
+          "normalized": "assets/images/sku_rose_orange_square_ba97c-31ceabe4-160.webp",
+          "asset_kind": "image",
+          "root_relative": false,
+          "source_path": "assets/images/sku_rose_orange_square_ba97c-31ceabe4-160.webp",
+          "source_exists": true,
+          "outside_source_root": false,
+          "source_root_fallback": false,
+          "pagekit_asset_path": "images/sku_rose_orange_square_ba97c-31ceabe4-160.webp",
+          "rewrite_required": true,
+          "rewrite_hint": "Rewrite source asset ref \"assets/images/sku_rose_orange_square_ba97c-31ceabe4-160.webp\" to the Page Kit campaign asset root, e.g. campaign_asset \"images/sku_rose_orange_square_ba97c-31ceabe4-160.webp\".",
+          "referenced_by": [
+            {
+              "path": "landing.html",
+              "kind": "html",
+              "attribute": "src",
+              "page_ids": [
+                "page_mweeqrin_6"
+              ]
+            }
+          ]
+        },
+        {
+          "raw": "assets/images/x1_19892a37-21b8-4377-8442-ac1d5040b127-1100.webp",
+          "normalized": "assets/images/x1_19892a37-21b8-4377-8442-ac1d5040b127-1100.webp",
+          "asset_kind": "image",
+          "root_relative": false,
+          "source_path": "assets/images/x1_19892a37-21b8-4377-8442-ac1d5040b127-1100.webp",
+          "source_exists": true,
+          "outside_source_root": false,
+          "source_root_fallback": false,
+          "pagekit_asset_path": "images/x1_19892a37-21b8-4377-8442-ac1d5040b127-1100.webp",
+          "rewrite_required": true,
+          "rewrite_hint": "Rewrite source asset ref \"assets/images/x1_19892a37-21b8-4377-8442-ac1d5040b127-1100.webp\" to the Page Kit campaign asset root, e.g. campaign_asset \"images/x1_19892a37-21b8-4377-8442-ac1d5040b127-1100.webp\".",
+          "referenced_by": [
+            {
+              "path": "landing.html",
+              "kind": "html",
+              "attribute": "src",
+              "page_ids": [
+                "page_mweeqrin_6"
+              ]
+            }
+          ]
+        },
+        {
+          "raw": "assets/images/x1_19892a37-21b8-4377-8442-ac1d5040b127-240.webp",
+          "normalized": "assets/images/x1_19892a37-21b8-4377-8442-ac1d5040b127-240.webp",
+          "asset_kind": "image",
+          "root_relative": false,
+          "source_path": "assets/images/x1_19892a37-21b8-4377-8442-ac1d5040b127-240.webp",
+          "source_exists": true,
+          "outside_source_root": false,
+          "source_root_fallback": false,
+          "pagekit_asset_path": "images/x1_19892a37-21b8-4377-8442-ac1d5040b127-240.webp",
+          "rewrite_required": true,
+          "rewrite_hint": "Rewrite source asset ref \"assets/images/x1_19892a37-21b8-4377-8442-ac1d5040b127-240.webp\" to the Page Kit campaign asset root, e.g. campaign_asset \"images/x1_19892a37-21b8-4377-8442-ac1d5040b127-240.webp\".",
+          "referenced_by": [
+            {
+              "path": "landing.html",
+              "kind": "html",
+              "attribute": "src",
+              "page_ids": [
+                "page_mweeqrin_6"
+              ]
+            }
+          ]
+        },
+        {
+          "raw": "assets/images/x3_eb3fd0cf-88f8-4f6e-9dea-8ba6e66a7343-1100.webp",
+          "normalized": "assets/images/x3_eb3fd0cf-88f8-4f6e-9dea-8ba6e66a7343-1100.webp",
+          "asset_kind": "image",
+          "root_relative": false,
+          "source_path": "assets/images/x3_eb3fd0cf-88f8-4f6e-9dea-8ba6e66a7343-1100.webp",
+          "source_exists": true,
+          "outside_source_root": false,
+          "source_root_fallback": false,
+          "pagekit_asset_path": "images/x3_eb3fd0cf-88f8-4f6e-9dea-8ba6e66a7343-1100.webp",
+          "rewrite_required": true,
+          "rewrite_hint": "Rewrite source asset ref \"assets/images/x3_eb3fd0cf-88f8-4f6e-9dea-8ba6e66a7343-1100.webp\" to the Page Kit campaign asset root, e.g. campaign_asset \"images/x3_eb3fd0cf-88f8-4f6e-9dea-8ba6e66a7343-1100.webp\".",
+          "referenced_by": [
+            {
+              "path": "landing.html",
+              "kind": "html",
+              "attribute": "src",
+              "page_ids": [
+                "page_mweeqrin_6"
+              ]
+            }
+          ]
+        },
+        {
+          "raw": "assets/images/x3_eb3fd0cf-88f8-4f6e-9dea-8ba6e66a7343-240.webp",
+          "normalized": "assets/images/x3_eb3fd0cf-88f8-4f6e-9dea-8ba6e66a7343-240.webp",
+          "asset_kind": "image",
+          "root_relative": false,
+          "source_path": "assets/images/x3_eb3fd0cf-88f8-4f6e-9dea-8ba6e66a7343-240.webp",
+          "source_exists": true,
+          "outside_source_root": false,
+          "source_root_fallback": false,
+          "pagekit_asset_path": "images/x3_eb3fd0cf-88f8-4f6e-9dea-8ba6e66a7343-240.webp",
+          "rewrite_required": true,
+          "rewrite_hint": "Rewrite source asset ref \"assets/images/x3_eb3fd0cf-88f8-4f6e-9dea-8ba6e66a7343-240.webp\" to the Page Kit campaign asset root, e.g. campaign_asset \"images/x3_eb3fd0cf-88f8-4f6e-9dea-8ba6e66a7343-240.webp\".",
+          "referenced_by": [
+            {
+              "path": "landing.html",
+              "kind": "html",
+              "attribute": "src",
+              "page_ids": [
+                "page_mweeqrin_6"
+              ]
+            }
+          ]
+        },
+        {
+          "raw": "assets/images/x6_12d27898-9d7c-4ccc-bc5a-9b4b577850b2-1100.webp",
+          "normalized": "assets/images/x6_12d27898-9d7c-4ccc-bc5a-9b4b577850b2-1100.webp",
+          "asset_kind": "image",
+          "root_relative": false,
+          "source_path": "assets/images/x6_12d27898-9d7c-4ccc-bc5a-9b4b577850b2-1100.webp",
+          "source_exists": true,
+          "outside_source_root": false,
+          "source_root_fallback": false,
+          "pagekit_asset_path": "images/x6_12d27898-9d7c-4ccc-bc5a-9b4b577850b2-1100.webp",
+          "rewrite_required": true,
+          "rewrite_hint": "Rewrite source asset ref \"assets/images/x6_12d27898-9d7c-4ccc-bc5a-9b4b577850b2-1100.webp\" to the Page Kit campaign asset root, e.g. campaign_asset \"images/x6_12d27898-9d7c-4ccc-bc5a-9b4b577850b2-1100.webp\".",
+          "referenced_by": [
+            {
+              "path": "landing.html",
+              "kind": "html",
+              "attribute": "src",
+              "page_ids": [
+                "page_mweeqrin_6"
+              ]
+            }
+          ]
+        },
+        {
+          "raw": "assets/images/x6_12d27898-9d7c-4ccc-bc5a-9b4b577850b2-240.webp",
+          "normalized": "assets/images/x6_12d27898-9d7c-4ccc-bc5a-9b4b577850b2-240.webp",
+          "asset_kind": "image",
+          "root_relative": false,
+          "source_path": "assets/images/x6_12d27898-9d7c-4ccc-bc5a-9b4b577850b2-240.webp",
+          "source_exists": true,
+          "outside_source_root": false,
+          "source_root_fallback": false,
+          "pagekit_asset_path": "images/x6_12d27898-9d7c-4ccc-bc5a-9b4b577850b2-240.webp",
+          "rewrite_required": true,
+          "rewrite_hint": "Rewrite source asset ref \"assets/images/x6_12d27898-9d7c-4ccc-bc5a-9b4b577850b2-240.webp\" to the Page Kit campaign asset root, e.g. campaign_asset \"images/x6_12d27898-9d7c-4ccc-bc5a-9b4b577850b2-240.webp\".",
+          "referenced_by": [
+            {
+              "path": "landing.html",
+              "kind": "html",
+              "attribute": "src",
+              "page_ids": [
+                "page_mweeqrin_6"
+              ]
+            }
+          ]
+        }
+      ],
+      "summary": {
+        "scanned_file_count": 3,
+        "reference_count": 57,
+        "missing_count": 0,
+        "outside_source_root_count": 0,
+        "source_root_fallback_count": 0,
+        "rewrite_required_count": 53,
+        "root_assets_path_count": 0
+      },
+      "warnings": []
+    }
+  },
+  "build_brief": {
+    "schema_version": "campaigns-os-build-brief/v1",
+    "mode": "guided_draft",
+    "status": "complete",
+    "input_path": "./campaign-build-brief.json",
+    "normalized_path": ".campaign-runtime/input/campaign-build-brief.normalized.json",
+    "question_count": 0,
+    "gate_count": 1,
+    "questions": [],
+    "gates": [
+      {
+        "code": "build_brief.partial_scope_qa_policy",
+        "severity": "warning",
+        "field": "qa_policy.require_checkout_flow",
+        "message": "Brief requires checkout flow QA while some mapped pages are skipped; partial builds need explicit launch-readiness language."
+      }
+    ],
+    "material": {
+      "presentation": "sha256:f1dd7df10de63bab448dbd3bfe03805366d830e8c65760851dcd58fd67c9a6fe",
+      "qa_policy": "sha256:4cd1f5da5642f23dd77ffb95a194cd5db258f3ed0a37310e10019e8486170f4c"
+    },
+    "input_sha256": "sha256:5b30bbd8e3cec58de37eacd0f00f3bd6399c0837809d663c003f338e7312a083"
+  },
+  "page_map": [
+    {
+      "page_id": "page_mweeqrin_6",
+      "source_path": "landing.html",
+      "skip_reason": null,
+      "output_path": "./src/christmas-diamond-painting-light-wreath/landing.html",
+      "page_kit": {
+        "target_path": "landing.html",
+        "output_path": "src/christmas-diamond-painting-light-wreath/landing.html",
+        "public_route": "/christmas-diamond-painting-light-wreath/",
+        "spec_route": "",
+        "page_type": "product",
+        "permalink_required": true,
+        "frontmatter": {
+          "page_type": "product",
+          "permalink": "/christmas-diamond-painting-light-wreath/",
+          "next_url": "/christmas-diamond-painting-light-wreath/checkout/"
+        }
+      }
+    },
+    {
+      "page_id": "page_mweeqrin_7",
+      "source_path": null,
+      "skip_reason": "Template stock: the saved Map gives this checkout page no design_source; the olympus family page is the design.",
+      "output_path": null,
+      "page_kit": null
+    },
+    {
+      "page_id": "page_mweet1jv_9",
+      "source_path": null,
+      "skip_reason": "Template stock: the saved Map gives this upsell page no design_source; the olympus family page is the design.",
+      "output_path": null,
+      "page_kit": null
+    },
+    {
+      "page_id": "page_mweet355_10",
+      "source_path": null,
+      "skip_reason": "Template stock: the saved Map gives this downsell page no design_source; the olympus family page is the design.",
+      "output_path": null,
+      "page_kit": null
+    },
+    {
+      "page_id": "page_mweeqrin_8",
+      "source_path": null,
+      "skip_reason": "Template stock: the saved Map gives this receipt page no design_source; the olympus family page is the design.",
+      "output_path": null,
+      "page_kit": null
+    }
+  ],
+  "scaffold": {
+    "mode": "existing",
+    "required": false,
+    "target_repo": ".",
+    "output_dir": "./src/christmas-diamond-painting-light-wreath",
+    "handoff_skill": "next-campaigns-build",
+    "handoff_artifact": ".campaign-runtime/setup-handoff.json",
+    "reason": "Target campaign output directory already exists."
+  },
+  "template": {
+    "family": "shop-single-step",
+    "locked": true,
+    "lock": {
+      "locked": true,
+      "locked_by": "operator_flag",
+      "confidence": "high",
+      "evidence": [
+        "prepare-build --template-family"
+      ]
+    },
+    "candidates": []
+  },
+  "adapter_decisions": {
+    "raw_html_conversion_status": "pending",
+    "source_asset_strategy": "pagekit_campaign_asset_root",
+    "route_rewrite_policy": "campaignspec_routes_via_campaign_link",
+    "config_script_strategy": "campaign_asset",
+    "commerce_shell_adoption": "not_required",
+    "wrapper_policy": "preserve_document_wrappers",
+    "frontmatter_policy": "pagekit_yaml_frontmatter",
+    "script_style_reference_policy": "frontmatter_or_campaign_asset",
+    "cta_rewrite_policy": "campaignspec_routes_via_campaign_link",
+    "layout_choice": "campaign_layout",
+    "template_files_copied": {
+      "status": "pending",
+      "required_groups": [
+        "pages",
+        "_includes",
+        "_layouts",
+        "assets/css",
+        "assets/js",
+        "frontmatter_vocabulary"
+      ],
+      "groups": [],
+      "paths": []
+    }
+  },
+  "commerce_zone_findings": [],
+  "prompts_required": [],
+  "decisions": [
+    {
+      "id": "dec_page_map_page_mweeqrin_6",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "mapped CampaignSpec page \"page_mweeqrin_6\" to source file \"landing.html\" via source-html manifest (matched by page_id)",
+      "confidence": "high",
+      "evidence": [
+        "source-html manifest entry matched page \"page_mweeqrin_6\" by page_id; path=\"landing.html\" from ./source/.campaigns-os/source-html-manifest.json"
+      ]
+    },
+    {
+      "id": "dec_page_scope_page_mweeqrin_7",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "recorded CampaignSpec page \"page_mweeqrin_7\" as template stock, declared out of source scope (explicit source-html manifest skip entry); keep the route unbuilt unless the operator opts in to materialising it from the locked shop-single-step family's stock page; intake demands no design source for it",
+      "confidence": "high",
+      "template_stock": true,
+      "template_family": "shop-single-step",
+      "evidence": [
+        "source-html manifest entry for \"page_mweeqrin_7\" at ./source/.campaigns-os/source-html-manifest.json declares skip_reason without a path"
+      ]
+    },
+    {
+      "id": "dec_page_scope_page_mweet1jv_9",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "recorded CampaignSpec page \"page_mweet1jv_9\" as template stock, declared out of source scope (explicit source-html manifest skip entry); keep the route unbuilt unless the operator opts in to materialising it from the locked shop-single-step family's stock page; intake demands no design source for it",
+      "confidence": "high",
+      "template_stock": true,
+      "template_family": "shop-single-step",
+      "evidence": [
+        "source-html manifest entry for \"page_mweet1jv_9\" at ./source/.campaigns-os/source-html-manifest.json declares skip_reason without a path"
+      ]
+    },
+    {
+      "id": "dec_page_scope_page_mweet355_10",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "recorded CampaignSpec page \"page_mweet355_10\" as template stock, declared out of source scope (explicit source-html manifest skip entry); keep the route unbuilt unless the operator opts in to materialising it from the locked shop-single-step family's stock page; intake demands no design source for it",
+      "confidence": "high",
+      "template_stock": true,
+      "template_family": "shop-single-step",
+      "evidence": [
+        "source-html manifest entry for \"page_mweet355_10\" at ./source/.campaigns-os/source-html-manifest.json declares skip_reason without a path"
+      ]
+    },
+    {
+      "id": "dec_page_scope_page_mweeqrin_8",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "recorded CampaignSpec page \"page_mweeqrin_8\" as template stock, declared out of source scope (explicit source-html manifest skip entry); keep the route unbuilt unless the operator opts in to materialising it from the locked shop-single-step family's stock page; intake demands no design source for it",
+      "confidence": "high",
+      "template_stock": true,
+      "template_family": "shop-single-step",
+      "evidence": [
+        "source-html manifest entry for \"page_mweeqrin_8\" at ./source/.campaigns-os/source-html-manifest.json declares skip_reason without a path"
+      ]
+    },
+    {
+      "id": "dec_page_kit_target_page_mweeqrin_6",
+      "stage": "prepare_build",
+      "decision_type": "deterministic_derivation",
+      "decision": "projected CampaignSpec page \"page_mweeqrin_6\" to Page Kit target \"landing.html\" with CPK page_type \"product\"",
+      "confidence": "high",
+      "evidence": [
+        "source path \"landing.html\" remains producer provenance",
+        "target path \"src/christmas-diamond-painting-light-wreath/landing.html\" derives from CampaignSpec route \"(entry route)\" and public slug \"christmas-diamond-painting-light-wreath\""
+      ]
+    }
+  ],
+  "theme": {
+    "status": "ready_with_warnings",
+    "policy": "inspect_only",
+    "source_kind": "html_funnel",
+    "producer": {
+      "name": "figma-sections-export",
+      "version": "v0"
+    },
+    "source_files": [
+      {
+        "path": "source/assets/css/base.css",
+        "role": "page",
+        "source": "mapped_html_reference",
+        "hash": "a60cb00e8314057f35b2f9f83bda5d3bf3d3e2e67f112730755d9e9e89ef0772",
+        "token_count": 26,
+        "inline_block_index": null,
+        "referenced_by": [
+          {
+            "page_id": "page_mweeqrin_6",
+            "path": "landing.html",
+            "ref": "assets/css/base.css"
+          }
+        ]
+      },
+      {
+        "path": "source/assets/css/page.css",
+        "role": "page",
+        "source": "mapped_html_reference",
+        "hash": "f60b8d58209c3011915f98313619230f061c0b95d2abce2e67ffcb904013229d",
+        "token_count": 173,
+        "inline_block_index": null,
+        "referenced_by": [
+          {
+            "page_id": "page_mweeqrin_6",
+            "path": "landing.html",
+            "ref": "assets/css/page.css"
+          }
+        ]
+      }
+    ],
+    "selected_source": {
+      "path": "source/assets/css/base.css",
+      "role": "page",
+      "source": "mapped_html_reference",
+      "hash": "a60cb00e8314057f35b2f9f83bda5d3bf3d3e2e67f112730755d9e9e89ef0772",
+      "token_count": 26,
+      "inline_block_index": null,
+      "referenced_by": [
+        {
+          "page_id": "page_mweeqrin_6",
+          "path": "landing.html",
+          "ref": "assets/css/base.css"
+        }
+      ]
+    },
+    "producer_defaults": {
+      "matched": false,
+      "producer": "figma-sections-export",
+      "version": "v0",
+      "matched_tokens": [],
+      "unresolved_tokens": [],
+      "present_core_tokens": [
+        "--brand-accent",
+        "--text-primary",
+        "--text-inverse",
+        "--border-default"
+      ]
+    },
+    "confidence": "medium",
+    "generated": {
+      "css_path": ".campaign-runtime/theme/brand-theme.css",
+      "fonts_css_path": ".campaign-runtime/theme/brand-fonts.css",
+      "report_path": ".campaign-runtime/theme/theme-report.json",
+      "safety": {
+        "ok": true,
+        "errors": [],
+        "warnings": []
+      },
+      "stale": {
+        "stale": false,
+        "reasons": []
+      },
+      "can_generate": true,
+      "can_auto_generate": false,
+      "overwrite_requires_force": false
+    },
+    "mappings": [
+      {
+        "source": "--brand-accent",
+        "target": "--brand--color--accent",
+        "value": "#ffc800",
+        "confidence": "high",
+        "derivation": null
+      },
+      {
+        "source": "--text-primary",
+        "target": "--brand--color--text-primary",
+        "value": "#000000",
+        "confidence": "high",
+        "derivation": null
+      },
+      {
+        "source": "--text-primary",
+        "target": "--brand--color--foreground",
+        "value": "#000000",
+        "confidence": "high",
+        "derivation": null
+      },
+      {
+        "source": "--border-default",
+        "target": "--brand--color--border",
+        "value": "#999999",
+        "confidence": "high",
+        "derivation": null
+      },
+      {
+        "source": "--border-default",
+        "target": "--component--color--outline",
+        "value": "#999999",
+        "confidence": "high",
+        "derivation": null
+      },
+      {
+        "source": "--rating-star",
+        "target": "--brand--color--rating-star",
+        "value": "#ffc800",
+        "confidence": "high",
+        "derivation": null
+      },
+      {
+        "source": "--brand-cta",
+        "target": "--brand--color--cta-primary",
+        "value": "#ffc800",
+        "confidence": "high",
+        "derivation": null
+      },
+      {
+        "source": "--button-primary-bg",
+        "target": "--brand--color--cta-primary",
+        "value": "#ffc800",
+        "confidence": "high",
+        "derivation": null
+      },
+      {
+        "source": "--brand--color--cta-primary",
+        "target": "--brand--color--cta-foreground",
+        "value": "#0a0a0a",
+        "confidence": "high",
+        "derivation": {
+          "method": "foreground-from-luminance",
+          "background": "--brand--color--cta-primary",
+          "background_value": "#ffc800",
+          "on": "dark",
+          "contrast": 12.74
+        }
+      },
+      {
+        "source": "--brand--color--cta-primary",
+        "target": "--brand--color--text-inverse",
+        "value": "#0a0a0a",
+        "confidence": "high",
+        "derivation": {
+          "method": "foreground-from-luminance",
+          "background": "--brand--color--cta-primary",
+          "background_value": "#ffc800",
+          "on": "dark",
+          "contrast": 12.74
+        }
+      },
+      {
+        "source": "--brand--color--accent",
+        "target": "--brand--color--accent-foreground",
+        "value": "#0a0a0a",
+        "confidence": "high",
+        "derivation": {
+          "method": "foreground-from-luminance",
+          "background": "--brand--color--accent",
+          "background_value": "#ffc800",
+          "on": "dark",
+          "contrast": 12.74
+        }
+      },
+      {
+        "source": "typography.heading",
+        "target": "--_text---font-family--heading",
+        "value": "\"Poppins\", sans-serif",
+        "confidence": "high",
+        "derivation": {
+          "method": "design-source-font-face",
+          "family": "Poppins",
+          "rule_weight": 4
+        }
+      },
+      {
+        "source": "typography.body",
+        "target": "--_text---font-family--primary",
+        "value": "\"Poppins\", sans-serif",
+        "confidence": "high",
+        "derivation": {
+          "method": "design-source-font-face",
+          "family": "Poppins",
+          "rule_weight": 3
+        }
+      },
+      {
+        "source": "typography.button_radius",
+        "target": "--radius-size--buttons",
+        "value": "8px",
+        "confidence": "high",
+        "derivation": {
+          "method": "design-source-button-radius",
+          "rule_count": 3
+        }
+      }
+    ],
+    "unmapped_defaults": [],
+    "warnings": [
+      {
+        "code": "theme.source_tokens.conflict",
+        "message": "Source token --text-primary has conflicting values across source files.",
+        "detail": {
+          "token": "--text-primary",
+          "entries": [
+            {
+              "path": "christmas-diamond-painting/source/assets/css/base.css",
+              "role": "page",
+              "value": "#000000"
+            },
+            {
+              "path": "christmas-diamond-painting/source/assets/css/page.css",
+              "role": "page",
+              "value": "#ffffff"
+            }
+          ]
+        }
+      },
+      {
+        "code": "theme.source_tokens.conflict",
+        "message": "Source token --brand-accent has conflicting values across source files.",
+        "detail": {
+          "token": "--brand-accent",
+          "entries": [
+            {
+              "path": "christmas-diamond-painting/source/assets/css/base.css",
+              "role": "page",
+              "value": "#ffc800"
+            },
+            {
+              "path": "christmas-diamond-painting/source/assets/css/page.css",
+              "role": "page",
+              "value": "#a87e64"
+            }
+          ]
+        }
+      }
+    ],
+    "wrote": {
+      "report": true,
+      "css": false,
+      "fonts_css": false
+    }
+  }
+}

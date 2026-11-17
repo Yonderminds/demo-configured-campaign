@@ -1,0 +1,103 @@
+{% comment %}
+  Side cart (replaces the live page's Shopify cart drawer; same theme drawer classes, so it looks the
+  same: header with item count, "Cart reserved" timer, free-shipping progress, lines, totals, checkout).
+
+  SDK-owned (0.4.43, https://cart-sdk.nextcommerce.com/v0.4.43/reference/data-attributes/):
+  - lines: data-next-cart-items + data-item-template-id (cart item list). Each line carries
+    data-next-quantity="decrease|increase" and data-next-remove-item with data-package-id; the cart item
+    list enhancer wires those buttons after every render (campaign-cart v0.4.43
+    cart-item-list.enhancer.ts, remove-item guide).
+  - totals: data-next-cart-summary with {subtotal} {shipping} {total} and data-next-discounts="offer"
+    rows, so the "Free Shipping 2+" automatic offer shows as its own row once two units are in the cart.
+  - item count: data-next-display="cart.totalQuantity"; empty/non-empty: data-next-show / data-next-hide.
+  - free-shipping bar: two static fills switched by cart.totalQuantity (2+ units = the offer's
+    threshold), no price math.
+  pdp.js only opens/closes the drawer and runs the 5-minute "Cart reserved" timer (merchant copy).
+{% endcomment %}
+<div class="drawer pdp-cart-drawer cart-drawer--desktop-width-normal cart-drawer--mobile-width-full" id="PdpCartDrawer" data-pdp-cart-drawer aria-hidden="true">
+  <div class="cart-drawer">
+    <div class="cart-drawer__overlay" data-pdp-cart-close></div>
+    <div class="drawer__inner" role="dialog" aria-modal="true" aria-label="Your cart" tabindex="-1">
+      <div class="drawer__header" style="--alignment:flex-start">
+        <h2 class="drawer__heading">Cart &bull; <span data-next-display="cart.totalQuantity" data-next-format="number">0</span> items</h2>
+        <button class="drawer__close" type="button" aria-label="Close" data-pdp-cart-close>
+          <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" class="icon icon-close" fill="none" viewBox="0 0 18 17"><path d="M.865 15.978a.5.5 0 00.707.707l7.433-7.431 7.579 7.282a.501.501 0 00.846-.37.5.5 0 00-.153-.351L9.712 8.546l7.417-7.416a.5.5 0 10-.707-.708L8.991 7.853 1.413.573a.5.5 0 10-.693.72l7.563 7.268-7.418 7.417z" fill="currentColor"></path></svg>
+        </button>
+      </div>
+
+      <div class="cart-drawer__body">
+        <div data-next-show="cart.isEmpty" class="pdp-cart-empty">
+          <h2 class="cart__empty-text">Your cart is empty</h2>
+          <button type="button" class="button" data-pdp-cart-close>Continue shopping</button>
+        </div>
+
+        <div data-next-hide="cart.isEmpty">
+          <div class="cart-timer color-inverse" style="--font-size:1.4rem;">
+            <strong>Cart reserved for <span data-pdp-cart-timer data-duration="299">05:00</span></strong>
+          </div>
+          <div class="cart-progress accent-color-accent-1">
+            <p class="cart-progress__text">🛒 OVER $45.98 FREE SHIPPING 🌏</p>
+            <div class="cart-progress__bar">
+              <div class="cart-progress__bar__progress pdp-progress--half" data-next-show="cart.totalQuantity &lt; 2">
+                <div class="cart-progress__bar__badge"><svg class="pdp-truck" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M3 5h11v3h3.6L21 11.6V17h-1.8a2.7 2.7 0 0 1-5.4 0H9.2a2.7 2.7 0 0 1-5.4 0H3V5zm11 4.6V15h.4a2.7 2.7 0 0 1 4.4 0h.6v-2.7l-2.6-2.7H14zM6.5 15.9a1.1 1.1 0 1 0 0 2.2 1.1 1.1 0 0 0 0-2.2zm10 0a1.1 1.1 0 1 0 0 2.2 1.1 1.1 0 0 0 0-2.2z"/></svg></div>
+              </div>
+              <div class="cart-progress__bar__progress pdp-progress--full" data-next-show="cart.totalQuantity &gt;= 2">
+                <div class="cart-progress__bar__badge"><svg class="pdp-truck" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M3 5h11v3h3.6L21 11.6V17h-1.8a2.7 2.7 0 0 1-5.4 0H9.2a2.7 2.7 0 0 1-5.4 0H3V5zm11 4.6V15h.4a2.7 2.7 0 0 1 4.4 0h.6v-2.7l-2.6-2.7H14zM6.5 15.9a1.1 1.1 0 1 0 0 2.2 1.1 1.1 0 0 0 0-2.2zm10 0a1.1 1.1 0 1 0 0 2.2 1.1 1.1 0 0 0 0-2.2z"/></svg></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cart-items pdp-cart-items"
+             data-next-cart-items
+             data-item-template-id="pdp-cart-line"
+             style="--image-size: 20%; --title-size: 1.5rem;"></div>
+      </div>
+
+      <div class="drawer__footer" data-next-hide="cart.isEmpty">
+        <div class="cart-drawer__footer">
+          <div class="cart-drawer__totals" data-next-cart-summary>
+            <template>
+              <div class="pdp-cart-totals">
+                <p class="cart-drawer__totals__row cart-drawer__totals__row--spaced"><span>Subtotal</span><span>{subtotal}</span></p>
+                <div class="pdp-cart-discounts" data-next-discounts="offer">
+                  <template><p class="cart-drawer__totals__row cart-drawer__totals__row--spaced pdp-cart-discount"><span>{discount.name}</span><span>&minus;{discount.amount}</span></p></template>
+                </div>
+                <p class="cart-drawer__totals__row cart-drawer__totals__row--spaced"><span>Shipping</span><span>{shipping}</span></p>
+                <p class="cart-drawer__totals__row cart-drawer__totals__row--spaced pdp-cart-total"><strong>Total</strong><strong>{total}</strong></p>
+              </div>
+            </template>
+          </div>
+        </div>
+        <div class="cart__ctas">
+          <a href="{{ next_url | campaign_link }}" class="cart__checkout-button button">Pay with Debit/Credit Card</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<template id="pdp-cart-line">
+  <div class="cart-item cart-drawer-item" data-package-id="{item.packageId}">
+    <div class="cart-item__media"><img class="cart-item__image" src="{item.image}" alt="" width="120" height="120" loading="lazy"></div>
+    <div class="cart-drawer-item__right">
+      <div class="cart-drawer-item__details-and-delete-btn">
+        <div class="cart-item__details">
+          <p class="cart-item__name break">{item.name}</p>
+          <p class="product-option pdp-line-variant">{item.variantAttributesFormatted}</p>
+        </div>
+        <button type="button" class="pdp-line-remove" data-next-remove-item data-package-id="{item.packageId}" aria-label="Remove">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M14 3h-3.53a3.07 3.07 0 0 0-.6-1.65C9.44.82 8.8.5 8 .5s-1.44.32-1.87.85A3.06 3.06 0 0 0 5.53 3H2a.5.5 0 0 0 0 1h1.25v10c0 .28.22.5.5.5h8.5a.5.5 0 0 0 .5-.5V4H14a.5.5 0 0 0 0-1zM6.91 1.98c.23-.29.58-.48 1.09-.48s.85.19 1.09.48c.2.24.3.6.36 1.02h-2.9c.05-.42.17-.78.36-1.02zm4.84 11.52h-7.5V4h7.5v9.5z"/><path fill="currentColor" d="M6.55 5.25a.5.5 0 0 0-.5.5v6a.5.5 0 0 0 1 0v-6a.5.5 0 0 0-.5-.5zm2.9 0a.5.5 0 0 0-.5.5v6a.5.5 0 0 0 1 0v-6a.5.5 0 0 0-.5-.5z"/></svg>
+        </button>
+      </div>
+      <div class="cart-drawer-item__quantity-and-prices">
+        <div class="quantity cart-quantity">
+          <button type="button" class="quantity__button quantity__button--minus" data-next-quantity="decrease" data-package-id="{item.packageId}" aria-label="Decrease quantity">&minus;</button>
+          <span class="quantity__input">{item.quantity}</span>
+          <button type="button" class="quantity__button quantity__button--plus" data-next-quantity="increase" data-package-id="{item.packageId}" aria-label="Increase quantity">+</button>
+        </div>
+        <div class="cart-item__totals"><span class="price cart-item__final-price">{item.lineTotal}</span></div>
+      </div>
+    </div>
+  </div>
+</template>

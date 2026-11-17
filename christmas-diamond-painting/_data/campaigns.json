@@ -1,0 +1,22 @@
+{
+  "christmas-diamond-painting-light-wreath": {
+    "name": "Christmas Diamond Painting Light Wreath",
+    "description": "Shop single-step checkout funnel",
+    "entry_url": "/",
+    "sdk_version": "0.4.43",
+    "store_name": "Coerneuineo",
+    "store_url": "https://coerneuineo.29next.store/",
+    "store_terms": "https://coerneuineo.com/pages/terms-of-purchase",
+    "store_privacy": "https://coerneuineo.com/pages/privacy-notice",
+    "store_contact": "https://coerneuineo.com/pages/contact",
+    "store_returns": "https://coerneuineo.com/pages/return-policy",
+    "store_shipping": "https://coerneuineo.com/pages/shipping-policy",
+    "store_phone": "",
+    "store_phone_tel": "",
+    "gtm_id": "",
+    "fb_pixel_id": "",
+    "og_image": "",
+    "axon_event_key": "10940056-d36f-4112-872e-5e7fd4b87228",
+    "axon_send_user_data": "true"
+  }
+}

@@ -1,0 +1,1660 @@
+{
+  "schema_version": "5.0",
+  "builder_version": "0.44.3",
+  "generated_at": "2026-11-13T03:21:16.865Z",
+  "_provenance": {
+    "ops": [
+      "funnels.*.pages.*.label",
+      "funnels.*.pages.*.notes",
+      "funnels.*.pages.*.custom_fields",
+      "funnels.*.pages.*.design_source",
+      "funnels.*.pages.*.upsell_template_pattern",
+      "funnels.*.pages.*.upsell_mv_tiers",
+      "funnels.*.pages.*.variant_labels",
+      "funnels.*.pages.*.offers",
+      "funnels.*.pages.*.exit_intent",
+      "funnels.*.pages.*.promo_code_input",
+      "funnels.*.promo_codes",
+      "build_scope",
+      "global_config.sdk_version",
+      "campaign.store_*",
+      "campaign.allowed_domains",
+      "campaign.tracking",
+      "analytics",
+      "campaign.footer_links",
+      "campaign.seo",
+      "campaign.preferred_template_family",
+      "figma_url"
+    ],
+    "api": [
+      "campaign.*",
+      "shipping_methods",
+      "offers",
+      "funnels.*.pages.*.packages.*.name",
+      "funnels.*.pages.*.packages.*.price",
+      "funnels.*.pages.*.packages.*.prices"
+    ],
+    "derived": [
+      "funnels.*.pages.*.page_url",
+      "funnels.*.pages.*.sdk_hints",
+      "funnels.*.pages.*.order",
+      "funnels.*.pages.*.is_entry",
+      "schema_version",
+      "builder_version",
+      "generated_at"
+    ],
+    "legacy": [
+      "funnel_pages"
+    ]
+  },
+  "campaign": {
+    "ref_id": 2517,
+    "slug": "christmas-diamond-painting-light-wreath",
+    "id": "christmas-diamond-painting-light-wreath",
+    "name": "Christmas Diamond Painting Light Wreath",
+    "currency": "USD",
+    "language": "en",
+    "payment_env_key": "66Q8S0A7388SKRA41418PJ6MF4",
+    "campaigns_api_key": "VB3ZMyWg56vjPHU4ATcnOFOOiUaR08u5gKGLzJHC",
+    "available_payment_methods": [
+      "apple_pay",
+      "bankcard"
+    ],
+    "available_express_payment_methods": [
+      "apple_pay"
+    ],
+    "available_currencies": [
+      "USD"
+    ],
+    "available_shipping_countries": "all",
+    "store_url": "https://coerneuineo.29next.store/",
+    "store_name": "Coerneuineo",
+    "store_terms": "https://coerneuineo.com/pages/terms-of-purchase",
+    "store_privacy": "https://coerneuineo.com/pages/privacy-notice",
+    "store_contact": "https://coerneuineo.com/pages/contact",
+    "store_returns": "https://coerneuineo.com/pages/return-policy",
+    "store_shipping": "https://coerneuineo.com/pages/shipping-policy",
+    "store_phone": "",
+    "store_phone_tel": "",
+    "tracking": {
+      "status": "unknown",
+      "providers": {}
+    }
+  },
+  "global_config": {
+    "sdk_version": "0.4.43"
+  },
+  "build_scope": {
+    "mode": "full",
+    "reasons": []
+  },
+  "funnels": [
+    {
+      "id": "default",
+      "name": "Default",
+      "weight": 100,
+      "pages": [
+        {
+          "id": "page_mweeqrin_6",
+          "type": "landing",
+          "order": 1,
+          "label": "Wreath product page",
+          "is_entry": true,
+          "page_url": "",
+          "packages": [
+            {
+              "ref_id": "1",
+              "qty": 1,
+              "name": "Christmas Diamond Painting Light Wreath",
+              "price": "23.99",
+              "price_retail": null,
+              "product_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨",
+              "product_sku": "K008261018-DPWR-SNOWMAN-1PC",
+              "product_variant_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨ - ⛄Snowman Wreath",
+              "product_purchase_availability": "available",
+              "product_inventory_availability": "untracked",
+              "image": "https://d1w87fp8j98gad.cloudfront.net/media/thumbnails/f674f1560dfd4445aa8e3ab0849c9dd2.webp",
+              "variant_attributes": [
+                {
+                  "code": "style",
+                  "name": "🎁Style",
+                  "value": "⛄Snowman Wreath"
+                }
+              ]
+            },
+            {
+              "ref_id": "2",
+              "qty": 1,
+              "name": "Christmas Diamond Painting Light Wreath",
+              "price": "23.99",
+              "price_retail": null,
+              "product_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨",
+              "product_sku": "K008261018-DPWR-SANTA-1PC",
+              "product_variant_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨ - 🎅Santa Claus Wreath",
+              "product_purchase_availability": "available",
+              "product_inventory_availability": "untracked",
+              "image": "https://d1w87fp8j98gad.cloudfront.net/media/thumbnails/590abc4829da42c2a06265068539939c.webp",
+              "variant_attributes": [
+                {
+                  "code": "style",
+                  "name": "🎁Style",
+                  "value": "🎅Santa Claus Wreath"
+                }
+              ]
+            },
+            {
+              "ref_id": "3",
+              "qty": 1,
+              "name": "Christmas Diamond Painting Light Wreath",
+              "price": "23.99",
+              "price_retail": null,
+              "product_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨",
+              "product_sku": "K008261018-DPWR-BOW-1PC",
+              "product_variant_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨ - 🎀Bow Wreath",
+              "product_purchase_availability": "available",
+              "product_inventory_availability": "untracked",
+              "image": "https://d1w87fp8j98gad.cloudfront.net/media/thumbnails/7e0fdffb77894753b95d4f9837f2d5a7.webp",
+              "variant_attributes": [
+                {
+                  "code": "style",
+                  "name": "🎁Style",
+                  "value": "🎀Bow Wreath"
+                }
+              ]
+            },
+            {
+              "ref_id": "4",
+              "qty": 1,
+              "name": "Christmas Diamond Painting Light Wreath",
+              "price": "23.99",
+              "price_retail": null,
+              "product_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨",
+              "product_sku": "K008261018-DPWR-DEER-1PC",
+              "product_variant_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨ - 🦌Deer",
+              "product_purchase_availability": "available",
+              "product_inventory_availability": "untracked",
+              "image": "https://d1w87fp8j98gad.cloudfront.net/media/thumbnails/72a561f36b2e4a1684c77201ddb228b5.webp",
+              "variant_attributes": [
+                {
+                  "code": "style",
+                  "name": "🎁Style",
+                  "value": "🦌Deer"
+                }
+              ]
+            },
+            {
+              "ref_id": "5",
+              "qty": 1,
+              "name": "Christmas Diamond Painting Light Wreath",
+              "price": "23.99",
+              "price_retail": null,
+              "product_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨",
+              "product_sku": "K008261018-DPWR-SNOWC-1PC",
+              "product_variant_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨ - ⛪ Snowy Christmas Chapel Wreath",
+              "product_purchase_availability": "available",
+              "product_inventory_availability": "untracked",
+              "image": "https://d1w87fp8j98gad.cloudfront.net/media/thumbnails/5880b10d4c524e8385c1a5d48d212bed.webp",
+              "variant_attributes": [
+                {
+                  "code": "style",
+                  "name": "🎁Style",
+                  "value": "⛪ Snowy Christmas Chapel Wreath"
+                }
+              ]
+            },
+            {
+              "ref_id": "6",
+              "qty": 1,
+              "name": "Christmas Diamond Painting Light Wreath",
+              "price": "23.99",
+              "price_retail": null,
+              "product_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨",
+              "product_sku": "K008261018-DPWR-ANGEL-1PC",
+              "product_variant_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨ - 👼 Golden Angel Wreath",
+              "product_purchase_availability": "available",
+              "product_inventory_availability": "untracked",
+              "image": "https://d1w87fp8j98gad.cloudfront.net/media/thumbnails/8cd5cc693d1e4092a6e61885d8f6a15a.webp",
+              "variant_attributes": [
+                {
+                  "code": "style",
+                  "name": "🎁Style",
+                  "value": "👼 Golden Angel Wreath"
+                }
+              ]
+            },
+            {
+              "ref_id": "7",
+              "qty": 1,
+              "name": "Christmas Diamond Painting Light Wreath",
+              "price": "23.99",
+              "price_retail": null,
+              "product_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨",
+              "product_sku": "K008261018-DPWR-JBR-1PC",
+              "product_variant_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨ - 🍪Gingerbread Man",
+              "product_purchase_availability": "available",
+              "product_inventory_availability": "untracked",
+              "image": "https://d1w87fp8j98gad.cloudfront.net/media/thumbnails/569d3ade2acb475cba2702baec66d77f.webp",
+              "variant_attributes": [
+                {
+                  "code": "style",
+                  "name": "🎁Style",
+                  "value": "🍪Gingerbread Man"
+                }
+              ]
+            },
+            {
+              "ref_id": "8",
+              "qty": 1,
+              "name": "Christmas Diamond Painting Light Wreath",
+              "price": "23.99",
+              "price_retail": null,
+              "product_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨",
+              "product_sku": "K008261018-DPWR-BELL-1PC",
+              "product_variant_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨ - 🔔 Christmas Bells",
+              "product_purchase_availability": "available",
+              "product_inventory_availability": "untracked",
+              "image": "https://d1w87fp8j98gad.cloudfront.net/media/thumbnails/68fd86525a8f477d96b06f509ede03c7.webp",
+              "variant_attributes": [
+                {
+                  "code": "style",
+                  "name": "🎁Style",
+                  "value": "🔔 Christmas Bells"
+                }
+              ]
+            }
+          ],
+          "next_page": "page_mweeqrin_7",
+          "_next_label": "Checkout",
+          "resolved_routing": {
+            "next_page": "page_mweeqrin_7",
+            "next_page_route": "checkout/",
+            "next_page_filename": "checkout/"
+          },
+          "sdk_hints": {
+            "sdk_page_type": "product",
+            "meta_tags": {
+              "next-page-type": "product",
+              "next-success-url": "upsell-30/"
+            },
+            "next_page": "checkout/"
+          }
+        },
+        {
+          "id": "page_mweeqrin_7",
+          "type": "checkout",
+          "order": 2,
+          "label": "Checkout",
+          "is_entry": false,
+          "page_url": "checkout/",
+          "packages": [
+            {
+              "ref_id": "1",
+              "qty": 1,
+              "name": "Christmas Diamond Painting Light Wreath",
+              "price": "23.99",
+              "price_retail": null,
+              "product_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨",
+              "product_sku": "K008261018-DPWR-SNOWMAN-1PC",
+              "product_variant_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨ - ⛄Snowman Wreath",
+              "product_purchase_availability": "available",
+              "product_inventory_availability": "untracked",
+              "image": "https://d1w87fp8j98gad.cloudfront.net/media/thumbnails/f674f1560dfd4445aa8e3ab0849c9dd2.webp",
+              "variant_attributes": [
+                {
+                  "code": "style",
+                  "name": "🎁Style",
+                  "value": "⛄Snowman Wreath"
+                }
+              ]
+            },
+            {
+              "ref_id": "2",
+              "qty": 1,
+              "name": "Christmas Diamond Painting Light Wreath",
+              "price": "23.99",
+              "price_retail": null,
+              "product_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨",
+              "product_sku": "K008261018-DPWR-SANTA-1PC",
+              "product_variant_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨ - 🎅Santa Claus Wreath",
+              "product_purchase_availability": "available",
+              "product_inventory_availability": "untracked",
+              "image": "https://d1w87fp8j98gad.cloudfront.net/media/thumbnails/590abc4829da42c2a06265068539939c.webp",
+              "variant_attributes": [
+                {
+                  "code": "style",
+                  "name": "🎁Style",
+                  "value": "🎅Santa Claus Wreath"
+                }
+              ]
+            },
+            {
+              "ref_id": "3",
+              "qty": 1,
+              "name": "Christmas Diamond Painting Light Wreath",
+              "price": "23.99",
+              "price_retail": null,
+              "product_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨",
+              "product_sku": "K008261018-DPWR-BOW-1PC",
+              "product_variant_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨ - 🎀Bow Wreath",
+              "product_purchase_availability": "available",
+              "product_inventory_availability": "untracked",
+              "image": "https://d1w87fp8j98gad.cloudfront.net/media/thumbnails/7e0fdffb77894753b95d4f9837f2d5a7.webp",
+              "variant_attributes": [
+                {
+                  "code": "style",
+                  "name": "🎁Style",
+                  "value": "🎀Bow Wreath"
+                }
+              ]
+            },
+            {
+              "ref_id": "4",
+              "qty": 1,
+              "name": "Christmas Diamond Painting Light Wreath",
+              "price": "23.99",
+              "price_retail": null,
+              "product_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨",
+              "product_sku": "K008261018-DPWR-DEER-1PC",
+              "product_variant_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨ - 🦌Deer",
+              "product_purchase_availability": "available",
+              "product_inventory_availability": "untracked",
+              "image": "https://d1w87fp8j98gad.cloudfront.net/media/thumbnails/72a561f36b2e4a1684c77201ddb228b5.webp",
+              "variant_attributes": [
+                {
+                  "code": "style",
+                  "name": "🎁Style",
+                  "value": "🦌Deer"
+                }
+              ]
+            },
+            {
+              "ref_id": "5",
+              "qty": 1,
+              "name": "Christmas Diamond Painting Light Wreath",
+              "price": "23.99",
+              "price_retail": null,
+              "product_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨",
+              "product_sku": "K008261018-DPWR-SNOWC-1PC",
+              "product_variant_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨ - ⛪ Snowy Christmas Chapel Wreath",
+              "product_purchase_availability": "available",
+              "product_inventory_availability": "untracked",
+              "image": "https://d1w87fp8j98gad.cloudfront.net/media/thumbnails/5880b10d4c524e8385c1a5d48d212bed.webp",
+              "variant_attributes": [
+                {
+                  "code": "style",
+                  "name": "🎁Style",
+                  "value": "⛪ Snowy Christmas Chapel Wreath"
+                }
+              ]
+            },
+            {
+              "ref_id": "6",
+              "qty": 1,
+              "name": "Christmas Diamond Painting Light Wreath",
+              "price": "23.99",
+              "price_retail": null,
+              "product_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨",
+              "product_sku": "K008261018-DPWR-ANGEL-1PC",
+              "product_variant_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨ - 👼 Golden Angel Wreath",
+              "product_purchase_availability": "available",
+              "product_inventory_availability": "untracked",
+              "image": "https://d1w87fp8j98gad.cloudfront.net/media/thumbnails/8cd5cc693d1e4092a6e61885d8f6a15a.webp",
+              "variant_attributes": [
+                {
+                  "code": "style",
+                  "name": "🎁Style",
+                  "value": "👼 Golden Angel Wreath"
+                }
+              ]
+            },
+            {
+              "ref_id": "7",
+              "qty": 1,
+              "name": "Christmas Diamond Painting Light Wreath",
+              "price": "23.99",
+              "price_retail": null,
+              "product_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨",
+              "product_sku": "K008261018-DPWR-JBR-1PC",
+              "product_variant_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨ - 🍪Gingerbread Man",
+              "product_purchase_availability": "available",
+              "product_inventory_availability": "untracked",
+              "image": "https://d1w87fp8j98gad.cloudfront.net/media/thumbnails/569d3ade2acb475cba2702baec66d77f.webp",
+              "variant_attributes": [
+                {
+                  "code": "style",
+                  "name": "🎁Style",
+                  "value": "🍪Gingerbread Man"
+                }
+              ]
+            },
+            {
+              "ref_id": "8",
+              "qty": 1,
+              "name": "Christmas Diamond Painting Light Wreath",
+              "price": "23.99",
+              "price_retail": null,
+              "product_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨",
+              "product_sku": "K008261018-DPWR-BELL-1PC",
+              "product_variant_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨ - 🔔 Christmas Bells",
+              "product_purchase_availability": "available",
+              "product_inventory_availability": "untracked",
+              "image": "https://d1w87fp8j98gad.cloudfront.net/media/thumbnails/68fd86525a8f477d96b06f509ede03c7.webp",
+              "variant_attributes": [
+                {
+                  "code": "style",
+                  "name": "🎁Style",
+                  "value": "🔔 Christmas Bells"
+                }
+              ]
+            }
+          ],
+          "success_url": "page_mweet1jv_9",
+          "_success_label": "Upsell 30% off (WREATH30)",
+          "resolved_routing": {
+            "success": "page_mweet1jv_9",
+            "success_route": "upsell-30/",
+            "success_filename": "upsell-30/"
+          },
+          "sdk_hints": {
+            "sdk_page_type": "checkout",
+            "meta_tags": {
+              "next-page-type": "checkout",
+              "next-success-url": "upsell-30/"
+            }
+          }
+        },
+        {
+          "id": "page_mweet1jv_9",
+          "type": "upsell",
+          "order": 3,
+          "label": "Upsell 30% off (WREATH30)",
+          "is_entry": false,
+          "page_url": "upsell-30/",
+          "packages": [
+            {
+              "ref_id": "1",
+              "qty": 1,
+              "name": "Christmas Diamond Painting Light Wreath",
+              "price": "23.99",
+              "price_retail": null,
+              "product_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨",
+              "product_sku": "K008261018-DPWR-SNOWMAN-1PC",
+              "product_variant_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨ - ⛄Snowman Wreath",
+              "product_purchase_availability": "available",
+              "product_inventory_availability": "untracked",
+              "image": "https://d1w87fp8j98gad.cloudfront.net/media/thumbnails/f674f1560dfd4445aa8e3ab0849c9dd2.webp",
+              "variant_attributes": [
+                {
+                  "code": "style",
+                  "name": "🎁Style",
+                  "value": "⛄Snowman Wreath"
+                }
+              ]
+            },
+            {
+              "ref_id": "2",
+              "qty": 1,
+              "name": "Christmas Diamond Painting Light Wreath",
+              "price": "23.99",
+              "price_retail": null,
+              "product_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨",
+              "product_sku": "K008261018-DPWR-SANTA-1PC",
+              "product_variant_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨ - 🎅Santa Claus Wreath",
+              "product_purchase_availability": "available",
+              "product_inventory_availability": "untracked",
+              "image": "https://d1w87fp8j98gad.cloudfront.net/media/thumbnails/590abc4829da42c2a06265068539939c.webp",
+              "variant_attributes": [
+                {
+                  "code": "style",
+                  "name": "🎁Style",
+                  "value": "🎅Santa Claus Wreath"
+                }
+              ]
+            },
+            {
+              "ref_id": "3",
+              "qty": 1,
+              "name": "Christmas Diamond Painting Light Wreath",
+              "price": "23.99",
+              "price_retail": null,
+              "product_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨",
+              "product_sku": "K008261018-DPWR-BOW-1PC",
+              "product_variant_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨ - 🎀Bow Wreath",
+              "product_purchase_availability": "available",
+              "product_inventory_availability": "untracked",
+              "image": "https://d1w87fp8j98gad.cloudfront.net/media/thumbnails/7e0fdffb77894753b95d4f9837f2d5a7.webp",
+              "variant_attributes": [
+                {
+                  "code": "style",
+                  "name": "🎁Style",
+                  "value": "🎀Bow Wreath"
+                }
+              ]
+            },
+            {
+              "ref_id": "4",
+              "qty": 1,
+              "name": "Christmas Diamond Painting Light Wreath",
+              "price": "23.99",
+              "price_retail": null,
+              "product_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨",
+              "product_sku": "K008261018-DPWR-DEER-1PC",
+              "product_variant_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨ - 🦌Deer",
+              "product_purchase_availability": "available",
+              "product_inventory_availability": "untracked",
+              "image": "https://d1w87fp8j98gad.cloudfront.net/media/thumbnails/72a561f36b2e4a1684c77201ddb228b5.webp",
+              "variant_attributes": [
+                {
+                  "code": "style",
+                  "name": "🎁Style",
+                  "value": "🦌Deer"
+                }
+              ]
+            },
+            {
+              "ref_id": "5",
+              "qty": 1,
+              "name": "Christmas Diamond Painting Light Wreath",
+              "price": "23.99",
+              "price_retail": null,
+              "product_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨",
+              "product_sku": "K008261018-DPWR-SNOWC-1PC",
+              "product_variant_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨ - ⛪ Snowy Christmas Chapel Wreath",
+              "product_purchase_availability": "available",
+              "product_inventory_availability": "untracked",
+              "image": "https://d1w87fp8j98gad.cloudfront.net/media/thumbnails/5880b10d4c524e8385c1a5d48d212bed.webp",
+              "variant_attributes": [
+                {
+                  "code": "style",
+                  "name": "🎁Style",
+                  "value": "⛪ Snowy Christmas Chapel Wreath"
+                }
+              ]
+            },
+            {
+              "ref_id": "6",
+              "qty": 1,
+              "name": "Christmas Diamond Painting Light Wreath",
+              "price": "23.99",
+              "price_retail": null,
+              "product_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨",
+              "product_sku": "K008261018-DPWR-ANGEL-1PC",
+              "product_variant_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨ - 👼 Golden Angel Wreath",
+              "product_purchase_availability": "available",
+              "product_inventory_availability": "untracked",
+              "image": "https://d1w87fp8j98gad.cloudfront.net/media/thumbnails/8cd5cc693d1e4092a6e61885d8f6a15a.webp",
+              "variant_attributes": [
+                {
+                  "code": "style",
+                  "name": "🎁Style",
+                  "value": "👼 Golden Angel Wreath"
+                }
+              ]
+            },
+            {
+              "ref_id": "7",
+              "qty": 1,
+              "name": "Christmas Diamond Painting Light Wreath",
+              "price": "23.99",
+              "price_retail": null,
+              "product_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨",
+              "product_sku": "K008261018-DPWR-JBR-1PC",
+              "product_variant_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨ - 🍪Gingerbread Man",
+              "product_purchase_availability": "available",
+              "product_inventory_availability": "untracked",
+              "image": "https://d1w87fp8j98gad.cloudfront.net/media/thumbnails/569d3ade2acb475cba2702baec66d77f.webp",
+              "variant_attributes": [
+                {
+                  "code": "style",
+                  "name": "🎁Style",
+                  "value": "🍪Gingerbread Man"
+                }
+              ]
+            },
+            {
+              "ref_id": "8",
+              "qty": 1,
+              "name": "Christmas Diamond Painting Light Wreath",
+              "price": "23.99",
+              "price_retail": null,
+              "product_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨",
+              "product_sku": "K008261018-DPWR-BELL-1PC",
+              "product_variant_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨ - 🔔 Christmas Bells",
+              "product_purchase_availability": "available",
+              "product_inventory_availability": "untracked",
+              "image": "https://d1w87fp8j98gad.cloudfront.net/media/thumbnails/68fd86525a8f477d96b06f509ede03c7.webp",
+              "variant_attributes": [
+                {
+                  "code": "style",
+                  "name": "🎁Style",
+                  "value": "🔔 Christmas Bells"
+                }
+              ]
+            }
+          ],
+          "on_accept": "page_mweeqrin_8",
+          "on_decline": "page_mweet355_10",
+          "_accept_label": "Thank You",
+          "_decline_label": "Downsell 50% off (WREATH50)",
+          "resolved_routing": {
+            "accept": "page_mweeqrin_8",
+            "accept_route": "receipt/",
+            "accept_filename": "receipt/",
+            "decline": "page_mweet355_10",
+            "decline_route": "downsell-50/",
+            "decline_filename": "downsell-50/"
+          },
+          "sdk_hints": {
+            "sdk_page_type": "upsell",
+            "meta_tags": {
+              "next-page-type": "upsell",
+              "next-upsell-accept-url": "receipt/",
+              "next-upsell-decline-url": "downsell-50/"
+            }
+          }
+        },
+        {
+          "id": "page_mweet355_10",
+          "type": "downsell",
+          "order": 4,
+          "label": "Downsell 50% off (WREATH50)",
+          "is_entry": false,
+          "page_url": "downsell-50/",
+          "packages": [
+            {
+              "ref_id": "1",
+              "qty": 1,
+              "name": "Christmas Diamond Painting Light Wreath",
+              "price": "23.99",
+              "price_retail": null,
+              "product_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨",
+              "product_sku": "K008261018-DPWR-SNOWMAN-1PC",
+              "product_variant_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨ - ⛄Snowman Wreath",
+              "product_purchase_availability": "available",
+              "product_inventory_availability": "untracked",
+              "image": "https://d1w87fp8j98gad.cloudfront.net/media/thumbnails/f674f1560dfd4445aa8e3ab0849c9dd2.webp",
+              "variant_attributes": [
+                {
+                  "code": "style",
+                  "name": "🎁Style",
+                  "value": "⛄Snowman Wreath"
+                }
+              ]
+            },
+            {
+              "ref_id": "2",
+              "qty": 1,
+              "name": "Christmas Diamond Painting Light Wreath",
+              "price": "23.99",
+              "price_retail": null,
+              "product_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨",
+              "product_sku": "K008261018-DPWR-SANTA-1PC",
+              "product_variant_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨ - 🎅Santa Claus Wreath",
+              "product_purchase_availability": "available",
+              "product_inventory_availability": "untracked",
+              "image": "https://d1w87fp8j98gad.cloudfront.net/media/thumbnails/590abc4829da42c2a06265068539939c.webp",
+              "variant_attributes": [
+                {
+                  "code": "style",
+                  "name": "🎁Style",
+                  "value": "🎅Santa Claus Wreath"
+                }
+              ]
+            },
+            {
+              "ref_id": "3",
+              "qty": 1,
+              "name": "Christmas Diamond Painting Light Wreath",
+              "price": "23.99",
+              "price_retail": null,
+              "product_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨",
+              "product_sku": "K008261018-DPWR-BOW-1PC",
+              "product_variant_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨ - 🎀Bow Wreath",
+              "product_purchase_availability": "available",
+              "product_inventory_availability": "untracked",
+              "image": "https://d1w87fp8j98gad.cloudfront.net/media/thumbnails/7e0fdffb77894753b95d4f9837f2d5a7.webp",
+              "variant_attributes": [
+                {
+                  "code": "style",
+                  "name": "🎁Style",
+                  "value": "🎀Bow Wreath"
+                }
+              ]
+            },
+            {
+              "ref_id": "4",
+              "qty": 1,
+              "name": "Christmas Diamond Painting Light Wreath",
+              "price": "23.99",
+              "price_retail": null,
+              "product_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨",
+              "product_sku": "K008261018-DPWR-DEER-1PC",
+              "product_variant_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨ - 🦌Deer",
+              "product_purchase_availability": "available",
+              "product_inventory_availability": "untracked",
+              "image": "https://d1w87fp8j98gad.cloudfront.net/media/thumbnails/72a561f36b2e4a1684c77201ddb228b5.webp",
+              "variant_attributes": [
+                {
+                  "code": "style",
+                  "name": "🎁Style",
+                  "value": "🦌Deer"
+                }
+              ]
+            },
+            {
+              "ref_id": "5",
+              "qty": 1,
+              "name": "Christmas Diamond Painting Light Wreath",
+              "price": "23.99",
+              "price_retail": null,
+              "product_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨",
+              "product_sku": "K008261018-DPWR-SNOWC-1PC",
+              "product_variant_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨ - ⛪ Snowy Christmas Chapel Wreath",
+              "product_purchase_availability": "available",
+              "product_inventory_availability": "untracked",
+              "image": "https://d1w87fp8j98gad.cloudfront.net/media/thumbnails/5880b10d4c524e8385c1a5d48d212bed.webp",
+              "variant_attributes": [
+                {
+                  "code": "style",
+                  "name": "🎁Style",
+                  "value": "⛪ Snowy Christmas Chapel Wreath"
+                }
+              ]
+            },
+            {
+              "ref_id": "6",
+              "qty": 1,
+              "name": "Christmas Diamond Painting Light Wreath",
+              "price": "23.99",
+              "price_retail": null,
+              "product_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨",
+              "product_sku": "K008261018-DPWR-ANGEL-1PC",
+              "product_variant_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨ - 👼 Golden Angel Wreath",
+              "product_purchase_availability": "available",
+              "product_inventory_availability": "untracked",
+              "image": "https://d1w87fp8j98gad.cloudfront.net/media/thumbnails/8cd5cc693d1e4092a6e61885d8f6a15a.webp",
+              "variant_attributes": [
+                {
+                  "code": "style",
+                  "name": "🎁Style",
+                  "value": "👼 Golden Angel Wreath"
+                }
+              ]
+            },
+            {
+              "ref_id": "7",
+              "qty": 1,
+              "name": "Christmas Diamond Painting Light Wreath",
+              "price": "23.99",
+              "price_retail": null,
+              "product_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨",
+              "product_sku": "K008261018-DPWR-JBR-1PC",
+              "product_variant_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨ - 🍪Gingerbread Man",
+              "product_purchase_availability": "available",
+              "product_inventory_availability": "untracked",
+              "image": "https://d1w87fp8j98gad.cloudfront.net/media/thumbnails/569d3ade2acb475cba2702baec66d77f.webp",
+              "variant_attributes": [
+                {
+                  "code": "style",
+                  "name": "🎁Style",
+                  "value": "🍪Gingerbread Man"
+                }
+              ]
+            },
+            {
+              "ref_id": "8",
+              "qty": 1,
+              "name": "Christmas Diamond Painting Light Wreath",
+              "price": "23.99",
+              "price_retail": null,
+              "product_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨",
+              "product_sku": "K008261018-DPWR-BELL-1PC",
+              "product_variant_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨ - 🔔 Christmas Bells",
+              "product_purchase_availability": "available",
+              "product_inventory_availability": "untracked",
+              "image": "https://d1w87fp8j98gad.cloudfront.net/media/thumbnails/68fd86525a8f477d96b06f509ede03c7.webp",
+              "variant_attributes": [
+                {
+                  "code": "style",
+                  "name": "🎁Style",
+                  "value": "🔔 Christmas Bells"
+                }
+              ]
+            }
+          ],
+          "on_accept": "page_mweeqrin_8",
+          "on_decline": "page_mweeqrin_8",
+          "_accept_label": "Thank You",
+          "_decline_label": "Thank You",
+          "resolved_routing": {
+            "accept": "page_mweeqrin_8",
+            "accept_route": "receipt/",
+            "accept_filename": "receipt/",
+            "decline": "page_mweeqrin_8",
+            "decline_route": "receipt/",
+            "decline_filename": "receipt/"
+          },
+          "sdk_hints": {
+            "sdk_page_type": "upsell",
+            "meta_tags": {
+              "next-page-type": "upsell",
+              "next-upsell-accept-url": "receipt/",
+              "next-upsell-decline-url": "receipt/"
+            }
+          }
+        },
+        {
+          "id": "page_mweeqrin_8",
+          "type": "thankyou",
+          "order": 5,
+          "label": "Thank You",
+          "is_entry": false,
+          "page_url": "receipt/",
+          "sdk_hints": {
+            "sdk_page_type": "receipt",
+            "meta_tags": {
+              "next-page-type": "receipt"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "funnel_pages": [
+    {
+      "id": "page_mweeqrin_6",
+      "type": "landing",
+      "order": 1,
+      "label": "Wreath product page",
+      "is_entry": true,
+      "page_url": "",
+      "packages": [
+        {
+          "ref_id": "1",
+          "qty": 1,
+          "name": "Christmas Diamond Painting Light Wreath",
+          "price": "23.99",
+          "price_retail": null,
+          "product_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨",
+          "product_sku": "K008261018-DPWR-SNOWMAN-1PC",
+          "product_variant_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨ - ⛄Snowman Wreath",
+          "product_purchase_availability": "available",
+          "product_inventory_availability": "untracked",
+          "image": "https://d1w87fp8j98gad.cloudfront.net/media/thumbnails/f674f1560dfd4445aa8e3ab0849c9dd2.webp",
+          "variant_attributes": [
+            {
+              "code": "style",
+              "name": "🎁Style",
+              "value": "⛄Snowman Wreath"
+            }
+          ]
+        },
+        {
+          "ref_id": "2",
+          "qty": 1,
+          "name": "Christmas Diamond Painting Light Wreath",
+          "price": "23.99",
+          "price_retail": null,
+          "product_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨",
+          "product_sku": "K008261018-DPWR-SANTA-1PC",
+          "product_variant_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨ - 🎅Santa Claus Wreath",
+          "product_purchase_availability": "available",
+          "product_inventory_availability": "untracked",
+          "image": "https://d1w87fp8j98gad.cloudfront.net/media/thumbnails/590abc4829da42c2a06265068539939c.webp",
+          "variant_attributes": [
+            {
+              "code": "style",
+              "name": "🎁Style",
+              "value": "🎅Santa Claus Wreath"
+            }
+          ]
+        },
+        {
+          "ref_id": "3",
+          "qty": 1,
+          "name": "Christmas Diamond Painting Light Wreath",
+          "price": "23.99",
+          "price_retail": null,
+          "product_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨",
+          "product_sku": "K008261018-DPWR-BOW-1PC",
+          "product_variant_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨ - 🎀Bow Wreath",
+          "product_purchase_availability": "available",
+          "product_inventory_availability": "untracked",
+          "image": "https://d1w87fp8j98gad.cloudfront.net/media/thumbnails/7e0fdffb77894753b95d4f9837f2d5a7.webp",
+          "variant_attributes": [
+            {
+              "code": "style",
+              "name": "🎁Style",
+              "value": "🎀Bow Wreath"
+            }
+          ]
+        },
+        {
+          "ref_id": "4",
+          "qty": 1,
+          "name": "Christmas Diamond Painting Light Wreath",
+          "price": "23.99",
+          "price_retail": null,
+          "product_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨",
+          "product_sku": "K008261018-DPWR-DEER-1PC",
+          "product_variant_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨ - 🦌Deer",
+          "product_purchase_availability": "available",
+          "product_inventory_availability": "untracked",
+          "image": "https://d1w87fp8j98gad.cloudfront.net/media/thumbnails/72a561f36b2e4a1684c77201ddb228b5.webp",
+          "variant_attributes": [
+            {
+              "code": "style",
+              "name": "🎁Style",
+              "value": "🦌Deer"
+            }
+          ]
+        },
+        {
+          "ref_id": "5",
+          "qty": 1,
+          "name": "Christmas Diamond Painting Light Wreath",
+          "price": "23.99",
+          "price_retail": null,
+          "product_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨",
+          "product_sku": "K008261018-DPWR-SNOWC-1PC",
+          "product_variant_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨ - ⛪ Snowy Christmas Chapel Wreath",
+          "product_purchase_availability": "available",
+          "product_inventory_availability": "untracked",
+          "image": "https://d1w87fp8j98gad.cloudfront.net/media/thumbnails/5880b10d4c524e8385c1a5d48d212bed.webp",
+          "variant_attributes": [
+            {
+              "code": "style",
+              "name": "🎁Style",
+              "value": "⛪ Snowy Christmas Chapel Wreath"
+            }
+          ]
+        },
+        {
+          "ref_id": "6",
+          "qty": 1,
+          "name": "Christmas Diamond Painting Light Wreath",
+          "price": "23.99",
+          "price_retail": null,
+          "product_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨",
+          "product_sku": "K008261018-DPWR-ANGEL-1PC",
+          "product_variant_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨ - 👼 Golden Angel Wreath",
+          "product_purchase_availability": "available",
+          "product_inventory_availability": "untracked",
+          "image": "https://d1w87fp8j98gad.cloudfront.net/media/thumbnails/8cd5cc693d1e4092a6e61885d8f6a15a.webp",
+          "variant_attributes": [
+            {
+              "code": "style",
+              "name": "🎁Style",
+              "value": "👼 Golden Angel Wreath"
+            }
+          ]
+        },
+        {
+          "ref_id": "7",
+          "qty": 1,
+          "name": "Christmas Diamond Painting Light Wreath",
+          "price": "23.99",
+          "price_retail": null,
+          "product_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨",
+          "product_sku": "K008261018-DPWR-JBR-1PC",
+          "product_variant_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨ - 🍪Gingerbread Man",
+          "product_purchase_availability": "available",
+          "product_inventory_availability": "untracked",
+          "image": "https://d1w87fp8j98gad.cloudfront.net/media/thumbnails/569d3ade2acb475cba2702baec66d77f.webp",
+          "variant_attributes": [
+            {
+              "code": "style",
+              "name": "🎁Style",
+              "value": "🍪Gingerbread Man"
+            }
+          ]
+        },
+        {
+          "ref_id": "8",
+          "qty": 1,
+          "name": "Christmas Diamond Painting Light Wreath",
+          "price": "23.99",
+          "price_retail": null,
+          "product_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨",
+          "product_sku": "K008261018-DPWR-BELL-1PC",
+          "product_variant_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨ - 🔔 Christmas Bells",
+          "product_purchase_availability": "available",
+          "product_inventory_availability": "untracked",
+          "image": "https://d1w87fp8j98gad.cloudfront.net/media/thumbnails/68fd86525a8f477d96b06f509ede03c7.webp",
+          "variant_attributes": [
+            {
+              "code": "style",
+              "name": "🎁Style",
+              "value": "🔔 Christmas Bells"
+            }
+          ]
+        }
+      ],
+      "next_page": "page_mweeqrin_7",
+      "_next_label": "Checkout",
+      "resolved_routing": {
+        "next_page": "page_mweeqrin_7",
+        "next_page_route": "checkout/",
+        "next_page_filename": "checkout/"
+      },
+      "sdk_hints": {
+        "sdk_page_type": "product",
+        "meta_tags": {
+          "next-page-type": "product",
+          "next-success-url": "upsell-30/"
+        },
+        "next_page": "checkout/"
+      },
+      "_funnel_id": "default",
+      "_funnel_name": "Default"
+    },
+    {
+      "id": "page_mweeqrin_7",
+      "type": "checkout",
+      "order": 2,
+      "label": "Checkout",
+      "is_entry": false,
+      "page_url": "checkout/",
+      "packages": [
+        {
+          "ref_id": "1",
+          "qty": 1,
+          "name": "Christmas Diamond Painting Light Wreath",
+          "price": "23.99",
+          "price_retail": null,
+          "product_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨",
+          "product_sku": "K008261018-DPWR-SNOWMAN-1PC",
+          "product_variant_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨ - ⛄Snowman Wreath",
+          "product_purchase_availability": "available",
+          "product_inventory_availability": "untracked",
+          "image": "https://d1w87fp8j98gad.cloudfront.net/media/thumbnails/f674f1560dfd4445aa8e3ab0849c9dd2.webp",
+          "variant_attributes": [
+            {
+              "code": "style",
+              "name": "🎁Style",
+              "value": "⛄Snowman Wreath"
+            }
+          ]
+        },
+        {
+          "ref_id": "2",
+          "qty": 1,
+          "name": "Christmas Diamond Painting Light Wreath",
+          "price": "23.99",
+          "price_retail": null,
+          "product_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨",
+          "product_sku": "K008261018-DPWR-SANTA-1PC",
+          "product_variant_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨ - 🎅Santa Claus Wreath",
+          "product_purchase_availability": "available",
+          "product_inventory_availability": "untracked",
+          "image": "https://d1w87fp8j98gad.cloudfront.net/media/thumbnails/590abc4829da42c2a06265068539939c.webp",
+          "variant_attributes": [
+            {
+              "code": "style",
+              "name": "🎁Style",
+              "value": "🎅Santa Claus Wreath"
+            }
+          ]
+        },
+        {
+          "ref_id": "3",
+          "qty": 1,
+          "name": "Christmas Diamond Painting Light Wreath",
+          "price": "23.99",
+          "price_retail": null,
+          "product_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨",
+          "product_sku": "K008261018-DPWR-BOW-1PC",
+          "product_variant_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨ - 🎀Bow Wreath",
+          "product_purchase_availability": "available",
+          "product_inventory_availability": "untracked",
+          "image": "https://d1w87fp8j98gad.cloudfront.net/media/thumbnails/7e0fdffb77894753b95d4f9837f2d5a7.webp",
+          "variant_attributes": [
+            {
+              "code": "style",
+              "name": "🎁Style",
+              "value": "🎀Bow Wreath"
+            }
+          ]
+        },
+        {
+          "ref_id": "4",
+          "qty": 1,
+          "name": "Christmas Diamond Painting Light Wreath",
+          "price": "23.99",
+          "price_retail": null,
+          "product_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨",
+          "product_sku": "K008261018-DPWR-DEER-1PC",
+          "product_variant_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨ - 🦌Deer",
+          "product_purchase_availability": "available",
+          "product_inventory_availability": "untracked",
+          "image": "https://d1w87fp8j98gad.cloudfront.net/media/thumbnails/72a561f36b2e4a1684c77201ddb228b5.webp",
+          "variant_attributes": [
+            {
+              "code": "style",
+              "name": "🎁Style",
+              "value": "🦌Deer"
+            }
+          ]
+        },
+        {
+          "ref_id": "5",
+          "qty": 1,
+          "name": "Christmas Diamond Painting Light Wreath",
+          "price": "23.99",
+          "price_retail": null,
+          "product_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨",
+          "product_sku": "K008261018-DPWR-SNOWC-1PC",
+          "product_variant_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨ - ⛪ Snowy Christmas Chapel Wreath",
+          "product_purchase_availability": "available",
+          "product_inventory_availability": "untracked",
+          "image": "https://d1w87fp8j98gad.cloudfront.net/media/thumbnails/5880b10d4c524e8385c1a5d48d212bed.webp",
+          "variant_attributes": [
+            {
+              "code": "style",
+              "name": "🎁Style",
+              "value": "⛪ Snowy Christmas Chapel Wreath"
+            }
+          ]
+        },
+        {
+          "ref_id": "6",
+          "qty": 1,
+          "name": "Christmas Diamond Painting Light Wreath",
+          "price": "23.99",
+          "price_retail": null,
+          "product_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨",
+          "product_sku": "K008261018-DPWR-ANGEL-1PC",
+          "product_variant_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨ - 👼 Golden Angel Wreath",
+          "product_purchase_availability": "available",
+          "product_inventory_availability": "untracked",
+          "image": "https://d1w87fp8j98gad.cloudfront.net/media/thumbnails/8cd5cc693d1e4092a6e61885d8f6a15a.webp",
+          "variant_attributes": [
+            {
+              "code": "style",
+              "name": "🎁Style",
+              "value": "👼 Golden Angel Wreath"
+            }
+          ]
+        },
+        {
+          "ref_id": "7",
+          "qty": 1,
+          "name": "Christmas Diamond Painting Light Wreath",
+          "price": "23.99",
+          "price_retail": null,
+          "product_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨",
+          "product_sku": "K008261018-DPWR-JBR-1PC",
+          "product_variant_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨ - 🍪Gingerbread Man",
+          "product_purchase_availability": "available",
+          "product_inventory_availability": "untracked",
+          "image": "https://d1w87fp8j98gad.cloudfront.net/media/thumbnails/569d3ade2acb475cba2702baec66d77f.webp",
+          "variant_attributes": [
+            {
+              "code": "style",
+              "name": "🎁Style",
+              "value": "🍪Gingerbread Man"
+            }
+          ]
+        },
+        {
+          "ref_id": "8",
+          "qty": 1,
+          "name": "Christmas Diamond Painting Light Wreath",
+          "price": "23.99",
+          "price_retail": null,
+          "product_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨",
+          "product_sku": "K008261018-DPWR-BELL-1PC",
+          "product_variant_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨ - 🔔 Christmas Bells",
+          "product_purchase_availability": "available",
+          "product_inventory_availability": "untracked",
+          "image": "https://d1w87fp8j98gad.cloudfront.net/media/thumbnails/68fd86525a8f477d96b06f509ede03c7.webp",
+          "variant_attributes": [
+            {
+              "code": "style",
+              "name": "🎁Style",
+              "value": "🔔 Christmas Bells"
+            }
+          ]
+        }
+      ],
+      "success_url": "page_mweet1jv_9",
+      "_success_label": "Upsell 30% off (WREATH30)",
+      "resolved_routing": {
+        "success": "page_mweet1jv_9",
+        "success_route": "upsell-30/",
+        "success_filename": "upsell-30/"
+      },
+      "sdk_hints": {
+        "sdk_page_type": "checkout",
+        "meta_tags": {
+          "next-page-type": "checkout",
+          "next-success-url": "upsell-30/"
+        }
+      },
+      "_funnel_id": "default",
+      "_funnel_name": "Default"
+    },
+    {
+      "id": "page_mweet1jv_9",
+      "type": "upsell",
+      "order": 3,
+      "label": "Upsell 30% off (WREATH30)",
+      "is_entry": false,
+      "page_url": "upsell-30/",
+      "packages": [
+        {
+          "ref_id": "1",
+          "qty": 1,
+          "name": "Christmas Diamond Painting Light Wreath",
+          "price": "23.99",
+          "price_retail": null,
+          "product_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨",
+          "product_sku": "K008261018-DPWR-SNOWMAN-1PC",
+          "product_variant_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨ - ⛄Snowman Wreath",
+          "product_purchase_availability": "available",
+          "product_inventory_availability": "untracked",
+          "image": "https://d1w87fp8j98gad.cloudfront.net/media/thumbnails/f674f1560dfd4445aa8e3ab0849c9dd2.webp",
+          "variant_attributes": [
+            {
+              "code": "style",
+              "name": "🎁Style",
+              "value": "⛄Snowman Wreath"
+            }
+          ]
+        },
+        {
+          "ref_id": "2",
+          "qty": 1,
+          "name": "Christmas Diamond Painting Light Wreath",
+          "price": "23.99",
+          "price_retail": null,
+          "product_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨",
+          "product_sku": "K008261018-DPWR-SANTA-1PC",
+          "product_variant_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨ - 🎅Santa Claus Wreath",
+          "product_purchase_availability": "available",
+          "product_inventory_availability": "untracked",
+          "image": "https://d1w87fp8j98gad.cloudfront.net/media/thumbnails/590abc4829da42c2a06265068539939c.webp",
+          "variant_attributes": [
+            {
+              "code": "style",
+              "name": "🎁Style",
+              "value": "🎅Santa Claus Wreath"
+            }
+          ]
+        },
+        {
+          "ref_id": "3",
+          "qty": 1,
+          "name": "Christmas Diamond Painting Light Wreath",
+          "price": "23.99",
+          "price_retail": null,
+          "product_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨",
+          "product_sku": "K008261018-DPWR-BOW-1PC",
+          "product_variant_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨ - 🎀Bow Wreath",
+          "product_purchase_availability": "available",
+          "product_inventory_availability": "untracked",
+          "image": "https://d1w87fp8j98gad.cloudfront.net/media/thumbnails/7e0fdffb77894753b95d4f9837f2d5a7.webp",
+          "variant_attributes": [
+            {
+              "code": "style",
+              "name": "🎁Style",
+              "value": "🎀Bow Wreath"
+            }
+          ]
+        },
+        {
+          "ref_id": "4",
+          "qty": 1,
+          "name": "Christmas Diamond Painting Light Wreath",
+          "price": "23.99",
+          "price_retail": null,
+          "product_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨",
+          "product_sku": "K008261018-DPWR-DEER-1PC",
+          "product_variant_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨ - 🦌Deer",
+          "product_purchase_availability": "available",
+          "product_inventory_availability": "untracked",
+          "image": "https://d1w87fp8j98gad.cloudfront.net/media/thumbnails/72a561f36b2e4a1684c77201ddb228b5.webp",
+          "variant_attributes": [
+            {
+              "code": "style",
+              "name": "🎁Style",
+              "value": "🦌Deer"
+            }
+          ]
+        },
+        {
+          "ref_id": "5",
+          "qty": 1,
+          "name": "Christmas Diamond Painting Light Wreath",
+          "price": "23.99",
+          "price_retail": null,
+          "product_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨",
+          "product_sku": "K008261018-DPWR-SNOWC-1PC",
+          "product_variant_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨ - ⛪ Snowy Christmas Chapel Wreath",
+          "product_purchase_availability": "available",
+          "product_inventory_availability": "untracked",
+          "image": "https://d1w87fp8j98gad.cloudfront.net/media/thumbnails/5880b10d4c524e8385c1a5d48d212bed.webp",
+          "variant_attributes": [
+            {
+              "code": "style",
+              "name": "🎁Style",
+              "value": "⛪ Snowy Christmas Chapel Wreath"
+            }
+          ]
+        },
+        {
+          "ref_id": "6",
+          "qty": 1,
+          "name": "Christmas Diamond Painting Light Wreath",
+          "price": "23.99",
+          "price_retail": null,
+          "product_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨",
+          "product_sku": "K008261018-DPWR-ANGEL-1PC",
+          "product_variant_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨ - 👼 Golden Angel Wreath",
+          "product_purchase_availability": "available",
+          "product_inventory_availability": "untracked",
+          "image": "https://d1w87fp8j98gad.cloudfront.net/media/thumbnails/8cd5cc693d1e4092a6e61885d8f6a15a.webp",
+          "variant_attributes": [
+            {
+              "code": "style",
+              "name": "🎁Style",
+              "value": "👼 Golden Angel Wreath"
+            }
+          ]
+        },
+        {
+          "ref_id": "7",
+          "qty": 1,
+          "name": "Christmas Diamond Painting Light Wreath",
+          "price": "23.99",
+          "price_retail": null,
+          "product_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨",
+          "product_sku": "K008261018-DPWR-JBR-1PC",
+          "product_variant_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨ - 🍪Gingerbread Man",
+          "product_purchase_availability": "available",
+          "product_inventory_availability": "untracked",
+          "image": "https://d1w87fp8j98gad.cloudfront.net/media/thumbnails/569d3ade2acb475cba2702baec66d77f.webp",
+          "variant_attributes": [
+            {
+              "code": "style",
+              "name": "🎁Style",
+              "value": "🍪Gingerbread Man"
+            }
+          ]
+        },
+        {
+          "ref_id": "8",
+          "qty": 1,
+          "name": "Christmas Diamond Painting Light Wreath",
+          "price": "23.99",
+          "price_retail": null,
+          "product_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨",
+          "product_sku": "K008261018-DPWR-BELL-1PC",
+          "product_variant_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨ - 🔔 Christmas Bells",
+          "product_purchase_availability": "available",
+          "product_inventory_availability": "untracked",
+          "image": "https://d1w87fp8j98gad.cloudfront.net/media/thumbnails/68fd86525a8f477d96b06f509ede03c7.webp",
+          "variant_attributes": [
+            {
+              "code": "style",
+              "name": "🎁Style",
+              "value": "🔔 Christmas Bells"
+            }
+          ]
+        }
+      ],
+      "on_accept": "page_mweeqrin_8",
+      "on_decline": "page_mweet355_10",
+      "_accept_label": "Thank You",
+      "_decline_label": "Downsell 50% off (WREATH50)",
+      "resolved_routing": {
+        "accept": "page_mweeqrin_8",
+        "accept_route": "receipt/",
+        "accept_filename": "receipt/",
+        "decline": "page_mweet355_10",
+        "decline_route": "downsell-50/",
+        "decline_filename": "downsell-50/"
+      },
+      "sdk_hints": {
+        "sdk_page_type": "upsell",
+        "meta_tags": {
+          "next-page-type": "upsell",
+          "next-upsell-accept-url": "receipt/",
+          "next-upsell-decline-url": "downsell-50/"
+        }
+      },
+      "_funnel_id": "default",
+      "_funnel_name": "Default"
+    },
+    {
+      "id": "page_mweet355_10",
+      "type": "downsell",
+      "order": 4,
+      "label": "Downsell 50% off (WREATH50)",
+      "is_entry": false,
+      "page_url": "downsell-50/",
+      "packages": [
+        {
+          "ref_id": "1",
+          "qty": 1,
+          "name": "Christmas Diamond Painting Light Wreath",
+          "price": "23.99",
+          "price_retail": null,
+          "product_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨",
+          "product_sku": "K008261018-DPWR-SNOWMAN-1PC",
+          "product_variant_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨ - ⛄Snowman Wreath",
+          "product_purchase_availability": "available",
+          "product_inventory_availability": "untracked",
+          "image": "https://d1w87fp8j98gad.cloudfront.net/media/thumbnails/f674f1560dfd4445aa8e3ab0849c9dd2.webp",
+          "variant_attributes": [
+            {
+              "code": "style",
+              "name": "🎁Style",
+              "value": "⛄Snowman Wreath"
+            }
+          ]
+        },
+        {
+          "ref_id": "2",
+          "qty": 1,
+          "name": "Christmas Diamond Painting Light Wreath",
+          "price": "23.99",
+          "price_retail": null,
+          "product_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨",
+          "product_sku": "K008261018-DPWR-SANTA-1PC",
+          "product_variant_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨ - 🎅Santa Claus Wreath",
+          "product_purchase_availability": "available",
+          "product_inventory_availability": "untracked",
+          "image": "https://d1w87fp8j98gad.cloudfront.net/media/thumbnails/590abc4829da42c2a06265068539939c.webp",
+          "variant_attributes": [
+            {
+              "code": "style",
+              "name": "🎁Style",
+              "value": "🎅Santa Claus Wreath"
+            }
+          ]
+        },
+        {
+          "ref_id": "3",
+          "qty": 1,
+          "name": "Christmas Diamond Painting Light Wreath",
+          "price": "23.99",
+          "price_retail": null,
+          "product_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨",
+          "product_sku": "K008261018-DPWR-BOW-1PC",
+          "product_variant_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨ - 🎀Bow Wreath",
+          "product_purchase_availability": "available",
+          "product_inventory_availability": "untracked",
+          "image": "https://d1w87fp8j98gad.cloudfront.net/media/thumbnails/7e0fdffb77894753b95d4f9837f2d5a7.webp",
+          "variant_attributes": [
+            {
+              "code": "style",
+              "name": "🎁Style",
+              "value": "🎀Bow Wreath"
+            }
+          ]
+        },
+        {
+          "ref_id": "4",
+          "qty": 1,
+          "name": "Christmas Diamond Painting Light Wreath",
+          "price": "23.99",
+          "price_retail": null,
+          "product_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨",
+          "product_sku": "K008261018-DPWR-DEER-1PC",
+          "product_variant_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨ - 🦌Deer",
+          "product_purchase_availability": "available",
+          "product_inventory_availability": "untracked",
+          "image": "https://d1w87fp8j98gad.cloudfront.net/media/thumbnails/72a561f36b2e4a1684c77201ddb228b5.webp",
+          "variant_attributes": [
+            {
+              "code": "style",
+              "name": "🎁Style",
+              "value": "🦌Deer"
+            }
+          ]
+        },
+        {
+          "ref_id": "5",
+          "qty": 1,
+          "name": "Christmas Diamond Painting Light Wreath",
+          "price": "23.99",
+          "price_retail": null,
+          "product_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨",
+          "product_sku": "K008261018-DPWR-SNOWC-1PC",
+          "product_variant_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨ - ⛪ Snowy Christmas Chapel Wreath",
+          "product_purchase_availability": "available",
+          "product_inventory_availability": "untracked",
+          "image": "https://d1w87fp8j98gad.cloudfront.net/media/thumbnails/5880b10d4c524e8385c1a5d48d212bed.webp",
+          "variant_attributes": [
+            {
+              "code": "style",
+              "name": "🎁Style",
+              "value": "⛪ Snowy Christmas Chapel Wreath"
+            }
+          ]
+        },
+        {
+          "ref_id": "6",
+          "qty": 1,
+          "name": "Christmas Diamond Painting Light Wreath",
+          "price": "23.99",
+          "price_retail": null,
+          "product_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨",
+          "product_sku": "K008261018-DPWR-ANGEL-1PC",
+          "product_variant_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨ - 👼 Golden Angel Wreath",
+          "product_purchase_availability": "available",
+          "product_inventory_availability": "untracked",
+          "image": "https://d1w87fp8j98gad.cloudfront.net/media/thumbnails/8cd5cc693d1e4092a6e61885d8f6a15a.webp",
+          "variant_attributes": [
+            {
+              "code": "style",
+              "name": "🎁Style",
+              "value": "👼 Golden Angel Wreath"
+            }
+          ]
+        },
+        {
+          "ref_id": "7",
+          "qty": 1,
+          "name": "Christmas Diamond Painting Light Wreath",
+          "price": "23.99",
+          "price_retail": null,
+          "product_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨",
+          "product_sku": "K008261018-DPWR-JBR-1PC",
+          "product_variant_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨ - 🍪Gingerbread Man",
+          "product_purchase_availability": "available",
+          "product_inventory_availability": "untracked",
+          "image": "https://d1w87fp8j98gad.cloudfront.net/media/thumbnails/569d3ade2acb475cba2702baec66d77f.webp",
+          "variant_attributes": [
+            {
+              "code": "style",
+              "name": "🎁Style",
+              "value": "🍪Gingerbread Man"
+            }
+          ]
+        },
+        {
+          "ref_id": "8",
+          "qty": 1,
+          "name": "Christmas Diamond Painting Light Wreath",
+          "price": "23.99",
+          "price_retail": null,
+          "product_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨",
+          "product_sku": "K008261018-DPWR-BELL-1PC",
+          "product_variant_name": "Buy 2, Get FREE Shipping! 🎁 Christmas Diamond Painting Light Wreath DIY Kit   HOT SALE 49% OFF✨ - 🔔 Christmas Bells",
+          "product_purchase_availability": "available",
+          "product_inventory_availability": "untracked",
+          "image": "https://d1w87fp8j98gad.cloudfront.net/media/thumbnails/68fd86525a8f477d96b06f509ede03c7.webp",
+          "variant_attributes": [
+            {
+              "code": "style",
+              "name": "🎁Style",
+              "value": "🔔 Christmas Bells"
+            }
+          ]
+        }
+      ],
+      "on_accept": "page_mweeqrin_8",
+      "on_decline": "page_mweeqrin_8",
+      "_accept_label": "Thank You",
+      "_decline_label": "Thank You",
+      "resolved_routing": {
+        "accept": "page_mweeqrin_8",
+        "accept_route": "receipt/",
+        "accept_filename": "receipt/",
+        "decline": "page_mweeqrin_8",
+        "decline_route": "receipt/",
+        "decline_filename": "receipt/"
+      },
+      "sdk_hints": {
+        "sdk_page_type": "upsell",
+        "meta_tags": {
+          "next-page-type": "upsell",
+          "next-upsell-accept-url": "receipt/",
+          "next-upsell-decline-url": "receipt/"
+        }
+      },
+      "_funnel_id": "default",
+      "_funnel_name": "Default"
+    },
+    {
+      "id": "page_mweeqrin_8",
+      "type": "thankyou",
+      "order": 5,
+      "label": "Thank You",
+      "is_entry": false,
+      "page_url": "receipt/",
+      "sdk_hints": {
+        "sdk_page_type": "receipt",
+        "meta_tags": {
+          "next-page-type": "receipt"
+        }
+      },
+      "_funnel_id": "default",
+      "_funnel_name": "Default"
+    }
+  ],
+  "shipping_methods": [
+    {
+      "ref_id": "1",
+      "code": "default",
+      "price": "4.99"
+    }
+  ],
+  "offers": [],
+  "slug": "christmas-diamond-painting-light-wreath-z56g",
+  "map_id": "christmas-diamond-painting-light-wreath-z56g",
+  "saved_at": "2026-11-13T03:21:16.953Z",
+  "spec_identity": {
+    "source": "campaign-map-builder",
+    "map_id": "christmas-diamond-painting-light-wreath-z56g",
+    "id": "map:christmas-diamond-painting-light-wreath-z56g",
+    "map_url": "https://campaign-map.nextcommerce.com/view/christmas-diamond-painting-light-wreath-z56g",
+    "edit_url": "https://campaign-map.nextcommerce.com/?load=christmas-diamond-painting-light-wreath-z56g",
+    "spec_url": "https://campaign-map.nextcommerce.com/api/spec/christmas-diamond-painting-light-wreath-z56g",
+    "spec_hash": "sha256:31ae8c73450990642a472553374719976bcdc629f85201c0f8a469cb4e097699",
+    "saved_at": "2026-11-13T03:21:16.953Z",
+    "public_route_slug": "christmas-diamond-painting-light-wreath"
+  }
+}

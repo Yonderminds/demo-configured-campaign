@@ -1,0 +1,101 @@
+---
+title: "Add One More Wreath | Christmas Diamond Painting Light Wreath"
+page_type: upsell
+next_url: receipt.html
+decline_url: receipt.html
+styles:
+  - https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css
+  - css/brand-theme.css
+  - css/brand-fonts.css
+  - css/upsell-slots.css
+scripts:
+  - https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js
+  - js/upsells.js
+  - js/payment-logos.js
+upsell_hero:
+  title: "Add more wreaths to your order"
+  offer: "{discount_1x} off every extra Christmas Diamond Painting Light Wreath"
+upsell_layout:
+  style: card
+  boxed: true
+  media: carousel
+  media_position: right
+  media_align: center
+  show_bullets: false
+  show_ships_info: false
+  show_payment_logos: true
+  decline_position: below
+upsell_offer:
+  # Mixed styles in one accept (SDK MV external slots): the quantity buttons pick how many wreaths (1-5),
+  # then each wreath gets its own style select (the SDK's native variant <select> over the 8 style
+  # packages of product 37). Accept adds every unit, grouped by style, with WREATH50 on every line.
+  type: mv
+  pricing_mode: discounted
+  package_id: 1
+  selector_id: "downsell-style"
+  display_selector_id: "downsell-style-display"
+  display_bundle_id: "downsell-style-display-card"
+  title: "Christmas Diamond Painting Light Wreath"
+  show_rating: false
+  quantity_label: "How many wreaths?"
+  # Campaign edit (upsell/offer-controls.html + upsell/offer-selector.html): style-rows slot layout.
+  slot_layout: style-rows
+  slots_label: "Choose a style for each"
+  slot_unit_label: "Wreath"
+  retail_label: "Regular price"
+  price_label: "Your total"
+  retail_shipping: ""
+  offer_shipping: ""
+  accept_text: "Yes, add to my order"
+  decline_text: "No thanks"
+# One tier per wreath count. Tier ids must be <selector_id>-<n>x (initBundleQtyToggle in upsells.js clicks
+# them from the quantity buttons). Every unit is a configurable slot that starts on Snowman Wreath (package 1).
+upsell_mv_tiers:
+  - { id: "downsell-style-1x", quantity: 1, vouchers_json: '["WREATH50"]', selected: true }
+  - { id: "downsell-style-2x", quantity: 2, vouchers_json: '["WREATH50"]' }
+  - { id: "downsell-style-3x", quantity: 3, vouchers_json: '["WREATH50"]' }
+  - { id: "downsell-style-4x", quantity: 4, vouchers_json: '["WREATH50"]' }
+  - { id: "downsell-style-5x", quantity: 5, vouchers_json: '["WREATH50"]' }
+payment_flags:
+  show_paypal: false
+  show_klarna: false
+  show_google_pay: false
+swiper_slides:
+  - { src: "https://d1w87fp8j98gad.cloudfront.net/media/thumbnails/f674f1560dfd4445aa8e3ab0849c9dd2.webp", alt: "Snowman Wreath" }
+  - { src: "https://d1w87fp8j98gad.cloudfront.net/media/thumbnails/590abc4829da42c2a06265068539939c.webp", alt: "Santa Claus Wreath" }
+  - { src: "https://d1w87fp8j98gad.cloudfront.net/media/thumbnails/7e0fdffb77894753b95d4f9837f2d5a7.webp", alt: "Bow Wreath" }
+  - { src: "https://d1w87fp8j98gad.cloudfront.net/media/thumbnails/72a561f36b2e4a1684c77201ddb228b5.webp", alt: "Deer" }
+  - { src: "https://d1w87fp8j98gad.cloudfront.net/media/thumbnails/5880b10d4c524e8385c1a5d48d212bed.webp", alt: "Snowy Christmas Chapel Wreath" }
+  - { src: "https://d1w87fp8j98gad.cloudfront.net/media/thumbnails/8cd5cc693d1e4092a6e61885d8f6a15a.webp", alt: "Golden Angel Wreath" }
+  - { src: "https://d1w87fp8j98gad.cloudfront.net/media/thumbnails/569d3ade2acb475cba2702baec66d77f.webp", alt: "Gingerbread Man" }
+  - { src: "https://d1w87fp8j98gad.cloudfront.net/media/thumbnails/68fd86525a8f477d96b06f509ede03c7.webp", alt: "Christmas Bells" }
+swiper_thumbs:
+  - { src: "https://d1w87fp8j98gad.cloudfront.net/media/thumbnails/f674f1560dfd4445aa8e3ab0849c9dd2.webp", alt: "Snowman Wreath" }
+  - { src: "https://d1w87fp8j98gad.cloudfront.net/media/thumbnails/590abc4829da42c2a06265068539939c.webp", alt: "Santa Claus Wreath" }
+  - { src: "https://d1w87fp8j98gad.cloudfront.net/media/thumbnails/7e0fdffb77894753b95d4f9837f2d5a7.webp", alt: "Bow Wreath" }
+  - { src: "https://d1w87fp8j98gad.cloudfront.net/media/thumbnails/72a561f36b2e4a1684c77201ddb228b5.webp", alt: "Deer" }
+  - { src: "https://d1w87fp8j98gad.cloudfront.net/media/thumbnails/5880b10d4c524e8385c1a5d48d212bed.webp", alt: "Snowy Christmas Chapel Wreath" }
+  - { src: "https://d1w87fp8j98gad.cloudfront.net/media/thumbnails/8cd5cc693d1e4092a6e61885d8f6a15a.webp", alt: "Golden Angel Wreath" }
+  - { src: "https://d1w87fp8j98gad.cloudfront.net/media/thumbnails/569d3ade2acb475cba2702baec66d77f.webp", alt: "Gingerbread Man" }
+  - { src: "https://d1w87fp8j98gad.cloudfront.net/media/thumbnails/68fd86525a8f477d96b06f509ede03c7.webp", alt: "Christmas Bells" }
+swiper_thumbs_per_view: 4
+---
+{% comment %}
+  Downsell (CampaignSpec page_mweet355_10): more wreaths in any mix of styles, voucher WREATH50 (50% off in the Campaigns App). Accept and decline -> receipt.
+  Composed from the shop-single-step upsell partials (upsell_offer.type: mv, slot_layout: style-rows).
+  The hidden in-offer selector (data-next-bundle-selector + data-next-upsell-context, never writes the
+  live cart) holds one configurable card per wreath count; the quantity buttons pick the card and the SDK
+  renders one slot per wreath into data-next-bundle-slots-for, each with its native style <select>.
+  Accept submits the selected card's effective items (units grouped by style package) plus WREATH50, so
+  2 Snowman + 1 Deer is one accept of [1 x2, 4 x1]. Prices are SDK display values (bundle.downsell-style.*
+  for the total, {item.*} slot vars per wreath), never hardcoded. No announcement bar, ratings, bullets
+  or ships-from row: the CampaignSpec gives no copy for them.
+{% endcomment %}
+<div class="page-wrapper">
+  <div class="main-wrapper">
+    {% campaign_include 'upsell/header-bar.html' logo='images/store-logo.png' %}
+    {% campaign_include 'upsell/hero.html' upsell_hero=upsell_hero %}
+    {% campaign_include 'upsell/offer.html' %}
+    {% campaign_include 'footer.html' %}
+  </div>
+</div>

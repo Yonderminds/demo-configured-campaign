@@ -1,0 +1,1087 @@
+{
+  "schema_version": "1.0",
+  "run_id": "MWEK83KHS9E4Q2RFKLRQR9EG3C",
+  "campaign_slug": "christmas-diamond-painting-light-wreath-z56g",
+  "public_route_slug": "christmas-diamond-painting-light-wreath",
+  "campaign_ref_id": 2517,
+  "spec_version": "5.0",
+  "spec_hash": "sha256:31ae8c73450990642a472553374719976bcdc629f85201c0f8a469cb4e097699",
+  "started_at": "2026-11-13T05:52:21.521Z",
+  "completed_at": "2026-11-13T05:55:03.754Z",
+  "generated_at": "2026-11-13T05:55:03.770Z",
+  "runtime": "campaigns-os-node-qa@1.71.0",
+  "disposition": "ready_with_exceptions",
+  "entry_urls": [],
+  "page_urls": [],
+  "tested_urls": [],
+  "assertions": [
+    {
+      "id": "page_kit.store_profile",
+      "family": "api-metadata",
+      "page": "campaign",
+      "status": "pass"
+    },
+    {
+      "id": "page_kit.sdk_version",
+      "family": "api-metadata",
+      "page": "campaign",
+      "status": "pass"
+    },
+    {
+      "id": "polish.hidden_eager_media",
+      "family": "polish_gate",
+      "page": "campaign",
+      "status": "pass"
+    },
+    {
+      "id": "polish.evidence_current",
+      "family": "polish_gate",
+      "page": "campaign",
+      "status": "pass"
+    },
+    {
+      "id": "theme_gate.applied",
+      "family": "theme_gate",
+      "page": "campaign",
+      "status": "pass"
+    },
+    {
+      "id": "template-brand-contract:shop-single-step",
+      "family": "template_residue",
+      "page": "campaign",
+      "status": "pass"
+    },
+    {
+      "id": "page-binding:page_mweeqrin_6",
+      "family": "api-metadata",
+      "page": "page_mweeqrin_6",
+      "status": "pass"
+    },
+    {
+      "id": "http:page_mweeqrin_6",
+      "family": "funnel-flow",
+      "page": "page_mweeqrin_6",
+      "status": "pass"
+    },
+    {
+      "id": "meta:page_mweeqrin_6:next-page-type",
+      "family": "meta-tags",
+      "page": "page_mweeqrin_6",
+      "status": "pass"
+    },
+    {
+      "id": "meta:page_mweeqrin_6:next-success-url",
+      "family": "meta-tags",
+      "page": "page_mweeqrin_6",
+      "status": "pass"
+    },
+    {
+      "id": "route-link:page_mweeqrin_6:next",
+      "family": "funnel-flow",
+      "page": "page_mweeqrin_6",
+      "status": "pass"
+    },
+    {
+      "id": "page-binding:page_mweeqrin_7",
+      "family": "api-metadata",
+      "page": "page_mweeqrin_7",
+      "status": "pass"
+    },
+    {
+      "id": "http:page_mweeqrin_7",
+      "family": "funnel-flow",
+      "page": "page_mweeqrin_7",
+      "status": "pass"
+    },
+    {
+      "id": "meta:page_mweeqrin_7:next-page-type",
+      "family": "meta-tags",
+      "page": "page_mweeqrin_7",
+      "status": "pass"
+    },
+    {
+      "id": "meta:page_mweeqrin_7:next-success-url",
+      "family": "meta-tags",
+      "page": "page_mweeqrin_7",
+      "status": "pass"
+    },
+    {
+      "id": "route-link:page_mweeqrin_7:next",
+      "family": "funnel-flow",
+      "page": "page_mweeqrin_7",
+      "status": "pass"
+    },
+    {
+      "id": "page-binding:page_mweet1jv_9",
+      "family": "api-metadata",
+      "page": "page_mweet1jv_9",
+      "status": "pass"
+    },
+    {
+      "id": "http:page_mweet1jv_9",
+      "family": "funnel-flow",
+      "page": "page_mweet1jv_9",
+      "status": "pass"
+    },
+    {
+      "id": "meta:page_mweet1jv_9:next-page-type",
+      "family": "meta-tags",
+      "page": "page_mweet1jv_9",
+      "status": "pass"
+    },
+    {
+      "id": "meta:page_mweet1jv_9:next-upsell-accept-url",
+      "family": "meta-tags",
+      "page": "page_mweet1jv_9",
+      "status": "pass"
+    },
+    {
+      "id": "meta:page_mweet1jv_9:next-upsell-decline-url",
+      "family": "meta-tags",
+      "page": "page_mweet1jv_9",
+      "status": "pass"
+    },
+    {
+      "id": "route-link:page_mweet1jv_9:next",
+      "family": "funnel-flow",
+      "page": "page_mweet1jv_9",
+      "status": "pass"
+    },
+    {
+      "id": "route-link:page_mweet1jv_9:accept",
+      "family": "funnel-flow",
+      "page": "page_mweet1jv_9",
+      "status": "pass"
+    },
+    {
+      "id": "route-link:page_mweet1jv_9:decline",
+      "family": "funnel-flow",
+      "page": "page_mweet1jv_9",
+      "status": "pass"
+    },
+    {
+      "id": "page-binding:page_mweet355_10",
+      "family": "api-metadata",
+      "page": "page_mweet355_10",
+      "status": "pass"
+    },
+    {
+      "id": "http:page_mweet355_10",
+      "family": "funnel-flow",
+      "page": "page_mweet355_10",
+      "status": "pass"
+    },
+    {
+      "id": "meta:page_mweet355_10:next-page-type",
+      "family": "meta-tags",
+      "page": "page_mweet355_10",
+      "status": "pass"
+    },
+    {
+      "id": "meta:page_mweet355_10:next-upsell-accept-url",
+      "family": "meta-tags",
+      "page": "page_mweet355_10",
+      "status": "pass"
+    },
+    {
+      "id": "meta:page_mweet355_10:next-upsell-decline-url",
+      "family": "meta-tags",
+      "page": "page_mweet355_10",
+      "status": "pass"
+    },
+    {
+      "id": "route-link:page_mweet355_10:next",
+      "family": "funnel-flow",
+      "page": "page_mweet355_10",
+      "status": "pass"
+    },
+    {
+      "id": "route-link:page_mweet355_10:accept",
+      "family": "funnel-flow",
+      "page": "page_mweet355_10",
+      "status": "pass"
+    },
+    {
+      "id": "route-link:page_mweet355_10:decline",
+      "family": "funnel-flow",
+      "page": "page_mweet355_10",
+      "status": "pass"
+    },
+    {
+      "id": "page-binding:page_mweeqrin_8",
+      "family": "api-metadata",
+      "page": "page_mweeqrin_8",
+      "status": "pass"
+    },
+    {
+      "id": "http:page_mweeqrin_8",
+      "family": "funnel-flow",
+      "page": "page_mweeqrin_8",
+      "status": "pass"
+    },
+    {
+      "id": "meta:page_mweeqrin_8:next-page-type",
+      "family": "meta-tags",
+      "page": "page_mweeqrin_8",
+      "status": "pass"
+    },
+    {
+      "id": "live-campaign-refs",
+      "family": "api-metadata",
+      "page": "campaign",
+      "status": "pass"
+    },
+    {
+      "id": "browser-load:page_mweeqrin_6",
+      "family": "browser-runtime",
+      "page": "page_mweeqrin_6",
+      "status": "pass"
+    },
+    {
+      "id": "browser-primary-cta:page_mweeqrin_6",
+      "family": "browser-runtime",
+      "page": "page_mweeqrin_6",
+      "status": "manual_review",
+      "severity": "warn",
+      "cause": "pre_existing",
+      "cause_reason": "same_status_in_prior_run"
+    },
+    {
+      "id": "template-residue:page_mweeqrin_6:placeholder-text",
+      "family": "template_residue",
+      "page": "page_mweeqrin_6",
+      "status": "pass"
+    },
+    {
+      "id": "template-residue:page_mweeqrin_6:demo-asset",
+      "family": "template_residue",
+      "page": "page_mweeqrin_6",
+      "status": "pass"
+    },
+    {
+      "id": "browser-console-errors:page_mweeqrin_6",
+      "family": "browser-runtime",
+      "page": "page_mweeqrin_6",
+      "status": "warn",
+      "severity": "warn",
+      "cause": "pre_existing",
+      "cause_reason": "same_status_in_prior_run"
+    },
+    {
+      "id": "browser-request-failures:page_mweeqrin_6",
+      "family": "browser-runtime",
+      "page": "page_mweeqrin_6",
+      "status": "warn",
+      "severity": "warn",
+      "cause": "pre_existing",
+      "cause_reason": "same_status_in_prior_run"
+    },
+    {
+      "id": "browser-load:page_mweeqrin_7",
+      "family": "browser-runtime",
+      "page": "page_mweeqrin_7",
+      "status": "pass"
+    },
+    {
+      "id": "browser-primary-cta:page_mweeqrin_7",
+      "family": "browser-runtime",
+      "page": "page_mweeqrin_7",
+      "status": "manual_review",
+      "severity": "warn",
+      "cause": "pre_existing",
+      "cause_reason": "same_status_in_prior_run"
+    },
+    {
+      "id": "browser-payment-surface:page_mweeqrin_7",
+      "family": "browser-runtime",
+      "page": "page_mweeqrin_7",
+      "status": "pass"
+    },
+    {
+      "id": "browser-payment-geometry:page_mweeqrin_7",
+      "family": "browser-runtime",
+      "page": "page_mweeqrin_7",
+      "status": "pass"
+    },
+    {
+      "id": "browser-express-wallets:page_mweeqrin_7",
+      "family": "browser-runtime",
+      "page": "page_mweeqrin_7",
+      "status": "pass"
+    },
+    {
+      "id": "browser-commerce-structure:page_mweeqrin_7",
+      "family": "browser-runtime",
+      "page": "page_mweeqrin_7",
+      "status": "fail",
+      "severity": "warn",
+      "cause": "pre_existing",
+      "cause_reason": "same_status_in_prior_run"
+    },
+    {
+      "id": "template-residue:page_mweeqrin_7:style:checkout_submit_button",
+      "family": "template_residue",
+      "page": "page_mweeqrin_7",
+      "status": "pass"
+    },
+    {
+      "id": "template-residue:page_mweeqrin_7:style:selected_bundle_card",
+      "family": "template_residue",
+      "page": "page_mweeqrin_7",
+      "status": "skipped"
+    },
+    {
+      "id": "template-residue:page_mweeqrin_7:style:announcement_bar",
+      "family": "template_residue",
+      "page": "page_mweeqrin_7",
+      "status": "skipped"
+    },
+    {
+      "id": "template-residue:page_mweeqrin_7:style:bump_outline",
+      "family": "template_residue",
+      "page": "page_mweeqrin_7",
+      "status": "skipped"
+    },
+    {
+      "id": "template-residue:page_mweeqrin_7:logo",
+      "family": "template_residue",
+      "page": "page_mweeqrin_7",
+      "status": "pass"
+    },
+    {
+      "id": "template-residue:page_mweeqrin_7:payment-chrome:paypal",
+      "family": "template_residue",
+      "page": "page_mweeqrin_7",
+      "status": "pass"
+    },
+    {
+      "id": "template-residue:page_mweeqrin_7:payment-chrome:klarna",
+      "family": "template_residue",
+      "page": "page_mweeqrin_7",
+      "status": "pass"
+    },
+    {
+      "id": "template-residue:page_mweeqrin_7:placeholder-text",
+      "family": "template_residue",
+      "page": "page_mweeqrin_7",
+      "status": "pass"
+    },
+    {
+      "id": "template-residue:page_mweeqrin_7:demo-asset",
+      "family": "template_residue",
+      "page": "page_mweeqrin_7",
+      "status": "pass"
+    },
+    {
+      "id": "pricing.checkout_price_visible",
+      "family": "pricing",
+      "page": "page_mweeqrin_7",
+      "status": "skipped"
+    },
+    {
+      "id": "browser-sdk-debugger:page_mweeqrin_7",
+      "family": "browser-runtime",
+      "page": "page_mweeqrin_7",
+      "status": "pass"
+    },
+    {
+      "id": "browser-console-errors:page_mweeqrin_7",
+      "family": "browser-runtime",
+      "page": "page_mweeqrin_7",
+      "status": "warn",
+      "severity": "warn",
+      "cause": "pre_existing",
+      "cause_reason": "same_status_in_prior_run"
+    },
+    {
+      "id": "browser-request-failures:page_mweeqrin_7",
+      "family": "browser-runtime",
+      "page": "page_mweeqrin_7",
+      "status": "warn",
+      "severity": "warn",
+      "cause": "pre_existing",
+      "cause_reason": "same_status_in_prior_run"
+    },
+    {
+      "id": "browser-load:page_mweet1jv_9",
+      "family": "browser-runtime",
+      "page": "page_mweet1jv_9",
+      "status": "pass"
+    },
+    {
+      "id": "browser-primary-cta:page_mweet1jv_9",
+      "family": "browser-runtime",
+      "page": "page_mweet1jv_9",
+      "status": "pass"
+    },
+    {
+      "id": "browser-upsell-control:page_mweet1jv_9:accept",
+      "family": "browser-runtime",
+      "page": "page_mweet1jv_9",
+      "status": "pass"
+    },
+    {
+      "id": "browser-upsell-control:page_mweet1jv_9:decline",
+      "family": "browser-runtime",
+      "page": "page_mweet1jv_9",
+      "status": "pass"
+    },
+    {
+      "id": "template-residue:page_mweet1jv_9:style:announcement_bar",
+      "family": "template_residue",
+      "page": "page_mweet1jv_9",
+      "status": "skipped"
+    },
+    {
+      "id": "template-residue:page_mweet1jv_9:style:upsell_accept_cta",
+      "family": "template_residue",
+      "page": "page_mweet1jv_9",
+      "status": "pass"
+    },
+    {
+      "id": "template-residue:page_mweet1jv_9:logo",
+      "family": "template_residue",
+      "page": "page_mweet1jv_9",
+      "status": "pass"
+    },
+    {
+      "id": "template-residue:page_mweet1jv_9:payment-chrome:paypal",
+      "family": "template_residue",
+      "page": "page_mweet1jv_9",
+      "status": "pass"
+    },
+    {
+      "id": "template-residue:page_mweet1jv_9:payment-chrome:klarna",
+      "family": "template_residue",
+      "page": "page_mweet1jv_9",
+      "status": "pass"
+    },
+    {
+      "id": "template-residue:page_mweet1jv_9:placeholder-text",
+      "family": "template_residue",
+      "page": "page_mweet1jv_9",
+      "status": "pass"
+    },
+    {
+      "id": "template-residue:page_mweet1jv_9:demo-asset",
+      "family": "template_residue",
+      "page": "page_mweet1jv_9",
+      "status": "pass"
+    },
+    {
+      "id": "pricing.upsell_price_visible:page_mweet1jv_9",
+      "family": "pricing",
+      "page": "page_mweet1jv_9",
+      "status": "pass"
+    },
+    {
+      "id": "browser-sdk-debugger:page_mweet1jv_9",
+      "family": "browser-runtime",
+      "page": "page_mweet1jv_9",
+      "status": "pass"
+    },
+    {
+      "id": "browser-console-errors:page_mweet1jv_9",
+      "family": "browser-runtime",
+      "page": "page_mweet1jv_9",
+      "status": "warn",
+      "severity": "warn",
+      "cause": "pre_existing",
+      "cause_reason": "same_status_in_prior_run"
+    },
+    {
+      "id": "browser-request-failures:page_mweet1jv_9",
+      "family": "browser-runtime",
+      "page": "page_mweet1jv_9",
+      "status": "warn",
+      "severity": "warn",
+      "cause": "pre_existing",
+      "cause_reason": "same_status_in_prior_run"
+    },
+    {
+      "id": "browser-load:page_mweet355_10",
+      "family": "browser-runtime",
+      "page": "page_mweet355_10",
+      "status": "pass"
+    },
+    {
+      "id": "browser-primary-cta:page_mweet355_10",
+      "family": "browser-runtime",
+      "page": "page_mweet355_10",
+      "status": "pass"
+    },
+    {
+      "id": "template-residue:page_mweet355_10:style:announcement_bar",
+      "family": "template_residue",
+      "page": "page_mweet355_10",
+      "status": "skipped"
+    },
+    {
+      "id": "template-residue:page_mweet355_10:style:upsell_accept_cta",
+      "family": "template_residue",
+      "page": "page_mweet355_10",
+      "status": "pass"
+    },
+    {
+      "id": "template-residue:page_mweet355_10:logo",
+      "family": "template_residue",
+      "page": "page_mweet355_10",
+      "status": "pass"
+    },
+    {
+      "id": "template-residue:page_mweet355_10:payment-chrome:paypal",
+      "family": "template_residue",
+      "page": "page_mweet355_10",
+      "status": "pass"
+    },
+    {
+      "id": "template-residue:page_mweet355_10:payment-chrome:klarna",
+      "family": "template_residue",
+      "page": "page_mweet355_10",
+      "status": "pass"
+    },
+    {
+      "id": "template-residue:page_mweet355_10:placeholder-text",
+      "family": "template_residue",
+      "page": "page_mweet355_10",
+      "status": "pass"
+    },
+    {
+      "id": "template-residue:page_mweet355_10:demo-asset",
+      "family": "template_residue",
+      "page": "page_mweet355_10",
+      "status": "pass"
+    },
+    {
+      "id": "pricing.upsell_price_visible:page_mweet355_10",
+      "family": "pricing",
+      "page": "page_mweet355_10",
+      "status": "pass"
+    },
+    {
+      "id": "browser-sdk-debugger:page_mweet355_10",
+      "family": "browser-runtime",
+      "page": "page_mweet355_10",
+      "status": "pass"
+    },
+    {
+      "id": "browser-console-errors:page_mweet355_10",
+      "family": "browser-runtime",
+      "page": "page_mweet355_10",
+      "status": "warn",
+      "severity": "warn",
+      "cause": "pre_existing",
+      "cause_reason": "same_status_in_prior_run"
+    },
+    {
+      "id": "browser-request-failures:page_mweet355_10",
+      "family": "browser-runtime",
+      "page": "page_mweet355_10",
+      "status": "warn",
+      "severity": "warn",
+      "cause": "pre_existing",
+      "cause_reason": "same_status_in_prior_run"
+    },
+    {
+      "id": "browser-load:page_mweeqrin_8",
+      "family": "browser-runtime",
+      "page": "page_mweeqrin_8",
+      "status": "pass"
+    },
+    {
+      "id": "template-residue:page_mweeqrin_8:logo",
+      "family": "template_residue",
+      "page": "page_mweeqrin_8",
+      "status": "pass"
+    },
+    {
+      "id": "template-residue:page_mweeqrin_8:payment-chrome:paypal",
+      "family": "template_residue",
+      "page": "page_mweeqrin_8",
+      "status": "pass"
+    },
+    {
+      "id": "template-residue:page_mweeqrin_8:payment-chrome:klarna",
+      "family": "template_residue",
+      "page": "page_mweeqrin_8",
+      "status": "pass"
+    },
+    {
+      "id": "template-residue:page_mweeqrin_8:placeholder-text",
+      "family": "template_residue",
+      "page": "page_mweeqrin_8",
+      "status": "pass"
+    },
+    {
+      "id": "template-residue:page_mweeqrin_8:demo-asset",
+      "family": "template_residue",
+      "page": "page_mweeqrin_8",
+      "status": "pass"
+    },
+    {
+      "id": "browser-sdk-debugger:page_mweeqrin_8",
+      "family": "browser-runtime",
+      "page": "page_mweeqrin_8",
+      "status": "pass"
+    },
+    {
+      "id": "browser-console-errors:page_mweeqrin_8",
+      "family": "browser-runtime",
+      "page": "page_mweeqrin_8",
+      "status": "warn",
+      "severity": "warn",
+      "cause": "pre_existing",
+      "cause_reason": "same_status_in_prior_run"
+    },
+    {
+      "id": "browser-request-failures:page_mweeqrin_8",
+      "family": "browser-runtime",
+      "page": "page_mweeqrin_8",
+      "status": "warn",
+      "severity": "warn",
+      "cause": "pre_existing",
+      "cause_reason": "same_status_in_prior_run"
+    },
+    {
+      "id": "qc.policy.presence:store_terms",
+      "family": "browser-runtime",
+      "page": "campaign",
+      "status": "manual_review",
+      "severity": "warn",
+      "cause": "pre_existing",
+      "cause_reason": "same_status_in_prior_run"
+    },
+    {
+      "id": "qc.policy.availability:store_terms",
+      "family": "browser-runtime",
+      "page": "campaign",
+      "status": "pass",
+      "severity": "info"
+    },
+    {
+      "id": "qc.policy.presence:store_privacy",
+      "family": "browser-runtime",
+      "page": "campaign",
+      "status": "pass",
+      "severity": "info"
+    },
+    {
+      "id": "qc.policy.availability:store_privacy",
+      "family": "browser-runtime",
+      "page": "campaign",
+      "status": "pass",
+      "severity": "info"
+    },
+    {
+      "id": "qc.policy.presence:store_returns",
+      "family": "browser-runtime",
+      "page": "campaign",
+      "status": "pass",
+      "severity": "info"
+    },
+    {
+      "id": "qc.policy.availability:store_returns",
+      "family": "browser-runtime",
+      "page": "campaign",
+      "status": "pass",
+      "severity": "info"
+    },
+    {
+      "id": "qc.policy.presence:store_shipping",
+      "family": "browser-runtime",
+      "page": "campaign",
+      "status": "pass",
+      "severity": "info"
+    },
+    {
+      "id": "qc.policy.availability:store_shipping",
+      "family": "browser-runtime",
+      "page": "campaign",
+      "status": "pass",
+      "severity": "info"
+    },
+    {
+      "id": "qc.policy.presence:store_contact",
+      "family": "browser-runtime",
+      "page": "campaign",
+      "status": "pass",
+      "severity": "info"
+    },
+    {
+      "id": "qc.policy.availability:store_contact",
+      "family": "browser-runtime",
+      "page": "campaign",
+      "status": "pass",
+      "severity": "info"
+    },
+    {
+      "id": "browser-test-order:checkout",
+      "family": "browser-test-order",
+      "page": "page_mweeqrin_7",
+      "status": "pass"
+    },
+    {
+      "id": "browser-order-display-parity:checkout",
+      "family": "browser-test-order",
+      "page": "page_mweeqrin_7",
+      "status": "pass"
+    },
+    {
+      "id": "browser-order-total-parity:checkout",
+      "family": "browser-test-order",
+      "page": "page_mweeqrin_7",
+      "status": "pass"
+    },
+    {
+      "id": "browser-order-currency:checkout",
+      "family": "browser-test-order",
+      "page": "page_mweeqrin_7",
+      "status": "pass"
+    },
+    {
+      "id": "analytics-correctness:data-layer-purchase:checkout",
+      "family": "analytics-correctness",
+      "page": "page_mweeqrin_7:order:checkout",
+      "status": "pass"
+    },
+    {
+      "id": "qc.tracking.url:checkout:url",
+      "family": "browser-test-order",
+      "page": "checkout",
+      "status": "pass",
+      "severity": "info"
+    },
+    {
+      "id": "qc.tracking.order:checkout:order",
+      "family": "browser-test-order",
+      "page": "checkout",
+      "status": "pass",
+      "severity": "info"
+    },
+    {
+      "id": "browser-test-order:accept",
+      "family": "browser-test-order",
+      "page": "page_mweeqrin_7",
+      "status": "pass"
+    },
+    {
+      "id": "browser-order-display-parity:accept",
+      "family": "browser-test-order",
+      "page": "page_mweeqrin_7",
+      "status": "pass"
+    },
+    {
+      "id": "browser-order-total-parity:accept",
+      "family": "browser-test-order",
+      "page": "page_mweeqrin_7",
+      "status": "pass"
+    },
+    {
+      "id": "browser-order-currency:accept",
+      "family": "browser-test-order",
+      "page": "page_mweeqrin_7",
+      "status": "pass"
+    },
+    {
+      "id": "browser-receipt-rendering:accept",
+      "family": "browser-receipt-rendering",
+      "page": "page_mweeqrin_7:receipt:accept",
+      "status": "pass"
+    },
+    {
+      "id": "analytics-correctness:data-layer-purchase:accept",
+      "family": "analytics-correctness",
+      "page": "page_mweeqrin_7:order:accept",
+      "status": "pass"
+    },
+    {
+      "id": "qc.tracking.url:accept:url",
+      "family": "browser-test-order",
+      "page": "accept",
+      "status": "pass",
+      "severity": "info"
+    },
+    {
+      "id": "qc.tracking.order:accept:order",
+      "family": "browser-test-order",
+      "page": "accept",
+      "status": "pass",
+      "severity": "info"
+    },
+    {
+      "id": "browser-test-order:decline-decline",
+      "family": "browser-test-order",
+      "page": "page_mweeqrin_7",
+      "status": "pass"
+    },
+    {
+      "id": "browser-order-display-parity:decline-decline",
+      "family": "browser-test-order",
+      "page": "page_mweeqrin_7",
+      "status": "pass"
+    },
+    {
+      "id": "browser-order-total-parity:decline-decline",
+      "family": "browser-test-order",
+      "page": "page_mweeqrin_7",
+      "status": "pass"
+    },
+    {
+      "id": "browser-order-currency:decline-decline",
+      "family": "browser-test-order",
+      "page": "page_mweeqrin_7",
+      "status": "pass"
+    },
+    {
+      "id": "browser-receipt-rendering:decline-decline",
+      "family": "browser-receipt-rendering",
+      "page": "page_mweeqrin_7:receipt:decline-decline",
+      "status": "pass"
+    },
+    {
+      "id": "analytics-correctness:data-layer-purchase:decline-decline",
+      "family": "analytics-correctness",
+      "page": "page_mweeqrin_7:order:decline-decline",
+      "status": "pass"
+    },
+    {
+      "id": "qc.tracking.url:decline-decline:url",
+      "family": "browser-test-order",
+      "page": "decline-decline",
+      "status": "pass",
+      "severity": "info"
+    },
+    {
+      "id": "qc.tracking.order:decline-decline:order",
+      "family": "browser-test-order",
+      "page": "decline-decline",
+      "status": "pass",
+      "severity": "info"
+    },
+    {
+      "id": "browser-test-order:decline-accept",
+      "family": "browser-test-order",
+      "page": "page_mweeqrin_7",
+      "status": "pass"
+    },
+    {
+      "id": "browser-order-display-parity:decline-accept",
+      "family": "browser-test-order",
+      "page": "page_mweeqrin_7",
+      "status": "pass"
+    },
+    {
+      "id": "browser-order-total-parity:decline-accept",
+      "family": "browser-test-order",
+      "page": "page_mweeqrin_7",
+      "status": "pass"
+    },
+    {
+      "id": "browser-order-currency:decline-accept",
+      "family": "browser-test-order",
+      "page": "page_mweeqrin_7",
+      "status": "pass"
+    },
+    {
+      "id": "browser-receipt-rendering:decline-accept",
+      "family": "browser-receipt-rendering",
+      "page": "page_mweeqrin_7:receipt:decline-accept",
+      "status": "pass"
+    },
+    {
+      "id": "analytics-correctness:data-layer-purchase:decline-accept",
+      "family": "analytics-correctness",
+      "page": "page_mweeqrin_7:order:decline-accept",
+      "status": "pass"
+    },
+    {
+      "id": "qc.tracking.url:decline-accept:url",
+      "family": "browser-test-order",
+      "page": "decline-accept",
+      "status": "pass",
+      "severity": "info"
+    },
+    {
+      "id": "qc.tracking.order:decline-accept:order",
+      "family": "browser-test-order",
+      "page": "decline-accept",
+      "status": "pass",
+      "severity": "info"
+    },
+    {
+      "id": "browser-test-order:upsell-action-coverage",
+      "family": "browser-test-order",
+      "page": "page_mweeqrin_7",
+      "status": "pass"
+    },
+    {
+      "id": "browser-test-order:vendor-beacons",
+      "family": "browser-test-order",
+      "page": "campaign",
+      "status": "pass",
+      "severity": "info"
+    },
+    {
+      "id": "commercial-parity:incomplete:commercial_claims_unresolved",
+      "family": "pricing",
+      "page": "campaign",
+      "status": "warn",
+      "severity": "warn",
+      "cause": "pre_existing",
+      "cause_reason": "same_status_in_prior_run"
+    }
+  ],
+  "test_orders": [],
+  "exceptions": [
+    {
+      "id": "browser-primary-cta:page_mweeqrin_6",
+      "family": "browser-runtime",
+      "page": "page_mweeqrin_6",
+      "status": "manual_review",
+      "severity": "warn",
+      "cause": "pre_existing",
+      "cause_reason": "same_status_in_prior_run"
+    },
+    {
+      "id": "browser-console-errors:page_mweeqrin_6",
+      "family": "browser-runtime",
+      "page": "page_mweeqrin_6",
+      "status": "warn",
+      "severity": "warn",
+      "cause": "pre_existing",
+      "cause_reason": "same_status_in_prior_run"
+    },
+    {
+      "id": "browser-request-failures:page_mweeqrin_6",
+      "family": "browser-runtime",
+      "page": "page_mweeqrin_6",
+      "status": "warn",
+      "severity": "warn",
+      "cause": "pre_existing",
+      "cause_reason": "same_status_in_prior_run"
+    },
+    {
+      "id": "browser-primary-cta:page_mweeqrin_7",
+      "family": "browser-runtime",
+      "page": "page_mweeqrin_7",
+      "status": "manual_review",
+      "severity": "warn",
+      "cause": "pre_existing",
+      "cause_reason": "same_status_in_prior_run"
+    },
+    {
+      "id": "browser-commerce-structure:page_mweeqrin_7",
+      "family": "browser-runtime",
+      "page": "page_mweeqrin_7",
+      "status": "fail",
+      "severity": "warn",
+      "cause": "pre_existing",
+      "cause_reason": "same_status_in_prior_run"
+    },
+    {
+      "id": "browser-console-errors:page_mweeqrin_7",
+      "family": "browser-runtime",
+      "page": "page_mweeqrin_7",
+      "status": "warn",
+      "severity": "warn",
+      "cause": "pre_existing",
+      "cause_reason": "same_status_in_prior_run"
+    },
+    {
+      "id": "browser-request-failures:page_mweeqrin_7",
+      "family": "browser-runtime",
+      "page": "page_mweeqrin_7",
+      "status": "warn",
+      "severity": "warn",
+      "cause": "pre_existing",
+      "cause_reason": "same_status_in_prior_run"
+    },
+    {
+      "id": "browser-console-errors:page_mweet1jv_9",
+      "family": "browser-runtime",
+      "page": "page_mweet1jv_9",
+      "status": "warn",
+      "severity": "warn",
+      "cause": "pre_existing",
+      "cause_reason": "same_status_in_prior_run"
+    },
+    {
+      "id": "browser-request-failures:page_mweet1jv_9",
+      "family": "browser-runtime",
+      "page": "page_mweet1jv_9",
+      "status": "warn",
+      "severity": "warn",
+      "cause": "pre_existing",
+      "cause_reason": "same_status_in_prior_run"
+    },
+    {
+      "id": "browser-console-errors:page_mweet355_10",
+      "family": "browser-runtime",
+      "page": "page_mweet355_10",
+      "status": "warn",
+      "severity": "warn",
+      "cause": "pre_existing",
+      "cause_reason": "same_status_in_prior_run"
+    },
+    {
+      "id": "browser-request-failures:page_mweet355_10",
+      "family": "browser-runtime",
+      "page": "page_mweet355_10",
+      "status": "warn",
+      "severity": "warn",
+      "cause": "pre_existing",
+      "cause_reason": "same_status_in_prior_run"
+    },
+    {
+      "id": "browser-console-errors:page_mweeqrin_8",
+      "family": "browser-runtime",
+      "page": "page_mweeqrin_8",
+      "status": "warn",
+      "severity": "warn",
+      "cause": "pre_existing",
+      "cause_reason": "same_status_in_prior_run"
+    },
+    {
+      "id": "browser-request-failures:page_mweeqrin_8",
+      "family": "browser-runtime",
+      "page": "page_mweeqrin_8",
+      "status": "warn",
+      "severity": "warn",
+      "cause": "pre_existing",
+      "cause_reason": "same_status_in_prior_run"
+    },
+    {
+      "id": "qc.policy.presence:store_terms",
+      "family": "browser-runtime",
+      "page": "campaign",
+      "status": "manual_review",
+      "severity": "warn",
+      "cause": "pre_existing",
+      "cause_reason": "same_status_in_prior_run"
+    },
+    {
+      "id": "commercial-parity:incomplete:commercial_claims_unresolved",
+      "family": "pricing",
+      "page": "campaign",
+      "status": "warn",
+      "severity": "warn",
+      "cause": "pre_existing",
+      "cause_reason": "same_status_in_prior_run"
+    }
+  ],
+  "cause_summary": {
+    "schema_version": "campaigns-os-finding-cause/v0",
+    "surface": "qa",
+    "total": 15,
+    "counts": {
+      "caused_by_change": 0,
+      "pre_existing": 15,
+      "test_environment": 0,
+      "upstream_drift": 0,
+      "unknown": 0
+    },
+    "prior_run_id": "run_1794546584451_005c0639",
+    "prior_qa_attempt_run_id": "MWEJ2Y5DP58CA543T6VADAFPS4",
+    "comparison": "prior_run"
+  }
+}

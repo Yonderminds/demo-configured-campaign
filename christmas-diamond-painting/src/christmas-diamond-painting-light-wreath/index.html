@@ -1,0 +1,40 @@
+---
+page_layout: base-landing.html
+title: "Buy 2, Get FREE Shipping! Christmas Diamond Painting Light Wreath DIY Kit"
+page_type: product
+
+# Checkout: the side cart's checkout button and "Buy it now" go here.
+next_url: "checkout.html"
+# CampaignSpec sdk_hints for this page: next-success-url = the checkout's success route.
+express_success_url: "upsell-30.html"
+scripts:
+  - js/landing/pdp.js
+---
+{% comment %}
+  Landing (CampaignSpec page_mweeqrin_6): a clone of the merchant's live Shopify product page
+  (design source: source/landing.html + source/.campaigns-os/screenshots/). Also served at the
+  Shopify product path /products/<handle> through a 200 rewrite in the repo-root netlify.toml.
+
+  Intentional drops from the live page: the header menu bar (logo, nav, search/account/cart icons);
+  the "Upgrade Your Pen" tool-pack add-on (not a campaign package); the PayPal and "Pay with
+  Debit/Credit Card" Shopify payment-app buttons (replaced by "Buy it now"); the 9th style pill
+  "8-in-1 Christmas Wreath Bundle (All 8 Styles)" (no campaign package); the Shopify cart drawer
+  (replaced by the SDK side cart below); Shopify/app scripts and trackers.
+
+  Commerce (SDK 0.4.43, documented attributes only):
+  - Style pills: one bundle selector in select mode, a card per package (ref_id 1..8)
+    https://cart-sdk.nextcommerce.com/v0.4.43/reference/data-attributes/ ("Bundle selector",
+    "Selection mode": under select, a separate add-to-cart button performs the cart write).
+  - Quantity: the bundle quantity stepper, data-next-bundle-qty-for="style" (same page, "Quantity
+    stepper"); in select mode the selector's selected items carry the stepped quantity, which the
+    add-to-cart button writes (campaign-cart v0.4.43 bundle-selector guide, use-cases.md).
+  - Add to cart / Buy it now: data-next-action="add-to-cart" (same page, "UI helpers") linked to the
+    selector with data-next-selector-id, plus data-next-url on Buy it now (campaign-cart v0.4.43
+    add-to-cart guide, get-started.md, options B and C).
+  - Side cart: data-next-cart-items with data-item-template-id, data-next-quantity and
+    data-next-remove-item per line (cart item list enhancer), data-next-cart-summary totals with
+    data-next-discounts="offer" rows (same page, "Cart summary").
+  pdp.js is UI only (gallery, zoom modal, drawer open/close, sticky bar, popup, timers).
+{% endcomment %}
+{% campaign_include 'landing/pdp-body.html' %}
+{% campaign_include 'landing/side-cart.html' %}

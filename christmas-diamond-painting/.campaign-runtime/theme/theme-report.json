@@ -1,0 +1,345 @@
+{
+  "schema_version": "campaign-runtime-brand-theme/v0",
+  "generated_at": "2026-11-13T05:09:53.689Z",
+  "status": "ready_with_warnings",
+  "policy": "auto",
+  "source_kind": "html_funnel",
+  "confidence": "medium",
+  "source_files": [
+    {
+      "path": "source/assets/css/base.css",
+      "role": "page",
+      "source": "mapped_html_reference",
+      "hash": "a60cb00e8314057f35b2f9f83bda5d3bf3d3e2e67f112730755d9e9e89ef0772",
+      "token_count": 26,
+      "inline_block_index": null,
+      "referenced_by": [
+        {
+          "page_id": "page_mweeqrin_6",
+          "path": "landing.html",
+          "ref": "assets/css/base.css"
+        }
+      ]
+    },
+    {
+      "path": "source/assets/css/page.css",
+      "role": "page",
+      "source": "mapped_html_reference",
+      "hash": "f60b8d58209c3011915f98313619230f061c0b95d2abce2e67ffcb904013229d",
+      "token_count": 173,
+      "inline_block_index": null,
+      "referenced_by": [
+        {
+          "page_id": "page_mweeqrin_6",
+          "path": "landing.html",
+          "ref": "assets/css/page.css"
+        }
+      ]
+    }
+  ],
+  "selected_source": {
+    "path": "source/assets/css/base.css",
+    "role": "page",
+    "source": "mapped_html_reference",
+    "hash": "a60cb00e8314057f35b2f9f83bda5d3bf3d3e2e67f112730755d9e9e89ef0772",
+    "token_count": 26,
+    "inline_block_index": null,
+    "referenced_by": [
+      {
+        "page_id": "page_mweeqrin_6",
+        "path": "landing.html",
+        "ref": "assets/css/base.css"
+      }
+    ]
+  },
+  "producer_defaults": {
+    "matched": false,
+    "producer": "figma-sections-export",
+    "version": "v0",
+    "matched_tokens": [],
+    "unresolved_tokens": [],
+    "present_core_tokens": [
+      "--brand-accent",
+      "--text-primary",
+      "--text-inverse",
+      "--border-default"
+    ]
+  },
+  "conflicts": [
+    {
+      "token": "--text-primary",
+      "entries": [
+        {
+          "path": "christmas-diamond-painting/source/assets/css/base.css",
+          "role": "page",
+          "value": "#000000"
+        },
+        {
+          "path": "christmas-diamond-painting/source/assets/css/page.css",
+          "role": "page",
+          "value": "#ffffff"
+        }
+      ]
+    },
+    {
+      "token": "--brand-accent",
+      "entries": [
+        {
+          "path": "christmas-diamond-painting/source/assets/css/base.css",
+          "role": "page",
+          "value": "#ffc800"
+        },
+        {
+          "path": "christmas-diamond-painting/source/assets/css/page.css",
+          "role": "page",
+          "value": "#a87e64"
+        }
+      ]
+    }
+  ],
+  "mappings": [
+    {
+      "source": "--brand-accent",
+      "target": "--brand--color--accent",
+      "value": "#ffc800",
+      "confidence": "high",
+      "derivation": null
+    },
+    {
+      "source": "--text-primary",
+      "target": "--brand--color--text-primary",
+      "value": "#000000",
+      "confidence": "high",
+      "derivation": null
+    },
+    {
+      "source": "--text-primary",
+      "target": "--brand--color--foreground",
+      "value": "#000000",
+      "confidence": "high",
+      "derivation": null
+    },
+    {
+      "source": "--border-default",
+      "target": "--brand--color--border",
+      "value": "#999999",
+      "confidence": "high",
+      "derivation": null
+    },
+    {
+      "source": "--border-default",
+      "target": "--component--color--outline",
+      "value": "#999999",
+      "confidence": "high",
+      "derivation": null
+    },
+    {
+      "source": "--rating-star",
+      "target": "--brand--color--rating-star",
+      "value": "#ffc800",
+      "confidence": "high",
+      "derivation": null
+    },
+    {
+      "source": "--brand-cta",
+      "target": "--brand--color--cta-primary",
+      "value": "#ffc800",
+      "confidence": "high",
+      "derivation": null
+    },
+    {
+      "source": "--button-primary-bg",
+      "target": "--brand--color--cta-primary",
+      "value": "#ffc800",
+      "confidence": "high",
+      "derivation": null
+    },
+    {
+      "source": "--brand--color--cta-primary",
+      "target": "--brand--color--cta-foreground",
+      "value": "#0a0a0a",
+      "confidence": "high",
+      "derivation": {
+        "method": "foreground-from-luminance",
+        "background": "--brand--color--cta-primary",
+        "background_value": "#ffc800",
+        "on": "dark",
+        "contrast": 12.74
+      }
+    },
+    {
+      "source": "--brand--color--cta-primary",
+      "target": "--brand--color--text-inverse",
+      "value": "#0a0a0a",
+      "confidence": "high",
+      "derivation": {
+        "method": "foreground-from-luminance",
+        "background": "--brand--color--cta-primary",
+        "background_value": "#ffc800",
+        "on": "dark",
+        "contrast": 12.74
+      }
+    },
+    {
+      "source": "--brand--color--accent",
+      "target": "--brand--color--accent-foreground",
+      "value": "#0a0a0a",
+      "confidence": "high",
+      "derivation": {
+        "method": "foreground-from-luminance",
+        "background": "--brand--color--accent",
+        "background_value": "#ffc800",
+        "on": "dark",
+        "contrast": 12.74
+      }
+    },
+    {
+      "source": "typography.heading",
+      "target": "--_text---font-family--heading",
+      "value": "\"Poppins\", sans-serif",
+      "confidence": "high",
+      "derivation": {
+        "method": "design-source-font-face",
+        "family": "Poppins",
+        "rule_weight": 4
+      }
+    },
+    {
+      "source": "typography.body",
+      "target": "--_text---font-family--primary",
+      "value": "\"Poppins\", sans-serif",
+      "confidence": "high",
+      "derivation": {
+        "method": "design-source-font-face",
+        "family": "Poppins",
+        "rule_weight": 3
+      }
+    },
+    {
+      "source": "typography.button_radius",
+      "target": "--radius-size--buttons",
+      "value": "8px",
+      "confidence": "high",
+      "derivation": {
+        "method": "design-source-button-radius",
+        "rule_count": 3
+      }
+    }
+  ],
+  "typography": {
+    "heading": {
+      "family": "Poppins",
+      "rule_weight": 4
+    },
+    "body": {
+      "family": "Poppins",
+      "rule_weight": 3
+    },
+    "button": null,
+    "button_radius": {
+      "value": "8px",
+      "rule_count": 3
+    },
+    "unavailable": [],
+    "radius_rejected": [],
+    "faces": [
+      {
+        "family": "Poppins",
+        "weight": "400",
+        "style": "normal",
+        "files": [
+          "assets/fonts/poppins_n4.0ba78fa5af9b0e1a374041b3ceaadf0a43b41362.woff2"
+        ]
+      },
+      {
+        "family": "Poppins",
+        "weight": "700",
+        "style": "normal",
+        "files": [
+          "assets/fonts/poppins_n7.56758dcf284489feb014a026f3727f2f20a54626.woff2"
+        ]
+      },
+      {
+        "family": "Poppins",
+        "weight": "400",
+        "style": "italic",
+        "files": [
+          "assets/fonts/poppins_i4.846ad1e22474f856bd6b81ba4585a60799a9f5d2.woff2"
+        ]
+      },
+      {
+        "family": "Poppins",
+        "weight": "700",
+        "style": "italic",
+        "files": [
+          "assets/fonts/poppins_i7.42fd71da11e9d101e1e6c7932199f925f9eea42d.woff2"
+        ]
+      }
+    ]
+  },
+  "generated": {
+    "css_path": ".campaign-runtime/theme/brand-theme.css",
+    "fonts_css_path": ".campaign-runtime/theme/brand-fonts.css",
+    "report_path": ".campaign-runtime/theme/theme-report.json",
+    "safety": {
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    "stale": {
+      "stale": false,
+      "reasons": []
+    },
+    "can_generate": true,
+    "can_auto_generate": false,
+    "overwrite_requires_force": false
+  },
+  "existing_brand_layers": [
+    {
+      "path": "src/christmas-diamond-painting-light-wreath/assets/css/brand-theme.css",
+      "source": "target_repo_scan"
+    }
+  ],
+  "warnings": [
+    {
+      "code": "theme.source_tokens.conflict",
+      "message": "Source token --text-primary has conflicting values across source files.",
+      "detail": {
+        "token": "--text-primary",
+        "entries": [
+          {
+            "path": "christmas-diamond-painting/source/assets/css/base.css",
+            "role": "page",
+            "value": "#000000"
+          },
+          {
+            "path": "christmas-diamond-painting/source/assets/css/page.css",
+            "role": "page",
+            "value": "#ffffff"
+          }
+        ]
+      }
+    },
+    {
+      "code": "theme.source_tokens.conflict",
+      "message": "Source token --brand-accent has conflicting values across source files.",
+      "detail": {
+        "token": "--brand-accent",
+        "entries": [
+          {
+            "path": "christmas-diamond-painting/source/assets/css/base.css",
+            "role": "page",
+            "value": "#ffc800"
+          },
+          {
+            "path": "christmas-diamond-painting/source/assets/css/page.css",
+            "role": "page",
+            "value": "#a87e64"
+          }
+        ]
+      }
+    }
+  ],
+  "errors": [],
+  "next_action": "Run campaigns-os theme generate, then apply brand-theme.css after next-core.css on commerce pages."
+}

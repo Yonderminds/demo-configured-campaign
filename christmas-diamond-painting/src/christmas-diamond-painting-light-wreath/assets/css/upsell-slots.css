@@ -1,0 +1,129 @@
+/* Upsell / downsell style rows (campaign-owned, christmas-diamond-painting-light-wreath).
+   Styles the mv offer with upsell_offer.slot_layout: style-rows: the quantity buttons (rendered as
+   <button>, so the UA button chrome is reset here) and the one-row-per-wreath slots the SDK renders into
+   [data-next-bundle-slots-for]. Each row: package image, "Wreath N" + the SDK's native style <select>
+   (.next-slot-variant-select), and the unit price. Colours come from the brand-theme.css tokens. */
+
+.next-bundle-qty__row button.next-bundle-qty__btn {
+  font: inherit;
+  font-weight: 600;
+  padding: 0;
+  appearance: none;
+}
+
+.upsell-slots {
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+.upsell-slots__heading {
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+}
+
+.upsell-slots__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.upsell-slot {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem;
+  border: 1px solid var(--brand--color--primary-light, #ede4f2);
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.upsell-slot__image {
+  display: block;
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 6px;
+  background-color: var(--brand--color--surface, #f3f3f3);
+}
+
+.upsell-slot__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 0;
+  margin: 0;
+  font-weight: 400;
+}
+
+.upsell-slot__label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--brand--color--foreground, #121212);
+}
+
+.upsell-slot__select .next-slot-variant-field {
+  margin: 0;
+}
+
+.upsell-slot__select .next-slot-variant-select {
+  width: 100%;
+  min-height: 2.5rem;
+  padding: 0.4rem 2rem 0.4rem 0.6rem;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='none' stroke='%23121212' stroke-width='1.5' d='M1 1.5l5 5 5-5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 12px 8px;
+  font: inherit;
+  font-size: 0.9375rem;
+  color: var(--brand--color--foreground, #121212);
+  background-color: #fff;
+  border: 1px solid #cfcfcf;
+  border-radius: var(--radius-size--buttons, 6px);
+  text-overflow: ellipsis;
+}
+
+.upsell-slot__select .next-slot-variant-select:focus {
+  outline: 2px solid var(--brand--color--primary, #6d388b);
+  outline-offset: 1px;
+}
+
+.upsell-slot__price {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  white-space: nowrap;
+}
+
+.upsell-slot__unit-price {
+  font-weight: 700;
+}
+
+.upsell-slot__compare {
+  font-size: 0.8125rem;
+  color: #6c757d;
+  text-decoration: line-through;
+}
+
+@media (max-width: 479px) {
+  .next-bundle-qty.upsell-slots-qty {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .upsell-slots-qty .next-bundle-qty__row {
+    justify-content: space-between;
+  }
+
+  .upsell-slot {
+    grid-template-columns: 56px minmax(0, 1fr) auto;
+    gap: 0.5rem;
+  }
+
+  .upsell-slot__image {
+    width: 56px;
+    height: 56px;
+  }
+}

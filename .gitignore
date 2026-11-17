@@ -1,0 +1,41 @@
+# Build output
+_site/
+.tmp/
+
+# Tailwind — compiled output is generated at build time, never committed
+**/tailwind.output.css
+
+# Dependencies
+node_modules/
+
+# macOS
+**/.DS_Store
+.AppleDouble
+.LSOverride
+
+# Sass
+**/.sass-cache
+**/.sass-cache/*
+scss/
+
+# Prepros
+prepros.cfg
+prepros-6.config
+prepros.config
+
+# Editors
+.vscode/*
+.cursor/
+
+# Netlify
+.netlify
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Claude Code
+.claude/settings.local.json
+.claude/settings.json
+.gstack/

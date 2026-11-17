@@ -1,0 +1,2677 @@
+{
+  "schema_version": "campaigns-os-doctor-output/v0",
+  "generated_at": "2026-11-13T05:55:08.565Z",
+  "generated_by": "qa run",
+  "ok": true,
+  "status": "ready_with_warnings",
+  "errors": [],
+  "warnings": [
+    {
+      "code": "campaign.allowed_domains_confirmed",
+      "message": "Non-localhost preview/production origins are not confirmed in the Campaigns App SDK origin allowlist. SDK runtime checks may be blocked after deploy.",
+      "cause": "pre_existing",
+      "cause_reason": "same_status_in_prior_run"
+    },
+    {
+      "code": "page_kit.analytics_vendors.undeclared",
+      "message": "_data/campaigns.json[christmas-diamond-painting-light-wreath].axon_event_key switches AppLovin Axon on, but the CampaignSpec does not declare analytics.vendors.axon. The template loads AppLovin Axon on every page. Record it in the spec with `campaigns-os spec derive --packet <packet>` (or in the Map), or clear the key if AppLovin Axon should be off.",
+      "detail": {
+        "vendor": "axon",
+        "id_key": "axon_event_key",
+        "repair": {
+          "kind": "command",
+          "command": "campaigns-os spec derive --packet <packet>"
+        }
+      },
+      "cause": "pre_existing",
+      "cause_reason": "same_status_in_prior_run"
+    },
+    {
+      "code": "source_html.prep.document_wrapper",
+      "message": "Mapped source HTML (the converted page-kit page once it exists at page_kit.output_path, else the design) is a full browser document, not page-kit-ready source: landing.html (doctype, html, head, body). Strip <!doctype>, <html>, <head>, and <body> so the campaign layout can wrap the page, or, for a standalone page meant to stay whole, record wrapper_policy \"preserve_document_wrappers\" as an explicit adapter decision: re-run start or prepare-build with --wrapper-policy preserve_document_wrappers, or set \"wrapper_policy\" in the source-html manifest. The adapter contract records wrapper_policy \"preserve_document_wrappers\", so this is reported without blocking. See docs/quickstart.md \"Prepare Raw HTML Source\" and docs/source-adapters.md \"Source preparation check\".",
+      "detail": {
+        "pages": [
+          {
+            "page_id": "page_mweeqrin_6",
+            "path": "landing.html",
+            "wrappers": [
+              "doctype",
+              "html",
+              "head",
+              "body"
+            ]
+          }
+        ],
+        "docs": "docs/quickstart.md \"Prepare Raw HTML Source\" and docs/source-adapters.md \"Source preparation check\""
+      },
+      "cause": "pre_existing",
+      "cause_reason": "same_status_in_prior_run"
+    },
+    {
+      "code": "built_output.family_script_divergence.diverged",
+      "message": "_site/christmas-diamond-painting-light-wreath/js/axon.adapter.js differs from the shop-single-step family file js/axon.adapter.js (candidate by same built path; ancestry is not recorded) at NextCommerceCo/campaign-cart-starter-templates@5711e22 (SDK 0.4.43), src/shop-single-step/assets/js/axon.adapter.js: 217 line(s) against 120 (+97), 4 hunk(s) adding 100 and removing 3 line(s), the first at line 21. Advisory: confirm the campaign edit is intended before the next family or SDK update, or move it upstream.",
+      "detail": {
+        "finding": {
+          "file": "_site/christmas-diamond-painting-light-wreath/js/axon.adapter.js",
+          "pages": [
+            "checkout",
+            "downsell-50",
+            "index",
+            "receipt",
+            "upsell-30"
+          ],
+          "match": "path",
+          "ancestry": "candidate",
+          "reference_path": "js/axon.adapter.js",
+          "source_path": "src/shop-single-step/assets/js/axon.adapter.js",
+          "result": "diverged",
+          "diff": {
+            "local_lines": 217,
+            "reference_lines": 120,
+            "delta": 97,
+            "hunks": {
+              "count": 4,
+              "added": 100,
+              "removed": 3,
+              "first": [
+                {
+                  "local_start": 21,
+                  "local_lines": 16,
+                  "reference_start": 21,
+                  "reference_lines": 1
+                },
+                {
+                  "local_start": 74,
+                  "local_lines": 67,
+                  "reference_start": 59,
+                  "reference_lines": 0
+                },
+                {
+                  "local_start": 151,
+                  "local_lines": 3,
+                  "reference_start": 69,
+                  "reference_lines": 2
+                }
+              ]
+            }
+          }
+        },
+        "reference": {
+          "kind": "bundled",
+          "repo": "NextCommerceCo/campaign-cart-starter-templates",
+          "sha": "5711e22345756c655f41c0ae71444478e4a8999e",
+          "sdk_version": "0.4.43",
+          "label": "NextCommerceCo/campaign-cart-starter-templates@5711e22 (SDK 0.4.43)"
+        }
+      },
+      "cause": "pre_existing",
+      "cause_reason": "same_status_in_prior_run"
+    },
+    {
+      "code": "built_output.family_script_divergence.diverged",
+      "message": "_site/christmas-diamond-painting-light-wreath/js/checkout.js differs from the shop-single-step family file js/checkout.js (candidate by same built path; ancestry is not recorded) at NextCommerceCo/campaign-cart-starter-templates@5711e22 (SDK 0.4.43), src/shop-single-step/assets/js/checkout.js: 1 line(s) against 203 (-202), 1 hunk(s) adding 1 and removing 203 line(s), the first at line 1. Advisory: confirm the campaign edit is intended before the next family or SDK update, or move it upstream.",
+      "detail": {
+        "finding": {
+          "file": "_site/christmas-diamond-painting-light-wreath/js/checkout.js",
+          "pages": [
+            "checkout"
+          ],
+          "match": "path",
+          "ancestry": "candidate",
+          "reference_path": "js/checkout.js",
+          "source_path": "src/shop-single-step/assets/js/checkout.js",
+          "result": "diverged",
+          "diff": {
+            "local_lines": 1,
+            "reference_lines": 203,
+            "delta": -202,
+            "hunks": {
+              "count": 1,
+              "added": 1,
+              "removed": 203,
+              "first": [
+                {
+                  "local_start": 1,
+                  "local_lines": 1,
+                  "reference_start": 1,
+                  "reference_lines": 203
+                }
+              ]
+            }
+          }
+        },
+        "reference": {
+          "kind": "bundled",
+          "repo": "NextCommerceCo/campaign-cart-starter-templates",
+          "sha": "5711e22345756c655f41c0ae71444478e4a8999e",
+          "sdk_version": "0.4.43",
+          "label": "NextCommerceCo/campaign-cart-starter-templates@5711e22 (SDK 0.4.43)"
+        }
+      },
+      "cause": "pre_existing",
+      "cause_reason": "same_status_in_prior_run"
+    },
+    {
+      "code": "built_output.family_script_divergence.diverged",
+      "message": "_site/christmas-diamond-painting-light-wreath/js/upsells.js differs from the shop-single-step family file js/upsells.js (candidate by same built path; ancestry is not recorded) at NextCommerceCo/campaign-cart-starter-templates@5711e22 (SDK 0.4.43), src/shop-single-step/assets/js/upsells.js: 1 line(s) against 126 (-125), 1 hunk(s) adding 1 and removing 126 line(s), the first at line 1. Advisory: confirm the campaign edit is intended before the next family or SDK update, or move it upstream.",
+      "detail": {
+        "finding": {
+          "file": "_site/christmas-diamond-painting-light-wreath/js/upsells.js",
+          "pages": [
+            "downsell-50",
+            "upsell-30"
+          ],
+          "match": "path",
+          "ancestry": "candidate",
+          "reference_path": "js/upsells.js",
+          "source_path": "src/shop-single-step/assets/js/upsells.js",
+          "result": "diverged",
+          "diff": {
+            "local_lines": 1,
+            "reference_lines": 126,
+            "delta": -125,
+            "hunks": {
+              "count": 1,
+              "added": 1,
+              "removed": 126,
+              "first": [
+                {
+                  "local_start": 1,
+                  "local_lines": 1,
+                  "reference_start": 1,
+                  "reference_lines": 126
+                }
+              ]
+            }
+          }
+        },
+        "reference": {
+          "kind": "bundled",
+          "repo": "NextCommerceCo/campaign-cart-starter-templates",
+          "sha": "5711e22345756c655f41c0ae71444478e4a8999e",
+          "sdk_version": "0.4.43",
+          "label": "NextCommerceCo/campaign-cart-starter-templates@5711e22 (SDK 0.4.43)"
+        }
+      },
+      "cause": "pre_existing",
+      "cause_reason": "same_status_in_prior_run"
+    },
+    {
+      "code": "built_output.family_script_divergence.diverged",
+      "message": "_site/christmas-diamond-painting-light-wreath/js/payment-logos.js differs from the shop-single-step family file js/payment-logos.js (candidate by same built path; ancestry is not recorded) at NextCommerceCo/campaign-cart-starter-templates@5711e22 (SDK 0.4.43), src/shop-single-step/assets/js/payment-logos.js: 1 line(s) against 36 (-35), 1 hunk(s) adding 1 and removing 36 line(s), the first at line 1. Advisory: confirm the campaign edit is intended before the next family or SDK update, or move it upstream.",
+      "detail": {
+        "finding": {
+          "file": "_site/christmas-diamond-painting-light-wreath/js/payment-logos.js",
+          "pages": [
+            "downsell-50",
+            "upsell-30"
+          ],
+          "match": "path",
+          "ancestry": "candidate",
+          "reference_path": "js/payment-logos.js",
+          "source_path": "src/shop-single-step/assets/js/payment-logos.js",
+          "result": "diverged",
+          "diff": {
+            "local_lines": 1,
+            "reference_lines": 36,
+            "delta": -35,
+            "hunks": {
+              "count": 1,
+              "added": 1,
+              "removed": 36,
+              "first": [
+                {
+                  "local_start": 1,
+                  "local_lines": 1,
+                  "reference_start": 1,
+                  "reference_lines": 36
+                }
+              ]
+            }
+          }
+        },
+        "reference": {
+          "kind": "bundled",
+          "repo": "NextCommerceCo/campaign-cart-starter-templates",
+          "sha": "5711e22345756c655f41c0ae71444478e4a8999e",
+          "sdk_version": "0.4.43",
+          "label": "NextCommerceCo/campaign-cart-starter-templates@5711e22 (SDK 0.4.43)"
+        }
+      },
+      "cause": "pre_existing",
+      "cause_reason": "same_status_in_prior_run"
+    },
+    {
+      "code": "built_output.smoke_qc.og_image_missing",
+      "message": "smoke_qc warning on _site/christmas-diamond-painting-light-wreath/checkout/index.html (og:image): og_image_missing.",
+      "detail": {
+        "qc_result": {
+          "schema": "campaigns-os-qc-result/v0",
+          "id": "smoke_qc:_site/christmas-diamond-painting-light-wreath/checkout/index.html:og:image",
+          "check": "smoke_qc",
+          "leg": "doctor",
+          "result": "warning",
+          "reason_code": "og_image_missing",
+          "subject": {
+            "check": "smoke_qc",
+            "page": "_site/christmas-diamond-painting-light-wreath/checkout/index.html",
+            "key": "og:image"
+          },
+          "state_fingerprint": "sha256:bcfb2d644c145e722b6c7d01980d12acad9919729ff5e9902ad0e573bb1d5c80",
+          "observation": {
+            "page": "_site/christmas-diamond-painting-light-wreath/checkout/index.html",
+            "og": {
+              "title": true,
+              "description": true,
+              "image": "absent",
+              "image_target": null
+            }
+          },
+          "members": [],
+          "accept_eligible": true,
+          "coverage": {
+            "observed": 1,
+            "expected": 1,
+            "limits": []
+          },
+          "measured_at": "2026-11-13T05:55:08.492Z",
+          "producer": "campaigns-os doctor"
+        }
+      },
+      "cause": "pre_existing",
+      "cause_reason": "same_status_in_prior_run"
+    },
+    {
+      "code": "built_output.smoke_qc.og_image_missing",
+      "message": "smoke_qc warning on _site/christmas-diamond-painting-light-wreath/downsell-50/index.html (og:image): og_image_missing.",
+      "detail": {
+        "qc_result": {
+          "schema": "campaigns-os-qc-result/v0",
+          "id": "smoke_qc:_site/christmas-diamond-painting-light-wreath/downsell-50/index.html:og:image",
+          "check": "smoke_qc",
+          "leg": "doctor",
+          "result": "warning",
+          "reason_code": "og_image_missing",
+          "subject": {
+            "check": "smoke_qc",
+            "page": "_site/christmas-diamond-painting-light-wreath/downsell-50/index.html",
+            "key": "og:image"
+          },
+          "state_fingerprint": "sha256:0963e74aaad9331e072bcc9f45f5731321ef45e9953145934587c57199e69c0d",
+          "observation": {
+            "page": "_site/christmas-diamond-painting-light-wreath/downsell-50/index.html",
+            "og": {
+              "title": true,
+              "description": true,
+              "image": "absent",
+              "image_target": null
+            }
+          },
+          "members": [],
+          "accept_eligible": true,
+          "coverage": {
+            "observed": 1,
+            "expected": 1,
+            "limits": []
+          },
+          "measured_at": "2026-11-13T05:55:08.492Z",
+          "producer": "campaigns-os doctor"
+        }
+      },
+      "cause": "pre_existing",
+      "cause_reason": "same_status_in_prior_run"
+    },
+    {
+      "code": "built_output.smoke_qc.og_image_missing",
+      "message": "smoke_qc warning on _site/christmas-diamond-painting-light-wreath/index.html (og:image): og_image_missing.",
+      "detail": {
+        "qc_result": {
+          "schema": "campaigns-os-qc-result/v0",
+          "id": "smoke_qc:_site/christmas-diamond-painting-light-wreath/index.html:og:image",
+          "check": "smoke_qc",
+          "leg": "doctor",
+          "result": "warning",
+          "reason_code": "og_image_missing",
+          "subject": {
+            "check": "smoke_qc",
+            "page": "_site/christmas-diamond-painting-light-wreath/index.html",
+            "key": "og:image"
+          },
+          "state_fingerprint": "sha256:5bae4214c219723fae8ca6a4683c83e4fc491290dbc3bb941f55ee38a340661b",
+          "observation": {
+            "page": "_site/christmas-diamond-painting-light-wreath/index.html",
+            "og": {
+              "title": true,
+              "description": true,
+              "image": "absent",
+              "image_target": null
+            }
+          },
+          "members": [],
+          "accept_eligible": true,
+          "coverage": {
+            "observed": 1,
+            "expected": 1,
+            "limits": []
+          },
+          "measured_at": "2026-11-13T05:55:08.492Z",
+          "producer": "campaigns-os doctor"
+        }
+      },
+      "cause": "pre_existing",
+      "cause_reason": "same_status_in_prior_run"
+    },
+    {
+      "code": "built_output.smoke_qc.og_image_missing",
+      "message": "smoke_qc warning on _site/christmas-diamond-painting-light-wreath/receipt/index.html (og:image): og_image_missing.",
+      "detail": {
+        "qc_result": {
+          "schema": "campaigns-os-qc-result/v0",
+          "id": "smoke_qc:_site/christmas-diamond-painting-light-wreath/receipt/index.html:og:image",
+          "check": "smoke_qc",
+          "leg": "doctor",
+          "result": "warning",
+          "reason_code": "og_image_missing",
+          "subject": {
+            "check": "smoke_qc",
+            "page": "_site/christmas-diamond-painting-light-wreath/receipt/index.html",
+            "key": "og:image"
+          },
+          "state_fingerprint": "sha256:0a73bc8526be7bae2b99bf54c137e3bd17e21a928bdc2b190fc3e6c553cb7e49",
+          "observation": {
+            "page": "_site/christmas-diamond-painting-light-wreath/receipt/index.html",
+            "og": {
+              "title": true,
+              "description": true,
+              "image": "absent",
+              "image_target": null
+            }
+          },
+          "members": [],
+          "accept_eligible": true,
+          "coverage": {
+            "observed": 1,
+            "expected": 1,
+            "limits": []
+          },
+          "measured_at": "2026-11-13T05:55:08.492Z",
+          "producer": "campaigns-os doctor"
+        }
+      },
+      "cause": "pre_existing",
+      "cause_reason": "same_status_in_prior_run"
+    },
+    {
+      "code": "built_output.smoke_qc.og_image_missing",
+      "message": "smoke_qc warning on _site/christmas-diamond-painting-light-wreath/upsell-30/index.html (og:image): og_image_missing.",
+      "detail": {
+        "qc_result": {
+          "schema": "campaigns-os-qc-result/v0",
+          "id": "smoke_qc:_site/christmas-diamond-painting-light-wreath/upsell-30/index.html:og:image",
+          "check": "smoke_qc",
+          "leg": "doctor",
+          "result": "warning",
+          "reason_code": "og_image_missing",
+          "subject": {
+            "check": "smoke_qc",
+            "page": "_site/christmas-diamond-painting-light-wreath/upsell-30/index.html",
+            "key": "og:image"
+          },
+          "state_fingerprint": "sha256:b676ca414821bbea148b67e6c2ef6ecc9c45c6089099b9d092f5bc92ce80353a",
+          "observation": {
+            "page": "_site/christmas-diamond-painting-light-wreath/upsell-30/index.html",
+            "og": {
+              "title": true,
+              "description": true,
+              "image": "absent",
+              "image_target": null
+            }
+          },
+          "members": [],
+          "accept_eligible": true,
+          "coverage": {
+            "observed": 1,
+            "expected": 1,
+            "limits": []
+          },
+          "measured_at": "2026-11-13T05:55:08.492Z",
+          "producer": "campaigns-os doctor"
+        }
+      },
+      "cause": "pre_existing",
+      "cause_reason": "same_status_in_prior_run"
+    },
+    {
+      "code": "built_output.build_summary_stale",
+      "message": "Page Kit build summary predates 5 built page(s); the build ran again without re-capturing. Re-run `npx campaign-build --json > .campaign-runtime/page-kit-build-summary.json`.",
+      "detail": {
+        "newer_pages": 5
+      },
+      "cause": "pre_existing",
+      "cause_reason": "same_status_in_prior_run"
+    },
+    {
+      "code": "template_contract.discount_claim_unverified",
+      "message": "Assembly is recorded complete, but built output contains promo discount percentage claims without explicit CampaignSpec percentage discount values: target:downsell-50.html:84 \"50% claim\"; target:upsell-30.html:84 \"30% claim\". Confirm the intended business logic with the build request/merchant notes or remove the claims before launch.",
+      "cause": "pre_existing",
+      "cause_reason": "same_status_in_prior_run"
+    },
+    {
+      "code": "market_copy.us_specific_claims",
+      "message": "Campaign market scope needs copy review (available_shipping_countries=all), and source/template files contain US-specific starter copy: target:_includes/upsell/ships-info.html:8 \"USPS\"; target:_includes/upsell/ships-info.html:16 \"ships from the USA\". Confirm or replace this copy; do not remove it automatically.",
+      "cause": "pre_existing",
+      "cause_reason": "same_status_in_prior_run"
+    },
+    {
+      "code": "adapter.raw_html_conversion_status",
+      "message": "Assembly is recorded complete, but report.adapter_decisions.raw_html_conversion_status is \"pending\". Use record build --adapter-decision raw_html_conversion_status=<value> to record completed/not_required after wrapper stripping, frontmatter, asset moves, script/style refs, CTA rewrites, route policy, and layout choice are settled.",
+      "cause": "pre_existing",
+      "cause_reason": "same_status_in_prior_run"
+    },
+    {
+      "code": "adapter.wrapper_policy",
+      "message": "Assembly is recorded complete with report.adapter_decisions.wrapper_policy=\"preserve_document_wrappers\". Select wrapper_policy at intake with prepare-build --wrapper-policy or the source-html manifest's wrapper_policy option; page-kit source should normally strip document wrappers unless preserving them is explicitly not_required.",
+      "cause": "pre_existing",
+      "cause_reason": "same_status_in_prior_run"
+    },
+    {
+      "code": "adapter.commerce_shell_adoption",
+      "message": "Assembly is recorded complete, but report.adapter_decisions.commerce_shell_adoption is \"not_required\" for runtime commerce pages (page_mweeqrin_7, page_mweet1jv_9, page_mweet355_10, page_mweeqrin_8). Use record build --adapter-decision commerce_shell_adoption=<value> after commerce pages are template-clone-first, then styled, with SDK-owned surfaces preserved.",
+      "cause": "pre_existing",
+      "cause_reason": "same_status_in_prior_run"
+    },
+    {
+      "code": "adapter.template_files_copied",
+      "message": "Assembly is recorded complete, but report.adapter_decisions.template_files_copied.status is \"pending\". Copy or verify the selected template family as one atomic slice, not individual commerce pages.",
+      "cause": "pre_existing",
+      "cause_reason": "same_status_in_prior_run"
+    }
+  ],
+  "ready": [
+    "Build Packet schema campaign-runtime-build-packet/v0",
+    "Template family \"shop-single-step\" is certified (commerce catalog + brand contract)",
+    "Template family \"shop-single-step\" certification is current: last verified against SDK 0.4.43 (2026-10-24), the current SDK recorded by the vendored contracts.",
+    "Target campaign output directory exists",
+    "Target page-kit dependency ^0.3.0",
+    "Local CampaignSpec parsed",
+    "CampaignSpec spec_identity includes map_id and public_route_slug",
+    "Packet public_route_slug \"christmas-diamond-painting-light-wreath\" matches CampaignSpec identity and is not the Map ID",
+    "CampaignSpec public page routes are Page Kit-compatible",
+    "CampaignSpec required Store Profile fields are present for page-kit campaigns.json",
+    "CampaignSpec store_url points at a non-placeholder storefront",
+    "Built checkout carries no paypal, klarna, google_pay payment-method markup (_site/christmas-diamond-painting-light-wreath/checkout/index.html); left to browser QA: shared chrome asset upsell-payment-logos.svg",
+    "Target campaigns.json SDK version matches CampaignSpec (0.4.43).",
+    "Target campaigns.json Store Profile matches the CampaignSpec across all nine governed fields. Intentionally empty per the CampaignSpec: store_phone, store_phone_tel.",
+    "CampaignSpec shipping countries: all countries",
+    "CampaignSpec routing meta deferred to built-output verification (_site/christmas-diamond-painting-light-wreath/).",
+    "CampaignSpec routing hints match the routes of the pages they name",
+    "Source-html manifest source-html-manifest/v0 validated",
+    "Template-stock page(s) materialised by the build stage: page_mweeqrin_7 (shop-single-step), page_mweet1jv_9 (shop-single-step), page_mweet355_10 (shop-single-step), page_mweeqrin_8 (shop-single-step)",
+    "Source mappings cover active CampaignSpec pages",
+    "All mapped CampaignSpec pages are build candidates",
+    "CampaignSpec package purchase availability has no unavailable package refs in active build data",
+    "Built output root found at _site/christmas-diamond-painting-light-wreath/",
+    "Build output fingerprint matches stages.assembly.build_fingerprint (111 file(s) under _site/christmas-diamond-painting-light-wreath/)",
+    "Built HTML structure and commerce refs checked in _site/christmas-diamond-painting-light-wreath/ for 5 page(s)",
+    "Every bundle selector on 2 built post-purchase page(s) is scoped away from the live cart (4 selector(s) scanned)",
+    "All 5 built page(s) agree on campaign identity (next-funnel \"Christmas Diamond Painting Light Wreath\", API key consistent)",
+    "SDK markup: 3 data-next-* name(s) not in the Campaign Cart 0.4.43 attribute index (advisory; the SDK does not read them): data-next-catalog-component, data-next-content, data-next-skeleton",
+    "SDK markup checks passed on 5 built page(s)",
+    "All 7 campaign-owned script(s) loaded by built pages parse",
+    "Family scripts compared with shop-single-step at NextCommerceCo/campaign-cart-starter-templates@5711e22 (SDK 0.4.43) (advisory): 5 candidate family script(s), 1 identical, 4 diverged; generated configuration not compared: _site/christmas-diamond-painting-light-wreath/config.js; 1 other campaign script(s) match no family file.",
+    "Cart placeholder check on 5 built page(s): 5 page(s) pass, 0 warning or review result(s)",
+    "Built SDK meta tags checked in _site/christmas-diamond-painting-light-wreath/ for 5 page(s)",
+    "Built routes match CampaignSpec page routes (5/5 verified)",
+    "Built output carries no needs-input markers, unverified urgency chrome, or template demo residue",
+    "Campaigns API key available via the packet-local CampaignSpec campaign.campaigns_api_key",
+    "Commerce catalog sharedFrontmatterVocabulary loaded",
+    "Template agentContract loaded for shop-single-step",
+    "Template brand/residue/pricing contract loaded for shop-single-step",
+    "Template family inventory matrix loaded for shop-single-step",
+    "Built target output has no obvious demo-only or unsupported starter contract residue",
+    "Built target output has no generic starter placeholder or promo-code residue",
+    "Built target output has no literal template placeholder text",
+    "Built target output references no template demo placeholder assets",
+    "shop-single-step contract has no explicit shipping frontmatter residue in currently available mapped source/target pages",
+    "shop-single-step upsell offers have code-backed discounts or no code-less discount offer binding requirement",
+    "Built target output has no ungoverned shop-single-step exit-pop residue",
+    "source_html.adapter_contract adapter decision fields loaded",
+    "qa.proof_policy loaded: browser=true, typed_card_depth=common, order_path_depth=common",
+    "Campaign Build Brief is complete: merchandising/design presentation truth is available.",
+    "Build context schema campaign-runtime-build-context/v0",
+    "context.adapter_decisions adapter decision fields loaded",
+    "Brand theme context ready_with_warnings (medium confidence)",
+    "Assembly report schema campaign-runtime-assembly-report/v0",
+    "Assembly report theme applied",
+    "report.adapter_decisions adapter decision fields loaded",
+    "report.proof_policy loaded: browser=true, typed_card_depth=common, order_path_depth=common",
+    "Theme gate passed: Brand theme is applied after next-core.css on commerce pages.",
+    "Campaign CSS has no display:none rules on shop-single-step pricing surfaces",
+    "Polish gate passed: structured evidence is current for this build.",
+    "Hidden eager-media checkpoint passed: package-owned page-load evidence is complete and current."
+  ],
+  "derived": {
+    "packet_path": "./campaign-runtime.build.json",
+    "assembly_report_path": ".campaign-runtime/assembly-report.json",
+    "map_id": "christmas-diamond-painting-light-wreath-z56g",
+    "public_route_slug": "christmas-diamond-painting-light-wreath",
+    "template_family": "shop-single-step",
+    "source_root": "./source",
+    "target_repo": ".",
+    "target_output_dir": "./src/christmas-diamond-painting-light-wreath",
+    "spec_path": ".campaign-runtime/fetched-specs/christmas-diamond-painting-light-wreath-z56g.json",
+    "doctor_checks": [
+      "campaign-spec.rule-registry",
+      "spec.identity_export",
+      "campaign.route_slug_identity",
+      "campaign.route_root",
+      "spec.public_routes",
+      "spec.store_profile",
+      "page_kit.sdk_version",
+      "page_kit.store_profile",
+      "page_kit.analytics_vendors",
+      "spec.shipping_countries",
+      "spec.routing_meta_tags",
+      "spec.routing_hint_stale",
+      "spec.routing_host_prefix",
+      "source_html.coverage",
+      "source_html.preparation",
+      "spec.package_availability",
+      "built_output.target_root",
+      "built_output.fingerprint",
+      "qa.baseline_accepted",
+      "built_output.pages",
+      "built_output.live_campaign_refs",
+      "built_output.upsell_selector_scope",
+      "built_output.campaign_identity",
+      "built_output.sdk_markup",
+      "built_output.script_syntax",
+      "built_output.family_script_divergence",
+      "built_output.cart_placeholders",
+      "built_output.smoke_qc",
+      "built_output.sdk_meta_tags",
+      "built_output.build_summary",
+      "built_output.route_drift",
+      "built_output.content_residue",
+      "built_output.proof_attestation",
+      "campaign.api_key",
+      "assembly.commerce_catalog",
+      "market_copy",
+      "source_html.adapter_contract",
+      "qa.proof_policy",
+      "build_brief.artifact",
+      "context.shape",
+      "assembly_report.shape"
+    ],
+    "checkpoint_gates": [
+      {
+        "id": "page_kit.sdk_version",
+        "scope": "page_kit.sdk_version",
+        "status": "pass",
+        "code": "page_kit.sdk_version.pass",
+        "reason": "Target SDK version exactly matches the CampaignSpec (0.4.43).",
+        "waivable": false,
+        "subject": {
+          "public_route_slug": "christmas-diamond-painting-light-wreath",
+          "target_path": "_data/campaigns.json"
+        },
+        "state": {
+          "expected": "0.4.43",
+          "observed": "0.4.43"
+        },
+        "state_fingerprint": null,
+        "expected_sdk_version": "0.4.43",
+        "observed_sdk_version": "0.4.43",
+        "expected_source": "global_config.sdk_version",
+        "waiver": null,
+        "waiver_assessment": {
+          "active": null,
+          "inert_counts": {
+            "stale": 0,
+            "foreign": 0,
+            "malformed": 0,
+            "expired": 0
+          }
+        },
+        "required_actions": []
+      },
+      {
+        "id": "page_kit.store_profile",
+        "scope": "page_kit.store_profile",
+        "status": "pass",
+        "code": "page_kit.store_profile.pass",
+        "reason": "Target Store Profile exactly matches the CampaignSpec for all nine governed fields. Intentionally empty per the CampaignSpec: store_phone, store_phone_tel.",
+        "waivable": false,
+        "subject": {
+          "public_route_slug": "christmas-diamond-painting-light-wreath",
+          "target_path": "_data/campaigns.json"
+        },
+        "state": {
+          "discrepancies": []
+        },
+        "state_fingerprint": "sha256:336142b94e5653f05538007828102b7a212e72d1a8e795ae34ee492cee506597",
+        "matrix": [
+          {
+            "field": "store_name",
+            "kind": "match",
+            "spec": "Coerneuineo",
+            "target": "Coerneuineo",
+            "severity": "clean"
+          },
+          {
+            "field": "store_url",
+            "kind": "match",
+            "spec": "https://coerneuineo.29next.store/",
+            "target": "https://coerneuineo.29next.store/",
+            "severity": "clean"
+          },
+          {
+            "field": "store_terms",
+            "kind": "match",
+            "spec": "https://coerneuineo.com/pages/terms-of-purchase",
+            "target": "https://coerneuineo.com/pages/terms-of-purchase",
+            "severity": "clean"
+          },
+          {
+            "field": "store_privacy",
+            "kind": "match",
+            "spec": "https://coerneuineo.com/pages/privacy-notice",
+            "target": "https://coerneuineo.com/pages/privacy-notice",
+            "severity": "clean"
+          },
+          {
+            "field": "store_contact",
+            "kind": "match",
+            "spec": "https://coerneuineo.com/pages/contact",
+            "target": "https://coerneuineo.com/pages/contact",
+            "severity": "clean"
+          },
+          {
+            "field": "store_returns",
+            "kind": "match",
+            "spec": "https://coerneuineo.com/pages/return-policy",
+            "target": "https://coerneuineo.com/pages/return-policy",
+            "severity": "clean"
+          },
+          {
+            "field": "store_shipping",
+            "kind": "match",
+            "spec": "https://coerneuineo.com/pages/shipping-policy",
+            "target": "https://coerneuineo.com/pages/shipping-policy",
+            "severity": "clean"
+          },
+          {
+            "field": "store_phone",
+            "kind": "intentionally_empty",
+            "spec": "",
+            "target": "",
+            "severity": "clean"
+          },
+          {
+            "field": "store_phone_tel",
+            "kind": "intentionally_empty",
+            "spec": "",
+            "target": "",
+            "severity": "clean"
+          }
+        ],
+        "blocker_fields": [],
+        "warning_fields": [],
+        "waiver": null,
+        "waiver_assessment": {
+          "active": null,
+          "inert_counts": {
+            "stale": 0,
+            "foreign": 0,
+            "malformed": 0,
+            "expired": 0
+          }
+        },
+        "required_actions": []
+      },
+      {
+        "id": "built_output.upsell_selector_scope",
+        "scope": "built_output.upsell_selector_scope",
+        "status": "pass",
+        "code": "built_output.upsell_selector_scope.pass",
+        "reason": "Every bundle selector on 2 built post-purchase page(s) is scoped away from the live cart.",
+        "waivable": false,
+        "subject": {
+          "public_route_slug": "christmas-diamond-painting-light-wreath",
+          "site_root": "./_site/christmas-diamond-painting-light-wreath"
+        },
+        "state": {
+          "findings": []
+        },
+        "state_fingerprint": null,
+        "findings": [],
+        "warned": [],
+        "pages_scanned": 2,
+        "selectors_scanned": 4,
+        "waiver": null,
+        "waiver_assessment": {
+          "active": null,
+          "inert_counts": {
+            "stale": 0,
+            "foreign": 0,
+            "malformed": 0,
+            "expired": 0
+          }
+        },
+        "required_actions": []
+      },
+      {
+        "id": "built_output.campaign_identity",
+        "scope": "built_output.campaign_identity",
+        "waivable": false,
+        "subject": {
+          "public_route_slug": "christmas-diamond-painting-light-wreath",
+          "site_root": "./_site/christmas-diamond-painting-light-wreath"
+        },
+        "waiver": null,
+        "status": "pass",
+        "code": "built_output.campaign_identity.pass",
+        "reason": "All 5 built page(s) agree on campaign identity (API key present, next-funnel \"Christmas Diamond Painting Light Wreath\").",
+        "findings": [],
+        "pages_scanned": 5,
+        "pages_skipped": [],
+        "identity": {
+          "api_key": "VB3ZMyWg56vjPHU4ATcnOFOOiUaR08u5gKGLzJHC",
+          "api_key_source": "/christmas-diamond-painting-light-wreath/config.js nextConfig.apiKey",
+          "funnel": "Christmas Diamond Painting Light Wreath"
+        },
+        "required_actions": []
+      },
+      {
+        "id": "built_output.sdk_markup",
+        "scope": "built_output.sdk_markup",
+        "waivable": false,
+        "subject": {
+          "public_route_slug": "christmas-diamond-painting-light-wreath",
+          "site_root": "./_site/christmas-diamond-painting-light-wreath"
+        },
+        "waiver": null,
+        "sdk_attribute_index_version": "0.4.43",
+        "campaign_sdk_version": "0.4.43",
+        "status": "pass",
+        "code": "built_output.sdk_markup.pass",
+        "reason": "SDK markup checks passed on 5 built page(s).",
+        "findings": [],
+        "warned": [],
+        "unknown_attributes": [
+          {
+            "name": "data-next-catalog-component",
+            "pages": [
+              "./_site/christmas-diamond-painting-light-wreath/checkout/index.html",
+              "./_site/christmas-diamond-painting-light-wreath/downsell-50/index.html",
+              "./_site/christmas-diamond-painting-light-wreath/receipt/index.html",
+              "./_site/christmas-diamond-painting-light-wreath/upsell-30/index.html"
+            ]
+          },
+          {
+            "name": "data-next-content",
+            "pages": [
+              "./_site/christmas-diamond-painting-light-wreath/receipt/index.html"
+            ]
+          },
+          {
+            "name": "data-next-skeleton",
+            "pages": [
+              "./_site/christmas-diamond-painting-light-wreath/receipt/index.html"
+            ]
+          }
+        ],
+        "pages_scanned": 5,
+        "required_actions": []
+      },
+      {
+        "id": "built_output.script_syntax",
+        "scope": "built_output.script_syntax",
+        "waivable": false,
+        "subject": {
+          "public_route_slug": "christmas-diamond-painting-light-wreath",
+          "site_root": "./_site/christmas-diamond-painting-light-wreath"
+        },
+        "waiver": null,
+        "status": "pass",
+        "code": "built_output.script_syntax.pass",
+        "reason": "All 7 campaign-owned script(s) loaded by 5 built page(s) parse.",
+        "findings": [],
+        "scripts_scanned": 7,
+        "scripts_unresolved": [],
+        "scripts_outside_site": [],
+        "warned": [],
+        "pages_scanned": 5,
+        "required_actions": []
+      }
+    ],
+    "qc_results": [
+      {
+        "schema": "campaigns-os-qc-result/v0",
+        "id": "cart_placeholders:_site/christmas-diamond-painting-light-wreath/checkout/index.html:page",
+        "check": "cart_placeholders",
+        "leg": "doctor",
+        "result": "pass",
+        "reason_code": null,
+        "subject": {
+          "check": "cart_placeholders",
+          "page": "_site/christmas-diamond-painting-light-wreath/checkout/index.html",
+          "key": "page"
+        },
+        "state_fingerprint": "sha256:7f5a4757e5766a4e50eb31dc2314f49d1ae058d61c2e063d09ceb76b83362dcf",
+        "observation": {
+          "page": "_site/christmas-diamond-painting-light-wreath/checkout/index.html",
+          "sdk_pin": "0.4.43",
+          "sdk_pin_source": "loader",
+          "token": null,
+          "shape_sha256": null,
+          "known": false,
+          "occurrences": [],
+          "bytes": 36167,
+          "candidates": 46
+        },
+        "members": [],
+        "accept_eligible": false,
+        "coverage": {
+          "observed": 1,
+          "expected": 1,
+          "limits": []
+        },
+        "measured_at": "2026-11-13T05:55:08.486Z",
+        "producer": "campaigns-os doctor"
+      },
+      {
+        "schema": "campaigns-os-qc-result/v0",
+        "id": "cart_placeholders:_site/christmas-diamond-painting-light-wreath/downsell-50/index.html:page",
+        "check": "cart_placeholders",
+        "leg": "doctor",
+        "result": "pass",
+        "reason_code": null,
+        "subject": {
+          "check": "cart_placeholders",
+          "page": "_site/christmas-diamond-painting-light-wreath/downsell-50/index.html",
+          "key": "page"
+        },
+        "state_fingerprint": "sha256:6405850a25c3411cc543547c935e77b55c7fb1de694e70a7f7e2c013789add71",
+        "observation": {
+          "page": "_site/christmas-diamond-painting-light-wreath/downsell-50/index.html",
+          "sdk_pin": "0.4.43",
+          "sdk_pin_source": "loader",
+          "token": null,
+          "shape_sha256": null,
+          "known": false,
+          "occurrences": [],
+          "bytes": 29924,
+          "candidates": 3
+        },
+        "members": [],
+        "accept_eligible": false,
+        "coverage": {
+          "observed": 1,
+          "expected": 1,
+          "limits": []
+        },
+        "measured_at": "2026-11-13T05:55:08.486Z",
+        "producer": "campaigns-os doctor"
+      },
+      {
+        "schema": "campaigns-os-qc-result/v0",
+        "id": "cart_placeholders:_site/christmas-diamond-painting-light-wreath/index.html:page",
+        "check": "cart_placeholders",
+        "leg": "doctor",
+        "result": "pass",
+        "reason_code": null,
+        "subject": {
+          "check": "cart_placeholders",
+          "page": "_site/christmas-diamond-painting-light-wreath/index.html",
+          "key": "page"
+        },
+        "state_fingerprint": "sha256:818e2d18938d7337098fbcd7c8363dc4ee420336caa4315747d2537b13f07e9b",
+        "observation": {
+          "page": "_site/christmas-diamond-painting-light-wreath/index.html",
+          "sdk_pin": "0.4.43",
+          "sdk_pin_source": "loader",
+          "token": null,
+          "shape_sha256": null,
+          "known": false,
+          "occurrences": [],
+          "bytes": 128873,
+          "candidates": 9
+        },
+        "members": [],
+        "accept_eligible": false,
+        "coverage": {
+          "observed": 1,
+          "expected": 1,
+          "limits": []
+        },
+        "measured_at": "2026-11-13T05:55:08.486Z",
+        "producer": "campaigns-os doctor"
+      },
+      {
+        "schema": "campaigns-os-qc-result/v0",
+        "id": "cart_placeholders:_site/christmas-diamond-painting-light-wreath/receipt/index.html:page",
+        "check": "cart_placeholders",
+        "leg": "doctor",
+        "result": "pass",
+        "reason_code": null,
+        "subject": {
+          "check": "cart_placeholders",
+          "page": "_site/christmas-diamond-painting-light-wreath/receipt/index.html",
+          "key": "page"
+        },
+        "state_fingerprint": "sha256:f85a615e36d4874c25f12af9b6b25d329b2a6226ef35fd29ba0ab79978f6b8cb",
+        "observation": {
+          "page": "_site/christmas-diamond-painting-light-wreath/receipt/index.html",
+          "sdk_pin": "0.4.43",
+          "sdk_pin_source": "loader",
+          "token": null,
+          "shape_sha256": null,
+          "known": false,
+          "occurrences": [],
+          "bytes": 33499,
+          "candidates": 8
+        },
+        "members": [],
+        "accept_eligible": false,
+        "coverage": {
+          "observed": 1,
+          "expected": 1,
+          "limits": []
+        },
+        "measured_at": "2026-11-13T05:55:08.486Z",
+        "producer": "campaigns-os doctor"
+      },
+      {
+        "schema": "campaigns-os-qc-result/v0",
+        "id": "cart_placeholders:_site/christmas-diamond-painting-light-wreath/upsell-30/index.html:page",
+        "check": "cart_placeholders",
+        "leg": "doctor",
+        "result": "pass",
+        "reason_code": null,
+        "subject": {
+          "check": "cart_placeholders",
+          "page": "_site/christmas-diamond-painting-light-wreath/upsell-30/index.html",
+          "key": "page"
+        },
+        "state_fingerprint": "sha256:9a357ca7e057c94e5f60d8a98b6cf4e10b115a66dc4d44e587e90e7dc3f883c7",
+        "observation": {
+          "page": "_site/christmas-diamond-painting-light-wreath/upsell-30/index.html",
+          "sdk_pin": "0.4.43",
+          "sdk_pin_source": "loader",
+          "token": null,
+          "shape_sha256": null,
+          "known": false,
+          "occurrences": [],
+          "bytes": 29996,
+          "candidates": 3
+        },
+        "members": [],
+        "accept_eligible": false,
+        "coverage": {
+          "observed": 1,
+          "expected": 1,
+          "limits": []
+        },
+        "measured_at": "2026-11-13T05:55:08.486Z",
+        "producer": "campaigns-os doctor"
+      },
+      {
+        "schema": "campaigns-os-qc-result/v0",
+        "id": "smoke_qc:_site/christmas-diamond-painting-light-wreath/checkout/index.html:favicon:link",
+        "check": "smoke_qc",
+        "leg": "doctor",
+        "result": "pass",
+        "reason_code": null,
+        "subject": {
+          "check": "smoke_qc",
+          "page": "_site/christmas-diamond-painting-light-wreath/checkout/index.html",
+          "key": "favicon:link"
+        },
+        "state_fingerprint": "sha256:2828058c25e753be6b93b7f402a4aa2fa83e5078b30585fb0c7fabf22755295c",
+        "observation": {
+          "page": "_site/christmas-diamond-painting-light-wreath/checkout/index.html",
+          "favicon": true
+        },
+        "members": [],
+        "accept_eligible": false,
+        "coverage": {
+          "observed": 1,
+          "expected": 1,
+          "limits": []
+        },
+        "measured_at": "2026-11-13T05:55:08.492Z",
+        "producer": "campaigns-os doctor"
+      },
+      {
+        "schema": "campaigns-os-qc-result/v0",
+        "id": "smoke_qc:_site/christmas-diamond-painting-light-wreath/checkout/index.html:og:title",
+        "check": "smoke_qc",
+        "leg": "doctor",
+        "result": "pass",
+        "reason_code": null,
+        "subject": {
+          "check": "smoke_qc",
+          "page": "_site/christmas-diamond-painting-light-wreath/checkout/index.html",
+          "key": "og:title"
+        },
+        "state_fingerprint": "sha256:b50e98f9665d6965949e47b98173b400b7f08608d12478c9a67c6daa2a56ad01",
+        "observation": {
+          "page": "_site/christmas-diamond-painting-light-wreath/checkout/index.html",
+          "og": {
+            "title": true,
+            "description": true,
+            "image": "absent",
+            "image_target": null
+          }
+        },
+        "members": [],
+        "accept_eligible": false,
+        "coverage": {
+          "observed": 1,
+          "expected": 1,
+          "limits": []
+        },
+        "measured_at": "2026-11-13T05:55:08.492Z",
+        "producer": "campaigns-os doctor"
+      },
+      {
+        "schema": "campaigns-os-qc-result/v0",
+        "id": "smoke_qc:_site/christmas-diamond-painting-light-wreath/checkout/index.html:og:description",
+        "check": "smoke_qc",
+        "leg": "doctor",
+        "result": "pass",
+        "reason_code": null,
+        "subject": {
+          "check": "smoke_qc",
+          "page": "_site/christmas-diamond-painting-light-wreath/checkout/index.html",
+          "key": "og:description"
+        },
+        "state_fingerprint": "sha256:f7c1d21e3cc18594835d4b04120d99bed030c0fd9c522fabec63b9f8ec58f2e6",
+        "observation": {
+          "page": "_site/christmas-diamond-painting-light-wreath/checkout/index.html",
+          "og": {
+            "title": true,
+            "description": true,
+            "image": "absent",
+            "image_target": null
+          }
+        },
+        "members": [],
+        "accept_eligible": false,
+        "coverage": {
+          "observed": 1,
+          "expected": 1,
+          "limits": []
+        },
+        "measured_at": "2026-11-13T05:55:08.492Z",
+        "producer": "campaigns-os doctor"
+      },
+      {
+        "schema": "campaigns-os-qc-result/v0",
+        "id": "smoke_qc:_site/christmas-diamond-painting-light-wreath/checkout/index.html:og:image",
+        "check": "smoke_qc",
+        "leg": "doctor",
+        "result": "warning",
+        "reason_code": "og_image_missing",
+        "subject": {
+          "check": "smoke_qc",
+          "page": "_site/christmas-diamond-painting-light-wreath/checkout/index.html",
+          "key": "og:image"
+        },
+        "state_fingerprint": "sha256:bcfb2d644c145e722b6c7d01980d12acad9919729ff5e9902ad0e573bb1d5c80",
+        "observation": {
+          "page": "_site/christmas-diamond-painting-light-wreath/checkout/index.html",
+          "og": {
+            "title": true,
+            "description": true,
+            "image": "absent",
+            "image_target": null
+          }
+        },
+        "members": [],
+        "accept_eligible": true,
+        "coverage": {
+          "observed": 1,
+          "expected": 1,
+          "limits": []
+        },
+        "measured_at": "2026-11-13T05:55:08.492Z",
+        "producer": "campaigns-os doctor"
+      },
+      {
+        "schema": "campaigns-os-qc-result/v0",
+        "id": "smoke_qc:_site/christmas-diamond-painting-light-wreath/checkout/index.html:tailwind_cdn:cdn.tailwindcss.com",
+        "check": "smoke_qc",
+        "leg": "doctor",
+        "result": "unexercised",
+        "reason_code": "build_environment_unknown",
+        "subject": {
+          "check": "smoke_qc",
+          "page": "_site/christmas-diamond-painting-light-wreath/checkout/index.html",
+          "key": "tailwind_cdn:cdn.tailwindcss.com"
+        },
+        "state_fingerprint": "sha256:10c591624de23a025ba4ce61f33261b876a1bbdc96f025e6cadbbd84922e9673",
+        "observation": {
+          "page": "_site/christmas-diamond-painting-light-wreath/checkout/index.html",
+          "tailwind_cdn": 0,
+          "environment": "unknown"
+        },
+        "members": [],
+        "accept_eligible": false,
+        "coverage": {
+          "observed": 0,
+          "expected": 1,
+          "limits": [
+            "build_environment_unknown"
+          ]
+        },
+        "measured_at": "2026-11-13T05:55:08.492Z",
+        "producer": "campaigns-os doctor"
+      },
+      {
+        "schema": "campaigns-os-qc-result/v0",
+        "id": "smoke_qc:_site/christmas-diamond-painting-light-wreath/checkout/index.html:asset_host:cdn.29next.store",
+        "check": "smoke_qc",
+        "leg": "doctor",
+        "result": "pass",
+        "reason_code": null,
+        "subject": {
+          "check": "smoke_qc",
+          "page": "_site/christmas-diamond-painting-light-wreath/checkout/index.html",
+          "key": "asset_host:cdn.29next.store"
+        },
+        "state_fingerprint": "sha256:33cbe1b3f5b072c038c3f8dd0c964d87f7278621934c38a311140dfb6132f7cf",
+        "observation": {
+          "page": "_site/christmas-diamond-painting-light-wreath/checkout/index.html",
+          "asset_host_refs": []
+        },
+        "members": [],
+        "accept_eligible": false,
+        "coverage": {
+          "observed": 1,
+          "expected": 1,
+          "limits": []
+        },
+        "measured_at": "2026-11-13T05:55:08.492Z",
+        "producer": "campaigns-os doctor"
+      },
+      {
+        "schema": "campaigns-os-qc-result/v0",
+        "id": "smoke_qc:_site/christmas-diamond-painting-light-wreath/checkout/index.html:loopback:loopback",
+        "check": "smoke_qc",
+        "leg": "doctor",
+        "result": "unexercised",
+        "reason_code": "build_environment_unknown",
+        "subject": {
+          "check": "smoke_qc",
+          "page": "_site/christmas-diamond-painting-light-wreath/checkout/index.html",
+          "key": "loopback:loopback"
+        },
+        "state_fingerprint": "sha256:a9ecdd1849f99be6f559e5698d2603fbe43042b85d2e68b03e635a66a2e3aaea",
+        "observation": {
+          "page": "_site/christmas-diamond-painting-light-wreath/checkout/index.html",
+          "loopback_refs": [],
+          "environment": "unknown"
+        },
+        "members": [],
+        "accept_eligible": false,
+        "coverage": {
+          "observed": 0,
+          "expected": 1,
+          "limits": [
+            "build_environment_unknown"
+          ]
+        },
+        "measured_at": "2026-11-13T05:55:08.492Z",
+        "producer": "campaigns-os doctor"
+      },
+      {
+        "schema": "campaigns-os-qc-result/v0",
+        "id": "smoke_qc:_site/christmas-diamond-painting-light-wreath/downsell-50/index.html:anchor:",
+        "check": "smoke_qc",
+        "leg": "doctor",
+        "result": "pass",
+        "reason_code": null,
+        "subject": {
+          "check": "smoke_qc",
+          "page": "_site/christmas-diamond-painting-light-wreath/downsell-50/index.html",
+          "key": "anchor:"
+        },
+        "state_fingerprint": "sha256:adfd509887e664d3437eae18090c44fc0608dc7046699e094c23d260fcf93bfa",
+        "observation": {
+          "page": "_site/christmas-diamond-painting-light-wreath/downsell-50/index.html",
+          "target": "",
+          "outcome": "resolved",
+          "scripts_read": null,
+          "scripts_loaded": null
+        },
+        "members": [],
+        "accept_eligible": false,
+        "coverage": {
+          "observed": 1,
+          "expected": 1,
+          "limits": []
+        },
+        "measured_at": "2026-11-13T05:55:08.492Z",
+        "producer": "campaigns-os doctor"
+      },
+      {
+        "schema": "campaigns-os-qc-result/v0",
+        "id": "smoke_qc:_site/christmas-diamond-painting-light-wreath/downsell-50/index.html:favicon:link",
+        "check": "smoke_qc",
+        "leg": "doctor",
+        "result": "pass",
+        "reason_code": null,
+        "subject": {
+          "check": "smoke_qc",
+          "page": "_site/christmas-diamond-painting-light-wreath/downsell-50/index.html",
+          "key": "favicon:link"
+        },
+        "state_fingerprint": "sha256:bba950ca94ceb4fd5573449b89eb0aa6706e31c2dadb1de971ba63b11d5f90e8",
+        "observation": {
+          "page": "_site/christmas-diamond-painting-light-wreath/downsell-50/index.html",
+          "favicon": true
+        },
+        "members": [],
+        "accept_eligible": false,
+        "coverage": {
+          "observed": 1,
+          "expected": 1,
+          "limits": []
+        },
+        "measured_at": "2026-11-13T05:55:08.492Z",
+        "producer": "campaigns-os doctor"
+      },
+      {
+        "schema": "campaigns-os-qc-result/v0",
+        "id": "smoke_qc:_site/christmas-diamond-painting-light-wreath/downsell-50/index.html:og:title",
+        "check": "smoke_qc",
+        "leg": "doctor",
+        "result": "pass",
+        "reason_code": null,
+        "subject": {
+          "check": "smoke_qc",
+          "page": "_site/christmas-diamond-painting-light-wreath/downsell-50/index.html",
+          "key": "og:title"
+        },
+        "state_fingerprint": "sha256:201c84dd88e8161ee90f01c76352daeda6bb50878a3c951880dea78161b8e172",
+        "observation": {
+          "page": "_site/christmas-diamond-painting-light-wreath/downsell-50/index.html",
+          "og": {
+            "title": true,
+            "description": true,
+            "image": "absent",
+            "image_target": null
+          }
+        },
+        "members": [],
+        "accept_eligible": false,
+        "coverage": {
+          "observed": 1,
+          "expected": 1,
+          "limits": []
+        },
+        "measured_at": "2026-11-13T05:55:08.492Z",
+        "producer": "campaigns-os doctor"
+      },
+      {
+        "schema": "campaigns-os-qc-result/v0",
+        "id": "smoke_qc:_site/christmas-diamond-painting-light-wreath/downsell-50/index.html:og:description",
+        "check": "smoke_qc",
+        "leg": "doctor",
+        "result": "pass",
+        "reason_code": null,
+        "subject": {
+          "check": "smoke_qc",
+          "page": "_site/christmas-diamond-painting-light-wreath/downsell-50/index.html",
+          "key": "og:description"
+        },
+        "state_fingerprint": "sha256:668ee4405e3065002a7707d793b0ee6e2f961ab953b275624db4e2220b44242d",
+        "observation": {
+          "page": "_site/christmas-diamond-painting-light-wreath/downsell-50/index.html",
+          "og": {
+            "title": true,
+            "description": true,
+            "image": "absent",
+            "image_target": null
+          }
+        },
+        "members": [],
+        "accept_eligible": false,
+        "coverage": {
+          "observed": 1,
+          "expected": 1,
+          "limits": []
+        },
+        "measured_at": "2026-11-13T05:55:08.492Z",
+        "producer": "campaigns-os doctor"
+      },
+      {
+        "schema": "campaigns-os-qc-result/v0",
+        "id": "smoke_qc:_site/christmas-diamond-painting-light-wreath/downsell-50/index.html:og:image",
+        "check": "smoke_qc",
+        "leg": "doctor",
+        "result": "warning",
+        "reason_code": "og_image_missing",
+        "subject": {
+          "check": "smoke_qc",
+          "page": "_site/christmas-diamond-painting-light-wreath/downsell-50/index.html",
+          "key": "og:image"
+        },
+        "state_fingerprint": "sha256:0963e74aaad9331e072bcc9f45f5731321ef45e9953145934587c57199e69c0d",
+        "observation": {
+          "page": "_site/christmas-diamond-painting-light-wreath/downsell-50/index.html",
+          "og": {
+            "title": true,
+            "description": true,
+            "image": "absent",
+            "image_target": null
+          }
+        },
+        "members": [],
+        "accept_eligible": true,
+        "coverage": {
+          "observed": 1,
+          "expected": 1,
+          "limits": []
+        },
+        "measured_at": "2026-11-13T05:55:08.492Z",
+        "producer": "campaigns-os doctor"
+      },
+      {
+        "schema": "campaigns-os-qc-result/v0",
+        "id": "smoke_qc:_site/christmas-diamond-painting-light-wreath/downsell-50/index.html:tailwind_cdn:cdn.tailwindcss.com",
+        "check": "smoke_qc",
+        "leg": "doctor",
+        "result": "unexercised",
+        "reason_code": "build_environment_unknown",
+        "subject": {
+          "check": "smoke_qc",
+          "page": "_site/christmas-diamond-painting-light-wreath/downsell-50/index.html",
+          "key": "tailwind_cdn:cdn.tailwindcss.com"
+        },
+        "state_fingerprint": "sha256:93ac33b286519d5f7b24cfd64d5668be6014f69eba39a8bd37ad54a65095d22d",
+        "observation": {
+          "page": "_site/christmas-diamond-painting-light-wreath/downsell-50/index.html",
+          "tailwind_cdn": 0,
+          "environment": "unknown"
+        },
+        "members": [],
+        "accept_eligible": false,
+        "coverage": {
+          "observed": 0,
+          "expected": 1,
+          "limits": [
+            "build_environment_unknown"
+          ]
+        },
+        "measured_at": "2026-11-13T05:55:08.492Z",
+        "producer": "campaigns-os doctor"
+      },
+      {
+        "schema": "campaigns-os-qc-result/v0",
+        "id": "smoke_qc:_site/christmas-diamond-painting-light-wreath/downsell-50/index.html:asset_host:cdn.29next.store",
+        "check": "smoke_qc",
+        "leg": "doctor",
+        "result": "pass",
+        "reason_code": null,
+        "subject": {
+          "check": "smoke_qc",
+          "page": "_site/christmas-diamond-painting-light-wreath/downsell-50/index.html",
+          "key": "asset_host:cdn.29next.store"
+        },
+        "state_fingerprint": "sha256:509cf36d85849c57ec64730c7c8faa1020b9008b6f8e386e8313202169011c6f",
+        "observation": {
+          "page": "_site/christmas-diamond-painting-light-wreath/downsell-50/index.html",
+          "asset_host_refs": []
+        },
+        "members": [],
+        "accept_eligible": false,
+        "coverage": {
+          "observed": 1,
+          "expected": 1,
+          "limits": []
+        },
+        "measured_at": "2026-11-13T05:55:08.492Z",
+        "producer": "campaigns-os doctor"
+      },
+      {
+        "schema": "campaigns-os-qc-result/v0",
+        "id": "smoke_qc:_site/christmas-diamond-painting-light-wreath/downsell-50/index.html:loopback:loopback",
+        "check": "smoke_qc",
+        "leg": "doctor",
+        "result": "unexercised",
+        "reason_code": "build_environment_unknown",
+        "subject": {
+          "check": "smoke_qc",
+          "page": "_site/christmas-diamond-painting-light-wreath/downsell-50/index.html",
+          "key": "loopback:loopback"
+        },
+        "state_fingerprint": "sha256:47bc256d3c89347a2dc1ca7635154bd028b820826c6106893ec6c3f199083c39",
+        "observation": {
+          "page": "_site/christmas-diamond-painting-light-wreath/downsell-50/index.html",
+          "loopback_refs": [],
+          "environment": "unknown"
+        },
+        "members": [],
+        "accept_eligible": false,
+        "coverage": {
+          "observed": 0,
+          "expected": 1,
+          "limits": [
+            "build_environment_unknown"
+          ]
+        },
+        "measured_at": "2026-11-13T05:55:08.492Z",
+        "producer": "campaigns-os doctor"
+      },
+      {
+        "schema": "campaigns-os-qc-result/v0",
+        "id": "smoke_qc:_site/christmas-diamond-painting-light-wreath/index.html:anchor:MainContent",
+        "check": "smoke_qc",
+        "leg": "doctor",
+        "result": "pass",
+        "reason_code": null,
+        "subject": {
+          "check": "smoke_qc",
+          "page": "_site/christmas-diamond-painting-light-wreath/index.html",
+          "key": "anchor:MainContent"
+        },
+        "state_fingerprint": "sha256:7c4197e7d3878345f0157617d2780842bc283902ef32a8c4d3436aa431a965d2",
+        "observation": {
+          "page": "_site/christmas-diamond-painting-light-wreath/index.html",
+          "target": "MainContent",
+          "outcome": "resolved",
+          "scripts_read": null,
+          "scripts_loaded": null
+        },
+        "members": [],
+        "accept_eligible": false,
+        "coverage": {
+          "observed": 1,
+          "expected": 1,
+          "limits": []
+        },
+        "measured_at": "2026-11-13T05:55:08.492Z",
+        "producer": "campaigns-os doctor"
+      },
+      {
+        "schema": "campaigns-os-qc-result/v0",
+        "id": "smoke_qc:_site/christmas-diamond-painting-light-wreath/index.html:anchor:ProductInfo-template--20345470386260__main",
+        "check": "smoke_qc",
+        "leg": "doctor",
+        "result": "pass",
+        "reason_code": null,
+        "subject": {
+          "check": "smoke_qc",
+          "page": "_site/christmas-diamond-painting-light-wreath/index.html",
+          "key": "anchor:ProductInfo-template--20345470386260__main"
+        },
+        "state_fingerprint": "sha256:e7bb68cb85666845220ab982e841b6056e24bfc453b55e61e3942071da5d985b",
+        "observation": {
+          "page": "_site/christmas-diamond-painting-light-wreath/index.html",
+          "target": "ProductInfo-template--20345470386260__main",
+          "outcome": "resolved",
+          "scripts_read": null,
+          "scripts_loaded": null
+        },
+        "members": [],
+        "accept_eligible": false,
+        "coverage": {
+          "observed": 1,
+          "expected": 1,
+          "limits": []
+        },
+        "measured_at": "2026-11-13T05:55:08.492Z",
+        "producer": "campaigns-os doctor"
+      },
+      {
+        "schema": "campaigns-os-qc-result/v0",
+        "id": "smoke_qc:_site/christmas-diamond-painting-light-wreath/index.html:anchor:",
+        "check": "smoke_qc",
+        "leg": "doctor",
+        "result": "pass",
+        "reason_code": null,
+        "subject": {
+          "check": "smoke_qc",
+          "page": "_site/christmas-diamond-painting-light-wreath/index.html",
+          "key": "anchor:"
+        },
+        "state_fingerprint": "sha256:e2abb932a448edafd8ea1119a21153888093172e1626ac2ae7d03b7854a6605a",
+        "observation": {
+          "page": "_site/christmas-diamond-painting-light-wreath/index.html",
+          "target": "",
+          "outcome": "resolved",
+          "scripts_read": null,
+          "scripts_loaded": null
+        },
+        "members": [],
+        "accept_eligible": false,
+        "coverage": {
+          "observed": 1,
+          "expected": 1,
+          "limits": []
+        },
+        "measured_at": "2026-11-13T05:55:08.492Z",
+        "producer": "campaigns-os doctor"
+      },
+      {
+        "schema": "campaigns-os-qc-result/v0",
+        "id": "smoke_qc:_site/christmas-diamond-painting-light-wreath/index.html:favicon:link",
+        "check": "smoke_qc",
+        "leg": "doctor",
+        "result": "pass",
+        "reason_code": null,
+        "subject": {
+          "check": "smoke_qc",
+          "page": "_site/christmas-diamond-painting-light-wreath/index.html",
+          "key": "favicon:link"
+        },
+        "state_fingerprint": "sha256:9d837a5eb93220da6cd6efea59a242b9952adc36fa2228f1ed6da9d631ae3172",
+        "observation": {
+          "page": "_site/christmas-diamond-painting-light-wreath/index.html",
+          "favicon": true
+        },
+        "members": [],
+        "accept_eligible": false,
+        "coverage": {
+          "observed": 1,
+          "expected": 1,
+          "limits": []
+        },
+        "measured_at": "2026-11-13T05:55:08.492Z",
+        "producer": "campaigns-os doctor"
+      },
+      {
+        "schema": "campaigns-os-qc-result/v0",
+        "id": "smoke_qc:_site/christmas-diamond-painting-light-wreath/index.html:og:title",
+        "check": "smoke_qc",
+        "leg": "doctor",
+        "result": "pass",
+        "reason_code": null,
+        "subject": {
+          "check": "smoke_qc",
+          "page": "_site/christmas-diamond-painting-light-wreath/index.html",
+          "key": "og:title"
+        },
+        "state_fingerprint": "sha256:ad1b4bc0f18b754a1260e6e4aaacf1b94e213fa10a6910cb75074d7fadd10206",
+        "observation": {
+          "page": "_site/christmas-diamond-painting-light-wreath/index.html",
+          "og": {
+            "title": true,
+            "description": true,
+            "image": "absent",
+            "image_target": null
+          }
+        },
+        "members": [],
+        "accept_eligible": false,
+        "coverage": {
+          "observed": 1,
+          "expected": 1,
+          "limits": []
+        },
+        "measured_at": "2026-11-13T05:55:08.492Z",
+        "producer": "campaigns-os doctor"
+      },
+      {
+        "schema": "campaigns-os-qc-result/v0",
+        "id": "smoke_qc:_site/christmas-diamond-painting-light-wreath/index.html:og:description",
+        "check": "smoke_qc",
+        "leg": "doctor",
+        "result": "pass",
+        "reason_code": null,
+        "subject": {
+          "check": "smoke_qc",
+          "page": "_site/christmas-diamond-painting-light-wreath/index.html",
+          "key": "og:description"
+        },
+        "state_fingerprint": "sha256:61b3597a72e1dc8dd1613c09a8fc99f42c54c19e7f4a14876465ea6bffe9ca87",
+        "observation": {
+          "page": "_site/christmas-diamond-painting-light-wreath/index.html",
+          "og": {
+            "title": true,
+            "description": true,
+            "image": "absent",
+            "image_target": null
+          }
+        },
+        "members": [],
+        "accept_eligible": false,
+        "coverage": {
+          "observed": 1,
+          "expected": 1,
+          "limits": []
+        },
+        "measured_at": "2026-11-13T05:55:08.492Z",
+        "producer": "campaigns-os doctor"
+      },
+      {
+        "schema": "campaigns-os-qc-result/v0",
+        "id": "smoke_qc:_site/christmas-diamond-painting-light-wreath/index.html:og:image",
+        "check": "smoke_qc",
+        "leg": "doctor",
+        "result": "warning",
+        "reason_code": "og_image_missing",
+        "subject": {
+          "check": "smoke_qc",
+          "page": "_site/christmas-diamond-painting-light-wreath/index.html",
+          "key": "og:image"
+        },
+        "state_fingerprint": "sha256:5bae4214c219723fae8ca6a4683c83e4fc491290dbc3bb941f55ee38a340661b",
+        "observation": {
+          "page": "_site/christmas-diamond-painting-light-wreath/index.html",
+          "og": {
+            "title": true,
+            "description": true,
+            "image": "absent",
+            "image_target": null
+          }
+        },
+        "members": [],
+        "accept_eligible": true,
+        "coverage": {
+          "observed": 1,
+          "expected": 1,
+          "limits": []
+        },
+        "measured_at": "2026-11-13T05:55:08.492Z",
+        "producer": "campaigns-os doctor"
+      },
+      {
+        "schema": "campaigns-os-qc-result/v0",
+        "id": "smoke_qc:_site/christmas-diamond-painting-light-wreath/index.html:tailwind_cdn:cdn.tailwindcss.com",
+        "check": "smoke_qc",
+        "leg": "doctor",
+        "result": "unexercised",
+        "reason_code": "build_environment_unknown",
+        "subject": {
+          "check": "smoke_qc",
+          "page": "_site/christmas-diamond-painting-light-wreath/index.html",
+          "key": "tailwind_cdn:cdn.tailwindcss.com"
+        },
+        "state_fingerprint": "sha256:4addb8c96518e1fa3be0c008690ba168664bee60a93c2ee7fc6815ca4059c527",
+        "observation": {
+          "page": "_site/christmas-diamond-painting-light-wreath/index.html",
+          "tailwind_cdn": 0,
+          "environment": "unknown"
+        },
+        "members": [],
+        "accept_eligible": false,
+        "coverage": {
+          "observed": 0,
+          "expected": 1,
+          "limits": [
+            "build_environment_unknown"
+          ]
+        },
+        "measured_at": "2026-11-13T05:55:08.492Z",
+        "producer": "campaigns-os doctor"
+      },
+      {
+        "schema": "campaigns-os-qc-result/v0",
+        "id": "smoke_qc:_site/christmas-diamond-painting-light-wreath/index.html:asset_host:cdn.29next.store",
+        "check": "smoke_qc",
+        "leg": "doctor",
+        "result": "pass",
+        "reason_code": null,
+        "subject": {
+          "check": "smoke_qc",
+          "page": "_site/christmas-diamond-painting-light-wreath/index.html",
+          "key": "asset_host:cdn.29next.store"
+        },
+        "state_fingerprint": "sha256:caa5c3f8879f906a934c99a0e25cb739f8c2489e8d1890dfb127ce6732f67efc",
+        "observation": {
+          "page": "_site/christmas-diamond-painting-light-wreath/index.html",
+          "asset_host_refs": []
+        },
+        "members": [],
+        "accept_eligible": false,
+        "coverage": {
+          "observed": 1,
+          "expected": 1,
+          "limits": []
+        },
+        "measured_at": "2026-11-13T05:55:08.492Z",
+        "producer": "campaigns-os doctor"
+      },
+      {
+        "schema": "campaigns-os-qc-result/v0",
+        "id": "smoke_qc:_site/christmas-diamond-painting-light-wreath/index.html:loopback:loopback",
+        "check": "smoke_qc",
+        "leg": "doctor",
+        "result": "unexercised",
+        "reason_code": "build_environment_unknown",
+        "subject": {
+          "check": "smoke_qc",
+          "page": "_site/christmas-diamond-painting-light-wreath/index.html",
+          "key": "loopback:loopback"
+        },
+        "state_fingerprint": "sha256:14dd188eb96eb7ef08199ff9462858da99de32707955bc77a0373bfc54665950",
+        "observation": {
+          "page": "_site/christmas-diamond-painting-light-wreath/index.html",
+          "loopback_refs": [],
+          "environment": "unknown"
+        },
+        "members": [],
+        "accept_eligible": false,
+        "coverage": {
+          "observed": 0,
+          "expected": 1,
+          "limits": [
+            "build_environment_unknown"
+          ]
+        },
+        "measured_at": "2026-11-13T05:55:08.492Z",
+        "producer": "campaigns-os doctor"
+      },
+      {
+        "schema": "campaigns-os-qc-result/v0",
+        "id": "smoke_qc:_site/christmas-diamond-painting-light-wreath/receipt/index.html:favicon:link",
+        "check": "smoke_qc",
+        "leg": "doctor",
+        "result": "pass",
+        "reason_code": null,
+        "subject": {
+          "check": "smoke_qc",
+          "page": "_site/christmas-diamond-painting-light-wreath/receipt/index.html",
+          "key": "favicon:link"
+        },
+        "state_fingerprint": "sha256:c5af19c786ccb04513e79d2ecf1617931c7fc97a4add3c53cf304eba64303457",
+        "observation": {
+          "page": "_site/christmas-diamond-painting-light-wreath/receipt/index.html",
+          "favicon": true
+        },
+        "members": [],
+        "accept_eligible": false,
+        "coverage": {
+          "observed": 1,
+          "expected": 1,
+          "limits": []
+        },
+        "measured_at": "2026-11-13T05:55:08.492Z",
+        "producer": "campaigns-os doctor"
+      },
+      {
+        "schema": "campaigns-os-qc-result/v0",
+        "id": "smoke_qc:_site/christmas-diamond-painting-light-wreath/receipt/index.html:og:title",
+        "check": "smoke_qc",
+        "leg": "doctor",
+        "result": "pass",
+        "reason_code": null,
+        "subject": {
+          "check": "smoke_qc",
+          "page": "_site/christmas-diamond-painting-light-wreath/receipt/index.html",
+          "key": "og:title"
+        },
+        "state_fingerprint": "sha256:0bb56ecedfe00c1165c5b237cf90d598c50878fc97f6fe0e063f313efa599131",
+        "observation": {
+          "page": "_site/christmas-diamond-painting-light-wreath/receipt/index.html",
+          "og": {
+            "title": true,
+            "description": true,
+            "image": "absent",
+            "image_target": null
+          }
+        },
+        "members": [],
+        "accept_eligible": false,
+        "coverage": {
+          "observed": 1,
+          "expected": 1,
+          "limits": []
+        },
+        "measured_at": "2026-11-13T05:55:08.492Z",
+        "producer": "campaigns-os doctor"
+      },
+      {
+        "schema": "campaigns-os-qc-result/v0",
+        "id": "smoke_qc:_site/christmas-diamond-painting-light-wreath/receipt/index.html:og:description",
+        "check": "smoke_qc",
+        "leg": "doctor",
+        "result": "pass",
+        "reason_code": null,
+        "subject": {
+          "check": "smoke_qc",
+          "page": "_site/christmas-diamond-painting-light-wreath/receipt/index.html",
+          "key": "og:description"
+        },
+        "state_fingerprint": "sha256:27f7a165fd848e78a1a73f02a950f9b739471ed3f9dab6fde87f6d8f28974f66",
+        "observation": {
+          "page": "_site/christmas-diamond-painting-light-wreath/receipt/index.html",
+          "og": {
+            "title": true,
+            "description": true,
+            "image": "absent",
+            "image_target": null
+          }
+        },
+        "members": [],
+        "accept_eligible": false,
+        "coverage": {
+          "observed": 1,
+          "expected": 1,
+          "limits": []
+        },
+        "measured_at": "2026-11-13T05:55:08.492Z",
+        "producer": "campaigns-os doctor"
+      },
+      {
+        "schema": "campaigns-os-qc-result/v0",
+        "id": "smoke_qc:_site/christmas-diamond-painting-light-wreath/receipt/index.html:og:image",
+        "check": "smoke_qc",
+        "leg": "doctor",
+        "result": "warning",
+        "reason_code": "og_image_missing",
+        "subject": {
+          "check": "smoke_qc",
+          "page": "_site/christmas-diamond-painting-light-wreath/receipt/index.html",
+          "key": "og:image"
+        },
+        "state_fingerprint": "sha256:0a73bc8526be7bae2b99bf54c137e3bd17e21a928bdc2b190fc3e6c553cb7e49",
+        "observation": {
+          "page": "_site/christmas-diamond-painting-light-wreath/receipt/index.html",
+          "og": {
+            "title": true,
+            "description": true,
+            "image": "absent",
+            "image_target": null
+          }
+        },
+        "members": [],
+        "accept_eligible": true,
+        "coverage": {
+          "observed": 1,
+          "expected": 1,
+          "limits": []
+        },
+        "measured_at": "2026-11-13T05:55:08.492Z",
+        "producer": "campaigns-os doctor"
+      },
+      {
+        "schema": "campaigns-os-qc-result/v0",
+        "id": "smoke_qc:_site/christmas-diamond-painting-light-wreath/receipt/index.html:tailwind_cdn:cdn.tailwindcss.com",
+        "check": "smoke_qc",
+        "leg": "doctor",
+        "result": "unexercised",
+        "reason_code": "build_environment_unknown",
+        "subject": {
+          "check": "smoke_qc",
+          "page": "_site/christmas-diamond-painting-light-wreath/receipt/index.html",
+          "key": "tailwind_cdn:cdn.tailwindcss.com"
+        },
+        "state_fingerprint": "sha256:676669fcb1f42cab5dcdfabcab43122122e405c9a974a941b5a85a3df4e6f1ee",
+        "observation": {
+          "page": "_site/christmas-diamond-painting-light-wreath/receipt/index.html",
+          "tailwind_cdn": 0,
+          "environment": "unknown"
+        },
+        "members": [],
+        "accept_eligible": false,
+        "coverage": {
+          "observed": 0,
+          "expected": 1,
+          "limits": [
+            "build_environment_unknown"
+          ]
+        },
+        "measured_at": "2026-11-13T05:55:08.492Z",
+        "producer": "campaigns-os doctor"
+      },
+      {
+        "schema": "campaigns-os-qc-result/v0",
+        "id": "smoke_qc:_site/christmas-diamond-painting-light-wreath/receipt/index.html:asset_host:cdn.29next.store",
+        "check": "smoke_qc",
+        "leg": "doctor",
+        "result": "pass",
+        "reason_code": null,
+        "subject": {
+          "check": "smoke_qc",
+          "page": "_site/christmas-diamond-painting-light-wreath/receipt/index.html",
+          "key": "asset_host:cdn.29next.store"
+        },
+        "state_fingerprint": "sha256:837c2b51d42836f0682f8725aa9189a70df23bb2dff825c7256b6c3623c6b166",
+        "observation": {
+          "page": "_site/christmas-diamond-painting-light-wreath/receipt/index.html",
+          "asset_host_refs": []
+        },
+        "members": [],
+        "accept_eligible": false,
+        "coverage": {
+          "observed": 1,
+          "expected": 1,
+          "limits": []
+        },
+        "measured_at": "2026-11-13T05:55:08.492Z",
+        "producer": "campaigns-os doctor"
+      },
+      {
+        "schema": "campaigns-os-qc-result/v0",
+        "id": "smoke_qc:_site/christmas-diamond-painting-light-wreath/receipt/index.html:loopback:loopback",
+        "check": "smoke_qc",
+        "leg": "doctor",
+        "result": "unexercised",
+        "reason_code": "build_environment_unknown",
+        "subject": {
+          "check": "smoke_qc",
+          "page": "_site/christmas-diamond-painting-light-wreath/receipt/index.html",
+          "key": "loopback:loopback"
+        },
+        "state_fingerprint": "sha256:da5f3debe808a6d108a85348c399f4b300b86a6d1c96ba139b0b7a0c7b4a7b76",
+        "observation": {
+          "page": "_site/christmas-diamond-painting-light-wreath/receipt/index.html",
+          "loopback_refs": [],
+          "environment": "unknown"
+        },
+        "members": [],
+        "accept_eligible": false,
+        "coverage": {
+          "observed": 0,
+          "expected": 1,
+          "limits": [
+            "build_environment_unknown"
+          ]
+        },
+        "measured_at": "2026-11-13T05:55:08.492Z",
+        "producer": "campaigns-os doctor"
+      },
+      {
+        "schema": "campaigns-os-qc-result/v0",
+        "id": "smoke_qc:_site/christmas-diamond-painting-light-wreath/upsell-30/index.html:anchor:",
+        "check": "smoke_qc",
+        "leg": "doctor",
+        "result": "pass",
+        "reason_code": null,
+        "subject": {
+          "check": "smoke_qc",
+          "page": "_site/christmas-diamond-painting-light-wreath/upsell-30/index.html",
+          "key": "anchor:"
+        },
+        "state_fingerprint": "sha256:4be36b3ecc4f2c012a53ca68bc8a32acd6c4b2975820098f517036b586fc76de",
+        "observation": {
+          "page": "_site/christmas-diamond-painting-light-wreath/upsell-30/index.html",
+          "target": "",
+          "outcome": "resolved",
+          "scripts_read": null,
+          "scripts_loaded": null
+        },
+        "members": [],
+        "accept_eligible": false,
+        "coverage": {
+          "observed": 1,
+          "expected": 1,
+          "limits": []
+        },
+        "measured_at": "2026-11-13T05:55:08.492Z",
+        "producer": "campaigns-os doctor"
+      },
+      {
+        "schema": "campaigns-os-qc-result/v0",
+        "id": "smoke_qc:_site/christmas-diamond-painting-light-wreath/upsell-30/index.html:favicon:link",
+        "check": "smoke_qc",
+        "leg": "doctor",
+        "result": "pass",
+        "reason_code": null,
+        "subject": {
+          "check": "smoke_qc",
+          "page": "_site/christmas-diamond-painting-light-wreath/upsell-30/index.html",
+          "key": "favicon:link"
+        },
+        "state_fingerprint": "sha256:08dac16d1831ded5393933f34dec0a3608bb3e32e70402c7c1c79af4146c862c",
+        "observation": {
+          "page": "_site/christmas-diamond-painting-light-wreath/upsell-30/index.html",
+          "favicon": true
+        },
+        "members": [],
+        "accept_eligible": false,
+        "coverage": {
+          "observed": 1,
+          "expected": 1,
+          "limits": []
+        },
+        "measured_at": "2026-11-13T05:55:08.492Z",
+        "producer": "campaigns-os doctor"
+      },
+      {
+        "schema": "campaigns-os-qc-result/v0",
+        "id": "smoke_qc:_site/christmas-diamond-painting-light-wreath/upsell-30/index.html:og:title",
+        "check": "smoke_qc",
+        "leg": "doctor",
+        "result": "pass",
+        "reason_code": null,
+        "subject": {
+          "check": "smoke_qc",
+          "page": "_site/christmas-diamond-painting-light-wreath/upsell-30/index.html",
+          "key": "og:title"
+        },
+        "state_fingerprint": "sha256:3365b482b605a1e3fa8d7e98d4ea55c13ed7998892ab07b03b28450e0a3bc07c",
+        "observation": {
+          "page": "_site/christmas-diamond-painting-light-wreath/upsell-30/index.html",
+          "og": {
+            "title": true,
+            "description": true,
+            "image": "absent",
+            "image_target": null
+          }
+        },
+        "members": [],
+        "accept_eligible": false,
+        "coverage": {
+          "observed": 1,
+          "expected": 1,
+          "limits": []
+        },
+        "measured_at": "2026-11-13T05:55:08.492Z",
+        "producer": "campaigns-os doctor"
+      },
+      {
+        "schema": "campaigns-os-qc-result/v0",
+        "id": "smoke_qc:_site/christmas-diamond-painting-light-wreath/upsell-30/index.html:og:description",
+        "check": "smoke_qc",
+        "leg": "doctor",
+        "result": "pass",
+        "reason_code": null,
+        "subject": {
+          "check": "smoke_qc",
+          "page": "_site/christmas-diamond-painting-light-wreath/upsell-30/index.html",
+          "key": "og:description"
+        },
+        "state_fingerprint": "sha256:ba28fd817e3836ca071ab2dc4f692723c81cde913919d62180b9370145eae058",
+        "observation": {
+          "page": "_site/christmas-diamond-painting-light-wreath/upsell-30/index.html",
+          "og": {
+            "title": true,
+            "description": true,
+            "image": "absent",
+            "image_target": null
+          }
+        },
+        "members": [],
+        "accept_eligible": false,
+        "coverage": {
+          "observed": 1,
+          "expected": 1,
+          "limits": []
+        },
+        "measured_at": "2026-11-13T05:55:08.492Z",
+        "producer": "campaigns-os doctor"
+      },
+      {
+        "schema": "campaigns-os-qc-result/v0",
+        "id": "smoke_qc:_site/christmas-diamond-painting-light-wreath/upsell-30/index.html:og:image",
+        "check": "smoke_qc",
+        "leg": "doctor",
+        "result": "warning",
+        "reason_code": "og_image_missing",
+        "subject": {
+          "check": "smoke_qc",
+          "page": "_site/christmas-diamond-painting-light-wreath/upsell-30/index.html",
+          "key": "og:image"
+        },
+        "state_fingerprint": "sha256:b676ca414821bbea148b67e6c2ef6ecc9c45c6089099b9d092f5bc92ce80353a",
+        "observation": {
+          "page": "_site/christmas-diamond-painting-light-wreath/upsell-30/index.html",
+          "og": {
+            "title": true,
+            "description": true,
+            "image": "absent",
+            "image_target": null
+          }
+        },
+        "members": [],
+        "accept_eligible": true,
+        "coverage": {
+          "observed": 1,
+          "expected": 1,
+          "limits": []
+        },
+        "measured_at": "2026-11-13T05:55:08.492Z",
+        "producer": "campaigns-os doctor"
+      },
+      {
+        "schema": "campaigns-os-qc-result/v0",
+        "id": "smoke_qc:_site/christmas-diamond-painting-light-wreath/upsell-30/index.html:tailwind_cdn:cdn.tailwindcss.com",
+        "check": "smoke_qc",
+        "leg": "doctor",
+        "result": "unexercised",
+        "reason_code": "build_environment_unknown",
+        "subject": {
+          "check": "smoke_qc",
+          "page": "_site/christmas-diamond-painting-light-wreath/upsell-30/index.html",
+          "key": "tailwind_cdn:cdn.tailwindcss.com"
+        },
+        "state_fingerprint": "sha256:556c836a7b84dc1105be882b47fab327d264247d571fdc0842b24991ad863b5e",
+        "observation": {
+          "page": "_site/christmas-diamond-painting-light-wreath/upsell-30/index.html",
+          "tailwind_cdn": 0,
+          "environment": "unknown"
+        },
+        "members": [],
+        "accept_eligible": false,
+        "coverage": {
+          "observed": 0,
+          "expected": 1,
+          "limits": [
+            "build_environment_unknown"
+          ]
+        },
+        "measured_at": "2026-11-13T05:55:08.492Z",
+        "producer": "campaigns-os doctor"
+      },
+      {
+        "schema": "campaigns-os-qc-result/v0",
+        "id": "smoke_qc:_site/christmas-diamond-painting-light-wreath/upsell-30/index.html:asset_host:cdn.29next.store",
+        "check": "smoke_qc",
+        "leg": "doctor",
+        "result": "pass",
+        "reason_code": null,
+        "subject": {
+          "check": "smoke_qc",
+          "page": "_site/christmas-diamond-painting-light-wreath/upsell-30/index.html",
+          "key": "asset_host:cdn.29next.store"
+        },
+        "state_fingerprint": "sha256:0b7e26daa4aefa014263f5823c052e29f0dbcba35a5484e3c70635e7ccfc0769",
+        "observation": {
+          "page": "_site/christmas-diamond-painting-light-wreath/upsell-30/index.html",
+          "asset_host_refs": []
+        },
+        "members": [],
+        "accept_eligible": false,
+        "coverage": {
+          "observed": 1,
+          "expected": 1,
+          "limits": []
+        },
+        "measured_at": "2026-11-13T05:55:08.492Z",
+        "producer": "campaigns-os doctor"
+      },
+      {
+        "schema": "campaigns-os-qc-result/v0",
+        "id": "smoke_qc:_site/christmas-diamond-painting-light-wreath/upsell-30/index.html:loopback:loopback",
+        "check": "smoke_qc",
+        "leg": "doctor",
+        "result": "unexercised",
+        "reason_code": "build_environment_unknown",
+        "subject": {
+          "check": "smoke_qc",
+          "page": "_site/christmas-diamond-painting-light-wreath/upsell-30/index.html",
+          "key": "loopback:loopback"
+        },
+        "state_fingerprint": "sha256:df5c67601cd47479998a8c378d988e84e1afa5c4c71933d983ceb64b16bbbdcf",
+        "observation": {
+          "page": "_site/christmas-diamond-painting-light-wreath/upsell-30/index.html",
+          "loopback_refs": [],
+          "environment": "unknown"
+        },
+        "members": [],
+        "accept_eligible": false,
+        "coverage": {
+          "observed": 0,
+          "expected": 1,
+          "limits": [
+            "build_environment_unknown"
+          ]
+        },
+        "measured_at": "2026-11-13T05:55:08.492Z",
+        "producer": "campaigns-os doctor"
+      }
+    ],
+    "polish_checkpoint_gate": {
+      "id": "polish.hidden_eager_media",
+      "scope": "polish.hidden_eager_media",
+      "status": "pass",
+      "checkpoint_status": "ready",
+      "severity": "info",
+      "code": "polish.hidden_eager_media.pass",
+      "reason": "Page-load evidence has no hidden eager media above 1,048,576 bytes.",
+      "waivable": false,
+      "subject": {
+        "build_fingerprint": "sha256:254b850087358f8a7cc145e2ed553a3ca0a7025a3e0fe0aa5f7a64833fc663f5",
+        "campaign_slug": "christmas-diamond-painting-light-wreath",
+        "route_scope": "selected",
+        "routes": [
+          "/christmas-diamond-painting-light-wreath/"
+        ],
+        "viewports": [
+          "desktop",
+          "mobile"
+        ]
+      },
+      "state": {
+        "findings": []
+      },
+      "state_fingerprint": "sha256:f0c3a5158f167063dae290c225ca21de55f9ea7ca6c0203f1c4f4a738550a7e3",
+      "findings": [],
+      "waiver": null,
+      "waiver_assessment": {
+        "active": null,
+        "inert_counts": {
+          "stale": 0,
+          "foreign": 0,
+          "malformed": 0,
+          "expired": 0
+        }
+      },
+      "required_actions": []
+    },
+    "prepare_build_gate": null,
+    "brand_contract": {
+      "state": "inspected",
+      "family": "shop-single-step"
+    },
+    "page_kit_campaign_config": {
+      "status": "ok",
+      "public_route_slug": "christmas-diamond-painting-light-wreath",
+      "target_path": "_data/campaigns.json"
+    },
+    "scaffold_required": false,
+    "scaffold_reason": null,
+    "scope": {
+      "mode": "full",
+      "built_pages": [
+        {
+          "page_id": "page_mweeqrin_6",
+          "type": "landing",
+          "role": "visual",
+          "route": "",
+          "source_path": "landing.html"
+        },
+        {
+          "page_id": "page_mweeqrin_7",
+          "type": "checkout",
+          "role": "runtime",
+          "route": "checkout/",
+          "source_path": null,
+          "template_stock": true,
+          "template_family": "shop-single-step"
+        },
+        {
+          "page_id": "page_mweet1jv_9",
+          "type": "upsell",
+          "role": "runtime",
+          "route": "upsell-30/",
+          "source_path": null,
+          "template_stock": true,
+          "template_family": "shop-single-step"
+        },
+        {
+          "page_id": "page_mweet355_10",
+          "type": "downsell",
+          "role": "runtime",
+          "route": "downsell-50/",
+          "source_path": null,
+          "template_stock": true,
+          "template_family": "shop-single-step"
+        },
+        {
+          "page_id": "page_mweeqrin_8",
+          "type": "thankyou",
+          "role": "runtime",
+          "route": "receipt/",
+          "source_path": null,
+          "template_stock": true,
+          "template_family": "shop-single-step"
+        }
+      ],
+      "out_of_scope_pages": [],
+      "out_of_scope_reasons": [],
+      "previewable_routes": [
+        {
+          "page_id": "page_mweeqrin_6",
+          "type": "landing",
+          "route": ""
+        },
+        {
+          "page_id": "page_mweeqrin_7",
+          "type": "checkout",
+          "route": "checkout/"
+        },
+        {
+          "page_id": "page_mweet1jv_9",
+          "type": "upsell",
+          "route": "upsell-30/"
+        },
+        {
+          "page_id": "page_mweet355_10",
+          "type": "downsell",
+          "route": "downsell-50/"
+        },
+        {
+          "page_id": "page_mweeqrin_8",
+          "type": "thankyou",
+          "route": "receipt/"
+        }
+      ],
+      "blocked_runtime_pages": []
+    },
+    "source_preparation": {
+      "checked_page_count": 1,
+      "finding_codes": [
+        "source_html.prep.document_wrapper"
+      ]
+    },
+    "build_output_fingerprint": {
+      "root": "_site/christmas-diamond-painting-light-wreath/",
+      "algorithm": "sha256-manifest/v1",
+      "value": "sha256:254b850087358f8a7cc145e2ed553a3ca0a7025a3e0fe0aa5f7a64833fc663f5",
+      "file_count": 111,
+      "excluded": [],
+      "recorded": "sha256:254b850087358f8a7cc145e2ed553a3ca0a7025a3e0fe0aa5f7a64833fc663f5",
+      "status": "pass"
+    },
+    "live_campaign_refs": {
+      "status": "not_run",
+      "reason_code": "not_read",
+      "reason": "This invocation does not read the live campaign.",
+      "checked_pages": 5,
+      "page_findings": [],
+      "drift": null
+    },
+    "family_script_divergence": {
+      "family": "shop-single-step",
+      "family_source": "packet",
+      "reference": {
+        "kind": "bundled",
+        "repo": "NextCommerceCo/campaign-cart-starter-templates",
+        "sha": "5711e22345756c655f41c0ae71444478e4a8999e",
+        "sdk_version": "0.4.43",
+        "label": "NextCommerceCo/campaign-cart-starter-templates@5711e22 (SDK 0.4.43)"
+      },
+      "status": "compared",
+      "reason": null,
+      "scripts": [
+        {
+          "file": "_site/christmas-diamond-painting-light-wreath/js/next-forwarder-core.js",
+          "pages": [
+            "checkout",
+            "downsell-50",
+            "index",
+            "receipt",
+            "upsell-30"
+          ],
+          "match": "path",
+          "ancestry": "candidate",
+          "reference_path": "js/next-forwarder-core.js",
+          "source_path": "src/shop-single-step/assets/js/next-forwarder-core.js",
+          "result": "identical"
+        },
+        {
+          "file": "_site/christmas-diamond-painting-light-wreath/js/axon.adapter.js",
+          "pages": [
+            "checkout",
+            "downsell-50",
+            "index",
+            "receipt",
+            "upsell-30"
+          ],
+          "match": "path",
+          "ancestry": "candidate",
+          "reference_path": "js/axon.adapter.js",
+          "source_path": "src/shop-single-step/assets/js/axon.adapter.js",
+          "result": "diverged",
+          "diff": {
+            "local_lines": 217,
+            "reference_lines": 120,
+            "delta": 97,
+            "hunks": {
+              "count": 4,
+              "added": 100,
+              "removed": 3,
+              "first": [
+                {
+                  "local_start": 21,
+                  "local_lines": 16,
+                  "reference_start": 21,
+                  "reference_lines": 1
+                },
+                {
+                  "local_start": 74,
+                  "local_lines": 67,
+                  "reference_start": 59,
+                  "reference_lines": 0
+                },
+                {
+                  "local_start": 151,
+                  "local_lines": 3,
+                  "reference_start": 69,
+                  "reference_lines": 2
+                }
+              ]
+            }
+          }
+        },
+        {
+          "file": "_site/christmas-diamond-painting-light-wreath/js/checkout.js",
+          "pages": [
+            "checkout"
+          ],
+          "match": "path",
+          "ancestry": "candidate",
+          "reference_path": "js/checkout.js",
+          "source_path": "src/shop-single-step/assets/js/checkout.js",
+          "result": "diverged",
+          "diff": {
+            "local_lines": 1,
+            "reference_lines": 203,
+            "delta": -202,
+            "hunks": {
+              "count": 1,
+              "added": 1,
+              "removed": 203,
+              "first": [
+                {
+                  "local_start": 1,
+                  "local_lines": 1,
+                  "reference_start": 1,
+                  "reference_lines": 203
+                }
+              ]
+            }
+          }
+        },
+        {
+          "file": "_site/christmas-diamond-painting-light-wreath/js/upsells.js",
+          "pages": [
+            "downsell-50",
+            "upsell-30"
+          ],
+          "match": "path",
+          "ancestry": "candidate",
+          "reference_path": "js/upsells.js",
+          "source_path": "src/shop-single-step/assets/js/upsells.js",
+          "result": "diverged",
+          "diff": {
+            "local_lines": 1,
+            "reference_lines": 126,
+            "delta": -125,
+            "hunks": {
+              "count": 1,
+              "added": 1,
+              "removed": 126,
+              "first": [
+                {
+                  "local_start": 1,
+                  "local_lines": 1,
+                  "reference_start": 1,
+                  "reference_lines": 126
+                }
+              ]
+            }
+          }
+        },
+        {
+          "file": "_site/christmas-diamond-painting-light-wreath/js/payment-logos.js",
+          "pages": [
+            "downsell-50",
+            "upsell-30"
+          ],
+          "match": "path",
+          "ancestry": "candidate",
+          "reference_path": "js/payment-logos.js",
+          "source_path": "src/shop-single-step/assets/js/payment-logos.js",
+          "result": "diverged",
+          "diff": {
+            "local_lines": 1,
+            "reference_lines": 36,
+            "delta": -35,
+            "hunks": {
+              "count": 1,
+              "added": 1,
+              "removed": 36,
+              "first": [
+                {
+                  "local_start": 1,
+                  "local_lines": 1,
+                  "reference_start": 1,
+                  "reference_lines": 36
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "generated_configuration": [
+        {
+          "file": "_site/christmas-diamond-painting-light-wreath/config.js",
+          "built_path": "config.js",
+          "pages": [
+            "checkout",
+            "downsell-50",
+            "index",
+            "receipt",
+            "upsell-30"
+          ]
+        }
+      ],
+      "not_compared": 1,
+      "unreadable": []
+    },
+    "input_currency": {
+      "brief": {
+        "bound": {
+          "presentation": "sha256:f1dd7df10de63bab448dbd3bfe03805366d830e8c65760851dcd58fd67c9a6fe",
+          "qa_policy": "sha256:4cd1f5da5642f23dd77ffb95a194cd5db258f3ed0a37310e10019e8486170f4c"
+        },
+        "current": {
+          "presentation": "sha256:f1dd7df10de63bab448dbd3bfe03805366d830e8c65760851dcd58fd67c9a6fe",
+          "qa_policy": "sha256:4cd1f5da5642f23dd77ffb95a194cd5db258f3ed0a37310e10019e8486170f4c"
+        },
+        "status": "current"
+      },
+      "spec": {
+        "bound": "sha256:31ae8c73450990642a472553374719976bcdc629f85201c0f8a469cb4e097699",
+        "current": "sha256:31ae8c73450990642a472553374719976bcdc629f85201c0f8a469cb4e097699",
+        "snapshot_material": "current",
+        "remote_currency": "unconfirmed"
+      },
+      "stages": {
+        "assembly": "current",
+        "polish": "current",
+        "qa": "current"
+      },
+      "reasons": {
+        "assembly": null,
+        "polish": null,
+        "qa": null
+      }
+    },
+    "theme_gate": {
+      "status": "pass",
+      "code": "theme_gate.applied",
+      "reason": "Brand theme is applied after next-core.css on commerce pages.",
+      "commerce_pages": [
+        "page_mweeqrin_7",
+        "page_mweet1jv_9",
+        "page_mweet355_10",
+        "page_mweeqrin_8"
+      ],
+      "commerce_pages_out_of_scope": [],
+      "waiver": null,
+      "required_actions": []
+    },
+    "evidence_debt": {
+      "polish": {
+        "status": "current",
+        "matches_current_build": true,
+        "recorded_build_fingerprint": "sha256:254b850087358f8a7cc145e2ed553a3ca0a7025a3e0fe0aa5f7a64833fc663f5",
+        "current_build_fingerprint": "sha256:254b850087358f8a7cc145e2ed553a3ca0a7025a3e0fe0aa5f7a64833fc663f5",
+        "reason": null,
+        "change": null,
+        "advisory": false
+      },
+      "qa": {
+        "status": "current",
+        "matches_current_build": true,
+        "recorded_build_fingerprint": "sha256:254b850087358f8a7cc145e2ed553a3ca0a7025a3e0fe0aa5f7a64833fc663f5",
+        "current_build_fingerprint": "sha256:254b850087358f8a7cc145e2ed553a3ca0a7025a3e0fe0aa5f7a64833fc663f5",
+        "reason": null,
+        "change": null,
+        "scope": null,
+        "owed_pages": []
+      },
+      "changes": {
+        "status": "known",
+        "reason": null,
+        "recorded_build_fingerprint": "sha256:254b850087358f8a7cc145e2ed553a3ca0a7025a3e0fe0aa5f7a64833fc663f5",
+        "current_build_fingerprint": "sha256:254b850087358f8a7cc145e2ed553a3ca0a7025a3e0fe0aa5f7a64833fc663f5",
+        "changed_pages": [],
+        "unmapped_files": [],
+        "extra": [],
+        "missing": [],
+        "changed": [],
+        "kind": "none",
+        "reasons": []
+      }
+    },
+    "polish_gate": {
+      "status": "pass",
+      "code": "polish.evidence_current",
+      "reason": "Polish evidence is current, structured, and produced by next-campaigns-polish.",
+      "build_fingerprint": "sha256:254b850087358f8a7cc145e2ed553a3ca0a7025a3e0fe0aa5f7a64833fc663f5",
+      "source_build_fingerprint": "sha256:254b850087358f8a7cc145e2ed553a3ca0a7025a3e0fe0aa5f7a64833fc663f5",
+      "source_package_material_fingerprint": "sha256:d265aede554ef7fee11cb301a84900e56d54f735c9951789bd83d218d36c0c6a",
+      "current_source_package_material_fingerprint": "sha256:d265aede554ef7fee11cb301a84900e56d54f735c9951789bd83d218d36c0c6a",
+      "assembly_source_package_material_fingerprint": "sha256:d265aede554ef7fee11cb301a84900e56d54f735c9951789bd83d218d36c0c6a",
+      "performed_by": "next-campaigns-polish",
+      "screenshot_evidence": "package_captures",
+      "waiver": null,
+      "warnings": [],
+      "owned_checkpoint_id": "polish.hidden_eager_media",
+      "owned_checkpoint_status": "pass",
+      "owned_checkpoint_only": false
+    }
+  },
+  "next": {
+    "stage": "done",
+    "status": "ready_with_warnings",
+    "stage_blocked": false,
+    "owner": "qa",
+    "default_skill": "next-campaigns-os",
+    "command": "npx --no-install campaigns-os next --packet ./campaign-runtime.build.json --context ./.campaign-runtime/build-context.json --report ./.campaign-runtime/assembly-report.json",
+    "reason": "All stages are in a terminal status (completed / completed_with_warnings / skipped). Pipeline is complete.",
+    "outcome": "standard_closeout",
+    "actions": [
+      "All stages are recorded as terminal; run npx --no-install campaigns-os next to confirm the closeout actions.",
+      "Confirm any rendered promo discount percentage claims against the build request, merchant notes, or CampaignSpec before launch.",
+      "QA passed with exceptions. Report them to the operator; do not clear or waive them, or change markup just to make them pass."
+    ],
+    "blocked_stages": [
+      "runtime-sdk-verification"
+    ]
+  },
+  "cause_summary": {
+    "schema_version": "campaigns-os-finding-cause/v0",
+    "surface": "doctor",
+    "total": 19,
+    "counts": {
+      "caused_by_change": 0,
+      "pre_existing": 19,
+      "test_environment": 0,
+      "upstream_drift": 0,
+      "unknown": 0
+    },
+    "prior_run_id": "run_1794546584451_005c0639",
+    "comparison": "prior_run"
+  }
+}

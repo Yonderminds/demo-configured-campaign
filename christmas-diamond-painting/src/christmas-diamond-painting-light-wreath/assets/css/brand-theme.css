@@ -1,0 +1,28 @@
+/* Coerneuineo brand layer for the commerce pages (checkout, upsell, downsell, receipt).
+   Root custom properties only, loaded after next-core.css. Operator decision: purple CTA
+   #6D388B with white text; font is Poppins, from the product page design (brand-fonts.css). */
+:root {
+  --brand--color--primary: #6D388B;
+  --brand--color--primary-dark: #592E72;
+  --brand--color--primary-light: #EDE4F2;
+  --brand--color--primary-lighter: #F8F5FA;
+  --brand--color--primary-foreground: #FFFFFF;
+  --brand--color--cta-primary: #6D388B;
+  --brand--color--cta-foreground: #FFFFFF;
+  --brand--color--text-inverse: #FFFFFF;
+  --brand--color--accent: #A87E64;
+  --brand--color--accent-foreground: #121212;
+  --brand--color--background: #FFFFFF;
+  --brand--color--surface: #F3F3F3;
+  --brand--color--foreground: #121212;
+  --brand--color--text-primary: #121212;
+  --brand--color--rating-star: #6D388B;
+  --radius-size--buttons: 6px;
+}
+
+/* next-core re-declares these on body below 992px; body keeps them at every width. */
+:root,
+body {
+  --_text---font-family--heading: "Poppins", sans-serif;
+  --_text---font-family--primary: "Poppins", sans-serif;
+}

@@ -1,0 +1,791 @@
+{
+  "contributions": [
+    {
+      "id": "html-funnel",
+      "kind": "html_funnel",
+      "mappings": [
+        {
+          "confidence": "high",
+          "coverage_role": "primary_design",
+          "id": "html-page_mweeqrin_6-coverage",
+          "reference_refs": [],
+          "screenshot_refs": [
+            "source-landing-desktop",
+            "source-landing-mobile"
+          ],
+          "source_refs": [
+            "asset-assets-css-base-css",
+            "asset-assets-css-page-css",
+            "asset-assets-images-0a697625fe63537134c6c951a30d8374-1100-webp",
+            "asset-assets-images-0a697625fe63537134c6c951a30d8374-240-webp",
+            "asset-assets-images-1-800-webp",
+            "asset-assets-images-147bdd38b27ac6b463d884a97358ea69-800-webp",
+            "asset-assets-images-1d87738d5ef36246be84ed242c84-fc684af0-1100-webp",
+            "asset-assets-images-1d87738d5ef36246be84ed242c84-fc684af0-240-webp",
+            "asset-assets-images-2-800-webp",
+            "asset-assets-images-220b767ecb465ddbbd27f0af8bda1207-800-webp",
+            "asset-assets-images-2386795e3dc39bfe3b20836aa13a6d8f-800-webp",
+            "asset-assets-images-2772675235a939bd161b0e5e62852fe1-1100-webp",
+            "asset-assets-images-2772675235a939bd161b0e5e62852fe1-240-webp",
+            "asset-assets-images-3edde018c34322db2d427abf60bfcaf86919f72b-800-webp",
+            "asset-assets-images-448a8248fbe12a73b930fc131270206b-800-webp",
+            "asset-assets-images-6f69a462ca627d211d3d25128c99-ae26e811-1100-webp",
+            "asset-assets-images-6f69a462ca627d211d3d25128c99-ae26e811-240-webp",
+            "asset-assets-images-72b1ae776c7e56710716f944d941-b24690a8-1100-webp",
+            "asset-assets-images-72b1ae776c7e56710716f944d941-b24690a8-240-webp",
+            "asset-assets-images-a8ce094bf0af7caeb8631838ffc0-a7881d19-1100-webp",
+            "asset-assets-images-a8ce094bf0af7caeb8631838ffc0-a7881d19-240-webp",
+            "asset-assets-images-ba03b8aa543bb266a934262848e2955c-800-webp",
+            "asset-assets-images-ba6ee487135a880d258d010faf530b7ac86809e6-800-webp",
+            "asset-assets-images-black-white-minimalist-simpl-471ae137-630-webp",
+            "asset-assets-images-c30f6b17b885bbe7f8a7fe493ef2-c6d02254-1100-webp",
+            "asset-assets-images-c30f6b17b885bbe7f8a7fe493ef2-c6d02254-240-webp",
+            "asset-assets-images-cd23045ab028196d34d9b2d90e412c1e-1100-webp",
+            "asset-assets-images-cd23045ab028196d34d9b2d90e412c1e-160-webp",
+            "asset-assets-images-cd23045ab028196d34d9b2d90e412c1e-240-webp",
+            "asset-assets-images-chatgpt-2026-10-19-17-45-06-1-1100-webp",
+            "asset-assets-images-chatgpt-2026-10-19-17-45-06-1-240-webp",
+            "asset-assets-images-chatgpt-2026-10-19-17-45-08-3-1100-webp",
+            "asset-assets-images-chatgpt-2026-10-19-17-45-08-3-240-webp",
+            "asset-assets-images-chatgpt-2026-10-19-17-45-09-4-1100-webp",
+            "asset-assets-images-chatgpt-2026-10-19-17-45-09-4-240-webp",
+            "asset-assets-images-d2aec6a65ff421f0bc41194a670e5218-800-webp",
+            "asset-assets-images-d9d3ecddb659d5e81186e2721b2920d9-1100-webp",
+            "asset-assets-images-d9d3ecddb659d5e81186e2721b2920d9-240-webp",
+            "asset-assets-images-e0628d6328ceb82047322c031fd75cbc-800-webp",
+            "asset-assets-images-e1452c63e1440bd91e7fa354b1cdfa33-1100-webp",
+            "asset-assets-images-e1452c63e1440bd91e7fa354b1cdfa33-240-webp",
+            "asset-assets-images-e3c102c08464ffa3a446bc14fd028ef6-1100-webp",
+            "asset-assets-images-e3c102c08464ffa3a446bc14fd028ef6-240-webp",
+            "asset-assets-images-f9a0e816d49533d1ebecfa2c0fb8-dac4d8d7-1100-webp",
+            "asset-assets-images-f9a0e816d49533d1ebecfa2c0fb8-dac4d8d7-240-webp",
+            "asset-assets-images-f9a0e816d49533d1ebecfa2c0fb8a60d-800-webp",
+            "asset-assets-images-sku-rose-orange-square-ba97c-31ceabe4-160-webp",
+            "asset-assets-images-x1-19892a37-21b8-4377-8442-ac1d5040b127-1100-webp",
+            "asset-assets-images-x1-19892a37-21b8-4377-8442-ac1d5040b127-240-webp",
+            "asset-assets-images-x3-eb3fd0cf-88f8-4f6e-9dea-8ba6e66a7343-1100-webp",
+            "asset-assets-images-x3-eb3fd0cf-88f8-4f6e-9dea-8ba6e66a7343-240-webp",
+            "asset-assets-images-x6-12d27898-9d7c-4ccc-bc5a-9b4b577850b2-1100-webp",
+            "asset-assets-images-x6-12d27898-9d7c-4ccc-bc5a-9b4b577850b2-240-webp",
+            "source-page_mweeqrin_6-html"
+          ],
+          "surface_id": "page_mweeqrin_6"
+        }
+      ],
+      "presentation_intent": {
+        "summary": "Preserve the provided source HTML composition and presentation intent while CampaignSpec and Page Kit retain commerce/runtime authority."
+      },
+      "provenance": {
+        "adapter": "source-html-intake",
+        "asset_crawl_schema_version": "source-asset-crawl/v0",
+        "generator": "next-campaigns-import@0.3.0 capture + hand-cleaned standalone landing.html",
+        "generator_version": null,
+        "manifest_path": "../../source/.campaigns-os/source-html-manifest.json",
+        "manifest_schema_version": "source-html-manifest/v0",
+        "manifest_sha256": "sha256:bd4f26ef7003f40545e4122bbfe38efe00640a66a9c988ed43ccee378dc30691",
+        "producer": null,
+        "producer_material_fingerprint": null,
+        "source_root": "../../source",
+        "source_type": "html_funnel"
+      },
+      "reference_refs": [],
+      "renderable": true,
+      "screenshot_refs": [
+        {
+          "availability": "available",
+          "browser": "playwright-chromium (next-campaigns-import@0.3.0 capture)",
+          "captured_at": "2026-11-13T04:30:03.539Z",
+          "device_profile": "desktop-1440x900",
+          "height": 9759,
+          "id": "source-landing-desktop",
+          "kind": "source_screenshot",
+          "notes": "Full-page capture of the live Shopify product page https://coerneuineo.com/products/hot-sale-49-off%E2%9C%A8-christmas-diamond-painting-light-wreath-diy-kit-buy-2-get-free-shipping-%F0%9F%8E%81 (merchant import authorized by NEXT 2026-11-13).",
+          "path": ".campaigns-os/screenshots/desktop.png",
+          "scale_factor": 1,
+          "sha256": "sha256:14fc93fe746c9d0a5d0013042118b9c95ee3a1eb8a32612edacc439e55e0f614",
+          "source_ref_id": "source-page_mweeqrin_6-html",
+          "viewport": "desktop",
+          "width": 1440
+        },
+        {
+          "availability": "available",
+          "browser": "playwright-chromium (next-campaigns-import@0.3.0 capture)",
+          "captured_at": "2026-11-13T04:30:10.950Z",
+          "device_profile": "mobile-375x812@2x",
+          "height": 22066,
+          "id": "source-landing-mobile",
+          "kind": "source_screenshot",
+          "notes": "Full-page capture of the live Shopify product page https://coerneuineo.com/products/hot-sale-49-off%E2%9C%A8-christmas-diamond-painting-light-wreath-diy-kit-buy-2-get-free-shipping-%F0%9F%8E%81 (merchant import authorized by NEXT 2026-11-13).",
+          "path": ".campaigns-os/screenshots/mobile.png",
+          "scale_factor": 2,
+          "sha256": "sha256:ad823c99987bb0530dddbf67e1d92d53d3c6480c5be290e3792524eebfdace2b",
+          "source_ref_id": "source-page_mweeqrin_6-html",
+          "viewport": "mobile",
+          "width": 750
+        }
+      ],
+      "source_refs": [
+        {
+          "id": "asset-assets-css-base-css",
+          "kind": "asset",
+          "path": "assets/css/base.css",
+          "role": "style",
+          "sha256": "sha256:a60cb00e8314057f35b2f9f83bda5d3bf3d3e2e67f112730755d9e9e89ef0772"
+        },
+        {
+          "id": "asset-assets-css-page-css",
+          "kind": "asset",
+          "path": "assets/css/page.css",
+          "role": "style",
+          "sha256": "sha256:f60b8d58209c3011915f98313619230f061c0b95d2abce2e67ffcb904013229d"
+        },
+        {
+          "id": "asset-assets-fonts-poppins-i4-846ad1e22474f856bd6b81ba4585a60799a9f5d2-woff2",
+          "kind": "asset",
+          "path": "assets/fonts/poppins_i4.846ad1e22474f856bd6b81ba4585a60799a9f5d2.woff2",
+          "role": "font",
+          "sha256": "sha256:e14852f0e1e174469f49552127804c9d854d46be2439625dcae973e4cb6ed1c8"
+        },
+        {
+          "id": "asset-assets-fonts-poppins-i7-42fd71da11e9d101e1e6c7932199f925f9eea42d-woff2",
+          "kind": "asset",
+          "path": "assets/fonts/poppins_i7.42fd71da11e9d101e1e6c7932199f925f9eea42d.woff2",
+          "role": "font",
+          "sha256": "sha256:b3fc257714112f59b894a710d0a60d1c528e4038ebc9ea5f544bb86af3d6f7b7"
+        },
+        {
+          "id": "asset-assets-fonts-poppins-n4-0ba78fa5af9b0e1a374041b3ceaadf0a43b41362-woff2",
+          "kind": "asset",
+          "path": "assets/fonts/poppins_n4.0ba78fa5af9b0e1a374041b3ceaadf0a43b41362.woff2",
+          "role": "font",
+          "sha256": "sha256:b47fa9a58915317eb5fe6a16e6ee41596e11c1c8808de89217a5311bf679d4de"
+        },
+        {
+          "id": "asset-assets-fonts-poppins-n7-56758dcf284489feb014a026f3727f2f20a54626-woff2",
+          "kind": "asset",
+          "path": "assets/fonts/poppins_n7.56758dcf284489feb014a026f3727f2f20a54626.woff2",
+          "role": "font",
+          "sha256": "sha256:cdb6094ba75edf2e9e001961b4cffbc0c6fd8acdfa13835ca7d388c7f9d07c1f"
+        },
+        {
+          "id": "asset-assets-images-0a697625fe63537134c6c951a30d8374-1100-webp",
+          "kind": "asset",
+          "path": "assets/images/0a697625fe63537134c6c951a30d8374-1100.webp",
+          "role": "image",
+          "sha256": "sha256:3dd96cc25bafffa79b036cf7368c033f5f49bebf0322063d91f06bf326dde84a"
+        },
+        {
+          "id": "asset-assets-images-0a697625fe63537134c6c951a30d8374-240-webp",
+          "kind": "asset",
+          "path": "assets/images/0a697625fe63537134c6c951a30d8374-240.webp",
+          "role": "image",
+          "sha256": "sha256:3de1b38b7587168895973b25b5acf1f286aadb91a54ad0ec4ca853253f0fa647"
+        },
+        {
+          "id": "asset-assets-images-1-800-webp",
+          "kind": "asset",
+          "path": "assets/images/1-800.webp",
+          "role": "image",
+          "sha256": "sha256:faf101ec2019d207b6260d3e4698bc4a224ac4e662f8d321816b0c9c0521d2a2"
+        },
+        {
+          "id": "asset-assets-images-147bdd38b27ac6b463d884a97358ea69-800-webp",
+          "kind": "asset",
+          "path": "assets/images/147bdd38b27ac6b463d884a97358ea69-800.webp",
+          "role": "image",
+          "sha256": "sha256:110a28c2c68a8e9f399cd2b4978f317c7013d823876d34f01892a633df3e96e8"
+        },
+        {
+          "id": "asset-assets-images-1d87738d5ef36246be84ed242c84-fc684af0-1100-webp",
+          "kind": "asset",
+          "path": "assets/images/1d87738d5ef36246be84ed242c84-fc684af0-1100.webp",
+          "role": "image",
+          "sha256": "sha256:81278d8cef52a3029ee1cb252f70cf420b96bf5b6c91088e39b94f0f5eda3f43"
+        },
+        {
+          "id": "asset-assets-images-1d87738d5ef36246be84ed242c84-fc684af0-240-webp",
+          "kind": "asset",
+          "path": "assets/images/1d87738d5ef36246be84ed242c84-fc684af0-240.webp",
+          "role": "image",
+          "sha256": "sha256:5da63a09a8ccce6be9fe54ac7dc7d16d7da88fdcc48181ff5f8a1645095f9b1a"
+        },
+        {
+          "id": "asset-assets-images-2-800-webp",
+          "kind": "asset",
+          "path": "assets/images/2-800.webp",
+          "role": "image",
+          "sha256": "sha256:a9bc95d3243adcedafee97e2fe8ab34f062e47673a3a37395a48496bf7156c04"
+        },
+        {
+          "id": "asset-assets-images-220b767ecb465ddbbd27f0af8bda1207-800-webp",
+          "kind": "asset",
+          "path": "assets/images/220b767ecb465ddbbd27f0af8bda1207-800.webp",
+          "role": "image",
+          "sha256": "sha256:b07428fd6996a9a0db2bd2623bd1b5f2540a1fb43f548df2e740c036506f4e4c"
+        },
+        {
+          "id": "asset-assets-images-2386795e3dc39bfe3b20836aa13a6d8f-800-webp",
+          "kind": "asset",
+          "path": "assets/images/2386795e3dc39bfe3b20836aa13a6d8f-800.webp",
+          "role": "image",
+          "sha256": "sha256:469326ea52f82cf4656c688f8299c0c1ca3461f1909ad13a6db6a4a0abcab083"
+        },
+        {
+          "id": "asset-assets-images-2772675235a939bd161b0e5e62852fe1-1100-webp",
+          "kind": "asset",
+          "path": "assets/images/2772675235a939bd161b0e5e62852fe1-1100.webp",
+          "role": "image",
+          "sha256": "sha256:bde164dc42df1f95445928b6c8c8ddcd515f241e572ca7b3d18f532e4d3b09f2"
+        },
+        {
+          "id": "asset-assets-images-2772675235a939bd161b0e5e62852fe1-240-webp",
+          "kind": "asset",
+          "path": "assets/images/2772675235a939bd161b0e5e62852fe1-240.webp",
+          "role": "image",
+          "sha256": "sha256:bf82c07ba3fc863493d11de66eb8b0302e29fe9edda527332d400aa743c5fb54"
+        },
+        {
+          "id": "asset-assets-images-3edde018c34322db2d427abf60bfcaf86919f72b-800-webp",
+          "kind": "asset",
+          "path": "assets/images/3edde018c34322db2d427abf60bfcaf86919f72b-800.webp",
+          "role": "image",
+          "sha256": "sha256:f40add161bb5caa82b63efefcc7363b1246579d4de9bec567f22d857f54ba3dd"
+        },
+        {
+          "id": "asset-assets-images-448a8248fbe12a73b930fc131270206b-800-webp",
+          "kind": "asset",
+          "path": "assets/images/448a8248fbe12a73b930fc131270206b-800.webp",
+          "role": "image",
+          "sha256": "sha256:4d9d2b20f45ec32787ca4f3109f2a12911104a365db6a76c8a963873d9d8ffe6"
+        },
+        {
+          "id": "asset-assets-images-6f69a462ca627d211d3d25128c99-ae26e811-1100-webp",
+          "kind": "asset",
+          "path": "assets/images/6f69a462ca627d211d3d25128c99-ae26e811-1100.webp",
+          "role": "image",
+          "sha256": "sha256:4590f69254cfb1d81077a003869b57cf03bb89570715b3bdf0871fdff6018218"
+        },
+        {
+          "id": "asset-assets-images-6f69a462ca627d211d3d25128c99-ae26e811-240-webp",
+          "kind": "asset",
+          "path": "assets/images/6f69a462ca627d211d3d25128c99-ae26e811-240.webp",
+          "role": "image",
+          "sha256": "sha256:c0e8ed04d3c7bb8c75b5b148d0935fa96ee2abbc96a94c95a258440005aa188d"
+        },
+        {
+          "id": "asset-assets-images-72b1ae776c7e56710716f944d941-b24690a8-1100-webp",
+          "kind": "asset",
+          "path": "assets/images/72b1ae776c7e56710716f944d941-b24690a8-1100.webp",
+          "role": "image",
+          "sha256": "sha256:15898fdc82e1b490c95d085693b84aa827ad7a813f4428c6136c071ec0c325f8"
+        },
+        {
+          "id": "asset-assets-images-72b1ae776c7e56710716f944d941-b24690a8-240-webp",
+          "kind": "asset",
+          "path": "assets/images/72b1ae776c7e56710716f944d941-b24690a8-240.webp",
+          "role": "image",
+          "sha256": "sha256:a3dd4360b9c0119fa01151f3fcf10fc6ea69c1b65d2605a35dceb6e56666df7a"
+        },
+        {
+          "id": "asset-assets-images-a8ce094bf0af7caeb8631838ffc0-a7881d19-1100-webp",
+          "kind": "asset",
+          "path": "assets/images/a8ce094bf0af7caeb8631838ffc0-a7881d19-1100.webp",
+          "role": "image",
+          "sha256": "sha256:59a96130839ce0cda4ceba06d01ce628d80852137e4883e565f6ebe3a0e23d0d"
+        },
+        {
+          "id": "asset-assets-images-a8ce094bf0af7caeb8631838ffc0-a7881d19-240-webp",
+          "kind": "asset",
+          "path": "assets/images/a8ce094bf0af7caeb8631838ffc0-a7881d19-240.webp",
+          "role": "image",
+          "sha256": "sha256:71e057bb58329bfb0f69a36a967a95b147230c331249553f72f3a247620d9e40"
+        },
+        {
+          "id": "asset-assets-images-ba03b8aa543bb266a934262848e2955c-800-webp",
+          "kind": "asset",
+          "path": "assets/images/ba03b8aa543bb266a934262848e2955c-800.webp",
+          "role": "image",
+          "sha256": "sha256:2f62908b6e75f2bc781ce11739b172485d1d484a8189c9bc115d069629ffc141"
+        },
+        {
+          "id": "asset-assets-images-ba6ee487135a880d258d010faf530b7ac86809e6-800-webp",
+          "kind": "asset",
+          "path": "assets/images/ba6ee487135a880d258d010faf530b7ac86809e6-800.webp",
+          "role": "image",
+          "sha256": "sha256:935582945cf5a8453cb3476726db65b9beeeed6de22035f4f4bbc46196a04706"
+        },
+        {
+          "id": "asset-assets-images-black-white-minimalist-simpl-471ae137-630-webp",
+          "kind": "asset",
+          "path": "assets/images/black_white_minimalist_simpl-471ae137-630.webp",
+          "role": "image",
+          "sha256": "sha256:8d3b8f2ba6aa7415b0479fcc36a896067dc63a066544d4c40f73c35b073f7c9f"
+        },
+        {
+          "id": "asset-assets-images-c30f6b17b885bbe7f8a7fe493ef2-c6d02254-1100-webp",
+          "kind": "asset",
+          "path": "assets/images/c30f6b17b885bbe7f8a7fe493ef2-c6d02254-1100.webp",
+          "role": "image",
+          "sha256": "sha256:2cff43c625577e9ae33355a4a18c263ff4fd93f2c13f3e0abdf9642ea63a9895"
+        },
+        {
+          "id": "asset-assets-images-c30f6b17b885bbe7f8a7fe493ef2-c6d02254-240-webp",
+          "kind": "asset",
+          "path": "assets/images/c30f6b17b885bbe7f8a7fe493ef2-c6d02254-240.webp",
+          "role": "image",
+          "sha256": "sha256:7b3e7e032a7f86585d097a5c1b43676874fd2e2f01e4bbfe3b939da35b1bf1c7"
+        },
+        {
+          "id": "asset-assets-images-cd23045ab028196d34d9b2d90e412c1e-1100-webp",
+          "kind": "asset",
+          "path": "assets/images/cd23045ab028196d34d9b2d90e412c1e-1100.webp",
+          "role": "image",
+          "sha256": "sha256:f8b9afa4dcf9c8c86971669d4241e92b01855cc0d3ee3eb49ad5d9bfc2a8586c"
+        },
+        {
+          "id": "asset-assets-images-cd23045ab028196d34d9b2d90e412c1e-160-webp",
+          "kind": "asset",
+          "path": "assets/images/cd23045ab028196d34d9b2d90e412c1e-160.webp",
+          "role": "image",
+          "sha256": "sha256:201e4221726c971051dfc34ba2c76c49e2bf6c883317588f5a18b7aeaeb37731"
+        },
+        {
+          "id": "asset-assets-images-cd23045ab028196d34d9b2d90e412c1e-240-webp",
+          "kind": "asset",
+          "path": "assets/images/cd23045ab028196d34d9b2d90e412c1e-240.webp",
+          "role": "image",
+          "sha256": "sha256:242d1eeea7e4dcaf26a556be79130d473773b49175010dbfca071ccfb60993db"
+        },
+        {
+          "id": "asset-assets-images-chatgpt-2026-10-19-17-45-06-1-1100-webp",
+          "kind": "asset",
+          "path": "assets/images/chatgpt_2026_10_19_17_45_06-1-1100.webp",
+          "role": "image",
+          "sha256": "sha256:d2807fb8705bfc2d700d0223b9021716933a172825ee8d605317842e28fd3394"
+        },
+        {
+          "id": "asset-assets-images-chatgpt-2026-10-19-17-45-06-1-240-webp",
+          "kind": "asset",
+          "path": "assets/images/chatgpt_2026_10_19_17_45_06-1-240.webp",
+          "role": "image",
+          "sha256": "sha256:110c12c8523227d8ff0739bd972dd6cb4a951e96eb4b0c9e03a31aa75969481b"
+        },
+        {
+          "id": "asset-assets-images-chatgpt-2026-10-19-17-45-08-3-1100-webp",
+          "kind": "asset",
+          "path": "assets/images/chatgpt_2026_10_19_17_45_08-3-1100.webp",
+          "role": "image",
+          "sha256": "sha256:03dbfc4414d5214cc22e9d0d3ba7fd832f6e7b4e7f978628dc8db04bc38c2851"
+        },
+        {
+          "id": "asset-assets-images-chatgpt-2026-10-19-17-45-08-3-240-webp",
+          "kind": "asset",
+          "path": "assets/images/chatgpt_2026_10_19_17_45_08-3-240.webp",
+          "role": "image",
+          "sha256": "sha256:49b532d572a2c0d284e6a2ed6351712a958b58c89894694407a23936193e6324"
+        },
+        {
+          "id": "asset-assets-images-chatgpt-2026-10-19-17-45-09-4-1100-webp",
+          "kind": "asset",
+          "path": "assets/images/chatgpt_2026_10_19_17_45_09-4-1100.webp",
+          "role": "image",
+          "sha256": "sha256:cc116875a4ddef36a6fe26fc9b7d9d2719ef6d535489b2cf90c961830f7af32a"
+        },
+        {
+          "id": "asset-assets-images-chatgpt-2026-10-19-17-45-09-4-240-webp",
+          "kind": "asset",
+          "path": "assets/images/chatgpt_2026_10_19_17_45_09-4-240.webp",
+          "role": "image",
+          "sha256": "sha256:84247cd44213624a410e00dac8b0e76e6f86ab64143133314fd35079d928dff5"
+        },
+        {
+          "id": "asset-assets-images-d2aec6a65ff421f0bc41194a670e5218-800-webp",
+          "kind": "asset",
+          "path": "assets/images/d2aec6a65ff421f0bc41194a670e5218-800.webp",
+          "role": "image",
+          "sha256": "sha256:191e48c2f35bbfab219d1fe2c05673b8e8274295f041ad660944097a0646d645"
+        },
+        {
+          "id": "asset-assets-images-d9d3ecddb659d5e81186e2721b2920d9-1100-webp",
+          "kind": "asset",
+          "path": "assets/images/d9d3ecddb659d5e81186e2721b2920d9-1100.webp",
+          "role": "image",
+          "sha256": "sha256:d277d74577c4683ae6b04a54d682d80bd86f142a8f09f4d4ddf82f9e4e2725dc"
+        },
+        {
+          "id": "asset-assets-images-d9d3ecddb659d5e81186e2721b2920d9-240-webp",
+          "kind": "asset",
+          "path": "assets/images/d9d3ecddb659d5e81186e2721b2920d9-240.webp",
+          "role": "image",
+          "sha256": "sha256:acad0250bfb849410c719976cd96f14510e8a66a6fa0886ce02521d8d6a79044"
+        },
+        {
+          "id": "asset-assets-images-e0628d6328ceb82047322c031fd75cbc-800-webp",
+          "kind": "asset",
+          "path": "assets/images/e0628d6328ceb82047322c031fd75cbc-800.webp",
+          "role": "image",
+          "sha256": "sha256:6e73ce207f07e8aae444ff242def14797edf2ed470b80e6124ac3bf13935fcfd"
+        },
+        {
+          "id": "asset-assets-images-e1452c63e1440bd91e7fa354b1cdfa33-1100-webp",
+          "kind": "asset",
+          "path": "assets/images/e1452c63e1440bd91e7fa354b1cdfa33-1100.webp",
+          "role": "image",
+          "sha256": "sha256:2f6d347282da5b6893ce6d2d40f54cfd0985393e6c83ac89ba4ab5b51affb0f1"
+        },
+        {
+          "id": "asset-assets-images-e1452c63e1440bd91e7fa354b1cdfa33-240-webp",
+          "kind": "asset",
+          "path": "assets/images/e1452c63e1440bd91e7fa354b1cdfa33-240.webp",
+          "role": "image",
+          "sha256": "sha256:8639120a2fdd1537bfc56211cc2e4c30edf580c8a1bdbaee91615d1aba7c8f0f"
+        },
+        {
+          "id": "asset-assets-images-e3c102c08464ffa3a446bc14fd028ef6-1100-webp",
+          "kind": "asset",
+          "path": "assets/images/e3c102c08464ffa3a446bc14fd028ef6-1100.webp",
+          "role": "image",
+          "sha256": "sha256:1daff71e2090db4e814caff42060fa643ca4dd052101cee39aca61493725369d"
+        },
+        {
+          "id": "asset-assets-images-e3c102c08464ffa3a446bc14fd028ef6-240-webp",
+          "kind": "asset",
+          "path": "assets/images/e3c102c08464ffa3a446bc14fd028ef6-240.webp",
+          "role": "image",
+          "sha256": "sha256:ba5d2575652de040f2fb7d6321d1d063656ea5651de170b7f7d5e6142fb1f43c"
+        },
+        {
+          "id": "asset-assets-images-f9a0e816d49533d1ebecfa2c0fb8-dac4d8d7-1100-webp",
+          "kind": "asset",
+          "path": "assets/images/f9a0e816d49533d1ebecfa2c0fb8-dac4d8d7-1100.webp",
+          "role": "image",
+          "sha256": "sha256:aadbc1e4140c5f3c6b35cc7ebd7dd7f4a63ae87929563a8cafc7dfca05e60beb"
+        },
+        {
+          "id": "asset-assets-images-f9a0e816d49533d1ebecfa2c0fb8-dac4d8d7-240-webp",
+          "kind": "asset",
+          "path": "assets/images/f9a0e816d49533d1ebecfa2c0fb8-dac4d8d7-240.webp",
+          "role": "image",
+          "sha256": "sha256:84281f300cd0c4b0af344a60622e5fb5dda666085a86cfb8f2c1fb3f6a3599e3"
+        },
+        {
+          "id": "asset-assets-images-f9a0e816d49533d1ebecfa2c0fb8a60d-800-webp",
+          "kind": "asset",
+          "path": "assets/images/f9a0e816d49533d1ebecfa2c0fb8a60d-800.webp",
+          "role": "image",
+          "sha256": "sha256:1969795177a2857b7e6da5b396e3616c29f62af320d4507f74b761ab68f4b93a"
+        },
+        {
+          "id": "asset-assets-images-sku-rose-orange-square-ba97c-31ceabe4-160-webp",
+          "kind": "asset",
+          "path": "assets/images/sku_rose_orange_square_ba97c-31ceabe4-160.webp",
+          "role": "image",
+          "sha256": "sha256:4a2cde68e4eed72e1443ebe3a057bb0e1a74c087ca68d9a384371873809c6675"
+        },
+        {
+          "id": "asset-assets-images-x1-19892a37-21b8-4377-8442-ac1d5040b127-1100-webp",
+          "kind": "asset",
+          "path": "assets/images/x1_19892a37-21b8-4377-8442-ac1d5040b127-1100.webp",
+          "role": "image",
+          "sha256": "sha256:9b1e6e850b1fef1c8c49be3ca11408007d382bc0e5b16554ce454ed6bda26d60"
+        },
+        {
+          "id": "asset-assets-images-x1-19892a37-21b8-4377-8442-ac1d5040b127-240-webp",
+          "kind": "asset",
+          "path": "assets/images/x1_19892a37-21b8-4377-8442-ac1d5040b127-240.webp",
+          "role": "image",
+          "sha256": "sha256:56c63747bc66b48ab6741da01295f0b53d7724b2b9b48242bcb78eeef9450131"
+        },
+        {
+          "id": "asset-assets-images-x3-eb3fd0cf-88f8-4f6e-9dea-8ba6e66a7343-1100-webp",
+          "kind": "asset",
+          "path": "assets/images/x3_eb3fd0cf-88f8-4f6e-9dea-8ba6e66a7343-1100.webp",
+          "role": "image",
+          "sha256": "sha256:2a899f09fc7befcc661f9f441b10f333ef905204c048cc53935429612730a5e5"
+        },
+        {
+          "id": "asset-assets-images-x3-eb3fd0cf-88f8-4f6e-9dea-8ba6e66a7343-240-webp",
+          "kind": "asset",
+          "path": "assets/images/x3_eb3fd0cf-88f8-4f6e-9dea-8ba6e66a7343-240.webp",
+          "role": "image",
+          "sha256": "sha256:bc14f8bcd3fafae2ee4b9d3ac816415248d3231959bf2cf6fd28b72bb9f5db5b"
+        },
+        {
+          "id": "asset-assets-images-x6-12d27898-9d7c-4ccc-bc5a-9b4b577850b2-1100-webp",
+          "kind": "asset",
+          "path": "assets/images/x6_12d27898-9d7c-4ccc-bc5a-9b4b577850b2-1100.webp",
+          "role": "image",
+          "sha256": "sha256:23089eb7f25735f49ec77abe2ff8b5527a1c47df77931d2760f8534162564f7b"
+        },
+        {
+          "id": "asset-assets-images-x6-12d27898-9d7c-4ccc-bc5a-9b4b577850b2-240-webp",
+          "kind": "asset",
+          "path": "assets/images/x6_12d27898-9d7c-4ccc-bc5a-9b4b577850b2-240.webp",
+          "role": "image",
+          "sha256": "sha256:fa60549e7a451483f02f55ce93113aec3944ef99638023418f7d53c5129bf926"
+        },
+        {
+          "id": "source-html-manifest",
+          "kind": "manifest",
+          "path": "../../source/.campaigns-os/source-html-manifest.json",
+          "role": "producer_manifest",
+          "sha256": "sha256:bd4f26ef7003f40545e4122bbfe38efe00640a66a9c988ed43ccee378dc30691"
+        },
+        {
+          "id": "source-page_mweeqrin_6-html",
+          "kind": "html_file",
+          "path": "landing.html",
+          "role": "page",
+          "sha256": "sha256:80e06653a07326baf8a28d5dc70304d3386e69680d01912a489597c9cb8297b6"
+        }
+      ],
+      "trust": "structured"
+    },
+    {
+      "id": "template-baseline",
+      "kind": "template_stock",
+      "mappings": [],
+      "presentation_intent": {
+        "summary": "Use the shop-single-step Template Reference only as the safe runtime baseline for explicitly template-backed pages."
+      },
+      "provenance": {
+        "adapter": "template-reference",
+        "asset_crawl_schema_version": null,
+        "generator": null,
+        "generator_version": null,
+        "manifest_path": null,
+        "manifest_schema_version": null,
+        "manifest_sha256": null,
+        "producer": "Campaign Page Kit",
+        "producer_material_fingerprint": null,
+        "source_root": null,
+        "source_type": "template_stock"
+      },
+      "reference_refs": [],
+      "renderable": true,
+      "screenshot_refs": [],
+      "source_refs": [],
+      "trust": "native"
+    }
+  ],
+  "divergences": [],
+  "generated_at": "2026-11-13T05:09:44.176Z",
+  "material_fingerprint": "sha256:d265aede554ef7fee11cb301a84900e56d54f735c9951789bd83d218d36c0c6a",
+  "notes": [],
+  "package_id": "christmas-diamond-painting-light-wreath-z56g:design-source",
+  "proposed_exceptions": [],
+  "readback": {
+    "blockers": [],
+    "gaps": [
+      "template-stock-page_mweeqrin_7: Page surface \"page_mweeqrin_7\" is template stock from the shop-single-step family: it has no design source of its own; keep it unbuilt unless the operator opts in to materialising that family's stock page.",
+      "template-stock-page_mweeqrin_8: Page surface \"page_mweeqrin_8\" is template stock from the shop-single-step family: it has no design source of its own; keep it unbuilt unless the operator opts in to materialising that family's stock page.",
+      "template-stock-page_mweet1jv_9: Page surface \"page_mweet1jv_9\" is template stock from the shop-single-step family: it has no design source of its own; keep it unbuilt unless the operator opts in to materialising that family's stock page.",
+      "template-stock-page_mweet355_10: Page surface \"page_mweet355_10\" is template stock from the shop-single-step family: it has no design source of its own; keep it unbuilt unless the operator opts in to materialising that family's stock page."
+    ],
+    "handled": [
+      "page_mweeqrin_6: primary_design (high) via html-funnel"
+    ],
+    "included_sources": [
+      "html-funnel (html_funnel)",
+      "template-baseline (template_stock)"
+    ],
+    "next_actions": [
+      "Proceed to Build with this Design Source Package material fingerprint."
+    ],
+    "summary": "Design Source Package is ready_with_gaps; 2 contribution(s), 1 coverage mapping(s), 4 gap(s), 0 TODO(s), and 0 waiver(s).",
+    "todos": [],
+    "waivers": []
+  },
+  "readiness": {
+    "blocking_reasons": [],
+    "gap_count": 4,
+    "generated_at": "2026-11-13T05:09:44.176Z",
+    "status": "ready_with_gaps",
+    "todo_count": 0,
+    "waiver_count": 0
+  },
+  "schema_version": "campaign-design-source-package/v0",
+  "source_gaps": [
+    {
+      "applies_to": [
+        "page_mweeqrin_7"
+      ],
+      "attributed_at": null,
+      "attributed_by": "prepare-build",
+      "id": "template-stock-page_mweeqrin_7",
+      "kind": "coverage_absence",
+      "reason": "Page surface \"page_mweeqrin_7\" is template stock from the shop-single-step family: it has no design source of its own; keep it unbuilt unless the operator opts in to materialising that family's stock page.",
+      "scope": "primary_design_coverage",
+      "status": "accepted"
+    },
+    {
+      "applies_to": [
+        "page_mweet1jv_9"
+      ],
+      "attributed_at": null,
+      "attributed_by": "prepare-build",
+      "id": "template-stock-page_mweet1jv_9",
+      "kind": "coverage_absence",
+      "reason": "Page surface \"page_mweet1jv_9\" is template stock from the shop-single-step family: it has no design source of its own; keep it unbuilt unless the operator opts in to materialising that family's stock page.",
+      "scope": "primary_design_coverage",
+      "status": "accepted"
+    },
+    {
+      "applies_to": [
+        "page_mweet355_10"
+      ],
+      "attributed_at": null,
+      "attributed_by": "prepare-build",
+      "id": "template-stock-page_mweet355_10",
+      "kind": "coverage_absence",
+      "reason": "Page surface \"page_mweet355_10\" is template stock from the shop-single-step family: it has no design source of its own; keep it unbuilt unless the operator opts in to materialising that family's stock page.",
+      "scope": "primary_design_coverage",
+      "status": "accepted"
+    },
+    {
+      "applies_to": [
+        "page_mweeqrin_8"
+      ],
+      "attributed_at": null,
+      "attributed_by": "prepare-build",
+      "id": "template-stock-page_mweeqrin_8",
+      "kind": "coverage_absence",
+      "reason": "Page surface \"page_mweeqrin_8\" is template stock from the shop-single-step family: it has no design source of its own; keep it unbuilt unless the operator opts in to materialising that family's stock page.",
+      "scope": "primary_design_coverage",
+      "status": "accepted"
+    }
+  ],
+  "source_kind": "html_funnel",
+  "source_todos": [],
+  "surface_identity": [
+    {
+      "aliases": [
+        "christmas-diamond-painting-light-wreath-z56g",
+        "christmas-diamond-painting-light-wreath"
+      ],
+      "id": "campaign",
+      "kind": "campaign",
+      "label": "Campaign",
+      "mappings": {
+        "campaign_map_id": "christmas-diamond-painting-light-wreath-z56g",
+        "campaign_slug": "christmas-diamond-painting-light-wreath"
+      }
+    },
+    {
+      "aliases": [
+        "page_mweeqrin_6",
+        "Wreath product page",
+        "landing",
+        "landing.html",
+        "/christmas-diamond-painting-light-wreath/",
+        "product",
+        "src/christmas-diamond-painting-light-wreath/landing.html"
+      ],
+      "id": "page_mweeqrin_6",
+      "kind": "page",
+      "label": "Wreath product page",
+      "mappings": {
+        "campaign_spec_page_id": "page_mweeqrin_6",
+        "map_builder_custom_name": null,
+        "map_builder_label": "Wreath product page",
+        "page_kit": {
+          "output_path": "src/christmas-diamond-painting-light-wreath/landing.html",
+          "page_type": "product",
+          "permalink_required": true,
+          "public_route": "/christmas-diamond-painting-light-wreath/",
+          "spec_route": "",
+          "target_path": "landing.html"
+        },
+        "producer_page_type": null,
+        "public_route": "/christmas-diamond-painting-light-wreath/",
+        "source_page_id": "page_mweeqrin_6",
+        "source_path": "landing.html"
+      }
+    },
+    {
+      "aliases": [
+        "page_mweeqrin_7",
+        "Checkout",
+        "checkout",
+        "checkout/"
+      ],
+      "id": "page_mweeqrin_7",
+      "kind": "page",
+      "label": "Checkout",
+      "mappings": {
+        "campaign_spec_page_id": "page_mweeqrin_7",
+        "map_builder_custom_name": null,
+        "map_builder_label": "Checkout",
+        "page_kit": null,
+        "producer_page_type": null,
+        "public_route": "checkout/",
+        "source_page_id": "page_mweeqrin_7",
+        "source_path": null
+      }
+    },
+    {
+      "aliases": [
+        "page_mweet1jv_9",
+        "Upsell 30% off (WREATH30)",
+        "upsell",
+        "upsell-30/"
+      ],
+      "id": "page_mweet1jv_9",
+      "kind": "page",
+      "label": "Upsell 30% off (WREATH30)",
+      "mappings": {
+        "campaign_spec_page_id": "page_mweet1jv_9",
+        "map_builder_custom_name": null,
+        "map_builder_label": "Upsell 30% off (WREATH30)",
+        "page_kit": null,
+        "producer_page_type": null,
+        "public_route": "upsell-30/",
+        "source_page_id": "page_mweet1jv_9",
+        "source_path": null
+      }
+    },
+    {
+      "aliases": [
+        "page_mweet355_10",
+        "Downsell 50% off (WREATH50)",
+        "downsell",
+        "downsell-50/"
+      ],
+      "id": "page_mweet355_10",
+      "kind": "page",
+      "label": "Downsell 50% off (WREATH50)",
+      "mappings": {
+        "campaign_spec_page_id": "page_mweet355_10",
+        "map_builder_custom_name": null,
+        "map_builder_label": "Downsell 50% off (WREATH50)",
+        "page_kit": null,
+        "producer_page_type": null,
+        "public_route": "downsell-50/",
+        "source_page_id": "page_mweet355_10",
+        "source_path": null
+      }
+    },
+    {
+      "aliases": [
+        "page_mweeqrin_8",
+        "Thank You",
+        "thankyou",
+        "receipt/"
+      ],
+      "id": "page_mweeqrin_8",
+      "kind": "page",
+      "label": "Thank You",
+      "mappings": {
+        "campaign_spec_page_id": "page_mweeqrin_8",
+        "map_builder_custom_name": null,
+        "map_builder_label": "Thank You",
+        "page_kit": null,
+        "producer_page_type": null,
+        "public_route": "receipt/",
+        "source_page_id": "page_mweeqrin_8",
+        "source_path": null
+      }
+    }
+  ],
+  "waivers": []
+}

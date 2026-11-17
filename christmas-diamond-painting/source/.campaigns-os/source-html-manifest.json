@@ -1,0 +1,61 @@
+{
+  "schema_version": "source-html-manifest/v0",
+  "generator": "next-campaigns-import@0.3.0 capture + hand-cleaned standalone landing.html",
+  "campaign_slug": "christmas-diamond-painting-light-wreath",
+  "wrapper_policy": "preserve_document_wrappers",
+  "pages": [
+    {
+      "page_id": "page_mweeqrin_6",
+      "path": "landing.html",
+      "source_hash": "80e06653a07326baf8a28d5dc70304d3386e69680d01912a489597c9cb8297b6",
+      "screenshots": [
+        {
+          "id": "source-landing-desktop",
+          "kind": "source_screenshot",
+          "viewport": "desktop",
+          "availability": "available",
+          "path": ".campaigns-os/screenshots/desktop.png",
+          "sha256": "14fc93fe746c9d0a5d0013042118b9c95ee3a1eb8a32612edacc439e55e0f614",
+          "width": 1440,
+          "height": 9759,
+          "scale_factor": 1,
+          "device_profile": "desktop-1440x900",
+          "browser": "playwright-chromium (next-campaigns-import@0.3.0 capture)",
+          "captured_at": "2026-11-13T04:30:03.539Z",
+          "notes": "Full-page capture of the live Shopify product page https://coerneuineo.com/products/hot-sale-49-off%E2%9C%A8-christmas-diamond-painting-light-wreath-diy-kit-buy-2-get-free-shipping-%F0%9F%8E%81 (merchant import authorized by NEXT 2026-11-13)."
+        },
+        {
+          "id": "source-landing-mobile",
+          "kind": "source_screenshot",
+          "viewport": "mobile",
+          "availability": "available",
+          "path": ".campaigns-os/screenshots/mobile.png",
+          "sha256": "ad823c99987bb0530dddbf67e1d92d53d3c6480c5be290e3792524eebfdace2b",
+          "width": 750,
+          "height": 22066,
+          "scale_factor": 2,
+          "device_profile": "mobile-375x812@2x",
+          "browser": "playwright-chromium (next-campaigns-import@0.3.0 capture)",
+          "captured_at": "2026-11-13T04:30:10.950Z",
+          "notes": "Full-page capture of the live Shopify product page https://coerneuineo.com/products/hot-sale-49-off%E2%9C%A8-christmas-diamond-painting-light-wreath-diy-kit-buy-2-get-free-shipping-%F0%9F%8E%81 (merchant import authorized by NEXT 2026-11-13)."
+        }
+      ]
+    },
+    {
+      "page_id": "page_mweeqrin_7",
+      "skip_reason": "Template stock: the saved Map gives this checkout page no design_source; the olympus family page is the design."
+    },
+    {
+      "page_id": "page_mweet1jv_9",
+      "skip_reason": "Template stock: the saved Map gives this upsell page no design_source; the olympus family page is the design."
+    },
+    {
+      "page_id": "page_mweet355_10",
+      "skip_reason": "Template stock: the saved Map gives this downsell page no design_source; the olympus family page is the design."
+    },
+    {
+      "page_id": "page_mweeqrin_8",
+      "skip_reason": "Template stock: the saved Map gives this receipt page no design_source; the olympus family page is the design."
+    }
+  ]
+}

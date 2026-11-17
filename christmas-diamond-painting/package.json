@@ -1,0 +1,27 @@
+{
+  "name": "christmas-diamond-painting",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Campaign Page Kit project for Coerneuineo (christmas-diamond-painting)",
+  "scripts": {
+    "setup": "campaign-init",
+    "start": "campaign-start",
+    "dev": "campaign-dev",
+    "tailwind:build": "tailwindcss -i ./src/christmas-diamond-painting-light-wreath/assets/css/tailwind.css -o ./src/christmas-diamond-painting-light-wreath/assets/css/tailwind.output.css --minify",
+    "build": "npm run tailwind:build && campaign-build",
+    "clone": "campaign-clone",
+    "config": "campaign-config",
+    "compress": "campaign-compress",
+    "compress:preview": "campaign-compress --preview",
+    "migrate": "campaign-migrate"
+  },
+  "type": "commonjs",
+  "dependencies": {
+    "next-campaign-page-kit": "^0.3.0"
+  },
+  "devDependencies": {
+    "@nextcommerce/campaigns-os": "1.71.0",
+    "@tailwindcss/cli": "^4.3.0",
+    "tailwindcss": "^4.3.0"
+  }
+}

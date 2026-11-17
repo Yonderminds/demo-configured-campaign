@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+/* Scan this campaign's pages, layouts and includes only (path is relative to this file). */
+@source "../../";
+
+/* No custom font: the landing uses Tailwind's default system sans stack. */
+@theme inline {
+  --color-brand-primary: var(--brand-primary);
+  --color-brand-secondary: var(--brand-secondary);
+  --color-brand-accent: var(--brand-accent);
+  --color-surface-bg: var(--surface-bg);
+  --color-surface-card: var(--surface-card);
+  --color-surface-alt: var(--surface-alt);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-inverse: var(--text-inverse);
+}

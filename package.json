@@ -1,0 +1,8 @@
+{
+  "name": "coerneuineo-cpk-build",
+  "private": true,
+  "description": "Repo-level build tooling only (scripts/optimize-site.js). Each campaign keeps its own package.json.",
+  "devDependencies": {
+    "esbuild": "0.28.2"
+  }
+}

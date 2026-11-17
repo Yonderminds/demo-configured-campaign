@@ -1,0 +1,55 @@
+{
+  "built": 5,
+  "errors": 0,
+  "warnings": 0,
+  "skipped": 0,
+  "ms": 127,
+  "pages": [
+    {
+      "inputFile": "src/christmas-diamond-painting-light-wreath/checkout.html",
+      "campaignSlug": "christmas-diamond-painting-light-wreath",
+      "url": "/christmas-diamond-painting-light-wreath/checkout/",
+      "outputFile": "_site/christmas-diamond-painting-light-wreath/checkout/index.html",
+      "status": "built",
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "inputFile": "src/christmas-diamond-painting-light-wreath/downsell-50.html",
+      "campaignSlug": "christmas-diamond-painting-light-wreath",
+      "url": "/christmas-diamond-painting-light-wreath/downsell-50/",
+      "outputFile": "_site/christmas-diamond-painting-light-wreath/downsell-50/index.html",
+      "status": "built",
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "inputFile": "src/christmas-diamond-painting-light-wreath/index.html",
+      "campaignSlug": "christmas-diamond-painting-light-wreath",
+      "url": "/christmas-diamond-painting-light-wreath/",
+      "outputFile": "_site/christmas-diamond-painting-light-wreath/index.html",
+      "status": "built",
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "inputFile": "src/christmas-diamond-painting-light-wreath/receipt.html",
+      "campaignSlug": "christmas-diamond-painting-light-wreath",
+      "url": "/christmas-diamond-painting-light-wreath/receipt/",
+      "outputFile": "_site/christmas-diamond-painting-light-wreath/receipt/index.html",
+      "status": "built",
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "inputFile": "src/christmas-diamond-painting-light-wreath/upsell-30.html",
+      "campaignSlug": "christmas-diamond-painting-light-wreath",
+      "url": "/christmas-diamond-painting-light-wreath/upsell-30/",
+      "outputFile": "_site/christmas-diamond-painting-light-wreath/upsell-30/index.html",
+      "status": "built",
+      "warnings": [],
+      "errors": []
+    }
+  ],
+  "assetWarnings": []
+}
