@@ -3,7 +3,7 @@
 - **Store:** coerneuineo
 - **Owner:** Yonderminds
 - **Campaign type:** CPK (Campaign Page Kit)
-- **Hosting:** GitHub Pages (being set up). Until the switch, the live site is served from a separate deploy, so changes here do not reach coerneuineo.com yet.
+- **Hosting:** GitHub Pages, published by `.github/workflows/pages.yml` on every push to `main`. No custom domain is attached yet, so nothing here is on coerneuineo.com.
 
 `AGENTS.md` is a link to this file, so Codex and Claude Code read the same instructions. Edit `CLAUDE.md`; do not replace the link with a copy.
 
@@ -17,9 +17,11 @@ This repo is the worked example for building campaigns on NEXT: the campaign is 
 coerneuineo-cpk/
 ├── .github/
 │   └── workflows/
+│       ├── pages.yml           # Build + publish to GitHub Pages on every push to main
 │       ├── smoke-check.yml     # Runs smoke-check.js on every PR → inline PR annotations
 │       └── campaign-check.yml  # Every package priced in every currency, on PRs + weekly
 ├── scripts/
+│   ├── pages-routes.js     # Writes netlify.toml rewrites as static pages for GitHub Pages
 │   ├── smoke-check.js      # Pre-deploy validator (run before the build, and on PRs)
 │   ├── campaign-check.js   # Read-only Campaigns API gate: every package priced in every currency
 │   ├── build.js            # Multi-campaign build: discovers + builds every campaign dir
@@ -34,7 +36,7 @@ coerneuineo-cpk/
 │   ├── CLAUDE.md           # Full SDK + template rules for campaigns in this project
 │   ├── AGENTS.md           # Link to that CLAUDE.md, for Codex
 │   └── package.json        # Build scripts (npm run build, dev, config, etc.)
-├── netlify.toml            # Rewrites, redirects and cache headers from the previous host (see "Hosting")
+├── netlify.toml            # Rewrite rules read by pages-routes.js; redirects and headers are not used on Pages
 ├── package.json            # Repo-level build tooling only (esbuild for optimize-site.js)
 ├── CLAUDE.md               # ← this file
 ├── AGENTS.md               # Link to this file, for Codex
@@ -92,10 +94,11 @@ The full build runs from the repo root: `node scripts/smoke-check.js && node scr
 
 ## Hosting
 
-Campaigns in this repo will be published with GitHub Pages from the merged root `_site/`. GitHub Pages serves static files only, so the rules in `netlify.toml` do not apply there:
+Campaigns in this repo are published with GitHub Pages. `.github/workflows/pages.yml` runs on every push to `main`: smoke check, root build, then `scripts/pages-routes.js`, and publishes the merged `_site/`. Pages serves static files only, so the rules in `netlify.toml` do not apply there directly:
 
-- **Rewrites:** the landing page is also served at the store's old product address (`/products/hot-sale-49-off…`), which is where the ads point. On GitHub Pages that address has to exist as a real page in `_site/`, written by the build.
-- **Redirects:** the 301 from the campaign slug to that address cannot be sent; use a plain copy or a meta refresh.
+- **Rewrites:** `scripts/pages-routes.js` reads every status-200 rule in `netlify.toml` and copies the target page to the `from` address in `_site/`. That is how the landing page is also served at the store's old product address (`/products/hot-sale-49-off…`), which is where the ads point. To add an address, add a status-200 rule to `netlify.toml`.
+- **Redirects:** 301 rules cannot be sent and are skipped (the build log lists them). The campaign slug address keeps serving the landing page itself.
+- **Domain:** pages use root-relative paths (`/christmas-diamond-painting-light-wreath/…`), so they only render correctly on a custom domain. The `github.io` project address serves the HTML without its styles.
 - **Cache headers:** GitHub Pages sets its own; the 30-day image and font caching is not available.
 - **Previews:** there are no per-PR preview sites. Check changes with `npm run dev` locally.
 
