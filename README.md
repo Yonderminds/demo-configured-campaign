@@ -13,7 +13,9 @@ Live pages: https://yonderminds.github.io/demo-configured-campaign/christmas-dia
 
 **New here? Start with [GO-LIVE.md](GO-LIVE.md)**: a step-by-step guide from a new GitHub repo to a live campaign.
 
-Your own repos are named after the store (`<store>-cpk`), not "demo". Layout: 1 repo per store, 1 folder per product line, 1 `src/<slug>/` folder per campaign.
+Your own repos are named after the store (`<store>-cpk`), not "demo".
+
+**This repo uses an advanced layout.** It has 1 extra folder level (`christmas-diamond-painting/`, for a product line) and its own root build scripts (`scripts/build.js`, `scripts/pages-routes.js`). The go-live guide uses a **simpler layout**: everything in the repo folder, 1 `src/<slug>/` folder per campaign, built with `npm run build`. Follow the guide for your own repos. Use this repo to see finished pages, tracking settings and test records. Its own build steps are below.
 
 Agent instructions are in `CLAUDE.md`. `AGENTS.md` links to it, so Codex and Claude Code follow the same rules.
 
@@ -21,7 +23,7 @@ Agent instructions are in `CLAUDE.md`. `AGENTS.md` links to it, so Codex and Cla
 
 | Slug | Pages | Status |
 |------|-------|--------|
-| `christmas-diamond-painting-light-wreath` | landing, checkout, upsell, downsell, receipt | Built; moves to GitHub Pages next |
+| `christmas-diamond-painting-light-wreath` | landing, checkout, upsell, downsell, receipt | Online on GitHub Pages at a test address (not on the store's domain) |
 
 ## Build
 

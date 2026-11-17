@@ -1,17 +1,88 @@
 # Go-live guide: campaigns on NEXT
 
-This guide takes you from nothing to a live campaign. Do the steps in order. Each step says **who** does it and **what you should see** when it worked.
+This guide is for **developers at Yonderminds** who build campaigns for a NEXT store. It takes you from nothing to a live campaign, one step at a time.
 
-You will use these tools:
+Each step says:
 
-- **GitHub** to keep the campaign code
-- **Codex** (your AI coding tool) to do most of the work
-- **Campaign Page Kit** to build the pages
-- **next-campaigns-create** (a NEXT skill) to create the campaign in your store
-- **Campaigns OS** and the **Map** to plan and build the whole funnel
-- **A hosting service** to put the pages on the internet
+- **Who** does it
+- **Where** to run commands (which folder)
+- **You should see**: how you know the step worked
 
-If a step does not work, stop and ask NEXT. Do not guess.
+If a step does not work, **stop and ask NEXT**. Do not guess.
+
+> **For Codex and other AI tools reading this file**
+>
+> 1. Do the steps in order. Do not skip steps.
+> 2. Steps marked **Who: Store admin**, **Org owner**, **Team leader** or **NEXT** need a person. Stop, tell the person what to do, and wait for them to say it is done.
+> 3. Never ask for, read, print or commit the **Admin API key**. Never commit a `.env` file.
+> 4. Never place a test order, change a price, switch on an offer, change DNS, or push to `main` unless the person says yes for that action.
+> 5. When a step says "You should see", check it. If it is not true, stop and report what you see.
+
+---
+
+## Part A. What NEXT gives you and what you give
+
+| NEXT gives you | You give |
+|---|---|
+| Your NEXT store and access to its dashboard | A GitHub account for each developer (Step 1) |
+| The Yonderminds GitHub organization | The products, prices and offers for each campaign |
+| The Campaigns App, Campaign Page Kit, Campaigns OS and the NEXT skills | Page designs (or you use a starter template) |
+| Help with payments, domains and redirect rules | Access to your domain's DNS settings |
+| 2 demo repos to copy from | Your AppLovin **Event Key** (if you use AppLovin) |
+| | The list of your old Shopify product addresses that ads use |
+
+---
+
+## Part B. Storefront and campaign: what is the difference?
+
+Your store on NEXT can sell in 2 ways. Most stores use **both**.
+
+| | **Storefront** | **Campaign** |
+|---|---|---|
+| What it is | Your full online shop: home page, all products, collections, cart | A sales funnel for 1 offer: landing page, checkout, upsell, downsell, thank-you page |
+| Who builds it | NEXT sets it up (theme) | You build it in GitHub with Codex (this guide) |
+| Where it lives | On NEXT, on your main domain (for example `mystore.com`) | On a hosting service you choose (Step 13), on your own domain |
+| Best for | Shoppers who browse, search, and come back | Paid ads (AppLovin, Meta, TikTok) that send shoppers to 1 product |
+| Post-purchase upsells | **No** | **Yes** (1-click upsell and downsell after payment) |
+| Page addresses (URLs) | **Fixed by NEXT. You cannot change them.** Old Shopify addresses need redirect rules (Part F) | **You choose them.** You can keep the **exact** old Shopify address, for example `/products/my-product` (Step 11) |
+| Design | NEXT theme | Any design you want |
+| Offers | Storefront offers (in the store settings) | Campaign offers (in the Campaigns App). The 2 are separate. A storefront offer does not change a campaign price. |
+| AppLovin pixel | The **AppLovin Axon app** in the dashboard (Part G) | A setting in the campaign code (Step 12) |
+| Work to set up | Less | More: GitHub, hosting, domain, testing |
+
+**Simple rule:**
+
+- The store itself and old links: **storefront**.
+- Ad landing pages where upsells matter, or where you must keep the exact old URL: **campaign**.
+
+### About keeping your Shopify URLs
+
+Your ads send shoppers to addresses like `https://mystore.com/products/my-product`.
+
+- **Storefront:** NEXT product pages use a different address. You cannot change it. So old addresses must **redirect** (send the shopper on) to the new page. See Part F.
+- **Campaign:** you can make the campaign page **answer at the same path**: `/products/my-product`. See Step 11.
+
+The address has 2 parts: the **domain** (`mystore.com`) and the **path** (`/products/my-product`). A domain can point to only 1 place:
+
+| Your situation | What to do |
+|---|---|
+| `mystore.com` is used **only** for campaigns (no storefront) | Point `mystore.com` at your campaign host. The old address works exactly as before. |
+| `mystore.com` is the **storefront** | Host campaigns on a subdomain, for example `offers.mystore.com`. Then add a storefront redirect: `mystore.com/products/my-product` goes to `offers.mystore.com/products/my-product` (Part F). Ads keep working with no change. |
+
+---
+
+## Part C. Before you start: collect these
+
+| Item | Who has it | Used in |
+|---|---|---|
+| Store subdomain (the name in your dashboard address) | NEXT | Steps 5, 6 |
+| Products, prices for each quantity, offers, shipping prices, currency | Store owner | Step 6 |
+| Page designs (HTML files and images), or "use a template" | Designer | Step 10 |
+| Store name, support email, links to policy pages | Store owner | Step 10 |
+| Old Shopify product addresses used in ads | Store owner | Step 11, Part F |
+| AppLovin Event Key (AppLovin Ads Manager > Account > API keys) | Ads team | Step 12, Part G |
+| The domain for the campaign, and who can change its DNS | Store owner | Step 13 |
+| Access to the Campaigns OS Workspace (the Map) | NEXT | Step 9 |
 
 ---
 
@@ -20,15 +91,16 @@ If a step does not work, stop and ask NEXT. Do not guess.
 | Word | Meaning |
 |---|---|
 | Store | Your NEXT store. You log in to its dashboard. |
-| Campaign | One sales funnel in the Campaigns App: its products, prices, shipping and offers. |
-| Package | One product (or variant) a shopper can buy in the campaign. Each package has a number (ID). |
+| Campaign | 1 sales funnel in the Campaigns App: its products, prices, shipping and offers. |
+| Package | 1 product (or variant) a shopper can buy in the campaign. Each package has a number (ID). |
 | Offer | A discount, for example "Buy 2, get 10% off". |
 | Funnel | The pages in order: landing page, checkout, upsell, downsell, thank-you page. |
-| Repo | A GitHub repository. One folder of code, saved in GitHub. |
+| Repo | A GitHub repository: 1 folder of code, saved in GitHub. |
 | Campaign API key | A **public** key. It goes in the page code. It tells the pages which campaign to use. |
-| Admin API key | A **private** key. It can change your store. **Never** put it in the code, in GitHub, or in a chat. |
+| Admin API key | A **private** key. It can change your store. **Never** put it in code, in GitHub, or in a chat. |
 | Domain | A web address, for example `offers.mystore.com`. |
 | Map | A plan of the funnel, made in the Campaigns OS Workspace. |
+| Publish | Put the pages on the internet. In this guide, merging into `main` publishes (Step 13). |
 
 ---
 
@@ -37,18 +109,23 @@ If a step does not work, stop and ask NEXT. Do not guess.
 | Step | What | Who |
 |---|---|---|
 | 1 | Accounts and tools | Every developer |
-| 2 | Create the GitHub repo and invite the team | Organization owner |
+| 2 | Create the repo for a store | Org owner |
 | 3 | Install Campaign Page Kit and Campaigns OS | Developer |
-| 4 | Install the NEXT skills for Codex | Developer |
+| 4 | Connect Codex, protect `main` | Developer + org owner |
 | 5 | Make an Admin API key | Store admin |
 | 6 | Create the campaign with next-campaigns-create | Developer + store admin |
 | 7 | Check the campaign settings | Store admin |
-| 8 | Add your domains to the Campaigns App | Store admin |
+| 8 | Add test domains to the Campaigns App | Store admin |
 | 9 | Build the Map | Developer |
-| 10 | Build the campaign with Campaigns OS | Developer |
-| 11 | Test the campaign | Developer |
-| 12 | Put the pages online (hosting) | Developer |
-| 13 | Go live | Team leader |
+| 10 | Build the pages with Campaigns OS | Developer |
+| 11 | Keep your Shopify URLs | Developer |
+| 12 | Add the AppLovin pixel | Developer |
+| 13 | Put the pages online | Developer + org owner |
+| 14 | Check payments are ready | Store admin + NEXT |
+| 15 | Final check and test orders | Developer + store admin |
+| 16 | Go live | Team leader |
+
+After go-live: **Part D** (changes and recovery), **Part E** (new campaign or new store). Storefront only: **Part F** (redirects) and **Part G** (AppLovin app).
 
 ---
 
@@ -56,87 +133,107 @@ If a step does not work, stop and ask NEXT. Do not guess.
 
 **Who:** every developer, 1 time only.
 
-1. Make your **own** GitHub account at https://github.com/signup. One account per person. Do not share accounts.
-2. Turn on two-factor authentication (2FA) in GitHub: **Settings > Password and authentication**. The Yonderminds organization requires it.
+1. Make your **own** GitHub account at https://github.com/signup. 1 account per person. Do not share accounts.
+2. Turn on two-factor authentication (2FA): GitHub **Settings > Password and authentication**. The Yonderminds organization requires it.
 3. Open the email invite to the **Yonderminds** organization and click **Join**.
-4. Install these programs on your computer:
+4. Install these programs:
 
-| Program | Version | Check it works |
+| Program | Version | Check |
 |---|---|---|
 | Git | any recent | `git --version` |
-| Node.js | 20.19 or newer | `node --version` |
+| Node.js | 20.19 or newer (22 is fine) | `node --version` |
 | npm | 10 or 11 (comes with Node.js) | `npm --version` |
 | Python | 3.9 or newer | `python3 --version` |
 | Codex | latest | `codex --version` |
 
-On Windows, use WSL (Windows Subsystem for Linux) for all commands in this guide.
+On Windows, use WSL (Windows Subsystem for Linux) for every command in this guide.
 
-**You should see:** each check command prints a version number.
+**You should see:** each check prints a version number.
 
 ---
 
-## Step 2. Create the GitHub repo and invite the team
+## Step 2. Create the repo for a store
 
-**Who:** an organization **owner** (a director, or NEXT). Team members cannot create repos in the Yonderminds organization. Do this once for each store.
+**Who:** org owner (a director, or NEXT). Team members cannot create repos in the Yonderminds organization.
 
-Use **1 repo for each store**. Name it `<store>-cpk`. Example: the store `mystore` has the repo `mystore-cpk`.
+Rules:
+
+- **1 repo for each store.** Name it `<store>-cpk`. Example: store `mystore` has repo `mystore-cpk`.
+- All campaigns for that store go in the **same repo**.
+- Yonderminds repos are **public**, because GitHub Pages hosting on the free plan needs public repos. So never put private data in a repo: no keys, no customer data, no passwords.
 
 1. Go to https://github.com/organizations/Yonderminds/repositories/new
-2. **Owner:** Yonderminds. **Repository name:** `<store>-cpk`.
-3. **Visibility:** choose **Public** if you will host on GitHub Pages (the free GitHub plan can only host public repos). Choose **Private** if you will host somewhere else (see Step 12).
-4. Tick **Add a README file**. Click **Create repository**.
-5. Invite your team: in the repo, open **Settings > Collaborators and teams > Add teams**. Choose your team. Give it the **Write** role.
-6. Each developer copies the repo to their computer:
+2. **Repository name:** `<store>-cpk`. **Visibility:** Public.
+3. Tick **Add a README file**. Click **Create repository**.
+4. Give the team access: in the repo, **Settings > Collaborators and teams > Add teams**, choose the team, role **Write**.
+5. Each developer copies the repo to their computer:
 
 ```bash
 git clone https://github.com/Yonderminds/<store>-cpk.git
 cd <store>-cpk
 ```
 
-**You should see:** a folder named `<store>-cpk` on your computer with a `README.md` file in it.
+**You should see:** a folder `<store>-cpk` with a `README.md` file in it.
 
-**2 demo repos** show you the start and the end. Look at them when you are not sure what a file should look like:
+### What the repo will look like when it is done
 
-| Repo | What it shows |
+```
+<store>-cpk/                 ← run every command in this folder
+├── AGENTS.md                ← instructions for Codex
+├── package.json             ← Page Kit and Campaigns OS
+├── _data/campaigns.json     ← 1 entry for each campaign
+├── src/
+│   ├── <campaign-1>/        ← 1 folder for each campaign
+│   └── <campaign-2>/
+├── scripts/shopify-urls.js  ← keeps old Shopify addresses (Step 11)
+├── shopify-urls.json
+├── .github/workflows/pages.yml  ← publishes to GitHub Pages (Step 13)
+└── _site/                   ← made by `npm run build`, never committed
+```
+
+A **second campaign** for the same store is a new folder in `src/`. It is not a new repo.
+
+**Demo repos:**
+
+| Repo | Shows |
 |---|---|
-| https://github.com/Yonderminds/demo-fresh-campaign | How your repo looks **after Step 3** (fresh install, nothing set up yet) |
-| https://github.com/Yonderminds/demo-configured-campaign | How your repo looks **after Step 13** (configured for a store, tested, online) |
+| https://github.com/Yonderminds/demo-fresh-campaign | Your repo **after Step 4** (fresh install, nothing set up yet). Same layout as this guide. |
+| https://github.com/Yonderminds/demo-configured-campaign | A **finished** campaign for 1 real store. It uses an **advanced layout** (1 extra folder level for product lines, and its own build scripts). Use it to see finished pages, tracking and test records. Do **not** copy its layout; follow this guide. |
 
 ---
 
 ## Step 3. Install Campaign Page Kit and Campaigns OS
 
-**Who:** developer. Run these commands **inside** the repo folder.
-
-Open https://campaigns.nextcommerce.com/start/ first. It shows the **current** version numbers. Use those numbers if they are newer than the ones below.
+**Who:** developer. **Where:** in the repo folder `<store>-cpk`.
 
 ```bash
-npm init -y && npm install --save-exact next-campaign-page-kit@0.3.0
+npm init -y
+npm install --save-exact next-campaign-page-kit@0.3.0
 npm install --save-dev --save-exact @nextcommerce/campaigns-os@1.71.2
-npx --no-install campaigns-os install-skills --platform codex
 npx --no-install campaigns-os install-agent-context --target .
 npx --no-install campaigns-os qa install-browser
 ```
 
 What these do:
 
-1. Install **Campaign Page Kit** (builds the pages).
-2. Install **Campaigns OS** (plans, builds and checks the campaign).
-3. Install the Campaigns OS skills into **Codex**.
-4. Add instruction files for Codex to the repo.
-5. Install a test browser, used for checking pages and placing test orders.
+1. Make `package.json`.
+2. Install **Campaign Page Kit** (builds the pages).
+3. Install **Campaigns OS** (plans, builds and checks the campaign).
+4. Add Campaigns OS instructions for Codex in `.campaign-runtime/agent-context/`.
+5. Install a test browser on your computer (for page checks and test orders).
 
-Then make a file named `.gitignore` in the repo folder with these lines. It stops private and temporary files going to GitHub:
+This guide was checked with **Page Kit 0.3.0** and **Campaigns OS 1.71.2**. Use these versions. To use a newer version later, ask NEXT first.
+
+Campaigns OS also makes a `.gitignore` file. Add these lines at the end of it:
 
 ```
 node_modules/
 _site/
 .env
 .env.*
-qa-output/
 ```
 
-Save your work to GitHub:
+Save your work:
 
 ```bash
 git add -A
@@ -144,23 +241,60 @@ git commit -m "Install Campaign Page Kit and Campaigns OS"
 git push
 ```
 
-**You should see:** `node_modules/`, `package.json` and `package-lock.json` in the folder, and no errors.
+**You should see:** `package.json`, `package-lock.json`, `node_modules/` and `.campaign-runtime/agent-context/AGENTS.md` in the folder.
 
 ---
 
-## Step 4. Install the NEXT skills for Codex
+## Step 4. Connect Codex
 
-**Who:** developer, 1 time only.
+**Who:** developer.
+
+### 4a. Install the skills (1 time on each computer)
 
 ```bash
+npx --no-install campaigns-os install-skills --platform codex
 npx skills add NextCommerceCo/skills -g -a codex
 ```
 
-Then **close Codex and open it again**. Codex only loads new skills when it starts.
+The 1st command installs the Campaigns OS skills (for example `next-campaigns-os`, `next-campaigns-build`, `next-campaigns-qa`). The 2nd installs the NEXT skills, including `next-campaigns-create` and `next-campaigns-setup`.
 
-**You should see:** Codex lists `next-campaigns-create` and `next-campaigns-setup` when you ask "Which NEXT skills do you have?"
+### 4b. Tell Codex where the Campaigns OS instructions are
 
-More information: https://developers.nextcommerce.com/docs/skills
+**Where:** in the repo folder. Make a file named `AGENTS.md` (or open it if it exists) and add these lines at the top:
+
+```
+# Instructions for AI tools
+
+- Read and follow `.campaign-runtime/agent-context/AGENTS.md` for Campaigns OS work.
+- Follow `GO-LIVE.md` from the demo: https://github.com/Yonderminds/demo-configured-campaign/blob/main/GO-LIVE.md
+- Never read, print or commit the Admin API key or `.env`.
+- When you run `campaign-init`, do not use `--ai-context`. It replaces this file.
+```
+
+Keep anything else that is already in `AGENTS.md`.
+
+**Important:** the Page Kit command `campaign-init --ai-context codex` **replaces** `AGENTS.md` and deletes these lines. If that happens, add the lines again.
+
+### 4c. Check
+
+Open Codex in the repo folder and ask:
+
+1. "Which NEXT and Campaigns OS skills can you use?" It should list `next-campaigns-create` and `next-campaigns-os`.
+2. "Which file has the Campaigns OS instructions for this repo?" It should say `.campaign-runtime/agent-context/AGENTS.md`.
+
+If Codex cannot see the skills, close Codex and open it again in the repo folder.
+
+**You should see:** both answers are correct. Commit `AGENTS.md` and push.
+
+### 4d. Protect `main`
+
+**Who:** org owner.
+
+Repo **Settings > Branches > Add branch protection rule**. Branch name `main`. Tick **Require a pull request before merging** and **Require approvals** (1). Save.
+
+From now on, every change goes through a branch and a pull request, and the team leader approves it before it is published (Part D).
+
+More information: https://developers.nextcommerce.com/docs/skills and https://campaigns.nextcommerce.com/start/
 
 ---
 
@@ -170,8 +304,8 @@ More information: https://developers.nextcommerce.com/docs/skills
 
 The `next-campaigns-create` skill needs this key to create the campaign in your store.
 
-1. In your store dashboard, open **Settings > API Access**.
-2. Create a new key. Give it **exactly these 7 permissions**:
+1. In the store dashboard, open **Settings > API Access**.
+2. Create a new key with **exactly these 7 permissions**:
    - read store settings
    - read campaigns
    - write campaigns
@@ -181,33 +315,33 @@ The `next-campaigns-create` skill needs this key to create the campaign in your 
    - write metadata
 3. Copy the key.
 
-**Where the key goes:** Codex will make a private file named `.env` in the repo folder. Open that file in a normal text editor and paste the key on the line Codex shows you. The line looks like this (store `my-store` becomes `MY_STORE`):
+**Where the key goes:** Codex makes a private file named `.env` in the repo folder and shows you 1 line to fill in. Open `.env` in a normal text editor and paste the key there. The line looks like this (store `my-store` becomes `MY_STORE`):
 
 ```
 MY_STORE_NEXT_ADMIN_API_TOKEN=paste-the-key-here
 ```
 
-**Rules for this key:**
+Rules:
 
-- Never paste it into Codex or any chat.
-- Never commit `.env` to GitHub. The `.gitignore` from Step 3 stops this.
+- Never paste the key into Codex or any chat.
+- Never commit `.env`. The `.gitignore` from Step 3 stops this.
 - If the key is ever shared by mistake, delete it in **Settings > API Access** and make a new one.
 
 ---
 
 ## Step 6. Create the campaign with next-campaigns-create
 
-**Who:** developer, with the store admin for the prices.
+**Who:** developer, with the store admin for prices.
 
-Before you start, decide these things. Codex will ask you, and it never guesses them:
+Decide these first. Codex asks for them and never guesses:
 
-- Which product(s) to sell
-- The price for each quantity (for example: 1 for $29.99, 2 for $49.99, 3 for $64.99)
-- The discounts (offers)
-- Shipping methods and shipping price
-- Currency (for example USD)
+- Which product(s)
+- Price for each quantity (for example 1 for $29.99, 2 for $49.99, 3 for $64.99)
+- Offers (discounts)
+- Shipping methods and prices (for example free over $45)
+- Currency
 
-Open Codex in the repo folder and type a request in plain words. Example:
+Open Codex in the repo folder and ask in plain words. Example:
 
 ```
 Use the next-campaigns-create skill. Create a campaign for store my-store.
@@ -215,19 +349,21 @@ Product: Christmas Light Wreath.
 Buy 1 for $29.99, Buy 2 for $49.99, Buy 3 for $64.99.
 Standard shipping $5.99, free over $45.
 Currency USD.
+Create the offers switched off.
 ```
 
 What happens:
 
-1. Codex reads your store: products, payment gateways, shipping methods.
-2. Codex shows you a **plan**: every package, price and offer.
-3. **Check every price.** If something is wrong, tell Codex what to change.
+1. Codex reads your store: products, payment gateways, shipping.
+2. Codex shows a **plan** with every package, price and offer.
+3. The store admin **checks every price**. Tell Codex what to change.
 4. When the plan is right, approve it. Codex creates the campaign.
-5. Codex gives you the **Campaign API key** and the **package IDs**. Keep these. The pages need them.
+5. Codex gives you the **Campaign API key** and the **package IDs**. Keep them.
+6. **Save the plan** Codex showed (copy it to a file outside the repo, or a shared document). You need it if you ever have to undo a change (Part D).
 
-Tip: you can ask Codex to create the offers **switched off**. Then nothing is discounted until you switch them on.
+Offers are **switched off** for now. You switch them on in Step 15, **before** the final test.
 
-**You should see:** the new campaign in your store dashboard under **Campaigns**.
+**You should see:** the new campaign in the dashboard under **Campaigns**.
 
 ---
 
@@ -235,93 +371,95 @@ Tip: you can ask Codex to create the offers **switched off**. Then nothing is di
 
 **Who:** store admin.
 
-In the dashboard, open **Campaigns**, click your campaign, then open the **Settings** tab. Check:
+Dashboard: **Campaigns** > click the campaign > **Settings** tab.
 
-| Setting | What to check |
+| Setting | Check |
 |---|---|
-| Name | Clear, so your team can find it |
+| Name | Clear, so the team can find it |
 | Currency | Correct. **It cannot be changed later.** |
 | Additional currencies | Only if you sell in more than 1 currency |
-| Shipping | The right shipping methods and prices |
+| Shipping | Right methods and prices |
 | Payment gateway group | The gateway that takes card payments for this store |
 | Payment methods | For example Credit Card, PayPal, Apple Pay |
-| Express payment methods | The buttons shown at the top of checkout, for example PayPal and Apple Pay |
+| Express payment methods | Buttons at the top of checkout, for example PayPal, Apple Pay |
 | PayPal account | Only if this campaign uses a different PayPal account from the store |
 
-To see the **Campaign API key** again: click **Developer** at the top of the campaign page. The key is in the **Campaigns API** box.
+The **Campaign API key**: click **Developer** at the top of the campaign page. It is in the **Campaigns API** box.
 
 ---
 
-## Step 8. Add your domains to the Campaigns App
+## Step 8. Add test domains to the Campaigns App
 
 **Who:** store admin.
 
-The pages can only load products and checkout on web addresses that you add here. **If a domain is not on this list, the checkout does not work.**
+The pages can only load products and checkout on addresses in this list. **If an address is not in the list, checkout does not work.**
 
-1. In the dashboard, open **Campaigns > Settings**.
+1. Dashboard: **Campaigns > Settings**.
 2. Under **Allowed Domains**, click **Add Domain**.
-3. Type the domain only, with no `https://` and no path. Example: `offers.mystore.com`.
+3. Type only the domain. No `https://`, no path. Example: `offers.mystore.com`.
 4. Choose the **Environment**:
 
-| Environment | Use it for | Analytics |
+| Environment | Use for | What happens to tracking |
 |---|---|---|
-| Development | Test addresses (your preview or test site) | NEXT analytics ignores visits and orders. Ad pixels still fire. |
-| Production | Your live address that shoppers and ads use | NEXT analytics records everything |
+| Development | Your computer (`localhost`) and test addresses | NEXT analytics **ignores** visits and orders. **Ad pixels (AppLovin, Meta) still fire.** |
+| Production | The live address that shoppers and ads use | NEXT analytics records everything. Ad pixels fire. |
 
 5. Click **Save**.
 
-Notes:
+Add now, as **Development**:
 
-- This list is for **all campaigns** in the store, not one campaign.
-- `localhost` (your own computer) already works for testing.
-- Add your **test** address as Development now. Add your **live** address as Production in Step 13.
+- `localhost`
+- your test address, if you have one
+
+You add the **live** address as Production in Step 16.
+
+This list is for **all campaigns** in the store.
 
 ---
 
 ## Step 9. Build the Map
 
-**Who:** developer.
+**Who:** developer. **Needs:** access to the Campaigns OS Workspace. If you cannot open it, ask NEXT before you start this step.
 
 The Map is the plan of your funnel: which pages, in which order, and which offer is on each page.
 
-1. In the dashboard, open **Campaigns**, click your campaign, click **Developer**, then click **Go to Map**. The Map opens with your store and campaign already filled in, and shows your packages, offers and shipping.
-   (The Workspace address is https://campaign-map.nextcommerce.com if you need to open it directly. Then connect it with the **Campaign API key** from Step 6.)
-2. Check that the packages and prices are the ones you approved in Step 6.
-3. Add the pages in order. A common funnel is:
-   **Landing page > Checkout > Upsell > Downsell > Thank-you page**
-4. For each page, choose a **template** and the **offer** it shows. See the templates at https://campaigns.nextcommerce.com/templates/
+1. Dashboard: **Campaigns** > click the campaign > **Developer** > **Go to Map**. The Map opens with your store and campaign filled in.
+   (Direct address: https://campaign-map.nextcommerce.com. Then connect it with the Campaign API key.)
+2. Check the packages and prices are the ones approved in Step 6.
+3. Add the pages in order. A common funnel: **Landing > Checkout > Upsell > Downsell > Thank-you**.
+4. For each page, choose a **template** and the **offer** it shows. Templates: https://campaigns.nextcommerce.com/templates/
 5. **Save** the Map.
-6. Open **Handoff** and click **Copy start prompt**. This prompt includes your **Map ID**. You need it in Step 10.
+6. Open **Handoff** and click **Copy start prompt**. It includes your **Map ID**.
 
-If you cannot open the Workspace, ask NEXT for access.
+**You should see:** a saved Map and the start prompt copied.
 
 ---
 
-## Step 10. Build the campaign with Campaigns OS
+## Step 10. Build the pages with Campaigns OS
 
-**Who:** developer.
+**Who:** developer. **Where:** the repo folder.
 
-1. In the repo folder, make a folder named `source`. Put your page designs in it (HTML files and their images). If you use the templates as they are, leave `source` empty.
+1. Make a folder named `source`. Put the page designs in it (HTML files and images). To use templates as they are, leave it empty.
 2. Open Codex in the repo folder.
-3. Paste the **start prompt** you copied from the Map in Step 9.
-   If you do not have it, paste this instead:
+3. Paste the **start prompt** from Step 9. If you do not have it, paste:
 
 ```
 Set up a NEXT campaign build in this folder.
 Follow https://campaigns.nextcommerce.com/llms.txt and ask me for anything you need.
 ```
 
-4. Codex now builds the campaign. It sets up the campaign folder with Campaign Page Kit (`npx campaign-init`), adds the Campaign API key, and runs Campaigns OS commands such as:
+4. Codex builds the campaign. It sets up the campaign folder with Page Kit, adds the Campaign API key, and runs Campaigns OS commands such as:
 
 ```bash
 npx --no-install campaigns-os start --map-id <map-id> --target . --source ./source --template-family <family>
 npx --no-install campaigns-os next --packet ./campaign-runtime.build.json
 ```
 
-   You do not need to type these yourself. Let Codex run them, and answer its questions.
+   You do not type these. Answer Codex's questions (store name, support email, policy links).
 
-5. Codex asks you questions on the way, for example your store name, support email and policy page links. Answer them.
-6. Look at the pages on your computer:
+   Then check that `AGENTS.md` still starts with the lines from Step 4b. If not, add them again.
+
+5. Look at the pages on your computer:
 
 ```bash
 npm run dev
@@ -329,82 +467,129 @@ npm run dev
 
 Open the address it prints (it starts with `http://localhost`). Click through every page.
 
-7. When the pages look right, save to GitHub:
+6. Build the final files:
 
 ```bash
-git add -A
-git commit -m "Build the <campaign name> campaign"
-git push
+npm run build
 ```
 
-**You should see:** every page of the funnel on `localhost`, with your products and prices.
+**You should see:** a folder `_site/<campaign-slug>/` with 1 folder for each page (for example `landing`, `checkout`, `receipt`), each with an `index.html`.
+
+Commit your work on a branch and open a pull request (Part D).
 
 ---
 
-## Step 11. Test the campaign
+## Step 11. Keep your Shopify URLs
 
-**Who:** developer.
+**Who:** developer. **Skip this step** if no ads or links use old Shopify addresses for this campaign.
 
-Ask Codex to run the Campaigns OS checks and **1 test order**. Codex uses this test card:
+This makes the campaign page also answer at the old Shopify path, for example `/products/my-product`.
 
-| Card number | Expiry | CVV |
-|---|---|---|
-| 6011 1111 1111 1117 | any date in the future | any |
+1. In the repo folder, make the file `scripts/shopify-urls.js` with this content:
 
-Important:
+```js
+// Keep old Shopify addresses: copy a built campaign page to an extra address.
+// Reads shopify-urls.json, for example:
+//   { "/products/my-product-handle": "/first-offer/landing/" }
+// Runs after `npm run build` (the "postbuild" script in package.json).
+const fs = require('fs');
+const path = require('path');
 
-- A test card takes **no money**, but it makes a **real order** in your store's **Orders** list. Tell your team. Make sure your warehouse does **not** ship test orders. Cancel them after the test.
-- Test the full path: landing page > checkout > upsell **accept**, and a second time with upsell **decline**.
-- If the card number box and CVV box on the checkout are **empty and you cannot type in them**, the store's card payment is not ready. Stop and ask NEXT.
+const SITE = path.join(__dirname, '..', '_site');
+const MAP = path.join(__dirname, '..', 'shopify-urls.json');
 
-More information: https://developers.nextcommerce.com/docs/testing
+if (!fs.existsSync(MAP)) process.exit(0);
+const urls = JSON.parse(fs.readFileSync(MAP, 'utf8'));
+let failed = false;
 
-**You should see:** the thank-you page, and the test order in **Orders** with the right products and prices.
+for (const [from, to] of Object.entries(urls)) {
+  const src = path.join(SITE, to.replace(/^\/+|\/+$/g, ''), 'index.html');
+  const dest = path.join(SITE, from.replace(/^\/+|\/+$/g, ''), 'index.html');
+  if (!dest.startsWith(SITE + path.sep) || !src.startsWith(SITE + path.sep)) {
+    console.error(`[shopify-urls] not allowed: ${from} -> ${to}`);
+    failed = true;
+    continue;
+  }
+  if (!fs.existsSync(src)) {
+    console.error(`[shopify-urls] page not found: ${to} (for ${from})`);
+    failed = true;
+    continue;
+  }
+  fs.mkdirSync(path.dirname(dest), { recursive: true });
+  fs.copyFileSync(src, dest);
+  console.log(`[shopify-urls] ${from}/ shows ${to}`);
+}
+
+process.exit(failed ? 1 : 0);
+```
+
+2. Make the file `shopify-urls.json`. On the left: the old Shopify path. On the right: the campaign page to show. Example:
+
+```json
+{
+  "/products/christmas-light-wreath": "/first-offer/landing/"
+}
+```
+
+3. Make it run after every build:
+
+```bash
+npm pkg set scripts.postbuild="node scripts/shopify-urls.js"
+```
+
+4. Build:
+
+```bash
+npm run build
+```
+
+**You should see:** the line `[shopify-urls] /products/christmas-light-wreath/ shows /first-offer/landing/`, and the file `_site/products/christmas-light-wreath/index.html`.
+
+Notes:
+
+- Ad click data in the address (for example AppLovin's `?aleid=...&alart=...`) stays on the address. Do not remove it.
+- If the domain is your **storefront**, you also need a storefront redirect (Part F) to send the old address to the campaign's domain.
 
 ---
 
-## Step 12. Put the pages online (hosting)
+## Step 12. Add the AppLovin pixel
 
-**Who:** developer.
+**Who:** developer. **Skip** if you do not run AppLovin ads.
 
-The build makes normal web files (HTML, CSS, images) in a folder named `_site`. **Any** static hosting service can host them. Every host needs the same 2 settings:
+The campaign templates already include the AppLovin (Axon) pixel. You only add your key.
 
-- **Build command:** `npm run build`
-- **Output (publish) folder:** `_site`
+1. Get the **Event Key** from AppLovin Ads Manager: **Account > API keys**. It is not a pixel ID.
+2. Open `_data/campaigns.json`. In your campaign's entry, add:
 
-### Hosting services you can use
+```json
+"axon_event_key": "your-event-key-here",
+"axon_item_category_id": "123"
+```
 
-| Host | Free plan | Notes |
-|---|---|---|
-| GitHub Pages | Yes | Repo must be **public** on the free plan. Set it up with the workflow below. |
-| Cloudflare Pages | Yes | Connect the GitHub repo. Framework preset: **None**. Fast in many countries. |
-| Netlify | Yes | Connect the GitHub repo. It finds the settings itself. |
-| Vercel | Yes | Connect the GitHub repo. Framework: **Other**. |
-| Render | Yes | Create a **Static Site**. Publish path `_site`. |
-| Firebase Hosting | Yes | Uses the `firebase` command line tool. |
-| AWS Amplify Hosting | Free tier | Connect the GitHub repo. |
-| AWS S3 + CloudFront | Pay as you use | More setup. For teams that already use AWS. |
-| Azure Static Web Apps | Yes | Connect the GitHub repo. |
-| DigitalOcean App Platform | Yes (static sites) | Create a **Static Site** component. |
-| GitLab Pages | Yes | Only if your code is in GitLab. |
-| Surge | Yes | Upload from the command line. For quick tests. |
+   `axon_item_category_id` is a **number**. Use the category number from your AppLovin product setup. If you do not have one, leave this line out.
 
-All of them work. Choose **one** host for your team and use it for every store. If you are not sure, use **Cloudflare Pages** or **GitHub Pages**.
+3. **Customer email and phone:** off by default. Add `"axon_send_user_data": "true"` **only** if the store owner confirms the store's privacy policy and consent allow sharing them with AppLovin.
+4. Do **not** also add AppLovin through Google Tag Manager. That counts every event 2 times.
+5. Build and open the page on your computer. Use the **Axon Pixel Helper** browser extension to check that `page_view`, `view_item`, `add_to_cart` and `begin_checkout` fire **once**.
 
-### Use your own domain
+Tell your media buyer:
 
-Always use **your own domain** (for example `offers.mystore.com`). The pages use addresses that start with `/`, so they only work at the top of a domain. The free addresses like `yonderminds.github.io/<repo>/` need extra setup. The demo-configured-campaign repo shows that setup (`scripts/pages-routes.js`) if you need it.
+- Each accepted **upsell** sends **another purchase** to AppLovin. Revenue is correct, but the **number of purchases** is higher than the number of orders.
+- Stores in the EU or UK: ask NEXT before switching the pixel on (consent rules).
 
-To use your own domain:
+The storefront uses the AppLovin **app** instead. See Part G.
 
-1. In your host, add the custom domain. The host tells you which DNS record to add (usually a **CNAME** record).
-2. Add that record where your domain's DNS is managed.
-3. Wait until the host says the domain is ready and HTTPS is on.
-4. Add the domain in **Campaigns > Settings > Allowed Domains** (Step 8).
+---
 
-### GitHub Pages setup
+## Step 13. Put the pages online
 
-1. In the repo, make the file `.github/workflows/pages.yml` with this content:
+**Who:** developer, and org owner for the domain. **Host:** GitHub Pages (the hosting Yonderminds uses). Other hosts are in Appendix 1.
+
+**Always use your own domain**, for example `offers.mystore.com`. The pages use addresses that start with `/`. They work only at the top of a domain, not at the free address `yonderminds.github.io/<repo>/`.
+
+### 13a. Add the publish workflow
+
+In the repo folder, make the file `.github/workflows/pages.yml`:
 
 ```yaml
 name: Deploy to GitHub Pages
@@ -443,51 +628,237 @@ jobs:
         uses: actions/deploy-pages@v4
 ```
 
-2. In the repo, open **Settings > Pages**. Under **Source**, choose **GitHub Actions**.
-3. On the same page, under **Custom domain**, type your domain and click **Save**. Tick **Enforce HTTPS** when it is available.
-4. Commit and push. Open the **Actions** tab to watch it. A green tick means the pages are online.
+This builds with the same command as Step 10 (`npm run build`, which also runs Step 11's script) and publishes the `_site` folder.
 
-Every time you push to `main`, the pages update by themselves.
+### 13b. Turn on GitHub Pages and the domain
+
+**Who:** org owner.
+
+1. Repo **Settings > Pages**. Under **Source**, choose **GitHub Actions**.
+2. Under **Custom domain**, type the domain (for example `offers.mystore.com`). Click **Save**.
+3. Where the domain's DNS is managed, add the record GitHub shows (for a subdomain: a **CNAME** record pointing to `yonderminds.github.io`).
+4. Wait until GitHub says the DNS check passed. Tick **Enforce HTTPS**.
+5. Add the domain to the Campaigns App as **Development** for now (Step 8). It becomes Production in Step 16.
+
+### 13c. AppLovin rule for subdomains
+
+If AppLovin ads use a subdomain (for example `offers.mystore.com`), AppLovin requires the subdomain's **home address** (`https://offers.mystore.com/`) to send shoppers to your main site (`https://mystore.com/`) with a permanent (301) redirect. GitHub Pages cannot send a 301. **Ask NEXT to set this up** (usually a redirect rule at your DNS provider).
+
+### 13d. Publish
+
+Merge your pull request into `main` (Part D). Open the repo's **Actions** tab. A green tick means the pages are online.
+
+**You should see:** `https://<your-domain>/<campaign-slug>/landing/` opens, with styles and images, over HTTPS.
 
 ---
 
-## Step 13. Go live
+## Step 14. Check payments are ready
 
-**Who:** team leader.
+**Who:** store admin, with NEXT.
 
-1. Add your **live** domain in **Campaigns > Settings > Allowed Domains** as **Production**.
-2. Open the live address. Click through every page.
-3. Place **1 test order** on the live address (Step 11 rules). Check it in **Orders**. Cancel it.
-4. Check your ad pixels and analytics see the visit and the purchase.
-5. Switch on the offers if you created them switched off.
-6. Point your ads to the live landing page address.
+The test card in Step 15 **does not use the payment gateway**. It proves the pages and order flow work. It does **not** prove that real payments work.
+
+For **each payment method** in the campaign (Step 7), confirm with NEXT that it is set up and approved:
+
+- [ ] Credit card gateway connected and approved
+- [ ] PayPal connected (if used)
+- [ ] Apple Pay / Google Pay working on your domain (if used)
+
+Do **not** pay with a real card to test, unless the store owner says yes and agrees to refund it.
+
+**You should see:** NEXT confirms each method in writing.
+
+---
+
+## Step 15. Final check and test orders
+
+**Who:** developer, with the store admin. Do this on the **final setup**: the real domain, the real campaign, and the **offers switched on**.
+
+### 15a. Set the final offers
+
+1. Store admin: switch on the offers you will run (ask Codex to use `next-campaigns-create`, or in the dashboard).
+2. After this, **do not change prices or offers** before go-live. If you change them, do Step 15 again.
+
+If the campaign **already has live traffic**, switching an offer on changes the price for real shoppers straight away. Plan the time with the team leader first.
+
+### 15b. Check prices (no orders needed)
+
+On the published pages, for **every quantity you advertise** (for example 1, 2 and 3):
+
+- [ ] The price on the landing page is right
+- [ ] The checkout total is right (product + shipping)
+- [ ] Free shipping starts at the right amount
+- [ ] Any discount code works
+- [ ] The currency is right
+
+### 15c. Place the test orders
+
+Ask Codex to run the Campaigns OS QA test orders on the published address. Campaigns OS uses NEXT's test card and **blocks the test purchase from reaching AppLovin and other ad tools**. Do not place test orders by hand on the live domain: a hand test sends a fake purchase to your ad accounts.
+
+Test **every path** in your funnel. For a funnel with 1 upsell and 1 downsell:
+
+| Test | Path |
+|---|---|
+| 1 | Checkout, then **accept** the upsell |
+| 2 | Checkout, **decline** the upsell, **accept** the downsell |
+| 3 | Checkout, **decline** the upsell, **decline** the downsell |
+
+You do **not** need 1 order for every price tier. Check the tiers in 15b. Order 1 tier on each path.
+
+Test card (from https://developers.nextcommerce.com/docs/testing):
+
+| Card number | Expiry | CVV |
+|---|---|---|
+| 6011 1111 1111 1117 | any future date | any |
+
+After each order, open the store dashboard **Orders**:
+
+- [ ] The order is tagged **Test Order**
+- [ ] The products, quantities and total are right
+- [ ] The upsell or downsell is on the order when accepted, and not there when declined
+
+If the card number and CVV boxes on checkout are **empty and you cannot type in them**, card payment is not ready. Stop and go back to Step 14.
+
+### 15d. Clean up the test orders
+
+**Who:** store admin.
+
+- Test orders make **real order records**. They can also create **fulfillment orders** and reach connected apps (warehouse, email, Shopify sync).
+- Straight after testing: check **Fulfillment**, and stop any fulfillment for test orders before the warehouse picks them.
+- Then filter **Orders** by **Test Orders** and delete them.
+- Deleting an order does **not** undo what was already sent to a warehouse or another app. If a test order reached one, tell them it is a test.
+
+Write down what you tested and anything that did not pass.
+
+---
+
+## Step 16. Go live
+
+**Who:** team leader. Nothing goes live without the team leader's yes.
+
+1. Check Steps 13, 14 and 15 are done and passed.
+2. Store admin: add the live domain in **Campaigns > Settings > Allowed Domains** as **Production** (change it from Development).
+3. If the domain is your storefront domain: NEXT adds the storefront redirects (Part F).
+4. Team leader writes "approved to go live" in the team chat, with the date.
+5. Point your ads to the live address.
+6. In the first hour, check: new orders arrive, AppLovin (Pixel Helper) shows 1 purchase per order, no customer complaints.
 
 ### Go-live checklist
 
 - [ ] Every developer has their own GitHub account with 2FA
-- [ ] The repo is in the Yonderminds organization and the team has Write access
-- [ ] `.env` and the Admin API key are **not** in GitHub
-- [ ] The campaign exists and every price was checked
+- [ ] Repo in the Yonderminds organization, `main` protected
+- [ ] `AGENTS.md` points to the Campaigns OS instructions
+- [ ] No `.env` and no Admin API key in GitHub
+- [ ] Campaign created and every price approved
 - [ ] Campaign settings checked: currency, shipping, payment methods
-- [ ] Test domain added as Development, live domain added as Production
-- [ ] Map saved, campaign built, every page checked on `localhost`
-- [ ] Test orders placed (upsell accept and decline), checked, and cancelled
+- [ ] Old Shopify URLs work (Step 11, and Part F if needed)
+- [ ] AppLovin Event Key added, events fire once
 - [ ] Pages online on your own domain with HTTPS
+- [ ] AppLovin subdomain home redirect set up by NEXT (if AppLovin on a subdomain)
+- [ ] Every payment method confirmed by NEXT
+- [ ] Final offers on, prices checked for every tier
+- [ ] Test orders on every path, checked and cleaned up
+- [ ] Live domain added as Production
+- [ ] Team leader approved
 - [ ] Ads point to the live address
 
 ---
 
-## Changing a live campaign
+## Part D. After go-live: making changes, and recovery
 
-- **Page changes** (text, images, layout): ask Codex, check with `npm run dev`, then commit and push. The host updates the pages.
-- **Price or offer changes:** ask Codex to use `next-campaigns-create` again. It shows what will change before it changes anything.
-- **New campaign for the same store:** add it to the same repo. Repeat Steps 6 to 11.
-- **New store:** make a new repo. Start again at Step 2.
+### How a change is published
+
+1. Developer makes a **branch**, makes the change with Codex, and checks it with `npm run dev`.
+2. Developer opens a **pull request**.
+3. **Team leader** reviews and approves it.
+4. Merging into `main` **publishes** the change. GitHub Actions takes about 2 minutes.
+5. Developer checks the **published** page (not only on their computer) and tells the team leader it is done.
+
+Price and offer changes are **not** in the code. They are store settings. Use `next-campaigns-create`, approve its plan, **save the plan**, then do Step 15b again.
+
+### If something breaks
+
+**Who owns recovery:** the team leader.
+
+1. **Checkout broken or prices wrong?** Pause the ads first. Then fix.
+2. **Page code problem:** on GitHub, open the pull request that caused it and click **Revert**. Merge the revert pull request. The previous version is published in about 2 minutes. Check the page.
+3. **Price or offer problem:** reverting code does **not** change store settings. Ask Codex to use `next-campaigns-create` to put back the old values from the saved plan (Step 6). Check prices again (Step 15b).
+4. Turn the ads back on only when the team leader says the page is right.
+5. Tell NEXT if the problem was on the platform.
+
+---
+
+## Part E. New campaign or new store
+
+**New campaign for a store that already has a repo:**
+
+- Reuse: the repo, Steps 1 to 5, the domain, the GitHub Pages setup, the Allowed Domains.
+- Do again: Steps 6, 7, 9, 10, 11, 12, 15 and 16 for the new campaign. It goes in a new folder in `src/`.
+
+**New store:** start again at Step 2 with a new repo.
+
+---
+
+## Part F. Storefront: redirects for old Shopify URLs
+
+**Who:** NEXT or the store admin. This is for the **storefront** (Part B). Campaigns use Step 11.
+
+Storefront page addresses are fixed. Old Shopify addresses must redirect. Dashboard: **Settings > Redirects**. Add 1 rule at a time.
+
+For **every** rule that an ad can reach:
+
+1. Tick **Match using regular expressions**. Without it, ad clicks (which carry `?aleid=...`) land on a "not found" page.
+2. Fill in:
+
+| Old Shopify address | Redirect From | Redirect To |
+|---|---|---|
+| `/products/my-product` | `^/products/my-product/?(?=$\|\?)` | the new page, for example `/my-product/` |
+| `/collections/any/products/my-product` | `^/collections/[^/?]+/products/my-product/?(?=$\|\?)` | the same new page |
+| Old address that should go to a **campaign** | the same patterns | the full campaign address, for example `https://offers.mystore.com/products/my-product/` |
+
+Type the From field **without** the `\` before `|`. Example: `^/products/my-product/?(?=$|\?)`
+
+3. **Redirect To** must have **no** `?` and **no** `#`. Otherwise the ad click data breaks.
+4. Wait 1 minute (rules are cached), then test the old address **with** `?aleid=test` on the end. It must arrive at the new page with `?aleid=test` still there.
+
+---
+
+## Part G. Storefront: AppLovin app
+
+**Who:** NEXT with the store admin. This is for the **storefront** only. It does **not** track campaign orders (campaigns use Step 12).
+
+1. Install the **AppLovin Axon** app on the store (Dashboard > Apps). If you cannot find it, ask NEXT.
+2. Enter the store's **Event Key** (AppLovin Ads Manager > Account > API keys).
+3. Settings: **Send Customer Email and Phone: off**. **Skip Test Orders: on**. Then switch **Enable** on.
+4. NEXT checks the storefront theme supports the app.
+5. Check with the **Axon Pixel Helper** on the storefront: `page_view`, `view_item`, `add_to_cart`, `remove_from_cart`, `begin_checkout` and `purchase` each fire **once**, and `purchase` has the right value, currency and order number.
+6. Do not also add AppLovin with Google Tag Manager.
+7. EU or UK stores: ask NEXT before switching it on (consent rules).
+
+---
+
+## Appendix 1. Other hosting services
+
+Yonderminds uses GitHub Pages (Step 13). Other static hosts can also serve the `_site` folder. Their settings are **not all the same**: check each host's own documentation for build settings, custom domains, redirects and plan limits before you use it.
+
+| Host | Notes |
+|---|---|
+| Cloudflare Pages | Connect the repo. Build command `npm run build`, output `_site`. Can do the 301 redirect from Step 13c itself. |
+| Netlify | Connect the repo. Build command `npm run build`, publish folder `_site`. |
+| Vercel | Connect the repo. Framework: Other. |
+| Render | Static Site, publish path `_site`. |
+| Others | Firebase Hosting, AWS Amplify, AWS S3 + CloudFront, Azure Static Web Apps, DigitalOcean App Platform, GitLab Pages, Surge. |
+
+Whichever host you use: add its domain to **Allowed Domains** (Step 8), and do Steps 14 to 16 on it.
+
+---
 
 ## Help
 
 - Campaigns docs: https://developers.nextcommerce.com/docs/campaigns
 - NEXT skills: https://developers.nextcommerce.com/docs/skills
-- Campaigns OS: https://campaigns.nextcommerce.com/
+- Campaigns OS: https://campaigns.nextcommerce.com/ and https://campaigns.nextcommerce.com/start/
 - Testing: https://developers.nextcommerce.com/docs/testing
 - Something not working: contact your NEXT team. Send the store name, the page address, and a screenshot.
+
+*Checked against Campaign Page Kit 0.3.0 and Campaigns OS 1.71.2 on 17 November 2026.*
