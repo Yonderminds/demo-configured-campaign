@@ -31,8 +31,12 @@ jobs:
         run: node scripts/smoke-check.js
       - name: Build all campaigns
         run: node scripts/build.js
-      - name: Write rewrite pages
+      - id: pages
+        uses: actions/configure-pages@v5
+      - name: Write rewrite pages and apply the base path
         run: node scripts/pages-routes.js
+        env:
+          PAGES_BASE_PATH: ${{ steps.pages.outputs.base_path }}
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site

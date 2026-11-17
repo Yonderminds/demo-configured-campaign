@@ -92,3 +92,41 @@ if (errors.length) {
   process.exit(1);
 }
 console.log(`[pages-routes] ${written} rewrite page(s) written`);
+
+// ── Base path ───────────────────────────────────────────────────────────────
+// A project site without a custom domain is served under /<repo>/ (for example
+// https://yonderminds.github.io/coerneuineo-cpk/). Pages use root-relative paths
+// such as "/<campaign-slug>/css/…", so prefix every root-relative reference to a
+// top-level folder of _site/ with the base path. The workflow passes the base path
+// from actions/configure-pages; it is empty once a custom domain is attached, and
+// then nothing is rewritten.
+const BASE = (process.env.PAGES_BASE_PATH || '').replace(/\/+$/, '');
+if (BASE && !/^\/[A-Za-z0-9._~%-]+(\/[A-Za-z0-9._~%-]+)*$/.test(BASE)) {
+  console.error(`[pages-routes] ERROR unexpected PAGES_BASE_PATH: ${BASE}`);
+  process.exit(1);
+}
+if (BASE) {
+  const tops = fs.readdirSync(SITE, { withFileTypes: true })
+    .filter(d => d.isDirectory())
+    .map(d => d.name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
+  // Encoded and decoded forms of each top folder (e.g. "products").
+  const alt = tops.map(t => `${t}|${encodeURIComponent(t).replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}`).join('|');
+  // A quote, backtick or "(" then "/<top>" followed by "/", a quote or ")".
+  const rx = new RegExp(`(["'\`(])/((?:${alt}))(?=[/"'\`)?#])`, 'g');
+  let files = 0, refs = 0;
+  const walk = dir => {
+    for (const d of fs.readdirSync(dir, { withFileTypes: true })) {
+      const p = path.join(dir, d.name);
+      if (d.isDirectory()) { walk(p); continue; }
+      if (!/\.(html|css|js|json|webmanifest)$/i.test(d.name)) continue;
+      const s = fs.readFileSync(p, 'utf8');
+      let n = 0;
+      const out = s.replace(rx, (m, q, top) => { n++; return `${q}${BASE}/${top}`; });
+      if (n) { fs.writeFileSync(p, out); files++; refs += n; }
+    }
+  };
+  walk(SITE);
+  console.log(`[pages-routes] base path ${BASE}: ${refs} reference(s) prefixed in ${files} file(s)`);
+} else {
+  console.log('[pages-routes] no base path (custom domain or local build): paths left as built');
+}
