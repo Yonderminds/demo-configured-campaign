@@ -1,41 +1,28 @@
-# Build output
-_site/
-.tmp/
+# campaigns-os: machine-local runtime state (managed block; edit the list, keep the marker)
+# Sessions, journals, Run Records, capture evidence, and full QA verdicts are
+# per-machine. The readback bundle (build-context, assembly-report, doctor-output,
+# qa-verdict), fetched-specs/, input/, theme/, and agent-context/ are meant to be
+# committed and are deliberately not listed here.
+.campaign-runtime/run-session.json
+.campaign-runtime/command-lifecycle.jsonl
+.campaign-runtime/agent-deviations.jsonl
+.campaign-runtime/workflow-findings.jsonl
+.campaign-runtime/run-records/
+.campaign-runtime/funnels/*/run-records/
+.campaign-runtime/progress/
+.campaign-runtime/polish-evidence/
+.campaign-runtime/evidence/
+qa-output/
+.campaign-runtime/*.log
+.campaign-runtime/*.tmp
+.campaign-runtime/**/*.tmp
 
-# Tailwind — compiled output is generated at build time, never committed
-**/tailwind.output.css
-
-# Dependencies
+# Dependencies, build output and private settings
 node_modules/
-
-# macOS
-**/.DS_Store
-.AppleDouble
-.LSOverride
-
-# Sass
-**/.sass-cache
-**/.sass-cache/*
-scss/
-
-# Prepros
-prepros.cfg
-prepros-6.config
-prepros.config
-
-# Editors
-.vscode/*
-.cursor/
-
-# Netlify
-.netlify
-
-# Environment
+_site/
 .env
-.env.local
-.env.*.local
-
-# Claude Code
-.claude/settings.local.json
-.claude/settings.json
-.gstack/
+.env.*
+**/tailwind.output.css
+.DS_Store
+# Left over from the old nested layout (only build output and dependencies)
+christmas-diamond-painting/

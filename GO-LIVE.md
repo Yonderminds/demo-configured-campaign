@@ -30,6 +30,7 @@ If a step does not work, **stop and ask NEXT**. Do not guess.
 | The Spark storefront theme and Theme Kit (Part H) | Storefront design changes, if you want them |
 | Help with payments, domains and redirect rules | Access to your domain's DNS settings |
 | 2 demo repos to copy from | Your AppLovin **Event Key** (if you use AppLovin) |
+| An admin tracker for the coordinator: [ADMIN-TRACKER.md](ADMIN-TRACKER.md) | A Cloudflare account for hosting (Step 13) |
 | | The list of your old Shopify product addresses that ads use |
 
 ---
@@ -113,7 +114,7 @@ The address has 2 parts: the **domain** (`mystore.com`) and the **path** (`/prod
 | 1 | Accounts and tools | Every developer |
 | 2 | Create the repo for a store | Org owner |
 | 3 | Install Campaign Page Kit and Campaigns OS | Developer |
-| 4 | Connect Codex, protect `main` | Developer + org owner |
+| 4 | Connect Codex, agree the team rule | Developer + team leader |
 | 5 | Make an Admin API key | Store admin |
 | 6 | Create the campaign with next-campaigns-create | Developer + store admin |
 | 7 | Check the campaign settings | Store admin |
@@ -162,10 +163,11 @@ Rules:
 
 - **1 repo for each store.** Name it `<store>-cpk`. Example: store `mystore` has repo `mystore-cpk`.
 - All campaigns for that store go in the **same repo**.
-- Yonderminds repos are **public**, because GitHub Pages hosting on the free plan needs public repos. So never put private data in a repo: no keys, no customer data, no passwords.
+- Store repos are **private**. Only your team and NEXT can see them. Still, never put secrets in a repo: no keys, no passwords, no customer data.
+- The 2 demo repos are public, because they are examples for everyone.
 
 1. Go to https://github.com/organizations/Yonderminds/repositories/new
-2. **Repository name:** `<store>-cpk`. **Visibility:** Public.
+2. **Repository name:** `<store>-cpk`. **Visibility:** Private.
 3. Tick **Add a README file**. Click **Create repository**.
 4. Give the team access: in the repo, **Settings > Collaborators and teams > Add teams**, choose the team, role **Write**.
 5. Each developer copies the repo to their computer:
@@ -189,7 +191,7 @@ cd <store>-cpk
 │   └── <campaign-2>/
 ├── scripts/shopify-urls.js  ← keeps old Shopify addresses (Step 11)
 ├── shopify-urls.json
-├── .github/workflows/pages.yml  ← publishes to GitHub Pages (Step 13)
+├── _redirects               ← Cloudflare Pages redirect rules (Step 13c)
 └── _site/                   ← made by `npm run build`, never committed
 ```
 
@@ -200,7 +202,7 @@ A **second campaign** for the same store is a new folder in `src/`. It is not a 
 | Repo | Shows |
 |---|---|
 | https://github.com/Yonderminds/demo-fresh-campaign | Your repo **after Step 4** (fresh install, nothing set up yet). Same layout as this guide. |
-| https://github.com/Yonderminds/demo-configured-campaign | A **finished** campaign for 1 real store. It uses an **advanced layout** (1 extra folder level for product lines, and its own build scripts). Use it to see finished pages, tracking and test records. Do **not** copy its layout; follow this guide. |
+| https://github.com/Yonderminds/demo-configured-campaign | Your repo **after Step 16**: a finished campaign for 1 real store, in the **same layout**. Compare the 2 repos to see exactly what changes. Its README lists every value you must **replace** if you copy from it. |
 
 ---
 
@@ -288,13 +290,13 @@ If Codex cannot see the skills, close Codex and open it again in the repo folder
 
 **You should see:** both answers are correct. Commit `AGENTS.md` and push.
 
-### 4d. Protect `main`
+### 4d. Agree the team rule for `main`
 
-**Who:** org owner.
+**Who:** team leader.
 
-Repo **Settings > Branches > Add branch protection rule**. Branch name `main`. Tick **Require a pull request before merging** and **Require approvals** (1). Save.
+From now on, every change goes through a **branch** and a **pull request**. Nobody merges their own pull request. The **team leader** merges it after checking it (Part D). Merging into `main` publishes the pages once Step 13 is done.
 
-From now on, every change goes through a branch and a pull request, and the team leader approves it before it is published (Part D).
+(GitHub can enforce this rule on private repos only with a paid GitHub plan. On the free plan, the team keeps it by agreement.)
 
 More information: https://developers.nextcommerce.com/docs/skills and https://campaigns.nextcommerce.com/start/
 
@@ -583,74 +585,75 @@ The storefront uses the AppLovin **app** instead. See Part G.
 
 ---
 
-## Step 13. Put the pages online
+## Step 13. Put the pages online (Cloudflare Pages)
 
-**Who:** developer, and org owner for the domain. **Host:** GitHub Pages (the hosting Yonderminds uses). Other hosts are in Appendix 1.
+**Who:** org owner (Cloudflare and domain), then developer. **Host:** Cloudflare Pages. GitHub keeps the code and the pull requests. Cloudflare builds the pages and puts them online.
 
-**Always use your own domain**, for example `offers.mystore.com`. The pages use addresses that start with `/`. They work only at the top of a domain, not at the free address `yonderminds.github.io/<repo>/`.
+Do **not** use GitHub Pages for campaigns. GitHub's rules do not allow GitHub Pages for sites that are mainly used to sell things.
 
-### 13a. Add the publish workflow
+**Always use your own domain**, for example `offers.mystore.com`. The pages use addresses that start with `/`, so they work only at the top of a domain.
 
-In the repo folder, make the file `.github/workflows/pages.yml`:
-
-```yaml
-name: Deploy to GitHub Pages
-on:
-  push:
-    branches: [main]
-  workflow_dispatch:
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-concurrency:
-  group: pages
-  cancel-in-progress: false
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "22"
-      - run: npm ci
-      - run: npm run build
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: _site
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - id: deployment
-        uses: actions/deploy-pages@v4
-```
-
-This builds with the same command as Step 10 (`npm run build`, which also runs Step 11's script) and publishes the `_site` folder.
-
-### 13b. Turn on GitHub Pages and the domain
+### 13a. Connect the repo to Cloudflare (1 time for each store repo)
 
 **Who:** org owner.
 
-1. Repo **Settings > Pages**. Under **Source**, choose **GitHub Actions**.
-2. Under **Custom domain**, type the domain (for example `offers.mystore.com`). Click **Save**.
-3. Where the domain's DNS is managed, add the record GitHub shows (for a subdomain: a **CNAME** record pointing to `yonderminds.github.io`).
-4. Wait until GitHub says the DNS check passed. Tick **Enforce HTTPS**.
-5. Add the domain to the Campaigns App as **Development** for now (Step 8). It becomes Production in Step 16.
+1. Make a free Cloudflare account for Yonderminds at https://dash.cloudflare.com/sign-up (1 company account; add developers as members).
+2. In Cloudflare: **Workers & Pages > Create application > Pages > Connect to Git**.
+3. Choose **GitHub**. The first time, install the **Cloudflare Workers and Pages** GitHub app on the **Yonderminds** organization. Choose **Only select repositories** and pick the store repo.
+4. Choose the repo `<store>-cpk`. Set:
 
-### 13c. AppLovin rule for subdomains
+| Setting | Value |
+|---|---|
+| Project name | `<store>-cpk` |
+| Production branch | `main` |
+| Framework preset | **None** |
+| Build command | `npm run build` |
+| Build output directory | `_site` |
+| Environment variable | `NODE_VERSION` = `22` |
 
-If AppLovin ads use a subdomain (for example `offers.mystore.com`), AppLovin requires the subdomain's **home address** (`https://offers.mystore.com/`) to send shoppers to your main site (`https://mystore.com/`) with a permanent (301) redirect. GitHub Pages cannot send a 301. **Ask NEXT to set this up** (usually a redirect rule at your DNS provider).
+5. Click **Save and Deploy**. Wait for the build to finish.
 
-### 13d. Publish
+**You should see:** a green "Success", and an address like `https://<store>-cpk.pages.dev`.
 
-Merge your pull request into `main` (Part D). Open the repo's **Actions** tab. A green tick means the pages are online.
+### 13b. Add your domain
 
-**You should see:** `https://<your-domain>/<campaign-slug>/landing/` opens, with styles and images, over HTTPS.
+**Who:** org owner.
+
+1. In the Pages project: **Custom domains > Set up a custom domain**. Type the domain, for example `offers.mystore.com`.
+2. If the domain's DNS is in Cloudflare, Cloudflare adds the record for you. If not, add the **CNAME** record Cloudflare shows (pointing to `<store>-cpk.pages.dev`) where your DNS is managed.
+3. Wait until the domain shows **Active**. HTTPS is set up automatically.
+4. Add the domain to the Campaigns App as **Development** for now (Step 8). It becomes Production in Step 16.
+
+### 13c. AppLovin rule: send the subdomain home address to your main site
+
+AppLovin requires that the **home address** of an ad subdomain (`https://offers.mystore.com/`) sends shoppers to your main site (`https://mystore.com/`) with a permanent (301) redirect.
+
+1. In the repo folder, make a file named `_redirects` with this line (use your own main domain):
+
+```
+/ https://mystore.com/ 301
+```
+
+2. Make the build copy it into `_site` (Cloudflare reads it from there):
+
+```bash
+npm pkg set scripts.postbuild="node scripts/shopify-urls.js && cp _redirects _site/_redirects"
+```
+
+(If you skipped Step 11, use `npm pkg set scripts.postbuild="cp _redirects _site/_redirects"`.)
+
+3. After the next publish, open `https://offers.mystore.com/`. It must go to `https://mystore.com/`.
+
+### 13d. Preview and production
+
+| | Address | What it is for |
+|---|---|---|
+| **Production** | Your domain, and `<store>-cpk.pages.dev` | What shoppers see. Updated when a pull request is **merged into `main`**. |
+| **Preview** | A different `*.pages.dev` address for each pull request | For the team leader to look at a change **before** it is merged. Cloudflare shows the link on the pull request in GitHub. |
+
+Preview addresses change for each pull request, so they are not in **Allowed Domains**. Pages show, but **checkout may not work on a preview**. Test checkout on your domain (Step 15).
+
+**You should see:** `https://<your-domain>/<campaign-slug>/` opens with styles and images, over HTTPS.
 
 ---
 
@@ -674,18 +677,33 @@ Do **not** pay with a real card to test, unless the store owner says yes and agr
 
 ## Step 15. Final check and test orders
 
-**Who:** developer, with the store admin. Do this on the **final setup**: the real domain, the real campaign, and the **offers switched on**.
+**Who:** developer, with the store admin. Do this on the **final setup**: your domain, the real campaign, and the **offers switched on**.
 
-### 15a. Set the final offers
+### 15a. Before any test order: stop test orders reaching the warehouse
+
+**Who:** store admin. **Name the person** who does this for the store, and write the name down.
+
+Test orders use a test card, so **no money moves**. But they are **real order records**, and they can reach other systems. Before the first test order, check each one:
+
+| System | Check before testing | Who |
+|---|---|---|
+| Warehouse / fulfillment | Test orders can create **fulfillment orders**. Agree how you stop them before they are picked (hold or cancel straight after each test), or tell the warehouse the test times. | Store admin |
+| Shopify sync (if the store still syncs to Shopify) | Test orders may be copied to Shopify. Ask NEXT if the store uses it. | Store admin + NEXT |
+| Customer emails | Order emails are sent to the test email address. Use an email address your team reads. | Developer |
+| Other apps (CRM, reviews, accounting) | Ask NEXT which apps are connected, and whether they receive test orders. | Store admin + NEXT |
+
+Do not start 15d until this table is complete.
+
+### 15b. Set the final offers
 
 1. Store admin: switch on the offers you will run (ask Codex to use `next-campaigns-create`, or in the dashboard).
 2. After this, **do not change prices or offers** before go-live. If you change them, do Step 15 again.
 
 If the campaign **already has live traffic**, switching an offer on changes the price for real shoppers straight away. Plan the time with the team leader first.
 
-### 15b. Check prices (no orders needed)
+### 15c. Check prices and links (no orders needed)
 
-On the published pages, for **every quantity you advertise** (for example 1, 2 and 3):
+On your domain, for **every quantity you advertise** (for example 1, 2 and 3):
 
 - [ ] The price on the landing page is right
 - [ ] The checkout total is right (product + shipping)
@@ -693,9 +711,14 @@ On the published pages, for **every quantity you advertise** (for example 1, 2 a
 - [ ] Any discount code works
 - [ ] The currency is right
 
-### 15c. Place the test orders
+Old Shopify addresses (Step 11): open each one **with** `?aleid=test` on the end, for example `https://offers.mystore.com/products/my-product?aleid=test`.
 
-Ask Codex to run the Campaigns OS QA test orders on the published address. Campaigns OS uses NEXT's test card and **blocks the test purchase from reaching AppLovin and other ad tools**. Do not place test orders by hand on the live domain: a hand test sends a fake purchase to your ad accounts.
+- [ ] The landing page opens
+- [ ] `aleid=test` is still in the address bar when the page has loaded
+
+### 15d. Place the test orders
+
+Ask Codex to run the Campaigns OS QA test orders on your domain. Campaigns OS uses NEXT's test card and **blocks the test purchase from reaching AppLovin and other ad tools**. Do not place test orders by hand on the live domain: a hand test sends a fake purchase to your ad accounts.
 
 Test **every path** in your funnel. For a funnel with 1 upsell and 1 downsell:
 
@@ -705,13 +728,15 @@ Test **every path** in your funnel. For a funnel with 1 upsell and 1 downsell:
 | 2 | Checkout, **decline** the upsell, **accept** the downsell |
 | 3 | Checkout, **decline** the upsell, **decline** the downsell |
 
-You do **not** need 1 order for every price tier. Check the tiers in 15b. Order 1 tier on each path.
+You do **not** need 1 order for every price tier. Check the tiers in 15c. Order 1 tier on each path.
 
 Test card (from https://developers.nextcommerce.com/docs/testing):
 
 | Card number | Expiry | CVV |
 |---|---|---|
 | 6011 1111 1111 1117 | any future date | any |
+
+The test card proves the **pages and order flow** work. It does **not** prove real payments. That is Step 14.
 
 After each order, open the store dashboard **Orders**:
 
@@ -721,16 +746,35 @@ After each order, open the store dashboard **Orders**:
 
 If the card number and CVV boxes on checkout are **empty and you cannot type in them**, card payment is not ready. Stop and go back to Step 14.
 
-### 15d. Clean up the test orders
+### 15e. Check the AppLovin events
 
-**Who:** store admin.
+**Who:** developer. **Skip** if you do not use AppLovin.
 
-- Test orders make **real order records**. They can also create **fulfillment orders** and reach connected apps (warehouse, email, Shopify sync).
-- Straight after testing: check **Fulfillment**, and stop any fulfillment for test orders before the warehouse picks them.
-- Then filter **Orders** by **Test Orders** and delete them.
-- Deleting an order does **not** undo what was already sent to a warehouse or another app. If a test order reached one, tell them it is a test.
+Open the Campaigns OS QA results (Codex shows them) or use the **Axon Pixel Helper**. These are the **expected** `purchase` events for each path:
 
-Write down what you tested and anything that did not pass.
+| Path | `purchase` events | Values |
+|---|---|---|
+| Checkout only (no upsell page) | 1 | The order |
+| Checkout + upsell **accepted** | 2 | The order, then the upsell (id ends in `-US1`) |
+| Upsell declined + downsell **accepted** | 2 | The order, then the downsell |
+| Upsell declined + downsell declined | 1 | The order |
+| **Reload** the thank-you page | **0 more** | Nothing new is sent |
+
+- [ ] The number of `purchase` events matches the table
+- [ ] Each value matches the order (or the upsell) in the dashboard. If not, stop and tell NEXT.
+- [ ] `page_view`, `view_item`, `add_to_cart`, `begin_checkout` each fire **once** per page
+
+This is why AppLovin shows **more purchases than orders** when upsells are accepted (Step 12). Tell your media buyer.
+
+### 15f. Clean up the test orders
+
+**Who:** the person named in 15a.
+
+1. Straight after testing: check **Fulfillment**, and stop any fulfillment for the test orders, as agreed in 15a.
+2. Filter **Orders** by **Test Orders** and delete them.
+3. Deleting an order does **not** undo what was already sent to a warehouse or another app. If a test order reached one, tell them it is a test.
+
+Write down what you tested, the order numbers, and anything that did not pass. This is your **QA evidence** for the team leader and the admin tracker.
 
 ---
 
@@ -738,30 +782,31 @@ Write down what you tested and anything that did not pass.
 
 **Who:** team leader. Nothing goes live without the team leader's yes.
 
-1. Check Steps 13, 14 and 15 are done and passed.
-2. Store admin: add the live domain in **Campaigns > Settings > Allowed Domains** as **Production** (change it from Development).
+1. Check Steps 13, 14 and 15 are done and passed, with the QA evidence from 15f.
+2. Store admin: change the live domain in **Campaigns > Settings > Allowed Domains** to **Production**.
 3. If the domain is your storefront domain: NEXT adds the storefront redirects (Part F).
-4. Team leader writes "approved to go live" in the team chat, with the date.
+4. Team leader writes "approved to go live" in the team chat, with the date, and updates the admin tracker.
 5. Point your ads to the live address.
-6. In the first hour, check: new orders arrive, AppLovin (Pixel Helper) shows 1 purchase per order, no customer complaints.
+6. In the first hour, check: new orders arrive, order totals are right, and AppLovin shows the purchase events from the 15e table (1 per order, plus 1 per accepted upsell or downsell).
 
 ### Go-live checklist
 
 - [ ] Every developer has their own GitHub account with 2FA
-- [ ] Repo in the Yonderminds organization, `main` protected
+- [ ] Store repo in the Yonderminds organization (private)
 - [ ] `AGENTS.md` points to the Campaigns OS instructions
 - [ ] No `.env` and no Admin API key in GitHub
 - [ ] Campaign created and every price approved
 - [ ] Campaign settings checked: currency, shipping, payment methods
-- [ ] Old Shopify URLs work (Step 11, and Part F if needed)
-- [ ] AppLovin Event Key added, events fire once
-- [ ] Pages online on your own domain with HTTPS
-- [ ] AppLovin subdomain home redirect set up by NEXT (if AppLovin on a subdomain)
-- [ ] Every payment method confirmed by NEXT
+- [ ] Old Shopify URLs work with `?aleid=test` (Step 11, and Part F if needed)
+- [ ] AppLovin Event Key added
+- [ ] Pages online on Cloudflare Pages, on your own domain, with HTTPS
+- [ ] Subdomain home address redirects to the main site (`_redirects`, Step 13c)
+- [ ] Every payment method confirmed by NEXT (Step 14)
+- [ ] Warehouse, Shopify sync, emails and apps checked before testing (15a)
 - [ ] Final offers on, prices checked for every tier
-- [ ] Test orders on every path, checked and cleaned up
-- [ ] Live domain added as Production
-- [ ] Team leader approved
+- [ ] Test orders on every path, AppLovin events match the table, test orders cleaned up
+- [ ] Live domain changed to Production
+- [ ] Team leader approved, admin tracker updated
 - [ ] Ads point to the live address
 
 ---
@@ -771,22 +816,24 @@ Write down what you tested and anything that did not pass.
 ### How a change is published
 
 1. Developer makes a **branch**, makes the change with Codex, and checks it with `npm run dev`.
-2. Developer opens a **pull request**.
-3. **Team leader** reviews and approves it.
-4. Merging into `main` **publishes** the change. GitHub Actions takes about 2 minutes.
-5. Developer checks the **published** page (not only on their computer) and tells the team leader it is done.
+2. Developer opens a **pull request**. Cloudflare adds a **preview** link to it (Step 13d).
+3. **Team leader** looks at the preview and approves the pull request.
+4. **Team rule:** nobody merges their own pull request. The **team leader** merges it. (GitHub can only enforce this on private repos with a paid GitHub plan, so the team keeps this rule by agreement.)
+5. Merging into `main` **publishes** the change. Cloudflare takes about 1 to 2 minutes.
+6. Developer checks the page **on your domain** (not only on their computer or the preview) and tells the team leader it is done.
 
-Price and offer changes are **not** in the code. They are store settings. Use `next-campaigns-create`, approve its plan, **save the plan**, then do Step 15b again.
+Price and offer changes are **not** in the code. They are store settings. Use `next-campaigns-create`, approve its plan, **save the plan**, then do Step 15c again.
 
 ### If something breaks
 
 **Who owns recovery:** the team leader.
 
 1. **Checkout broken or prices wrong?** Pause the ads first. Then fix.
-2. **Page code problem:** on GitHub, open the pull request that caused it and click **Revert**. Merge the revert pull request. The previous version is published in about 2 minutes. Check the page.
-3. **Price or offer problem:** reverting code does **not** change store settings. Ask Codex to use `next-campaigns-create` to put back the old values from the saved plan (Step 6). Check prices again (Step 15b).
-4. Turn the ads back on only when the team leader says the page is right.
-5. Tell NEXT if the problem was on the platform.
+2. **Page code problem, fastest fix:** in Cloudflare, open the Pages project, **Deployments**, find the last good deployment, and choose **Rollback**. The old version is back in seconds.
+3. Then fix the code: on GitHub, open the pull request that caused the problem and click **Revert**. The team leader merges the revert, so `main` matches what is online.
+4. **Price or offer problem:** rolling back code does **not** change store settings. Ask Codex to use `next-campaigns-create` to put back the old values from the saved plan (Step 6). Check prices again (Step 15c).
+5. Turn the ads back on only when the team leader says the page is right.
+6. Tell NEXT if the problem was on the platform.
 
 ---
 
@@ -794,7 +841,7 @@ Price and offer changes are **not** in the code. They are store settings. Use `n
 
 **New campaign for a store that already has a repo:**
 
-- Reuse: the repo, Steps 1 to 5, the domain, the GitHub Pages setup, the Allowed Domains.
+- Reuse: the repo, Steps 1 to 5, the Cloudflare Pages project and domain (Step 13), the Allowed Domains.
 - Do again: Steps 6, 7, 9, 10, 11, 12, 15 and 16 for the new campaign. It goes in a new folder in `src/`.
 
 **New store:** start again at Step 2 with a new repo.
@@ -886,7 +933,7 @@ This key is different from the Admin API key in Step 5. Keep it private in the s
 
 1. Create a repo named `<store>-theme` in Yonderminds (same way as Step 2).
 2. Developer: clone it and open the folder.
-3. Make a `.gitignore` file **first**, with these lines. `config.yml` holds the Theme Kit key, and the repo is public.
+3. Make a `.gitignore` file **first**, with these lines. `config.yml` holds the Theme Kit key. Never commit it, even in a private repo.
 
 ```
 config.yml
@@ -987,12 +1034,12 @@ You choose the template for each page in the **Map** (Step 9). Codex uses that c
 
 ## Appendix 1. Other hosting services
 
-Yonderminds uses GitHub Pages (Step 13). Other static hosts can also serve the `_site` folder. Their settings are **not all the same**: check each host's own documentation for build settings, custom domains, redirects and plan limits before you use it.
+Yonderminds uses **Cloudflare Pages** (Step 13). Other static hosts can also serve the `_site` folder, but their settings are **not the same**: redirects (`_redirects` is a Cloudflare and Netlify format), custom domains, preview addresses and plan limits differ. Check the host's own documentation, and ask NEXT before you use one.
 
 | Host | Notes |
 |---|---|
-| Cloudflare Pages | Connect the repo. Build command `npm run build`, output `_site`. Can do the 301 redirect from Step 13c itself. |
-| Netlify | Connect the repo. Build command `npm run build`, publish folder `_site`. |
+| GitHub Pages | **Do not use for campaigns.** GitHub's rules do not allow it for sites mainly used to sell things. Keep GitHub for code and pull requests. |
+| Netlify | Connect the repo. Build command `npm run build`, publish folder `_site`. Reads `_redirects`. |
 | Vercel | Connect the repo. Framework: Other. |
 | Render | Static Site, publish path `_site`. |
 | Others | Firebase Hosting, AWS Amplify, AWS S3 + CloudFront, Azure Static Web Apps, DigitalOcean App Platform, GitLab Pages, Surge. |
@@ -1014,4 +1061,4 @@ Whichever host you use: add its domain to **Allowed Domains** (Step 8), and do S
 - Theme skills: https://github.com/NextCommerceCo/skills (next-theme-figma, next-theme-design, next-theme-dev)
 - Something not working: contact your NEXT team. Send the store name, the page address, and a screenshot.
 
-*Checked against Campaign Page Kit 0.3.0 and Campaigns OS 1.71.2 on 17 November 2026.*
+*Checked against Campaign Page Kit 0.3.0 and Campaigns OS 1.71.2 on 17 November 2026. Hosting changed to Cloudflare Pages on 18 November 2026.*

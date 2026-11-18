@@ -1,82 +1,79 @@
 # Demo: a configured campaign
 
-This repo shows a **finished** campaign: built for one real store (**Coerneuineo**), configured, tested and online. Use it to see what your own store repo will look like when it is done.
-
-There are 2 demo repos. Look at them side by side:
+This repo shows a **finished** campaign: built for one real store (**Coerneuineo**), configured and tested. It uses the **same layout** as the fresh demo and the go-live guide, so you can compare the 2 repos and see exactly what changes.
 
 | Repo | What it shows |
 |---|---|
-| [demo-fresh-campaign](https://github.com/Yonderminds/demo-fresh-campaign) | A **fresh** Campaign Page Kit project, right after install. Nothing set up for a store yet. |
-| **demo-configured-campaign** (this repo) | A campaign **configured for a store**: real campaign, real pages, hosting and test records. |
+| [demo-fresh-campaign](https://github.com/Yonderminds/demo-fresh-campaign) | Your repo **after Step 4**: Page Kit installed, nothing set up for a store yet |
+| **demo-configured-campaign** (this repo) | Your repo **after Step 16**: real campaign, real pages, Shopify URL, redirects and test records |
 
-Live pages: https://yonderminds.github.io/demo-configured-campaign/christmas-diamond-painting-light-wreath/
+**New here? Start with [GO-LIVE.md](GO-LIVE.md)**, the step-by-step guide. Coordinators: see [ADMIN-TRACKER.md](ADMIN-TRACKER.md).
 
-**New here? Start with [GO-LIVE.md](GO-LIVE.md)**: a step-by-step guide from a new GitHub repo to a live campaign.
+Agent instructions are in `AGENTS.md` (`CLAUDE.md` links to it).
 
-Your own repos are named after the store (`<store>-cpk`), not "demo".
+This demo is **not hosted** for shoppers. Your store repos are hosted on Cloudflare Pages (Step 13).
 
-**This repo uses an advanced layout.** It has 1 extra folder level (`christmas-diamond-painting/`, for a product line) and its own root build scripts (`scripts/build.js`, `scripts/pages-routes.js`). The go-live guide uses a **simpler layout**: everything in the repo folder, 1 `src/<slug>/` folder per campaign, built with `npm run build`. Follow the guide for your own repos. Use this repo to see finished pages, tracking settings and test records. Its own build steps are below.
+---
 
-Agent instructions are in `CLAUDE.md`. `AGENTS.md` links to it, so Codex and Claude Code follow the same rules.
-
-## Campaigns
-
-| Slug | Pages | Status |
-|------|-------|--------|
-| `christmas-diamond-painting-light-wreath` | landing, checkout, upsell, downsell, receipt | Online on GitHub Pages at a test address (not on the store's domain) |
-
-## Build
-
-```bash
-cd christmas-diamond-painting
-npm install
-npm run dev              # dev server with campaign picker
-npm run build            # build just this project, for local checking
-npm run config           # set API key interactively
-npm run compress         # compress all images in a campaign
-npm run compress:preview # preview compression savings without modifying files
-```
-
-The full build runs from the repo root: `node scripts/smoke-check.js && node scripts/build.js`. `build.js` finds every top-level folder holding both `package.json` and `src/`, builds each, and merges the results into one root `_site/`, which is what gets published.
-
-## Adding a new campaign
-
-A new campaign in this project is a new `src/<slug>/` folder, and the folder name is the URL path, so slugs must be unique across the whole repo. `npm run clone` duplicates a campaign that already exists in `src/` to a new slug. It cannot create the first one.
-
-For a project's first campaign, inside the project folder:
-
-1. `npm install`
-2. `npm run setup -- --slug <slug>` (an alias for `campaign-init`). It shows a picker of starter templates from `NextCommerceCo/campaign-cart-starter-templates`, downloads the chosen template into `src/<slug>/`, adds the entry to `_data/campaigns.json`, and can write the API key to `src/<slug>/assets/config.js`. Keep `--slug`: without it the folder name, and so the URL path, defaults to the template name.
-3. Check that the new entry in `_data/campaigns.json` carries a pinned `sdk_version`. The lookup is best effort, so copy it from the upstream registry if it is missing.
-
-Do not pass `--ai-context claude`; it overwrites the project's `CLAUDE.md`.
-
-A separate product line is a new top-level project folder alongside `christmas-diamond-painting/`: copy `package.json`, `CLAUDE.md`, `AGENTS.md`, and an empty `_data/campaigns.json` (not `src/`, so no slug is duplicated), run `npm install`, then add its first campaign the same way. The root build picks it up with no other change.
-
-## Structure
+## Layout
 
 ```
 demo-configured-campaign/
-├── scripts/
-│   ├── smoke-check.js       # Pre-deploy validator
-│   └── build.js             # Root build: discovers and merges every project
-├── christmas-diamond-painting/
-│   ├── _data/
-│   │   └── campaigns.json   # Campaign registry: sdk_version, store fields, analytics IDs
-│   ├── src/
-│   │   └── christmas-diamond-painting-light-wreath/  # Campaign source
-│   ├── CLAUDE.md            # SDK + template rules for campaigns in this project
-│   ├── AGENTS.md            # Link to CLAUDE.md, for Codex
-│   └── package.json         # Build scripts (next-campaign-page-kit)
-├── netlify.toml              # Rules from the previous host; see "Hosting" in CLAUDE.md
-├── CLAUDE.md                 # Repo-level agent instructions
-├── AGENTS.md                 # Link to CLAUDE.md, for Codex
-└── .gitignore
+├── AGENTS.md                ← instructions for Codex (top lines from Step 4b)
+├── GO-LIVE.md               ← the developer guide
+├── ADMIN-TRACKER.md         ← the coordinator's 1-row-per-store tracker
+├── package.json             ← Page Kit, Campaigns OS, and the build commands
+├── _data/campaigns.json     ← the campaign: store details and tracking settings
+├── src/christmas-diamond-painting-light-wreath/   ← the campaign pages
+├── source/                  ← the design the pages were built from
+├── scripts/shopify-urls.js  ← keeps the old Shopify address (Step 11)
+├── shopify-urls.json        ← old Shopify address → campaign page
+├── _redirects               ← Cloudflare Pages: subdomain home → main site (Step 13c)
+├── campaign-runtime.build.json, campaign-build-brief.json, .campaign-runtime/  ← Campaigns OS records
+└── _site/                   ← made by `npm run build`, never committed
 ```
 
-## References
+## Build
 
-- [Campaign Cart SDK docs](https://cart-sdk.nextcommerce.com/latest/). For the docs matching this repo's pin, use `https://cart-sdk.nextcommerce.com/v<sdk_version>/` with the `sdk_version` in `christmas-diamond-painting/_data/campaigns.json`
-- [Starter templates](https://github.com/NextCommerceCo/campaign-cart-starter-templates)
-- [Page Kit on npm](https://www.npmjs.com/package/next-campaign-page-kit)
-- SDK + template rules for this repo: `christmas-diamond-painting/CLAUDE.md`
+All commands in the repo folder:
+
+```bash
+npm ci
+npm run dev      # look at the pages on your computer
+npm run build    # make _site/ (5 pages + the old Shopify address + _redirects)
+```
+
+## The campaign
+
+| Page | Address |
+|---|---|
+| Landing | `/christmas-diamond-painting-light-wreath/` and the old Shopify address `/products/hot-sale-49-off✨-christmas-diamond-painting-light-wreath-diy-kit-buy-2-get-free-shipping-🎁/` |
+| Checkout | `/christmas-diamond-painting-light-wreath/checkout/` |
+| Upsell (30% off) | `/christmas-diamond-painting-light-wreath/upsell-30/` |
+| Downsell (50% off) | `/christmas-diamond-painting-light-wreath/downsell-50/` |
+| Thank-you | `/christmas-diamond-painting-light-wreath/receipt/` |
+
+Built with Page Kit 0.3.0 and Campaigns OS 1.71.0. Tested with test-card orders on 13 November 2026 (records in `.campaign-runtime/qa-verdict.json`).
+
+---
+
+## If you copy from this demo: replace these
+
+**Everything below belongs to the Coerneuineo store.** Never reuse it for another store.
+
+| What | Where | Replace with |
+|---|---|---|
+| Campaign API key | `src/<slug>/assets/config.js` (`apiKey`) | Your campaign's key (Step 6) |
+| Package IDs | The pages and `_includes/` in `src/<slug>/` (`data-next-package-id`, and page settings at the top of each page) | Your campaign's package IDs (Step 6) |
+| Store name, support contact, phone, policy links | `_data/campaigns.json` (`store_*` fields) | Your store's details |
+| Tracking | `_data/campaigns.json` (`axon_event_key`, `gtm_id`, `fb_pixel_id`). They are **empty** here on purpose. | Your keys (Step 12). Leave customer data sharing **off** unless the store owner approves it. |
+| Old Shopify address | `shopify-urls.json` | Your old Shopify product addresses (Step 11) |
+| Main site in the redirect | `_redirects` | Your main domain (Step 13c) |
+| Page text, images, design | `src/<slug>/`, `source/` | Your own |
+| Campaigns OS records | `campaign-runtime.build.json`, `campaign-build-brief.json`, `.campaign-runtime/` | **Do not copy.** Codex makes new ones for your campaign (Step 10). |
+
+## Attribution notes for this store
+
+- All 11 store metadata fields for campaign attribution were present on 13 November 2026 (2 order fields, 9 attribution fields).
+- The Campaign Cart SDK saves `affid` / `aff` and `sub1` to `sub5` from the landing address, first visit.
+- Attribution platform and Meta Conversions API: not confirmed. Record them here when they are decided.

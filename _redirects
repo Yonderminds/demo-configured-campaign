@@ -1,0 +1,3 @@
+# Cloudflare Pages redirects. "npm run build" copies this file into _site/.
+# AppLovin rule: the home address of the campaign subdomain sends shoppers to the main site.
+/ https://coerneuineo.com/ 301
