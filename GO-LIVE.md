@@ -27,6 +27,7 @@ If a step does not work, **stop and ask NEXT**. Do not guess.
 | Your NEXT store and access to its dashboard | A GitHub account for each developer (Step 1) |
 | The Yonderminds GitHub organization | The products, prices and offers for each campaign |
 | The Campaigns App, Campaign Page Kit, Campaigns OS and the NEXT skills | Page designs (or you use a starter template) |
+| The Spark storefront theme and Theme Kit (Part H) | Storefront design changes, if you want them |
 | Help with payments, domains and redirect rules | Access to your domain's DNS settings |
 | 2 demo repos to copy from | Your AppLovin **Event Key** (if you use AppLovin) |
 | | The list of your old Shopify product addresses that ads use |
@@ -40,7 +41,8 @@ Your store on NEXT can sell in 2 ways. Most stores use **both**.
 | | **Storefront** | **Campaign** |
 |---|---|---|
 | What it is | Your full online shop: home page, all products, collections, cart | A sales funnel for 1 offer: landing page, checkout, upsell, downsell, thank-you page |
-| Who builds it | NEXT sets it up (theme) | You build it in GitHub with Codex (this guide) |
+| Who builds it | NEXT sets up the theme. You can change it with Codex and the theme skills (Part H) | You build it in GitHub with Codex (this guide) |
+| Templates to start from | Spark theme (Part I) | Campaign templates with checkout and upsell pages (Part I) |
 | Where it lives | On NEXT, on your main domain (for example `mystore.com`) | On a hosting service you choose (Step 13), on your own domain |
 | Best for | Shoppers who browse, search, and come back | Paid ads (AppLovin, Meta, TikTok) that send shoppers to 1 product |
 | Post-purchase upsells | **No** | **Yes** (1-click upsell and downsell after payment) |
@@ -125,7 +127,7 @@ The address has 2 parts: the **domain** (`mystore.com`) and the **path** (`/prod
 | 15 | Final check and test orders | Developer + store admin |
 | 16 | Go live | Team leader |
 
-After go-live: **Part D** (changes and recovery), **Part E** (new campaign or new store). Storefront only: **Part F** (redirects) and **Part G** (AppLovin app).
+After go-live: **Part D** (changes and recovery), **Part E** (new campaign or new store). Storefront only: **Part F** (redirects), **Part G** (AppLovin app) and **Part H** (build or change the store theme). Where to get templates: **Part I**.
 
 ---
 
@@ -837,6 +839,152 @@ Type the From field **without** the `\` before `|`. Example: `^/products/my-prod
 
 ---
 
+## Part H. Storefront: build or change the store theme
+
+**Who:** developer, with the store admin. This is for the **storefront** (Part B). It does not change campaigns.
+
+The storefront look comes from a **theme**. NEXT's recommended theme is **Spark** (built with Tailwind CSS). You change a theme on your computer and send it to the store with **Theme Kit** (the `ntk` command). Codex does the work with the 3 **theme skills**:
+
+| Skill | Use it when |
+|---|---|
+| `next-theme-figma` | You have a **Figma** design for the store |
+| `next-theme-design` | You want to copy a **live website** (for example your old Shopify page) |
+| `next-theme-dev` | Codex builds or changes the theme. Always the last step. |
+
+`next-theme-figma` or `next-theme-design` makes a **handoff package** (a full description of the design). Then `next-theme-dev` builds it.
+
+### H1. Install the tools (1 time on each computer)
+
+1. Python **3.10 or newer**: `python3 --version`
+2. Theme Kit, in a Python virtual environment:
+
+```bash
+python3 -m venv ~/.venvs/ntk
+source ~/.venvs/ntk/bin/activate
+pip install next-theme-kit
+ntk --help
+```
+
+3. The theme skills come with the NEXT skills from Step 4a (`npx skills add NextCommerceCo/skills -g -a codex`). If you skipped Step 4a, run it now, then close and open Codex.
+
+**You should see:** `ntk --help` prints the list of commands.
+
+### H2. Make a Theme Kit key
+
+**Who:** store admin.
+
+1. Store dashboard: **Settings > API Access > Create App**.
+2. Give it a name (for example "Theme Kit"), and choose the user.
+3. **Permissions** tab: tick **themes:read** and **themes:write**. Nothing else.
+4. Click **Save** and copy the key.
+
+This key is different from the Admin API key in Step 5. Keep it private in the same way.
+
+### H3. Make the theme repo
+
+**Who:** org owner, then developer.
+
+1. Create a repo named `<store>-theme` in Yonderminds (same way as Step 2).
+2. Developer: clone it and open the folder.
+3. Make a `.gitignore` file **first**, with these lines. `config.yml` holds the Theme Kit key, and the repo is public.
+
+```
+config.yml
+node_modules/
+.env
+```
+
+4. Commit and push the `.gitignore`.
+
+### H4. Get a theme to work on
+
+**Never work on the live theme directly.** Always work on a **copy** that shoppers do not see.
+
+Choose 1:
+
+- **Change the store's current theme.** In the store dashboard, duplicate the live theme first, so you have a copy to work on. Then:
+
+```bash
+ntk list --apikey <theme-kit-key> --store https://<store>.29next.store
+ntk checkout --theme_id <id-of-the-copy> --apikey <theme-kit-key> --store https://<store>.29next.store
+```
+
+- **Start a new theme from Spark.** Copy the Spark files from https://github.com/NextCommerceCo/spark into the repo folder, then register it as a new theme on the store:
+
+```bash
+ntk init --name "<store> theme" --apikey <theme-kit-key> --store https://<store>.29next.store
+```
+
+  `ntk init` makes an **empty** theme on the store. The files go up with `ntk push` in H5 (Codex asks you first). Spark also has its own setup step for its styles: ask Codex to follow Spark's README.
+
+Both commands write `config.yml` with the key. Check `git status` does **not** show `config.yml`.
+
+Type the key in **your own terminal**, not in the Codex chat.
+
+### H5. Build the design with Codex
+
+Open Codex in the theme repo folder. Example requests:
+
+```
+Use next-theme-design to record the design of https://old-shopify-store.com/products/my-product.
+Then use next-theme-dev to build the product page in this theme.
+```
+
+```
+Use next-theme-figma with this Figma file: <link>. Then use next-theme-dev to build it.
+```
+
+Codex tells you which theme it will change (store, theme ID, live or not live) and **waits for your yes** before it uploads (`ntk push` or `ntk watch`).
+
+### H6. Check the preview
+
+Open the preview of the **copy** on the store's own address (`https://<store>.29next.store`), not your public domain. Check on a computer and a phone:
+
+- [ ] Home page, a collection, a product page, the cart and checkout look right
+- [ ] Add to cart and checkout work
+- [ ] Nothing is broken on a phone
+
+Commit and push the theme files to GitHub, using a pull request (Part D).
+
+### H7. Make it live
+
+**Who:** team leader approves, store admin publishes.
+
+1. Keep the **old live theme** in the store. It is how you go back if something is wrong.
+2. In the store dashboard, publish the new theme.
+3. Check the live storefront: home, product, cart, checkout, and the AppLovin events (Part G).
+4. **If something is wrong:** publish the old theme again, then fix the copy.
+
+More information: https://developers.nextcommerce.com/docs/storefront/themes and https://developers.nextcommerce.com/docs/storefront/themes/theme-kit
+
+---
+
+## Part I. Where to get templates
+
+### Storefront themes
+
+| Template | What it is | Where |
+|---|---|---|
+| Spark | NEXT's recommended storefront theme (Tailwind CSS) | https://github.com/NextCommerceCo/spark |
+| Intro Bootstrap | An older theme, based on Bootstrap | https://github.com/NextCommerceCo/intro-bootstrap |
+| Your store's current theme | The theme NEXT already set up for your store | Download it with `ntk checkout` (Part H) |
+
+### Campaign templates (landing, checkout, upsell, downsell, thank-you)
+
+Each campaign **template family** is a full funnel: landing or presell pages, a **checkout**, **upsell** and downsell pages, and a **receipt** (thank-you) page. Campaigns OS and Page Kit download them for you (Step 10). You do not copy them by hand.
+
+| Where | What you find |
+|---|---|
+| https://campaigns.nextcommerce.com/templates/ | Preview each template family and see its pages. **apollo** is the recommended one. Others include **olympus**, **olympus-mv-single-step** (products with variants, like size or colour) and **shop-three-step** (checkout in 3 steps). |
+| https://campaigns.nextcommerce.com/patterns/ | Ready parts you can add to a page, for example **bundle selectors** (Buy 1 / Buy 2 / Buy 3 cards) |
+| https://github.com/NextCommerceCo/campaign-cart-starter-templates | The template code itself, and `templates.json`, the list of all template families |
+| https://github.com/Yonderminds/demo-fresh-campaign | The apollo template as you get it: 9 pages, including **5 upsell styles** (bundle stepper, tier cards, tier pills, single product, video) |
+| https://github.com/Yonderminds/demo-configured-campaign | A finished funnel: landing page, checkout, upsell, downsell, receipt |
+
+You choose the template for each page in the **Map** (Step 9). Codex uses that choice when it builds (Step 10).
+
+---
+
 ## Appendix 1. Other hosting services
 
 Yonderminds uses GitHub Pages (Step 13). Other static hosts can also serve the `_site` folder. Their settings are **not all the same**: check each host's own documentation for build settings, custom domains, redirects and plan limits before you use it.
@@ -859,6 +1007,11 @@ Whichever host you use: add its domain to **Allowed Domains** (Step 8), and do S
 - NEXT skills: https://developers.nextcommerce.com/docs/skills
 - Campaigns OS: https://campaigns.nextcommerce.com/ and https://campaigns.nextcommerce.com/start/
 - Testing: https://developers.nextcommerce.com/docs/testing
+- Campaign templates: https://campaigns.nextcommerce.com/templates/
+- Storefront themes: https://developers.nextcommerce.com/docs/storefront/themes
+- Theme Kit (`ntk`): https://developers.nextcommerce.com/docs/storefront/themes/theme-kit
+- Spark theme: https://github.com/NextCommerceCo/spark
+- Theme skills: https://github.com/NextCommerceCo/skills (next-theme-figma, next-theme-design, next-theme-dev)
 - Something not working: contact your NEXT team. Send the store name, the page address, and a screenshot.
 
 *Checked against Campaign Page Kit 0.3.0 and Campaigns OS 1.71.2 on 17 November 2026.*
