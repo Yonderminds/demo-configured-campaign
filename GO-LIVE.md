@@ -157,7 +157,7 @@ On Windows, use WSL (Windows Subsystem for Linux) for every command in this guid
 
 ## Step 2. Create the repo for a store
 
-**Who:** org owner (a director, or NEXT). Team members cannot create repos in the Yonderminds organization.
+**Who:** org owner (Harris, Alen or NEXT). Directors, team leaders and members cannot create repos in the Yonderminds organization.
 
 Rules:
 
@@ -166,10 +166,22 @@ Rules:
 - Store repos are **private**. Only your team and NEXT can see them. Still, never put secrets in a repo: no keys, no passwords, no customer data.
 - The 2 demo repos are public, because they are examples for everyone.
 
+**How the Yonderminds organization is set up:**
+
+| Who | GitHub role | Sees |
+|---|---|---|
+| Harris, Alen, NEXT | Owner | Everything |
+| Director (Jimmy, John) | Member, maintainer of their group's teams | All repos of their group |
+| Team leader | Member, maintainer of their own team | Their team's repos |
+| Team member | Member of their team | Their team's repos |
+
+Each group (`group-jimmy`, `group-john`, `group-harris-alen`) has 1 sub-team for each team leader. A store repo belongs to 1 sub-team. Everyone in the organization can see the list of people and teams, but only the right team can see a repo.
+
 1. Go to https://github.com/organizations/Yonderminds/repositories/new
 2. **Repository name:** `<store>-cpk`. **Visibility:** Private.
 3. Tick **Add a README file**. Click **Create repository**.
-4. Give the team access: in the repo, **Settings > Collaborators and teams > Add teams**, choose the team, role **Write**.
+4. Give the team access: in the repo, **Settings > Collaborators and teams > Add teams**. Choose the store's **sub-team** (the team leader's team, for example `jimmy-lian-siyu`), role **Write**.
+   **Never** give a store repo to a `group-*` team (`group-jimmy`, `group-john`, `group-harris-alen`). Every sub-team in that group would then see the repo. The group's director already sees it, because directors are in every sub-team of their group.
 5. Each developer copies the repo to their computer:
 
 ```bash
